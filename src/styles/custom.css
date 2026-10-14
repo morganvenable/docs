@@ -1,0 +1,11 @@
+/* Keybard's brand green (kb-primary) as the accent. */
+:root {
+	--sl-color-accent-low: #06372b;
+	--sl-color-accent: #099e7c;
+	--sl-color-accent-high: #b5ecdf;
+}
+:root[data-theme='light'] {
+	--sl-color-accent-low: #c9f2e8;
+	--sl-color-accent: #07806a;
+	--sl-color-accent-high: #04392f;
+}

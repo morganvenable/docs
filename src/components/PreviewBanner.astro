@@ -1,0 +1,21 @@
+---
+// Until cutover: a preview of the new docs. Delete this override at cutover.
+import Default from '@astrojs/starlight/components/Banner.astro';
+---
+
+<div class="sl-banner" data-pagefind-ignore>
+	Preview. The current manual is at <a href="https://svalboard.com/manual">svalboard.com/manual</a>.
+</div>
+<Default />
+
+<style>
+	.sl-banner {
+		padding: 0.5rem var(--sl-nav-pad-x);
+		background-color: var(--sl-color-bg-accent);
+		color: var(--sl-color-text-invert);
+		text-align: center;
+	}
+	.sl-banner a {
+		color: inherit;
+	}
+</style>
