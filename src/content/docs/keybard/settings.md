@@ -73,8 +73,6 @@ Choose a preset at the top:
 
 Or set each finger under **Left** and **Right**. The thumbs always use the thumb cluster. On a connected board, the change is written like any other edit.
 
-On vNext1 firmware or later, Keybard also lists each hand's pointing module here, marked **Locked**. See [Pointing devices](/keybard/pointing/#which-pointing-module-each-hand-has).
-
 ## Check every key with Matrix Tester
 
 1. Connect the board and choose **Matrix Tester** in the toolbar.

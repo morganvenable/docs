@@ -11,19 +11,27 @@ A layer is another set of meanings for the same keys, like Shift turns lowercase
 
 ## The default layout
 
-The default layout is **Sval-QWERTY**. It approximates Datahand QWERTY. This is the Svalboard QMK default; Svalboard's Vial firmware may differ in details.
+Your Svalboard ships with **Sval-QWERTY**, a layout modeled on Datahand QWERTY. These pictures are straight from Keybard.
 
-- **Base layer** (layer 0): letters. Thumbs:
-  - Left: Shift (Down), Enter (Pad; hold for NavNAS), Tab (Nail; hold for GUI), Ctrl (Knuckle), Caps Lock (Double Down).
-  - Right: NavNAS (hold Down), Space (Pad), Backspace (Nail), Alt (Knuckle), Function layer (hold Double Down).
-- **NavNAS layer** (layer 1): hold **Right Thumb Down** or **Left Thumb Pad**. Numbers are on the Center keys and symbols on the North keys. The right South keys are arrows; the left South keys are Home, End, Page Up and Page Down.
-- **Function layer** (layer 2): hold **Right Thumb Double Down** (press Down all the way through). F1–F24.
-- **Board settings layer** (layer 14): hold **Right Ring East**. The left hand has pointer speed keys and Output Status.
-- **Mouse layer** (layer 15): turns on by itself when you move a pointing device (see [Pointing modules](/hardware/pointing-modules/)).
+**Base layer:** letters, with Shift, Enter, Tab, Ctrl and Caps Lock under the left thumb, and Space, Backspace and Alt under the right.
 
-The thumb **Up** keys ship blank. Thumb Up layer switching from older layouts is no longer used. Assign the Up keys as you like.
+![The base layer of the default layout in Keybard: letters on the finger clusters, modifiers and editing keys on the thumbs.](../../../assets/hardware/layer-00-layer-0.webp)
 
-<!-- VERIFY: the draft wants one image per layer of the default layout. The live guide's layer images are screenshots from an older Keybard and may not match the current Svalboard QMK keymap, so they are left out. Capture new ones from current Keybard (layers 0, 1, 2, 14, 15)? -->
+**NavNAS layer:** hold Right Thumb Down or Left Thumb Pad for numbers, symbols, arrows and page navigation.
+
+![The NavNAS layer in Keybard: numbers on the Center keys, symbols on the North keys, arrows on the right South keys, and Home, End, Page Up and Page Down on the left South keys.](../../../assets/hardware/layer-01-layer-1.webp)
+
+**Function layer:** hold Right Thumb Double Down (press Down all the way through) for F1–F24.
+
+![The function layer in Keybard, with F1 to F24.](../../../assets/hardware/layer-02-layer-2.webp)
+
+**Board settings layer:** hold Right Ring East for pointer speed and Output Status.
+
+![The board settings layer in Keybard: left and right pointer DPI up and down on the left middle and ring clusters, and Output Status on the left index center key.](../../../assets/hardware/layer-14-layer-14.webp)
+
+**Mouse layer:** turns on by itself when you move a pointing device. See [Pointing modules](/hardware/pointing-modules/#the-mouse-layer-automouse).
+
+The thumb **Up** keys ship blank, ready for whatever you want there.
 
 ## Layouts
 

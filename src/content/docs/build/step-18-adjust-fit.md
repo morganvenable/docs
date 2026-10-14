@@ -11,13 +11,23 @@ Adjust each part of the Svalboard to fit your hands. You'll keep making small ad
 
 ## Palm rest
 
-1. Loosen both carrier screws slightly.
-2. The palm rest carrier moves in X, Y and yaw. Snug the screws lightly to test and tweak.
-3. With a relaxed hand, your fingers should rest comfortably on the center keys. Slide and rotate the palm rest to get a good starting position. You can always tweak it later.
-4. The base knuckles of each hand usually rest just in front of the front edge of the palm rest.
-5. Tighten both screws gently snug to fix the position.
+The carrier moves in X, Y and yaw on the base plate. The palm rest tilts in pitch and roll on the carrier.
 
-![The palm rest carrier on the base plate, with its two screws in the carrier slots.](../../../assets/build/fit-palm-rest.webp)
+1. Reach the two carrier screws through the window in the palm rest, and loosen them slightly.
+2. With a relaxed hand, your fingers should rest comfortably on the center keys. Slide and turn the palm rest to get a good starting position. You can always tweak it later.
+3. The base knuckles of each hand usually rest just in front of the front edge of the palm rest.
+4. Tighten both carrier screws gently snug to fix the position.
+5. To set pitch and roll, loosen the large center screw slightly with the 3 mm hex key. Tilt the rest until your palm lies flat on it, then tighten the center screw firmly.
+
+![Close-up of a hemispherical palm rest. The center screw sits in its washer, and the two carrier screws show through the window above it.](../../../assets/build/palm-rest-hemisphere-screws.webp)
+
+<!-- VERIFY: which driver fits the carrier screws through the window: the T10 driver, or a hex key? -->
+
+### Older builds: tripod palm rests
+
+Loosen both carrier screws slightly, slide and turn the carrier as above, then tighten the screws gently snug. To change the height, add or remove shims under the legs ([Step 14](/build/step-14-palm-rests/)).
+
+![A tripod palm rest carrier on the base plate, with its two screws in the carrier slots.](../../../assets/build/fit-palm-rest.webp)
 
 ## Finger clusters
 
@@ -49,8 +59,10 @@ To move one finger farther away than its slot allows, move the other fingers clo
 
 Watch the [palm rest shaping video](https://www.youtube.com/watch?v=feAgCKpLzhQ).
 
-- Only shape the palm rest while it's attached to the carrier, so the alignment pegs stay in the right places.
+- Only shape the palm rest while it's attached to the carrier. On a tripod rest, this keeps the legs in the right places.
 - Dip the area you want to shape in water at about 90 °C. Swish it gently for 5 to 10 seconds until it's pliable.
 - Quickly shake off the hot water and form it to your hand. It cools and hardens quickly.
 - Work a little at a time. Don't rush, and don't force a bend, or the layers may split.
 - Keep a bowl of cool water nearby. If the plastic gets too soft, dip it to set the shape quickly.
+
+<!-- VERIFY: is hot-water shaping supported on PLA hemispherical rests? Should they stay on the carrier while shaping, so the ball and the screw recess keep their shape? -->

@@ -38,7 +38,9 @@ Pick your side key size first. See [Sizing before you build](/build/fitment/).
 
 **Other parts**
 
-- Palm rests and carriers: Left Palm Rest, Right Palm Rest, Left Carrier, Right Carrier.
+- Palm rests: Hemi Palm L, Hemi Palm R, two 9 mm hemi carriers, and two hemi top washers. The files are in the Hemi Palms folder under Palmrests. Carriers from 1 mm to 15 mm tall are in its "Additional carrier variants and heights" folder.
+
+  <!-- VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? Which carrier ships: "2N-Slots" (both slots on the window side) or "Split-Slots"? The page and the carrier render assume 2N-Slots. -->
 - Base plates and cases: L Base, L Case, R Base, R Case.
 - TrackPoint case, if you have a TrackPoint: top cover and bottom cover.
 - Tools: mini 4x3 magnet stages (Key and Cluster), magnet dropper, mini key tray fixture.
@@ -114,12 +116,19 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 
 ## Palm rests and carriers
 
-- Use tree supports (Auto, Default or Organic) for the palm rests.
-- Stand each palm rest on the flat long edge made for this.
-- Add a brim to the palm rests. You may want to paint seam blockers on the visible surfaces.
-- No supports on the carriers or shims.
+- Print every palm rest part with 6 walls for strength.
+- Stand each palm rest on its flat long edge, with tree supports (Auto, Default or Organic) and a brim of 5 mm or more. You may want to paint seam blockers on the visible surfaces.
+- Print the carriers and the top washers flat side down. They don't need supports.
 
-![Slicer view of a palm rest standing on its long edge with tree supports, next to two carriers and a set of shims.](../../../assets/build/print-palm-rests.webp)
+<!-- PHOTO: slicer screenshot of one build plate with Hemi Palm L and R standing on their long edges with tree supports and brim, plus two 9 mm hemi carriers and two top washers lying flat side down. Same framing and plate as print-palm-rests.webp. -->
+
+![The parts of a hemispherical palm rest, pulled apart: the M5 flat head screw and the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup and two curved slots, and the M5 square nut.](../../../assets/build/palm-rest-hemisphere-exploded.webp)
+
+### Older builds: tripod palm rests
+
+Print the tripod palm rests the same way, standing on the long edge with tree supports and a brim. Print the carriers and shims without supports.
+
+![Slicer view of a tripod palm rest standing on its long edge with tree supports, next to two carriers and a set of shims.](../../../assets/build/print-palm-rests.webp)
 
 ## TrackPoint case
 

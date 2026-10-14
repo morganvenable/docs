@@ -5,37 +5,22 @@ sidebar:
   order: 7
 ---
 
-## Every FFC connection
+Every FFC connector has a small black latch. Flip the latch up, slide the cable all the way in, then flip the latch down to lock it. To remove a cable, flip the latch up and pull the cable straight out.
 
-Every time you connect an FFC, do it in this order:
-
-1. **Unlatch:** flip the connector's black latch up.
-2. **Insert:** slide the FFC fully into the connector, with its contacts facing the way the step says.
-3. **Latch:** flip the latch down to lock the FFC.
-
-To remove an FFC, reverse it: unlatch, pull the FFC straight out, then latch the empty connector.
-
-Contacts face **down** at both ends of every FFC, with the blue stiffener up. The one exception is the TrackPoint PCBA end, where the contacts face **up**.
+<!-- VIDEO: a short clip of unlatch, insert, latch on one connector (shot list: ffc-latch-video). -->
 
 ![An MCU's FFC connectors up close. One latch is down (closed) and one is up (open).](../../../assets/build/ffc-latch-up-down.webp)
 
 ## Attach FFCs to the PCBAs
 
-- For the thumbs, use only the 10-pin FFC if you have it. The RGB layer lights need it. The 8-pin thumb connector on the MCU is for older builds only.
-- Unlatch: flip the black latch up.
-- Insert the FFC with the contacts **down** and the blue stiffener up.
-- Latch: flip the latch down to lock it.
-- On thumb PCBAs, route the cable down through the slot after you close the latch.
-- The latch is on the side opposite the cable.
-- Exception: on the TrackPoint PCBA the contacts face **up** ([Step 10a](/build/step-10-pointing-devices/#10a-trackpoint)).
+At both ends of every FFC, the contacts face down and the blue stiffener faces up. The one exception is the TrackPoint PCBA, where the contacts face up ([Step 10a](/build/step-10-pointing-devices/#10a-trackpoint)).
 
-![FFCs attached to a trackball PCBA, a thumb PCBA and a finger cluster PCBA. On the thumb PCBA the latch sits on the side opposite the cable.](../../../assets/build/ffc-on-pcbas.webp)
+For the thumbs, use the 10-pin FFC if you have it; the RGB layer lights need it. On a thumb PCBA the latch sits on the side opposite the cable, so route the cable down through the slot after you close the latch.
+
+![FFCs attached to a TrackPoint PCBA, a thumb PCBA and a finger cluster PCBA. On the thumb PCBA the latch sits on the side opposite the cable.](../../../assets/build/ffc-on-pcbas.webp)
 
 ## FFCs on the MCU
 
-You connect the other end of each FFC to the MCU in [Step 12](/build/step-12-install-mcus/). The same rules apply:
-
-- For the thumbs, use only the 10-pin FFC if you have it. The RGB layer lights need it. The 8-pin thumb connector on the MCU is for older builds only.
-- At each MCU connector: unlatch, insert the FFC contacts **down**, latch.
+You connect the other end of each FFC to the MCU in [Step 12](/build/step-12-install-mcus/), the same way. The MCU's 8-pin thumb connector is for older builds; use the 10-pin one.
 
 ![An MCU connected to a finger cluster PCBA by an FFC.](../../../assets/build/ffc-on-mcu.webp)

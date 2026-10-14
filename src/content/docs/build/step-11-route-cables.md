@@ -5,6 +5,8 @@ sidebar:
   order: 13
 ---
 
+<!-- PHOTO: replace with a current build: black FFCs, current base plate, every cable routed including the trackball or TrackPoint cable at the MCU (shot list: cable-routing). -->
+
 The photos show routing through the channels in the base plate. You don't have to use the channels: connecting the cables directly, without them, is easier to work with in the long run. Either way, make sure every cable keeps the right orientation: contacts down at the MCU, blue stiffener up.
 
 - You can put twists and creases in the FFCs wherever you like, under the PCBA or in the free sections below it.

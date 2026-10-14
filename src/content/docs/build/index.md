@@ -32,17 +32,22 @@ This is the standard packing list for Lightly FDM V2.0. It can vary a little bet
 | Thumb PCBAs | 2 |
 | Main PCBAs (MCUs) | 2 |
 | 150 mm FFCs (flat flexible cables) | 12 (10, plus 2 spare) |
-| M2 thread-cutting screws, for PCBAs and palm rest set screws | 46 (44, plus 2 spare) |
+| M2 thread-cutting screws, for PCBAs (and the set screws of older tripod palm rests) | 46 (44, plus 2 spare) |
 | M3 6 mm screws, for cases and clusters | 40 (32, plus 8 spare) |
 | M3 square nuts | 32 (24, plus 8 spare) |
 | M3 6 mm thread-cutting screws, for the main PCB | 9 (8, plus 1 spare) |
+| M5 16 mm flat head screws, for the palm rests | 2 |
+| M5 thin square nuts, for the palm rests | 2 |
 | Stainless steel towers for clusters | set of 10 |
 | Rubber feet (FC-036-DCW-PT) | 9 (4 per side) |
 | T10 Torx driver | 1 |
 | T6 Torx bit | 1 |
+| 3 mm hex key, for the palm rest center screws | 1 |
 | USB-C to USB-C cables | 2 |
 | TrackPoint PCBA | optional |
 | Trackball PCBA | optional |
+
+<!-- VERIFY: the M5 screw, M5 nut and 3 mm hex key rows are new, from the hemispherical palm rest readme and the Fit page. Does the kit include them, and in what counts (any spares)? Does the M2 count of 44 still include tripod set screws, or should it drop? -->
 
 <!-- VERIFY: the kit list says 14 M3x4 inserts (12 plus 2 spare), but Step 8 installs 7 in each base plate, which is 14 with no spare. Which count is right? -->
 
@@ -98,13 +103,13 @@ Static can damage the PCBAs.
 5. [Apply paint or ink to key flags as needed](/build/step-05-key-flags/)
 6. [Attach FFCs to PCBAs](/build/step-06-attach-ffcs/)
 7. [Install PCBAs in clusters, then test them (recommended)](/build/step-07-install-pcbas/)
-8. [Install heat set inserts in base and cover](/build/step-08-heat-set-inserts/)
+8. [Install inserts and nuts in base and cover](/build/step-08-heat-set-inserts/)
 9. [Attach towers to clusters](/build/step-09-attach-towers/)
 10. [Install towers on baseplates and clusters on towers](/build/step-10-install-towers/), then the pointing devices: [10a TrackPoint, 10b trackball, 10c touchpad](/build/step-10-pointing-devices/)
 11. [Route cables through baseplates](/build/step-11-route-cables/)
 12. [Install MCUs on baseplates and connect cables](/build/step-12-install-mcus/)
 13. [Attach palm rest carriers to baseplates](/build/step-13-palm-rest-carriers/)
-14. [Attach palm rests to sleds](/build/step-14-palm-rests/)
+14. [Attach palm rests to carriers](/build/step-14-palm-rests/)
 15. [Flash firmware and connect the cables](/build/step-15-flash-and-connect/)
 16. [Test all keys in Keybard](/build/step-16-test-keys/)
 17. [Install back cover and rubber feet](/build/step-17-back-cover/)

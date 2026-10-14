@@ -35,13 +35,12 @@ All magnets are 2.0 mm x 1.5 mm N35.
 
 ## Cluster magnets
 
-Install the cluster magnets the same way, from the Cluster stage (north pole up). The red arrows show where the magnets go.
+Install the cluster magnets the same way, from the Cluster stage (north pole up). Red arrows mark each magnet hole.
 
-![Finger clusters from the top. Red arrows point to the magnet holes.](../../../assets/build/magnets-finger-clusters.webp)
+![A finger cluster. Red arrows point to its magnet holes.](../../../assets/build/magnets-finger-cluster.webp)
 
-The thumb cluster takes magnets the same way. The left thumb cluster is shown. The right one is the same.
+![The left thumb cluster from three angles. Red arrows point to its magnet holes. The right thumb cluster is the same.](../../../assets/build/magnets-thumb-cluster.webp)
 
-![Left thumb cluster from three angles. Red arrows point to the magnet holes.](../../../assets/build/magnets-thumb-cluster.webp)
 
 ## Key magnets
 

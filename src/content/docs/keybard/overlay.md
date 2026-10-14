@@ -62,7 +62,7 @@ The overlay's **⋯** menu, above its corner, and the tray icon hold its setting
 - **Adaptive contrast** (Windows): restyles each key for the background behind it.
 - **Place at bottom** and **Reload board layout**.
 
-Shifted legends follow Shift, Caps Lock and Caps Word on your Svalboard. This needs firmware vNext1 or later. On older firmware, the overlay follows your computer's Shift and Caps Lock.
+Shifted legends follow your computer's Shift and Caps Lock.
 
 For layout changes made outside Keybard, or if the overlay looks out of date, choose **Reload board layout** from the overlay's menu or the tray.
 
@@ -71,8 +71,6 @@ For layout changes made outside Keybard, or if the overlay looks out of date, ch
 The Overlay dialog shows which Keybard Host is connected. If it's older than the current release, the dialog links to the new one. The tray icon's tooltip shows your version too.
 
 Updating Keybard doesn't update Keybard Host. To update it, quit from the tray, extract the new release to a new folder, and run it. Your settings carry over.
-
-Boards on vNext1 firmware need Keybard Host vLaunch2.3 or later.
 
 ## Other platforms
 

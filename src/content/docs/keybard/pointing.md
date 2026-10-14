@@ -45,11 +45,7 @@ It also has Svalboard's own keys, including:
 
 The keys shown depend on the board's firmware.
 
-## Which pointing module each hand has
-
-On vNext1 firmware or later, Keybard detects the pointing module on each half. **Settings → Fragments** lists it under **Left** and **Right**, marked **Locked**. You can't change it there: it follows the hardware.
-
-<!-- VERIFY: vLaunch2 doesn't report its pointing hardware; vNext1 does. But vNext1 has one file per side for every module, so the "Wrong pointing-device firmware" case below can't come up on any released firmware: only "Pointing device not picked up" can. Keep the next section, cut it to the not-picked-up case, or hold it until a per-module release reports its hardware? -->
+<!-- VERIFY: vLaunch2 doesn't report its pointing hardware to Keybard. Can the "Wrong pointing-device firmware" dialog below appear on vLaunch2? If not, cut this section until a stable release reports it. -->
 
 ## Wrong pointing-device firmware
 

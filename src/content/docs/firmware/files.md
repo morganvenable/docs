@@ -19,5 +19,3 @@ Download from the [vLaunch2 release](https://github.com/svalboard/qmk/releases/t
 The `blank` files have no keys assigned. Builders use them to test keys without typing anything.
 
 Flash as in [Flashing firmware](/firmware/flashing/). Flashing resets your layout to the default, so export a `.svil` first and import it afterward.
-
-Bleeding-edge firmware uses one file per side for every module. See [Bleeding edge (vNext)](/firmware/bleeding-edge/).

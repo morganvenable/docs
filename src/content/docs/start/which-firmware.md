@@ -25,14 +25,13 @@ Open https://keybard.svalboard.com in Chrome or Edge and choose **Connect Keyboa
 
 Svalboard QMK is the current firmware, `svalboard/qmk`, release **vLaunch2**. You configure it with **Keybard** in your browser. The keyboard stores and runs your setup, so you can close Keybard and keep typing.
 
-- **Keybard, stable**: https://keybard.svalboard.com
-- **Keybard, bleeding edge**: https://next.keybard.svalboard.com, built from every change. Use it to try new features early.
+Open Keybard at https://keybard.svalboard.com.
 
 Keybard needs **Chrome or Edge** on a desktop. Firefox and Safari can't connect to the keyboard. You can open layout files without a board.
 
 ## How these docs are organized
 
 - **Hardware**: the halves, fit, typing, pointing modules and troubleshooting. These apply to every Svalboard.
-- **Firmware**: flashing, Svalboard QMK files and recovery, the bleeding-edge firmware, and moving between Vial and Svalboard QMK.
+- **Firmware**: flashing, Svalboard QMK files and recovery, and moving between Vial and Svalboard QMK.
 - **Keybard**: the configurator, layer lights, and the Keybard Host overlay.
 - **Vial (legacy)**: for boards that stay on Vial.

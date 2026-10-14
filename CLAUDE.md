@@ -19,6 +19,7 @@ Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`; the s
 - The TrackPoint goes on the half connected to USB.
 - Flashing firmware resets settings: export a `.svil` first, import it after.
 - Short, plain sentences. UI names in **bold**, exactly as on screen. No filler, no marketing.
+- Write as Svalboard speaking to its customers: describe options as offerings ("For more reach, choose…"), never as observations or exclusions ("Svalboard sometimes sells…", "the only other…"). No hedging about our own products.
 - Owner questions go in an HTML comment, `<!-- VERIFY: ... -->`, never on the page.
 
 ## Docs and development

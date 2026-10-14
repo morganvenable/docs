@@ -31,7 +31,7 @@ Each thumb has six keys: **Pad, Knuckle, Nail, Up, Down and Double Down**. Doubl
 
 That gives **52 keys** in total, each a few millimeters from your fingers.
 
-The only other cluster is the **6-key finger cluster**, which adds a second South key. With 6-key clusters on some or all fingers, a board has 56 to 60 keys. Svalboard sometimes sells boards built this way. The second South key works on all Svalboard firmware. In Keybard, choose the clusters your board has in **Settings → Fragments** (see [Fragments](/keybard/settings/#fragments-your-finger-clusters)).
+For more reach, choose the **6-key finger cluster**, which adds a second South key under each finger that has one. Put it on any or all fingers for 56 to 60 keys. Every Svalboard firmware supports it. In Keybard, choose the clusters your board has in **Settings → Fragments** (see [Fragments](/keybard/settings/#fragments-your-finger-clusters)).
 
 ## Mounting and tenting
 
@@ -42,18 +42,18 @@ Each half has two M5 inserts at the inner edge and a ¼"-20 insert at the center
 
 ## Care and cleaning
 
-Factory builds are printed in ABS. Keep them out of hot cars and away from heaters. Self-printed PLA parts can soften in heat or strong sun. ABS dissolves in acetone; don't use it on the board.
+Factory builds are printed in tough ABS and handle everyday heat well; like any electronics, don't leave them in a hot car. Self-printed PLA parts are another matter: they can soften in a hot car, near a heater or in strong sun. ABS dissolves in acetone, so keep acetone away from the board.
 
 - **Keys**: all keys except the finger Center keys lift out. Wash them in cold or room-temperature water with mild soap. Don't use an ultrasonic cleaner; it heats the water and can warp the keys. Handle the flag on each key carefully.
-- **Center keys**: "tippy" Center keys curl under the cluster to a magnet at the north end. Rotate the key upward to pull its arm off the magnet and out through the cluster. Older "gap slider" Center keys pop off the back of the cluster; see the [build guide](https://svalboard.com/build). Don't lose the sliders.
-- **The board**: use a powered air duster. Unplug the board before cleaning spills. Use a barely damp cloth on bare plastic only. Keep water off the circuit boards. When it is dry, plug it in and test every key in Matrix Tester.
+- **Center keys**: tipping Center keys curl under the cluster to a magnet at the north end. Rotate the key upward to pull its arm off the magnet and out through the cluster. Older "gap slider" Center keys pop off the back of the cluster; see the [build guide](https://svalboard.com/build). Don't lose the sliders.
+- **Dust**: blow it out with a powered air duster.
+- **Spills**: unplug the board first. Wipe the plastic with a barely damp cloth, keeping water away from the electronics, and let everything dry completely before you plug it back in. Then check that every key still works in [Matrix Tester](/keybard/settings/#check-every-key-with-matrix-tester).
 
 ## Opening the case
 
-1. Unplug all USB cables, including magnetic adapters. They block the case.
-2. Turn the half upside down. Don't rest it on the thumb keys.
-3. Remove the six or seven M3 screws in the bottom plate with the included 2.5 mm hex key, or the T10 driver for Torx screws.
-4. Lift off the bottom. You can leave the screws in their holes.
+1. Turn the half upside down. Don't rest it on the thumb keys.
+2. Remove the six or seven M3 screws in the bottom plate with the included 2.5 mm hex key, or the T10 driver for Torx screws.
+3. Lift off the bottom. You can leave the screws in their holes.
 
 ## Self-printing and repairs
 

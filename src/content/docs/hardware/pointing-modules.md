@@ -7,26 +7,21 @@ sidebar:
 
 Each half can have one pointing module:
 
-- **Trackball** (44 mm default, 52 mm option)
+- **Trackball**
 - **TrackPoint**
 - **Touchpad**
 
-On the current firmware, each half needs the file for its module (see [Firmware files](/firmware/files/)). Flashing the wrong file does no harm; the pointer just won't work until you flash the right one. The bleeding-edge firmware finds the module by itself (see [Bleeding edge (vNext)](/firmware/bleeding-edge/)).
+Each half needs the file for its module (see [Firmware files](/firmware/files/)). Flashing the wrong file does no harm; the pointer just won't work until you flash the right one.
 
-**Which half to connect**: the TrackPoint half must be the half connected to the computer. On the other half it feels laggy. In general the half connected to the computer performs better, so connect the half with your main pointing device.
+One half connects to your computer by USB, and the other connects to it through the split cable. Pointing is smoothest on the USB half, so plug in the half with your main pointing device. A TrackPoint always goes on the USB half.
 
 ## The mouse layer (automouse)
 
-Moving a pointer turns on the mouse layer, layer 15. The thumb layer lights glow magenta while it is on. On the default Svalboard QMK mouse layer:
+Moving a pointer turns on the mouse layer, and the thumb layer lights glow magenta while it's on. The default mouse layer puts the mouse buttons and Sniper under your left hand: hold Sniper for slower, finer pointer movement.
 
-- Left Index Center is left click, Left Middle Center is middle click, Left Ring Center is right click.
-- Left Thumb Pad is left click and Left Thumb Nail is right click.
-- Left Pinky South is Sniper 3x: hold it for slower, finer movement.
+![The default mouse layer in Keybard. Left click is on the left index center key and the left thumb pad, right click on the left ring center and the left thumb nail, middle click on the left middle center, and Sniper on the left pinky's south key. Every other key shows the transparent marker.](../../../assets/hardware/layer-15-mouse.webp)
 
-The mouse layer turns off when:
-
-- you press a key that isn't on the mouse layer, or
-- the timeout passes with no movement and no mouse-layer key pressed or held. Pressing a mouse-layer key restarts the timer, so double clicks and Ctrl-clicks work.
+Every key marked ▽ is transparent: it isn't on the mouse layer. Pressing one turns the mouse layer off and types that key's normal character, so you can go straight back to typing. The mouse layer also turns off on its own once the pointer has been still for the timeout with no mouse-layer key held. Each click restarts the timer, so double clicks and Ctrl-clicks work.
 
 The timeout defaults to 500 ms. Change it, turn automouse off, or change sensitivity in Keybard (see [Pointing devices](/keybard/pointing/)). On Vial, see [Pointing settings in Vial](/vial/pointing/).
 

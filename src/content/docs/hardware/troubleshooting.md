@@ -51,7 +51,7 @@ Check that you flashed the trackball file for that half (see [Firmware files](/f
 
 ## Trackball tracks poorly
 
-The ball may sit too far from the sensor. Dip the holder's plastic parts (not the electronics) in hot water for 30 seconds and reshape it to bring the ball closer, or contact support@svalboard.com.
+The ball may sit too far from the sensor. Contact support@svalboard.com and we'll help you fix it. If you printed the holder yourself in PLA, you can reshape it: dip its plastic parts (not the electronics) in hot water for 30 seconds and bend it to bring the ball closer.
 
 ## Still stuck
 

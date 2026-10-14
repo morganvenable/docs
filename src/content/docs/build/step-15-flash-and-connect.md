@@ -30,10 +30,6 @@ Do this once for each half.
 
 Flashing resets the layout to the default. Later, export a `.svil` from Keybard before you flash, and import it afterward. More detail: [Flashing firmware](/firmware/flashing/).
 
-:::note[vNext1 prerelease]
-vNext1 is a prerelease. It needs only two files: `svalboard_left_sval_<release>.uf2` and `svalboard_right_sval_<release>.uf2`. The same file works with every pointing device, because the firmware detects the module when the half starts. After you attach or change a module, unplug the board and plug it back in. See [Bleeding edge (vNext)](/firmware/bleeding-edge/) before you use it.
-:::
-
 ### Staying on Vial
 
 Svalboard's Vial firmware is still available, with no new releases planned. To use it, flash the `v2025-11-01` files from https://github.com/svalboard/vial-qmk/releases and configure the board with Vial (https://vial.rocks). The rest of this guide uses Keybard.

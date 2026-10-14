@@ -5,11 +5,7 @@ sidebar:
   order: 12
 ---
 
-Use one pointing device per half. Every FFC connection follows the same order: unlatch, insert, latch (see [Step 6](/build/step-06-attach-ffcs/#every-ffc-connection)).
-
-:::note[vNext1 prerelease]
-On vNext1, the firmware detects the module at startup, so you don't pick firmware by module. If the board was plugged in while you attached a module, unplug it and plug it back in. See [Step 15](/build/step-15-flash-and-connect/).
-:::
+Use one pointing device per half. Connect its FFCs as in [Step 6](/build/step-06-attach-ffcs/).
 
 ## 10a TrackPoint
 
@@ -50,8 +46,6 @@ If you don't carry your Svalboard around and don't tent it steeply, you don't st
 - Route the cable with the finger cluster cables ([Step 10](/build/step-10-install-towers/)).
 - Connect the trackball cable to the 8-pin FFC connector marked "TrkPt", "Trackball" or "Ball", depending on your MCU: unlatch, insert the contacts down, latch.
 
-On vNext1 you can skip the sensor check. The firmware detects both sensors.
-
 ## 10c Touchpad
 
 - The touchpad uses the same mounting rail as the trackball, so you can swap them.
@@ -60,7 +54,7 @@ On vNext1 you can skip the sensor check. The firmware detects both sensors.
 - Connect the other end to the 6-pin "Azo" connector on the MCU: unlatch, insert the contacts **down**, latch.
 - Mount the touchpad on the rail.
 - Route the cable with the finger cluster cables ([Step 10](/build/step-10-install-towers/)).
-- This half needs touchpad firmware. See [Step 15](/build/step-15-flash-and-connect/).
+- This half needs touchpad firmware, or firmware that detects its pointing module automatically. See [Step 15](/build/step-15-flash-and-connect/).
 
 <!-- VERIFY: the touchpad mounting steps (screws, holder, cover) for this section. -->
 <!-- VERIFY: photos needed: the touchpad end of the FFC (contacts down, latch closed); the MCU end in the "Azo" connector (contacts down, latch closed); the touchpad mounted on the rail, from above and from the side. -->

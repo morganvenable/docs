@@ -72,6 +72,10 @@ Set the palm rests first. You need a steady hand position before you can fit the
 - Loosen both carrier screws until the carrier moves easily. Tighten until it holds, test, then tighten a little more. Don't overtighten; it can damage the carrier and base plate.
 - With a relaxed hand, your fingers rest on the Center keys. Your base knuckles usually sit just in front of the palm rest's front edge.
 - **Hemispherical palm rests** (default on orders after 2026-09-01): loosen the large center screw slightly with the 3 mm hex key to adjust pitch and roll, then tighten it firmly. They ship on 9 mm carriers; other heights are in the parts repository.
+
+  ![Hemispherical palm rests on a dual-trackball Svalboard, seen from the front, with the center adjustment screw in each rest.](../../../assets/hardware/palm-rest-hemisphere-pair.webp)
+
+  ![A hemispherical palm rest from an angle, showing its curved shape behind the thumb cluster.](../../../assets/hardware/palm-rest-hemisphere-angled.webp)
 - **Tripod palm rests**: newer ones have 5 mm shims installed. Remove them to lower the rest 5 mm, or use any shim up to about 6 mm.
 
   ![Exploded view of a tripod palm rest: three legs, a shim for each leg, and the carrier with its set screws.](../../../assets/hardware/tripod-palm-rest-shims.webp)
@@ -80,8 +84,14 @@ Set the palm rests first. You need a steady hand position before you can fit the
 
 ## Finger clusters
 
-- **Length, breadth and yaw**: loosen the base screw just enough to move the tower with gentle pressure. Fingers should rest on the Center keys; many people like a slight bias toward South. If a cluster won't reach, move the palm rest back.
-- **Height and roll**: loosen the cluster height screw slightly and slide the cluster. Each finger should rest with the same light pressure, without reaching or pulling back. Roll the cluster so you reach East and West easily. If you must favor one, favor the inward key (East on the left hand, West on the right).
+- **X/Y and yaw**: loosen the base screw just enough to move the tower with gentle pressure: north–south (Y), east–west (X), and turned (yaw). Fingers should rest on the Center keys; many people like a slight bias toward South. If a cluster won't reach, move the palm rest back.
+
+  ![A base plate with its finger clusters. Lines point to the tower base screws; red arrows show a cluster's X, Y and yaw movement.](../../../assets/build/fit-finger-adjustment.webp)
+
+- **Z and roll**: loosen the cluster height screw slightly and slide the cluster up or down (Z), or turn it on its tower (roll). Each finger should rest with the same light pressure, without reaching or pulling back. Roll the cluster so you reach East and West easily. If you must favor one, favor the inward key (East on the left hand, West on the right).
+
+  ![A Svalboard half from the side. Red arrows show a cluster's Z (height) and roll movement on its tower.](../../../assets/build/fit-height-roll.webp)
+
 - **Keep splay small**: put clusters as close together as you can without neighboring East and West keys touching.
 - At very low heights, check that the cluster doesn't hit the baseplate, especially on the pinky.
 - Tighten gently. Overtightening can damage the cluster or base plate.
