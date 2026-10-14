@@ -3,6 +3,11 @@ title: "Build guide"
 description: "Build a Svalboard from a self-print kit, from printing the parts to the first fit."
 ---
 
+import { Image } from 'astro:assets';
+import hemiExplodedLight from '../../../assets/build/cad-hemi-exploded-light.webp';
+import hemiExplodedDark from '../../../assets/build/cad-hemi-exploded-dark.webp';
+import tippingKeyLight from '../../../assets/build/cad-tipping-center-key-light.webp';
+import tippingKeyDark from '../../../assets/build/cad-tipping-center-key-dark.webp';
 import facts from '../../../data/facts.json';
 export const stable = facts.firmware.stable;
 export const blank = (side) => stable.assets.find((a) => a.startsWith(`svalboard_${side}_blank_`) && a.endsWith('.uf2'));
@@ -295,7 +300,7 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 
 {/* PHOTO: slicer screenshot of one build plate with Hemi Palm L and R standing on their long edges with tree supports and brim, plus two 9 mm hemi carriers and two top washers lying flat side down. Same framing and plate as print-palm-rests.webp. */}
 
-![The parts of a hemispherical palm rest, pulled apart: the M5 flat head screw and the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup and two curved slots, and the M5 square nut.](../../../assets/build/palm-rest-hemisphere-exploded.webp)
+<p><Image src={hemiExplodedLight} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="dark:sl-hidden" /><Image src={hemiExplodedDark} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="light:sl-hidden" /></p>
 
 #### Older builds: tripod palm rests
 
@@ -429,7 +434,7 @@ This is how each key sits in its cluster:
 3. Let it snap into place.
 4. Put the North key back.
 
-![A tipping center key hooked into a finger cluster.](../../../assets/build/tipping-center-key-insertion.webp)
+<p><Image src={tippingKeyLight} alt="A finger cluster seen from underneath, with a tipping center key (orange) hooked through it. The key arm is marked 0.9." class="dark:sl-hidden" /><Image src={tippingKeyDark} alt="A finger cluster seen from underneath, with a tipping center key (orange) hooked through it. The key arm is marked 0.9." class="light:sl-hidden" /></p>
 
 The tipping center key replaces the older slider-based center key. Slider parts are deprecated.
 
@@ -733,7 +738,7 @@ The palm rest has a ball on its underside that sits in the cup of the carrier. O
 3. Set the palm rest on its carrier, with the ball in the cup and the window over the carrier slots.
 4. Tighten the screw into the nut under the carrier with the 3 mm hex key. Leave it just loose enough to tilt the rest for now. You set the angle in [Step 18](/build/#step-18-adjust-the-fit).
 
-![The parts of a hemispherical palm rest, pulled apart: the M5 flat head screw and the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup and two curved slots, and the M5 square nut.](../../../assets/build/palm-rest-hemisphere-exploded.webp)
+<p><Image src={hemiExplodedLight} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="dark:sl-hidden" /><Image src={hemiExplodedDark} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="light:sl-hidden" /></p>
 
 ![Both halves with hemispherical palm rests. On the near half, the center screw sits in the top of the rest. The far half shows the rest from the side, on its carrier.](../../../assets/build/palm-rest-hemisphere-installed.webp)
 
