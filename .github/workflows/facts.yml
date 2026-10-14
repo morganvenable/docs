@@ -1,0 +1,38 @@
+name: Facts
+# Regenerates src/data/facts.json (release tags, dates, USB IDs, file names)
+# from svalboard/qmk and svalboard/keybard, and opens a PR when it changed.
+on:
+  schedule:
+    - cron: '17 6 * * 1' # Mondays 06:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: facts
+  cancel-in-progress: false
+jobs:
+  facts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - run: npm run facts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: peter-evans/create-pull-request@v8.1.1
+        with:
+          branch: automation/facts
+          delete-branch: true
+          add-paths: src/data/facts.json
+          commit-message: 'Update release facts'
+          title: 'Update release facts'
+          body: |
+            `npm run facts` found new release data in svalboard/qmk or svalboard/keybard.
+
+            Before merging:
+            - Check the preview of /reference/usb-ids/ and /reference/releases/.
+            - If a release changed how people update or which file they flash, update those guide pages in this PR too.
+          labels: facts

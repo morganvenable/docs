@@ -1,0 +1,63 @@
+---
+title: USB IDs
+description: The USB vendor and product IDs each Svalboard firmware uses.
+sidebar:
+  order: 20
+---
+
+import facts from '../../../data/facts.json';
+
+export const stable = facts.firmware.stable;
+export const next = facts.firmware.next;
+export const pid = (side) => (side ? <code>{side.pid}</code> : '—');
+export const label = (m) => (m.deprecated ? `${m.label} (deprecated)` : m.label);
+
+Every Svalboard uses USB vendor ID <code>{stable.vid}</code>.
+The product ID depends on the firmware release and on the firmware flashed to each half.
+These tables are generated from the firmware source, so they match the release files.
+
+{/* VERIFY: Confirm the board reports the product ID of the half connected to USB, so a page can say which ID a computer sees. */}
+
+## Current release
+
+<code>{stable.tag}</code>, released {stable.date}.{stable.singleImage ? ' Every module uses the same product IDs.' : ' Each pointing module has its own firmware, with its own product IDs.'}
+
+<table>
+	<thead>
+		<tr><th>Firmware</th><th>Left half</th><th>Right half</th></tr>
+	</thead>
+	<tbody>
+		{stable.modules.map((m) => (
+			<tr><td>{label(m)}</td><td>{pid(m.left)}</td><td>{pid(m.right)}</td></tr>
+		))}
+	</tbody>
+</table>
+
+## Prerelease
+
+{!next && <p>There is no prerelease right now.</p>}
+
+{next && (
+	<>
+		<p><code>{next.tag}</code>, released {next.date}.{next.singleImage && ' There is one firmware file per half. The board detects its pointing module, so every module uses the same product IDs.'}</p>
+		<table>
+			<thead>
+				<tr><th>Firmware</th><th>Left half</th><th>Right half</th></tr>
+			</thead>
+			<tbody>
+				{next.singleImage
+					? <tr><td>Every module</td><td>{pid(next.modules[0].left)}</td><td>{pid(next.modules[0].right)}</td></tr>
+					: next.modules.map((m) => (
+						<tr><td>{label(m)}</td><td>{pid(m.left)}</td><td>{pid(m.right)}</td></tr>
+					))}
+			</tbody>
+		</table>
+		{next.singleImage && <p>After you move a board with a pointing module to {next.tag}, Keybard asks you to choose the board again, because its product ID changed.</p>}
+	</>
+)}
+
+## Linux udev rule
+
+On Linux, Keybard needs a udev rule to open the board. One rule covers every product ID above. See [Linux: the udev rule](/firmware/linux-udev/).
+
+See [Releases](/reference/releases/) for the firmware files in each release.

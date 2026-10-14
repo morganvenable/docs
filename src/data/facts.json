@@ -1,0 +1,174 @@
+{
+	"generatedBy": "scripts/gen-facts.mjs",
+	"firmware": {
+		"stable": {
+			"tag": "vLaunch2",
+			"name": "Svalboard QMK — Launch 2",
+			"date": "2026-10-08",
+			"url": "https://github.com/svalboard/qmk/releases/tag/vLaunch2",
+			"prerelease": false,
+			"vid": "303a",
+			"singleImage": false,
+			"modules": [
+				{
+					"module": "base",
+					"label": "Base board",
+					"deprecated": false,
+					"left": {
+						"keyboard": "svalboard/left",
+						"pid": "4044",
+						"keymaps": [
+							"blank",
+							"sval"
+						]
+					},
+					"right": {
+						"keyboard": "svalboard/right",
+						"pid": "4045",
+						"keymaps": [
+							"blank",
+							"sval"
+						]
+					}
+				},
+				{
+					"module": "trackpoint",
+					"label": "TrackPoint",
+					"deprecated": false,
+					"left": {
+						"keyboard": "svalboard/trackpoint/left",
+						"pid": "404a",
+						"keymaps": [
+							"sval"
+						]
+					},
+					"right": {
+						"keyboard": "svalboard/trackpoint/right",
+						"pid": "404b",
+						"keymaps": [
+							"sval"
+						]
+					}
+				},
+				{
+					"module": "pmw3389",
+					"label": "PMW3389 trackball",
+					"deprecated": false,
+					"left": {
+						"keyboard": "svalboard/trackball/pmw3389/left",
+						"pid": "4048",
+						"keymaps": [
+							"sval"
+						]
+					},
+					"right": {
+						"keyboard": "svalboard/trackball/pmw3389/right",
+						"pid": "4049",
+						"keymaps": [
+							"sval"
+						]
+					}
+				},
+				{
+					"module": "azoteq",
+					"label": "Azoteq touchpad",
+					"deprecated": false,
+					"left": {
+						"keyboard": "svalboard/azoteq/left",
+						"pid": "404c",
+						"keymaps": [
+							"sval"
+						]
+					},
+					"right": {
+						"keyboard": "svalboard/azoteq/right",
+						"pid": "404d",
+						"keymaps": [
+							"sval"
+						]
+					}
+				},
+				{
+					"module": "pmw3360",
+					"label": "PMW3360 trackball",
+					"deprecated": true,
+					"left": {
+						"keyboard": "svalboard/trackball/pmw3360/left",
+						"pid": "4046",
+						"keymaps": [
+							"sval"
+						]
+					},
+					"right": {
+						"keyboard": "svalboard/trackball/pmw3360/right",
+						"pid": "4047",
+						"keymaps": [
+							"sval"
+						]
+					}
+				}
+			],
+			"assets": [
+				"svalboard_azoteq_left_sval_vLaunch2.uf2",
+				"svalboard_azoteq_right_sval_vLaunch2.uf2",
+				"svalboard_left_blank_vLaunch2.uf2",
+				"svalboard_left_sval_vLaunch2.uf2",
+				"svalboard_right_blank_vLaunch2.uf2",
+				"svalboard_right_sval_vLaunch2.uf2",
+				"svalboard_trackball_pmw3360_left_sval_vLaunch2.uf2",
+				"svalboard_trackball_pmw3360_right_sval_vLaunch2.uf2",
+				"svalboard_trackball_pmw3389_left_sval_vLaunch2.uf2",
+				"svalboard_trackball_pmw3389_right_sval_vLaunch2.uf2",
+				"svalboard_trackpoint_left_sval_vLaunch2.uf2",
+				"svalboard_trackpoint_right_sval_vLaunch2.uf2"
+			]
+		},
+		"next": {
+			"tag": "vNext1",
+			"name": "vNext1",
+			"date": "2026-10-14",
+			"url": "https://github.com/svalboard/qmk/releases/tag/vNext1",
+			"prerelease": true,
+			"vid": "303a",
+			"singleImage": true,
+			"modules": [
+				{
+					"module": "base",
+					"label": "Base board",
+					"deprecated": false,
+					"left": {
+						"keyboard": "svalboard/left",
+						"pid": "4044",
+						"keymaps": [
+							"sval"
+						]
+					},
+					"right": {
+						"keyboard": "svalboard/right",
+						"pid": "4045",
+						"keymaps": [
+							"sval"
+						]
+					}
+				}
+			],
+			"assets": [
+				"svalboard_left_sval_vNext1.svup",
+				"svalboard_left_sval_vNext1.uf2",
+				"svalboard_right_sval_vNext1.svup",
+				"svalboard_right_sval_vNext1.uf2"
+			]
+		}
+	},
+	"keybardHost": {
+		"tag": "vLaunch2.3",
+		"name": "Keybard Host vLaunch2.3",
+		"date": "2026-10-14",
+		"url": "https://github.com/svalboard/keybard/releases/tag/vLaunch2.3",
+		"assets": [
+			"KeybardHost-Windows.zip",
+			"SHA256SUMS.txt",
+			"keybard-paranoid.html"
+		]
+	}
+}

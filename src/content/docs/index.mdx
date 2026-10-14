@@ -12,3 +12,14 @@ hero:
       link: /build/
       variant: minimal
 ---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<LinkCard title="Start here" description="Set up a new board." href="/start/quickstart/" />
+	<LinkCard title="Hardware" description="Fit, typing and pointing modules." href="/hardware/hardware/" />
+	<LinkCard title="Build guide" description="Build a kit, step by step." href="/build/" />
+	<LinkCard title="Firmware" description="Flash Svalboard QMK, recover a board." href="/firmware/flashing/" />
+	<LinkCard title="Keybard" description="Change your layout in the browser." href="/keybard/" />
+	<LinkCard title="Reference" description="Releases, USB IDs and links." href="/reference/releases/" />
+</CardGrid>
