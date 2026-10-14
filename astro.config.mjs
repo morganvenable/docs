@@ -17,6 +17,8 @@ export default defineConfig({
 				dark: './src/assets/brand/svalboard-dark.svg',
 			},
 			favicon: '/favicon.svg',
+			// Owner notes (off unless switched on in a browser): public/notes.js
+			head: [{ tag: 'script', attrs: { src: '/notes.js', defer: true } }],
 			social: [
 				{ icon: 'discord', label: 'Discord', href: 'https://www.svalboard.com/discord' },
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/svalboard/docs' },

@@ -28,3 +28,7 @@ Every feature PR in svalboard/keybard or svalboard/qmk that changes what a user 
 ## Not cut over yet
 
 svalboard.com/manual and /build still point at the Google Doc and Slides. Don't edit those, and don't change those redirects. `src/components/PreviewBanner.astro` marks this site as a preview until cutover.
+
+## Notes from the owner
+
+`public/notes.js` lets the owner file notes on any page into a private inbox. Notes are private. Never quote or paraphrase a note's wording in commits, PR titles or bodies, issues, or pages. Describe each change in your own neutral words (for example, "Step 6: correct the latch direction").
