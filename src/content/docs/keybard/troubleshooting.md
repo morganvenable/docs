@@ -11,8 +11,8 @@ sidebar:
 - Use a USB data cable, not a charge-only one.
 - Check that you picked the right device in the browser's chooser.
 - Close other configuration apps that may be holding the keyboard, then try again.
-- The board needs Svalboard QMK firmware. See [Moving from Vial](/firmware/moving-from-vial/) if it is on Vial.
-- On Linux, add [the udev rule](/firmware/linux-udev/) so your browser can open the keyboard.
+- The board needs Svalboard QMK firmware. See [Moving from Vial](/firmware/#moving-from-vial) if it is on Vial.
+- On Linux, add [the udev rule](/firmware/#linux-the-udev-rule) so your browser can open the keyboard.
 
 A browser permission you granted before doesn't prove the cable, firmware or connection are working.
 

@@ -17,7 +17,7 @@ Use both. Automatic backups catch the change you forgot to save. An exported fil
 Flashing firmware resets the board's settings, including your layout.
 
 1. Connect in Keybard and choose **Export Layout**. Save a `.svil` with **Include Macros** on, somewhere outside the browser.
-2. Flash both halves. See [Flashing firmware](/firmware/flashing/).
+2. Flash both halves. See [Flashing firmware](/firmware/#flashing-firmware).
 3. Reconnect, choose **Import Layout**, and select your saved file.
 4. Review the import. In Manual Updates, choose **Stage import**, then **Apply N Changes**. In Live Updating, choose **Apply import**.
 5. Check your layers, behaviors, pointing settings, colors and names. Set your [default layer](/keybard/layers/#choose-the-layer-the-board-starts-on) again. Then export a fresh backup.

@@ -51,7 +51,7 @@ The keys shown depend on the board's firmware.
 
 Each half's firmware is built for one kind of pointing device, or for none. When you connect, Keybard checks this. If a half doesn't match, it shows **Wrong pointing-device firmware**. The dialog says which half is wrong, which device is attached, and the exact `.uf2` file that fixes it.
 
-To fix it, download that file from the latest Svalboard firmware release and flash it to that half. See [Flashing firmware](/firmware/flashing/). Export a `.svil` first: flashing resets the board's settings.
+To fix it, download that file from the latest Svalboard firmware release and flash it to that half. See [Flashing firmware](/firmware/#flashing-firmware). Export a `.svil` first: flashing resets the board's settings.
 
 The dialog can also say a half has no pointing device answering. If that half has one, check its cable. If it has none, flash the file the dialog names.
 

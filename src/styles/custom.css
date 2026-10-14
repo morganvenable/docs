@@ -9,3 +9,15 @@
 	--sl-color-accent: #07806a;
 	--sl-color-accent-high: #04392f;
 }
+
+/* Sidebar jump links (public/sidebar-spy.js): the section in view takes the current-page highlight. */
+.sidebar-content a[aria-current='location'] {
+	font-weight: 600;
+	color: var(--sl-color-text-invert);
+	background-color: var(--sl-color-text-accent);
+}
+.sidebar-content a.spy-off[aria-current='page'] {
+	font-weight: inherit;
+	color: var(--sl-color-gray-2);
+	background-color: transparent;
+}

@@ -1,6 +1,6 @@
 # Svalboard docs (docs.svalboard.com)
 
-Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`; the sidebar is generated per section (order with `sidebar: { order: N }` in frontmatter). Images live in `src/assets/<section>/` and are referenced relatively so Astro optimizes them.
+Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`. Build, Hardware, Firmware and Vial are each one page (`<section>/index.md(x)`) read by jumping: their sidebar entries are anchor links listed in `astro.config.mjs` (update them when an h2 changes), old page URLs redirect to anchors there, and there is no previous/next pager. Keybard, Start and Reference are generated per section (order with `sidebar: { order: N }` in frontmatter). Images live in `src/assets/<section>/` and are referenced relatively so Astro optimizes them.
 
 ## Commands
 
@@ -20,7 +20,7 @@ Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`; the s
 - Flashing firmware resets settings: export a `.svil` first, import it after.
 - Short, plain sentences. UI names in **bold**, exactly as on screen. No filler, no marketing.
 - Write as Svalboard speaking to its customers: describe options as offerings ("For more reach, choose…"), never as observations or exclusions ("Svalboard sometimes sells…", "the only other…"). No hedging about our own products.
-- Owner questions go in an HTML comment, `<!-- VERIFY: ... -->`, never on the page.
+- Owner questions go in an HTML comment, `<!-- VERIFY: ... -->` (in `.mdx`: `{/* VERIFY: ... */}`), never on the page.
 
 ## Docs and development
 

@@ -18,8 +18,8 @@ Svalboard boards run one of two firmwares. Svalboard QMK, configured with Keybar
 
 Open https://keybard.svalboard.com in Chrome or Edge and choose **Connect Keyboard**.
 
-- If Keybard shows your layout, you are on Svalboard QMK. See [Keybard](/keybard/) and [What's new compared with Vial](/firmware/whats-new/).
-- If Keybard shows **Update your Svalboard's firmware** and says the board is running the old Vial firmware, you are on Vial. To update, see [Moving from Vial](/firmware/moving-from-vial/). To stay on Vial, see [Vial firmware (legacy)](/vial/).
+- If Keybard shows your layout, you are on Svalboard QMK. See [Keybard](/keybard/) and [What's new compared with Vial](/firmware/#whats-new-compared-with-vial).
+- If Keybard shows **Update your Svalboard's firmware** and says the board is running the old Vial firmware, you are on Vial. To update, see [Moving from Vial](/firmware/#moving-from-vial). To stay on Vial, see [Vial firmware (legacy)](/vial/).
 
 ## Svalboard QMK and Keybard
 

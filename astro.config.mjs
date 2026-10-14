@@ -65,8 +65,118 @@ const notesInbox = () => ({
 
 const section = (label, directory) => ({ label, items: [{ autogenerate: { directory } }] });
 
+// One page per guide (build, hardware, firmware, Vial): the sidebar lists each
+// page's sections as jump links, and public/sidebar-spy.js highlights the one in view.
+const jumps = (label, items) => ({ label, collapsed: true, items });
+const hardwareJumps = [
+	{ label: 'Overview', link: '/hardware/' },
+	{ label: "Keys", link: '/hardware/#keys' },
+	{ label: "Mounting and tenting", link: '/hardware/#mounting-and-tenting' },
+	{ label: "Care and cleaning", link: '/hardware/#care-and-cleaning' },
+	{ label: "Opening the case", link: '/hardware/#opening-the-case' },
+	{ label: "Self-printing and repairs", link: '/hardware/#self-printing-and-repairs' },
+	{ label: "Fit", link: '/hardware/#fit' },
+	{ label: "Typing on a Svalboard", link: '/hardware/#typing-on-a-svalboard' },
+	{ label: "Pointing modules", link: '/hardware/#pointing-modules' },
+	{ label: "Troubleshooting", link: '/hardware/#troubleshooting' },
+];
+const buildJumps = [
+	{ label: 'Overview', link: '/build/' },
+	{ label: "What's in the kit", link: '/build/#whats-in-the-kit' },
+	{ label: "Tools you need", link: '/build/#tools-you-need' },
+	{ label: "Sizing before you build", link: '/build/#sizing-before-you-build' },
+	{ label: "Step 1: Print all parts", link: '/build/#step-1-print-all-parts' },
+	{ label: "Step 2: Organize magnets", link: '/build/#step-2-organize-magnets' },
+	{ label: "Step 3: Install magnets", link: '/build/#step-3-install-magnets' },
+	{ label: "Step 4: Insert keys", link: '/build/#step-4-insert-keys' },
+	{ label: "Step 5: Ink the key flags", link: '/build/#step-5-ink-the-key-flags' },
+	{ label: "Step 6: Attach FFCs", link: '/build/#step-6-attach-ffcs' },
+	{ label: "Step 7: Install PCBAs and test", link: '/build/#step-7-install-pcbas-and-test' },
+	{ label: "Step 8: Install inserts and nuts", link: '/build/#step-8-install-inserts-and-nuts' },
+	{ label: "Step 9: Attach towers to clusters", link: '/build/#step-9-attach-towers-to-clusters' },
+	{ label: "Step 10: Install towers on baseplates", link: '/build/#step-10-install-towers-on-baseplates' },
+	{ label: "Steps 10a to 10c: Pointing devices", link: '/build/#steps-10a-to-10c-pointing-devices' },
+	{ label: "Step 11: Route cables", link: '/build/#step-11-route-cables' },
+	{ label: "Step 12: Install MCUs", link: '/build/#step-12-install-mcus' },
+	{ label: "Step 13: Attach palm rest carriers", link: '/build/#step-13-attach-palm-rest-carriers' },
+	{ label: "Step 14: Attach palm rests", link: '/build/#step-14-attach-palm-rests' },
+	{ label: "Step 15: Flash firmware and connect", link: '/build/#step-15-flash-firmware-and-connect' },
+	{ label: "Step 16: Test all keys", link: '/build/#step-16-test-all-keys' },
+	{ label: "Step 17: Install back cover and feet", link: '/build/#step-17-install-back-cover-and-feet' },
+	{ label: "Step 18: Adjust the fit", link: '/build/#step-18-adjust-the-fit' },
+	{ label: "Step 19: Enjoy!", link: '/build/#step-19-enjoy' },
+];
+const firmwareJumps = [
+	{ label: "Flashing firmware", link: '/firmware/' },
+	{ label: "What's new compared with Vial", link: '/firmware/#whats-new-compared-with-vial' },
+	{ label: "Firmware files", link: '/firmware/#firmware-files' },
+	{ label: "Recovery", link: '/firmware/#recovery' },
+	{ label: "Known limitations", link: '/firmware/#known-limitations' },
+	{ label: "Linux: the udev rule", link: '/firmware/#linux-the-udev-rule' },
+	{ label: "Moving from Vial", link: '/firmware/#moving-from-vial' },
+	{ label: "Going back to Vial", link: '/firmware/#going-back-to-vial' },
+	{ label: "What a .vil doesn't hold", link: '/firmware/#what-a-vil-doesnt-hold' },
+];
+const vialJumps = [
+	{ label: 'Overview', link: '/vial/' },
+	{ label: "Vial firmware files", link: '/vial/#vial-firmware-files' },
+	{ label: "Flash Vial firmware", link: '/vial/#flash-vial-firmware' },
+	{ label: "The Vial app", link: '/vial/#the-vial-app' },
+	{ label: "Layers, tap dances, combos, overrides and macros", link: '/vial/#layers-tap-dances-combos-overrides-and-macros' },
+	{ label: "Svalboard keys in Vial", link: '/vial/#svalboard-keys-in-vial' },
+	{ label: "Pointing settings in Vial", link: '/vial/#pointing-settings-in-vial' },
+	{ label: "Recovery on Vial", link: '/vial/#recovery-on-vial' },
+];
+
+// Old page URLs, from before each guide became one page.
+const redirects = {
+	'/build/fitment': '/build/#sizing-before-you-build',
+	'/build/step-01-print-parts': '/build/#step-1-print-all-parts',
+	'/build/step-02-organize-magnets': '/build/#step-2-organize-magnets',
+	'/build/step-03-install-magnets': '/build/#step-3-install-magnets',
+	'/build/step-04-insert-keys': '/build/#step-4-insert-keys',
+	'/build/step-05-key-flags': '/build/#step-5-ink-the-key-flags',
+	'/build/step-06-attach-ffcs': '/build/#step-6-attach-ffcs',
+	'/build/step-07-install-pcbas': '/build/#step-7-install-pcbas-and-test',
+	'/build/step-08-heat-set-inserts': '/build/#step-8-install-inserts-and-nuts',
+	'/build/step-09-attach-towers': '/build/#step-9-attach-towers-to-clusters',
+	'/build/step-10-install-towers': '/build/#step-10-install-towers-on-baseplates',
+	'/build/step-10-pointing-devices': '/build/#steps-10a-to-10c-pointing-devices',
+	'/build/step-11-route-cables': '/build/#step-11-route-cables',
+	'/build/step-12-install-mcus': '/build/#step-12-install-mcus',
+	'/build/step-13-palm-rest-carriers': '/build/#step-13-attach-palm-rest-carriers',
+	'/build/step-14-palm-rests': '/build/#step-14-attach-palm-rests',
+	'/build/step-15-flash-and-connect': '/build/#step-15-flash-firmware-and-connect',
+	'/build/step-16-test-keys': '/build/#step-16-test-all-keys',
+	'/build/step-17-back-cover': '/build/#step-17-install-back-cover-and-feet',
+	'/build/step-18-adjust-fit': '/build/#step-18-adjust-the-fit',
+	'/build/step-19-enjoy': '/build/#step-19-enjoy',
+	'/firmware/flashing': '/firmware/#flashing-firmware',
+	'/firmware/whats-new': '/firmware/#whats-new-compared-with-vial',
+	'/firmware/files': '/firmware/#firmware-files',
+	'/firmware/recovery': '/firmware/#recovery',
+	'/firmware/known-limitations': '/firmware/#known-limitations',
+	'/firmware/linux-udev': '/firmware/#linux-the-udev-rule',
+	'/firmware/moving-from-vial': '/firmware/#moving-from-vial',
+	'/firmware/going-back-to-vial': '/firmware/#going-back-to-vial',
+	'/firmware/vil-limits': '/firmware/#what-a-vil-doesnt-hold',
+	'/hardware/fit': '/hardware/#fit',
+	'/hardware/typing': '/hardware/#typing-on-a-svalboard',
+	'/hardware/pointing-modules': '/hardware/#pointing-modules',
+	'/hardware/troubleshooting': '/hardware/#troubleshooting',
+	'/hardware/hardware': '/hardware/',
+	'/vial/files': '/vial/#vial-firmware-files',
+	'/vial/flashing': '/vial/#flash-vial-firmware',
+	'/vial/app': '/vial/#the-vial-app',
+	'/vial/features': '/vial/#layers-tap-dances-combos-overrides-and-macros',
+	'/vial/svalboard-keys': '/vial/#svalboard-keys-in-vial',
+	'/vial/pointing': '/vial/#pointing-settings-in-vial',
+	'/vial/recovery': '/vial/#recovery-on-vial',
+};
+
 export default defineConfig({
 	site: 'https://docs.svalboard.com',
+	redirects,
 	vite: { plugins: [notesInbox()] },
 	integrations: [
 		starlight({
@@ -78,7 +188,12 @@ export default defineConfig({
 			},
 			favicon: '/favicon.svg',
 			// Owner notes (off unless switched on in a browser): public/notes.js
-			head: [{ tag: 'script', attrs: { src: '/notes.js', defer: true } }],
+			head: [
+				{ tag: 'script', attrs: { src: '/notes.js', defer: true } },
+				{ tag: 'script', attrs: { src: '/sidebar-spy.js', defer: true } },
+			],
+			// Guides are single pages read by jumping, so no previous/next links.
+			pagination: false,
 			social: [
 				{ icon: 'discord', label: 'Discord', href: 'https://www.svalboard.com/discord' },
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/svalboard/docs' },
@@ -90,11 +205,11 @@ export default defineConfig({
 			plugins: [starlightLinksValidator({ errorOnLocalLinks: false }), starlightLlmsTxt()],
 			sidebar: [
 				section('Start here', 'start'),
-				section('Hardware', 'hardware'),
-				section('Build guide', 'build'),
-				section('Firmware', 'firmware'),
+				jumps('Hardware', hardwareJumps),
+				jumps('Build guide', buildJumps),
+				jumps('Firmware', firmwareJumps),
 				section('Keybard', 'keybard'),
-				section('Vial (legacy)', 'vial'),
+				jumps('Vial (legacy)', vialJumps),
 				section('Reference', 'reference'),
 			],
 		}),

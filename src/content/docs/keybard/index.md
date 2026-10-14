@@ -15,7 +15,7 @@ With Keybard you change what each key does, organize layers, build macros, tap d
 
 - **A desktop browser that supports WebHID**: Chrome or Edge. Firefox and Safari don't support WebHID, so **Connect Keyboard** is unavailable there.
 - **A USB data cable** between your computer and the half you plug in.
-- **Svalboard QMK firmware** on the board. A board still on Svalboard's Vial firmware needs new firmware first; see [Moving from Vial](/firmware/moving-from-vial/).
+- **Svalboard QMK firmware** on the board. A board still on Svalboard's Vial firmware needs new firmware first; see [Moving from Vial](/firmware/#moving-from-vial).
 
 ## The welcome screen
 
