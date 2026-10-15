@@ -21,3 +21,39 @@
 	color: var(--sl-color-gray-2);
 	background-color: transparent;
 }
+
+/* CAD figures (src/components/CadFigure.astro): four versions per figure, one shown.
+   html[data-cad] is "shaded" for rendered figures; anything else means line drawings. */
+.cad-fig {
+	margin: 1.5rem 0;
+}
+.cad-fig .cad-v {
+	display: none;
+	max-width: 100%;
+	height: auto;
+}
+:root:not([data-cad='shaded'])[data-theme='light'] .cad-fig .cad-line-light,
+:root:not([data-cad='shaded']):not([data-theme='light']) .cad-fig .cad-line-dark,
+:root[data-cad='shaded'][data-theme='light'] .cad-fig .cad-shaded-light,
+:root[data-cad='shaded']:not([data-theme='light']) .cad-fig .cad-shaded-dark {
+	display: block;
+}
+.cad-fig figcaption {
+	margin-top: 0.5rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-2);
+}
+/* A short sequence of figures side by side on wide screens. */
+.cad-steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+	gap: 0 1rem;
+	align-items: start;
+}
+.cad-steps .cad-fig {
+	margin: 1rem 0 0;
+}
+/* The figure style picker only matters on pages with CAD figures. */
+:root:not(:has(.cad-fig)) .cad-style-select {
+	display: none;
+}

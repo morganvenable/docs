@@ -1,0 +1,39 @@
+---
+// A CAD figure in four versions: line drawing or rendered, light or dark page.
+// Files: src/assets/cad/<name>-{line|shaded}-{light|dark}.webp, all four the same size
+// and crop, so the switch (CadStyleSelect) swaps them in place. CSS in custom.css shows
+// one; the hidden three are lazy, so the browser only downloads them after a switch.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	name: string;
+	alt: string;
+	caption?: string;
+}
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/cad/*.webp', { eager: true });
+const { name, alt, caption } = Astro.props;
+const variants = ['line-light', 'line-dark', 'shaded-light', 'shaded-dark'] as const;
+const images = variants.map((v) => {
+	const file = files[`../assets/cad/${name}-${v}.webp`];
+	if (!file) throw new Error(`CadFigure: missing src/assets/cad/${name}-${v}.webp`);
+	return { v, src: file.default };
+});
+---
+
+<figure class="cad-fig">
+	{
+		images.map(({ v, src }) => (
+			<Image
+				src={src}
+				alt={alt}
+				width={Math.round(src.width / 2)}
+				densities={[1, 2]}
+				loading="lazy"
+				class={`cad-v cad-${v}`}
+			/>
+		))
+	}
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>

@@ -191,6 +191,12 @@ export default defineConfig({
 			head: [
 				{ tag: 'script', attrs: { src: '/notes.js', defer: true } },
 				{ tag: 'script', attrs: { src: '/sidebar-spy.js', defer: true } },
+				// CAD figure style (src/components/CadStyleSelect.astro), set before first paint.
+				{
+					tag: 'script',
+					content:
+						"try{if(localStorage.getItem('svalboard-cad-style')==='shaded')document.documentElement.dataset.cad='shaded'}catch(e){}",
+				},
 			],
 			// Guides are single pages read by jumping, so no previous/next links.
 			pagination: false,
@@ -201,7 +207,10 @@ export default defineConfig({
 			editLink: { baseUrl: 'https://github.com/svalboard/docs/edit/main/' },
 			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],
-			components: { Banner: './src/components/PreviewBanner.astro' },
+			components: {
+				Banner: './src/components/PreviewBanner.astro',
+				ThemeSelect: './src/components/ThemeSelect.astro',
+			},
 			plugins: [starlightLinksValidator({ errorOnLocalLinks: false }), starlightLlmsTxt()],
 			sidebar: [
 				section('Start here', 'start'),

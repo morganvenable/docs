@@ -3,11 +3,7 @@ title: "Hardware"
 description: "The two halves, their ports and keys, mounting and tenting, care, opening the case and repairs."
 ---
 
-import { Image } from 'astro:assets';
-import fcKeysLight from '../../../assets/hardware/cad-finger-cluster-keys-light.webp';
-import fcKeysDark from '../../../assets/hardware/cad-finger-cluster-keys-dark.webp';
-import tcKeysLight from '../../../assets/hardware/cad-thumb-cluster-keys-light.webp';
-import tcKeysDark from '../../../assets/hardware/cad-thumb-cluster-keys-dark.webp';
+import CadFigure from '../../../components/CadFigure.astro';
 
 ## The halves
 
@@ -23,11 +19,11 @@ Each half has its own RP2040 microcontroller and its own firmware. You flash eac
 
 ## Keys
 
-<p><Image src={fcKeysLight} alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." class="dark:sl-hidden" /><Image src={fcKeysDark} alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." class="light:sl-hidden" /></p>
+<CadFigure name="cad-finger-cluster-keys" alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." />
 
 Each finger has a **5-key cluster**: North, South, East, West, and a Center key pressed down. This is the standard cluster.
 
-<p><Image src={tcKeysLight} alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." class="dark:sl-hidden" /><Image src={tcKeysDark} alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." class="light:sl-hidden" /></p>
+<CadFigure name="cad-thumb-cluster-keys" alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." />
 
 Each thumb has six keys: **Pad, Knuckle, Nail, Up, Down and Double Down**. Double Down is a switch under the Down key: press Down all the way through.
 

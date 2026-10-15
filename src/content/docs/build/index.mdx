@@ -3,25 +3,7 @@ title: "Build guide"
 description: "Build a Svalboard from a self-print kit, from printing the parts to the first fit."
 ---
 
-import { Image } from 'astro:assets';
-import hemiExplodedLight from '../../../assets/build/cad-hemi-exploded-light.webp';
-import hemiExplodedDark from '../../../assets/build/cad-hemi-exploded-dark.webp';
-import tippingKeyLight from '../../../assets/build/cad-tipping-center-key-light.webp';
-import tippingKeyDark from '../../../assets/build/cad-tipping-center-key-dark.webp';
-import fcKeysLight from '../../../assets/hardware/cad-finger-cluster-keys-light.webp';
-import fcKeysDark from '../../../assets/hardware/cad-finger-cluster-keys-dark.webp';
-import tcKeysLight from '../../../assets/hardware/cad-thumb-cluster-keys-light.webp';
-import tcKeysDark from '../../../assets/hardware/cad-thumb-cluster-keys-dark.webp';
-import popnutLocLight from '../../../assets/build/cad-popnut-locations-light.webp';
-import popnutLocDark from '../../../assets/build/cad-popnut-locations-dark.webp';
-import popnutDropLight from '../../../assets/build/cad-popnut-1-drop-light.webp';
-import popnutDropDark from '../../../assets/build/cad-popnut-1-drop-dark.webp';
-import popnutPushLight from '../../../assets/build/cad-popnut-2-push-light.webp';
-import popnutPushDark from '../../../assets/build/cad-popnut-2-push-dark.webp';
-import popnutSeatedLight from '../../../assets/build/cad-popnut-3-seated-light.webp';
-import popnutSeatedDark from '../../../assets/build/cad-popnut-3-seated-dark.webp';
-import towerClusterLight from '../../../assets/build/cad-tower-on-cluster-light.webp';
-import towerClusterDark from '../../../assets/build/cad-tower-on-cluster-dark.webp';
+import CadFigure from '../../../components/CadFigure.astro';
 import facts from '../../../data/facts.json';
 export const stable = facts.firmware.stable;
 export const blank = (side) => stable.assets.find((a) => a.startsWith(`svalboard_${side}_blank_`) && a.endsWith('.uf2'));
@@ -314,7 +296,7 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 
 {/* PHOTO: slicer screenshot of one build plate with Hemi Palm L and R standing on their long edges with tree supports and brim, plus two 9 mm hemi carriers and two top washers lying flat side down. Same framing and plate as print-palm-rests.webp. */}
 
-<p><Image src={hemiExplodedLight} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="dark:sl-hidden" /><Image src={hemiExplodedDark} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="light:sl-hidden" /></p>
+<CadFigure name="cad-hemi-exploded" alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." />
 
 #### Older builds: tripod palm rests
 
@@ -439,9 +421,9 @@ If a key doesn't slide in easily or doesn't move freely:
 
 This is how each key sits in its cluster:
 
-<p><Image src={fcKeysLight} alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." class="dark:sl-hidden" /><Image src={fcKeysDark} alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." class="light:sl-hidden" /></p>
+<CadFigure name="cad-finger-cluster-keys" alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." />
 
-<p><Image src={tcKeysLight} alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." class="dark:sl-hidden" /><Image src={tcKeysDark} alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." class="light:sl-hidden" /></p>
+<CadFigure name="cad-thumb-cluster-keys" alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." />
 
 ### Tipping center keys
 
@@ -450,7 +432,7 @@ This is how each key sits in its cluster:
 3. Let it snap into place.
 4. Put the North key back.
 
-<p><Image src={tippingKeyLight} alt="A finger cluster seen from underneath, with a tipping center key (orange) hooked through it. The key arm is marked 0.9." class="dark:sl-hidden" /><Image src={tippingKeyDark} alt="A finger cluster seen from underneath, with a tipping center key (orange) hooked through it. The key arm is marked 0.9." class="light:sl-hidden" /></p>
+<CadFigure name="cad-tipping-center-key" alt="A finger cluster seen from underneath, with a tipping center key (orange) hooked through it. The key arm is marked 0.9." />
 
 The tipping center key replaces the older slider-based center key. Slider parts are deprecated.
 
@@ -547,22 +529,22 @@ The back cases take heat set inserts either way.
 
 Square nuts need no soldering iron. Each one clicks into a pocket on the back of the base plate and stays there, ready for its case screw. You need 7 M3 square nuts per base plate, DIN 562 (the thin kind: 5.5 mm across and 1.8 mm thick).
 
-<p><Image src={popnutLocLight} alt="The back of the right base plate. Orange circles mark the seven case screw holes, each with a small rectangular opening beside it." class="dark:sl-hidden" /><Image src={popnutLocDark} alt="The back of the right base plate. Orange circles mark the seven case screw holes, each with a small rectangular opening beside it." class="light:sl-hidden" /></p>
+<CadFigure name="cad-popnut-locations" alt="The back of the right base plate. Orange circles mark the seven case screw holes, each with a small rectangular opening beside it." />
 
 The left base plate is a mirror image. In the close-ups below, the thin layer of plastic over the pocket is cut away so you can see the nut.
 
 1. Lay the base plate on the table with the back facing up.
 2. Drop a nut flat into the rectangular opening beside a case screw hole.
 
-   <p><Image src={popnutDropLight} alt="Close-up of a case screw hole from the back of the base plate. A square nut (orange) hovers above the rectangular opening, and an arrow shows it dropping in. A blue spring arm runs along each side of the opening." class="dark:sl-hidden" /><Image src={popnutDropDark} alt="Close-up of a case screw hole from the back of the base plate. A square nut (orange) hovers above the rectangular opening, and an arrow shows it dropping in. A blue spring arm runs along each side of the opening." class="light:sl-hidden" /></p>
+   <CadFigure name="cad-popnut-1-drop" alt="Close-up of a case screw hole from the back of the base plate. A square nut (orange) hovers above the rectangular opening, and an arrow shows it dropping in. A blue spring arm runs along each side of the opening." />
 
 3. Push the nut sideways toward the screw hole, with a fingertip or a small screwdriver. The two spring arms bend outward to let it pass.
 
-   <p><Image src={popnutPushLight} alt="The nut lies in the opening between the blue spring arms, and an arrow shows the push toward the screw hole." class="dark:sl-hidden" /><Image src={popnutPushDark} alt="The nut lies in the opening between the blue spring arms, and an arrow shows the push toward the screw hole." class="light:sl-hidden" /></p>
+   <CadFigure name="cad-popnut-2-push" alt="The nut lies in the opening between the blue spring arms, and an arrow shows the push toward the screw hole." />
 
 4. Keep pushing until the nut clicks into the pocket over the hole. The arms spring back behind it and hold it in place.
 
-   <p><Image src={popnutSeatedLight} alt="The nut sits in its pocket, centered over the screw hole, with the blue arm tips behind it. A dashed line shows where the case screw goes in." class="dark:sl-hidden" /><Image src={popnutSeatedDark} alt="The nut sits in its pocket, centered over the screw hole, with the blue arm tips behind it. A dashed line shows where the case screw goes in." class="light:sl-hidden" /></p>
+   <CadFigure name="cad-popnut-3-seated" alt="The nut sits in its pocket, centered over the screw hole, with the blue arm tips behind it. A dashed line shows where the case screw goes in." />
 
 5. Repeat for the other six holes, then do the other base plate.
 
@@ -618,7 +600,7 @@ Make sure each tower goes in the right place:
 - **Index fingers:** the tall oblique tower, tall side up.
 - **Middle, ring and pinky:** the shorter, symmetric towers.
 
-<p><Image src={towerClusterLight} alt="An index tower (orange) screwed to a finger cluster with an M3 screw." class="dark:sl-hidden" /><Image src={towerClusterDark} alt="An index tower (orange) screwed to a finger cluster with an M3 screw." class="light:sl-hidden" /></p>
+<CadFigure name="cad-tower-on-cluster" alt="An index tower (orange) screwed to a finger cluster with an M3 screw." />
 
 ## Step 10: Install towers on baseplates
 
@@ -729,7 +711,7 @@ The black latches on the connectors flip up to open and down to close.
 
 The carrier holds the palm rest. Its cup takes the ball on the underside of the rest, and its two curved slots let it slide and turn on the base plate.
 
-<p><Image src={hemiExplodedLight} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="dark:sl-hidden" /><Image src={hemiExplodedDark} alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." class="light:sl-hidden" /></p>
+<CadFigure name="cad-hemi-exploded" alt="The parts of a hemispherical palm rest, pulled apart from top to bottom: the M5 flat head screw (orange), the hemispherical top washer, the palm rest with the ball on its underside, the carrier with its cup, and the M5 square nut (orange)." />
 
 This step mounts the carrier and its nut, the bottom of the stack. Step 14 adds the palm rest, washer and screw on top.
 
