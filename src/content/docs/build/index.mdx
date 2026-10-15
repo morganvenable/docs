@@ -469,6 +469,12 @@ Black PLA usually doesn't need ink.
 
 Every FFC connector has a small black latch. Flip the latch up, slide the cable all the way in, then flip the latch down to lock it. To remove a cable, flip the latch up and pull the cable straight out.
 
+<div class="cad-steps">
+	<CadFigure name="cad-ffc-1-open" alt="An FFC connector on a circuit board with its black latch flipped up." caption="1. Flip the latch up." />
+	<CadFigure name="cad-ffc-2-insert" alt="An FFC end being slid into the open connector, blue stiffener on top and contacts facing down. An arrow shows the direction." caption="2. Slide the cable all the way in, contacts down and blue stiffener up." />
+	<CadFigure name="cad-ffc-3-latch" alt="The cable fully inserted and the latch pressed down flat over it. An arrow shows the latch closing." caption="3. Flip the latch down to lock the cable." />
+</div>
+
 {/* VIDEO: a short clip of unlatch, insert, latch on one connector (shot list: ffc-latch-video). */}
 
 ![An MCU's FFC connectors up close. One latch is down (closed) and one is up (open).](../../../assets/build/ffc-latch-up-down.webp)
@@ -499,7 +505,11 @@ You connect the other end of each FFC to the MCU in [Step 12](/build/#step-12-in
 
 Use the M2 thread-cutting screws.
 
-![Thumb and finger cluster PCBAs screwed into their clusters. A red line marks one more thumb screw hidden under a key. Inset: a finger cluster PCBA with its two screws.](../../../assets/build/pcbas-in-clusters.webp)
+<CadFigure name="cad-pcba-finger" alt="A finger cluster from below with its PCBA in place. Two M2 screws (orange) sit in opposite corners; rings mark the two spare holes and the bottom-left corner that must be fully seated." caption="Finger cluster: two M2 screws in opposite corners. If one strips, use a spare hole. Make sure the bottom-left corner is fully seated." />
+
+<CadFigure name="cad-pcba-thumb" alt="A right thumb cluster from the PCBA side with the keys removed. Orange rings mark the six M2 screw holes." caption="Thumb cluster: use 3 to 5 of the M2 screw holes." />
+
+{/* VERIFY: the six thumb rings are taken to be the M2 screw holes; the finger figure's "bottom-left corner" follows the old photo's orientation. */}
 
 {/* PHOTO: replace with current-design photos (shot list: pcba-install). */}
 
@@ -511,7 +521,12 @@ A square nut goes in the back underside of each cluster. It's the fixing point f
 2. Line up the nut with small pliers or tweezers.
 3. Press it **straight** down into the slot.
 
-![A finger cluster from below with the square nut in its slot, and from the side.](../../../assets/build/square-nuts-in-clusters.webp)
+<div class="cad-steps">
+	<CadFigure name="cad-cluster-nut" alt="A finger cluster upside down. A square nut (orange) hovers above its slot at the back, and an arrow shows it pressed straight down." caption="Press the square nut straight down into the slot at the back of the cluster." />
+	<CadFigure name="cad-cluster-nut-seated" alt="The same cluster with the square nut seated in its slot, its edge just visible." caption="Seated: the nut sits fully in the slot." />
+</div>
+
+{/* VERIFY: the nut drawings leave out the center key and PCBA. In the model the center key's rear arm passes under the nut pocket: can the nut go in with the center key installed? */}
 
 ### Test the clusters (recommended)
 
@@ -541,6 +556,7 @@ Our latest base plates use square nuts at the case screw holes. Earlier base pla
 
 The back cases take heat set inserts either way.
 
+<CadFigure name="cad-plate-identify" alt="Two close-ups of a case screw hole on the back of a base plate. The latest plate has a rectangular opening beside the hole; the earlier plate has a plain round hole." caption="Back of the base plate at a case screw hole. Latest plates have a square nut opening beside the hole; earlier plates have a plain round hole for a heat set insert." />
 
 ### Square nuts at the case screw holes
 
@@ -581,17 +597,22 @@ Look through each screw hole. You should see the nut's thread centered in it.
 4. **Don't insert it all the way.** Stop about 0.5 mm short.
 5. Finish by pressing the part against a flat surface, or with a flat tool, so the insert sits flush and flat.
 
+<div class="cad-steps">
+	<CadFigure name="cad-heatset-1-stop" alt="A cut-away of a base plate hole with a heat set insert (orange) pressed in by the iron tip, stopped about 0.5 mm short of flush." caption="Stop about 0.5 mm short." />
+	<CadFigure name="cad-heatset-2-flush" alt="The same cut-away with a flat tool pressing the insert down until it sits flush with the surface. An arrow shows the press." caption="Finish with a flat tool so the insert sits flush and flat." />
+</div>
+
 #### Heat set inserts in the base plates
 
 If your base plates have plain round case screw holes, install 7 M3 inserts in each base plate.
 
-![Left and right base plates. Lines point to the seven M3 insert holes on each.](../../../assets/build/inserts-baseplates.webp)
+<CadFigure name="cad-inserts-baseplates" alt="The backs of the right and left v1.2.8 base plates. Orange rings mark the seven M3 insert holes on each." caption="The seven M3 insert holes on each base plate (v1.2.8 shown, back side up)." />
 
 #### Back cases
 
 Install a 1/4-20 insert in the middle of each back case, and the M5 inserts on the side. The M5 inserts are for screw-in legs.
 
-![The bottom of a back case. Yellow lines point to the two M5 inserts and a red line to the 1/4-20 insert.](../../../assets/build/inserts-back-case.webp)
+<CadFigure name="cad-inserts-back-case" alt="The bottom of the right back case. Two M5 inserts (orange) sit near the inner edge and a 1/4-20 insert (blue) in the middle." caption="Back case, bottom: two M5 inserts for screw-in legs and one 1/4-20 insert in the middle." />
 
 ### Square nuts in the base plate slots
 
@@ -600,10 +621,20 @@ The square nuts in the slots let each cluster tower bolt to the base plate anywh
 Slot nuts go in from the front of the base plate, the side the towers mount on.
 
 - **Latest base plates:** each slot opening has two spring arms, like the case screw pockets. Drop a nut into the opening and push it along the slot past the arms.
+
+  <div class="cad-steps">
+  	<CadFigure name="cad-slot-nut-latest-1-drop" alt="The front of the latest base plate at a slot end, with the top layer over the slot cut away. A square nut (orange) drops into the square opening between two spring arms." caption="Latest base plates: drop a nut into the slot opening. (The top layer over the slot is cut away so you can see the nut.)" />
+  	<CadFigure name="cad-slot-nut-latest-2-push" alt="The nut in the opening, with an arrow showing it pushed along the slot past the spring arms." caption="Push it along the slot, past the spring arms." />
+  </div>
+
 - **Earlier base plates:** drop a nut into each slot opening and tip it into position on one side of the slot.
 
+  <div class="cad-steps">
+  	<CadFigure name="cad-slot-nut-earlier-1-drop" alt="The front of an earlier base plate at a slot end, top layer over the slot cut away. A square nut drops into the square opening." caption="Earlier base plates: drop a nut into the slot opening." />
+  	<CadFigure name="cad-slot-nut-earlier-2-push" alt="The nut in the opening of an earlier plate, with an arrow showing it moved into the slot." caption="Tip it into position in the slot." />
+  </div>
 
-{/* VERIFY: the live guide's slide for this ("Insert nuts in baseplate") says "Need pic". A photo of the nuts seated in the slots would help. */}
+{/* VERIFY: the earlier-plate drawings show "tip it into position" as moving the nut from the opening into the slot channel. Check against a real earlier plate. */}
 
 ## Step 9: Attach towers to clusters
 
@@ -611,11 +642,15 @@ Attach each tower to its cluster first. Then attach the assembly to the nut in t
 
 Put an M3x6 mm screw through the tower and into the square nut in the cluster. Tighten it a little to keep the cluster roughly in place. You adjust it later.
 
+<CadFigure name="cad-tower-exploded" alt="An exploded view on one axis: an M3x6 screw, the index tower (orange), and the finger cluster, with the square nut (blue) below its slot in the cluster." caption="The M3x6 screw passes through the tower and into the square nut in the cluster." />
+
 Make sure each tower goes in the right place:
 
 - **Thumb:** the acute-angle tower, long side down.
 - **Index fingers:** the tall oblique tower, tall side up.
 - **Middle, ring and pinky:** the shorter, symmetric towers.
+
+<CadFigure name="cad-tower-types" alt="Three stainless towers seen from the side, stacked: the thumb tower with its long side down, the tall index tower with its tall side up, and the shorter tower used for middle, ring and pinky." caption="Thumb: long side down. Index: tall side up. Middle, ring and pinky: the shorter towers." />
 
 <CadFigure name="cad-tower-on-cluster" alt="An index tower (orange) screwed to a finger cluster with an M3 screw." />
 
@@ -625,7 +660,7 @@ Make sure each tower goes in the right place:
 2. Put an M3x6 mm screw through the tower base and into the square nut in the base plate slot.
 3. Tighten it enough to hold the tower. You'll move the towers later to fit your hand ([Step 18](/build/#step-18-adjust-the-fit)), so don't tighten them hard.
 
-![Towers and clusters on a base plate. A line points to where a cluster's FFC passes through the base plate.](../../../assets/build/towers-on-baseplate.webp)
+<CadFigure name="cad-tower-on-plate" alt="An index tower and cluster lifted above the base plate. The cluster's FFC (blue) passes down through its hole in the plate, and an M3x6 screw lines up with the tower base slot and the square nut (blue) in the plate slot." caption="Feed the FFC through the base plate, then screw the tower base to the square nut in the slot." />
 
 If you have a TrackPoint, trackball or touchpad, install it next: see [Steps 10a to 10c](/build/#steps-10a-to-10c-pointing-devices).
 
@@ -641,7 +676,9 @@ Use one pointing device per half. Connect its FFCs as in [Step 6](/build/#step-6
 - This half needs TrackPoint firmware. See [Step 15](/build/#step-15-flash-firmware-and-connect).
 - The TrackPoint half must be the half you connect to your computer ([Step 15](/build/#step-15-flash-firmware-and-connect)).
 
-{/* VERIFY: the live guide's TrackPoint slide says "[needs pics]". Photos of the TrackPoint in its holder and of the FFC contacts-up end would help. */}
+<CadFigure name="cad-trackpoint-exploded" alt="An exploded TrackPoint holder: the holder bottom, the TrackPoint module (blue) with its stick up, three M2 screws, the cover, and two cover screws, with dashed lines to their holes." caption="TrackPoint holder: module stick up, held with three M2 screws, then the cover." />
+
+{/* VERIFY: the TrackPoint drawing infers two cover screws from the matching counterbored holes; is the cover screwed, not snapped? A photo of the FFC contacts-up end is still needed. */}
 
 ### 10b Trackball
 
@@ -650,15 +687,21 @@ Use one pointing device per half. Connect its FFCs as in [Step 6](/build/#step-6
 - Print the holder at 0.2 mm layer height with 6 or more walls. You can add supports under the large bridges, but in PLA the holders work fine without them.
 - The holder takes four static bearing balls, 3.175 mm. Some older holder designs use 3 mm balls. See [Trackballs and static bearings](/build/#trackballs-and-static-bearings).
 
+<CadFigure name="cad-trackball-holder" alt="The trackball holder from above with its cover beside it. Orange rings mark the four bearing balls: three in the cup and one in the keeper arm." caption="The four bearing balls: three in the cup and one in the keeper." />
+
 1. Remove the supports. Make sure the ball cavities are clear of stray material.
 2. Put a small drop of medium CA glue in each bearing location, and drop a bearing into each.
 3. After a moment, press each bearing into its seat with a screwdriver blade, so it seats fully.
 4. Test the ball fit. The top arm (the keeper) should be very close to the ball but not touch it in normal use: 0 to 0.2 mm.
 5. If needed, heat the keeper and bend it slightly to get the hold you want. Use hot water for PLA, or a heat gun on low for ABS. This is easier before the sensor is installed.
 
+<CadFigure name="cad-trackball-keeper" alt="A section through the holder and a 44 mm trackball (blue). A ring marks the small gap between the ball and the keeper's bearing ball." caption="The keeper sits very close to the ball without touching it: 0 to 0.2 mm." />
+
 If you don't carry your Svalboard around and don't tent it steeply, you don't strictly need the keeper.
 
 ![The trackball holder, with the bearing balls in place. Labels show the direction the cover slides on and where the cable exits.](../../../assets/build/trackball-holder.webp)
+
+{/* VERIFY: cad-trackball-holder can replace this photo once the cover's slide direction and the cable exit are confirmed and drawn on it. */}
 
 #### Trackball PCBA
 
