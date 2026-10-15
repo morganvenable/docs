@@ -216,6 +216,7 @@ Pick your side key size first. See [Sizing before you build](/build/#sizing-befo
 
   {/* VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? */}
 - Base plates and cases: L Base, L Case, R Base, R Case.
+  For a compact board with no palm rest, print the [sawed-off case](/build/#sawed-off-case) instead.
 - TrackPoint case, if you have a TrackPoint: top cover and bottom cover.
 - Tools: mini 4x3 magnet stages (Key and Cluster), magnet dropper, mini key tray fixture.
 
@@ -307,6 +308,18 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 Print the tripod palm rests the same way, standing on the long edge with tree supports and a brim. Print the carriers and shims without supports.
 
 ![Slicer view of a tripod palm rest standing on its long edge with tree supports, next to two carriers and a set of shims.](../../../assets/build/print-palm-rests.webp)
+
+### Sawed-off case
+
+The sawed-off case shortens the whole half: base plate and back case end just behind the cluster slots, with no palm rest. It packs small for travel, and it's the one to choose if you bring your own palm rest setup.
+
+Print the sawed-off base plates and cases from the [Sawed-off Case folder](https://github.com/svalboard/svalboard-self-print/tree/main/Lightly%20FDM/V2.0/Baseplates%20and%20Case/Sawed-off%20Case) in place of the standard ones. Its one STEP file holds both halves. Print them the same way as the [standard cases and base plates](/build/#cases-and-base-plates). Skip the palm rest parts, and skip [Steps 13 and 14](/build/#step-13-attach-palm-rest-carriers).
+
+The sawed-off base plates take heat set inserts at the case screw holes, five per plate. See [Heat set inserts in the base plates](/build/#heat-set-inserts-in-the-base-plates).
+
+<CadFigure name="cad-sawed-off-case" alt="Two right halves at the same scale, each a base plate on its back case. The standard one on the left runs long behind the cluster slots, with the palm rest slot. The sawed-off one on the right ends just behind the cluster slots and has no palm rest slot." caption="The standard right base plate and case beside the sawed-off one, at the same scale." />
+
+{/* VERIFY: the published sawed-off file is "sawedoff test 1.X.step", cut from the v1.2.8 base plate and case (heat set inserts, five M3 case screw holes per plate instead of seven, by hole count). Is it final, and should it be renamed? Is a square nut (pop-nut) version planned to match the latest base plates? */}
 
 ### TrackPoint case
 
@@ -769,6 +782,8 @@ The black latches on the connectors flip up to open and down to close.
 ![Left: two photos of an MCU with all FFCs connected. A red line points to the pointing device cable. Right: a TrackPoint PCBA with its FFC, contacts up.](../../../assets/build/mcu-connect-trackpoint.webp)
 
 ## Step 13: Attach palm rest carriers
+
+If you're building the [sawed-off case](/build/#sawed-off-case), skip this step and Step 14.
 
 The carrier holds the palm rest. Its cup takes the ball on the underside of the rest, and its two curved slots let it slide and turn on the base plate.
 
