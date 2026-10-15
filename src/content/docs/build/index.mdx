@@ -103,7 +103,7 @@ Static can damage the PCBAs.
 1. [Print all parts and clean them up](/build/#step-1-print-all-parts)
 2. [Organize magnets for assembly](/build/#step-2-organize-magnets)
 3. [Install magnets in keys and clusters](/build/#step-3-install-magnets)
-4. [Insert keys into clusters](/build/#step-4-insert-keys)
+4. [Insert square nuts, then keys, into clusters](/build/#step-4-insert-keys)
 5. [Apply paint or ink to key flags as needed](/build/#step-5-ink-the-key-flags)
 6. [Attach FFCs to PCBAs](/build/#step-6-attach-ffcs)
 7. [Install PCBAs in clusters, then test them (recommended)](/build/#step-7-install-pcbas-and-test)
@@ -141,7 +141,7 @@ The sizer measures fingertip width 6 mm from the tip. That is the depth of a fin
 
 There are four side key sizes. In order of increasing fingertip space:
 
-| Size | Spacing |
+| Size | Approximate spacing |
 |---|---|
 | Thick | 16 mm |
 | Semi | 17 mm |
@@ -152,13 +152,11 @@ There are four side key sizes. In order of increasing fingertip space:
 - People with blunt or wide fingertips may need the Backset keys for enough room to type comfortably.
 - North keys come in Thick only.
 
-The spacing is the minimum distance between the keys, measured at the top of the center key.
+The spacing is roughly the space between opposite side keys, near their tops. The numbers are approximate: use them to compare sizes, not as exact measurements.
 
-<CadFigure name="cad-key-profiles" alt="Side profiles of the four side key sizes in a row: Thick 16 mm, Semi 17 mm, Thin 18 mm and Backset 20 mm. A dashed line marks the front of each key base; the Thick key top reaches past it, the Thin key top is level with it, and the Backset key top sits behind it." caption="The four side key sizes from the side. The dashed line is the front of the key base." />
+<CadFigure name="cad-key-profiles" alt="Side profiles of the four side key sizes in a row: Thick about 16 mm, Semi about 17 mm, Thin about 18 mm and Backset about 20 mm. A dashed line marks the front of each key base; the Thick key top reaches past it, the Thin key top is level with it, and the Backset key top sits behind it." caption="The four side key sizes from the side. The dashed line is the front of the key base." />
 
-<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: Thick 16 mm, Semi 17 mm, Thin 18 mm, Backset 20 mm." caption="The space between opposite side keys for each key size." />
-
-{/* VERIFY: cad-key-sizing shows the nominal 16/17/18/20 mm, where the CAD gaps match them: 7.2 mm above the cluster top. At the resting center key top the CAD gaps are about 14.5/15.4/16.5/18.1 mm. Which height does "measured at the top of the center key" mean? */}
+<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: Thick about 16 mm, Semi about 17 mm, Thin about 18 mm, Backset about 20 mm." caption="Approximate space between opposite side keys for each key size." />
 
 {/* VERIFY: the live build guide (slide 15) also lists a "-2mm" side key, "only for huge fingers on narrow cluster PCBAs (not standard)". Should it be listed here? */}
 
@@ -420,6 +418,21 @@ The tipping center key uses normal key polarity: the **south** pole faces out (u
 
 ## Step 4: Insert keys
 
+### Square nut first
+
+Each cluster takes a square nut in the back of its underside, the fixing point for the tower. Put it in **before** you install the center key: the center key covers the nut's slot.
+
+1. Place the cluster top side down.
+2. Line up the nut with small pliers or tweezers.
+3. Press it **straight** down into the slot.
+
+<div class="cad-steps">
+	<CadFigure name="cad-cluster-nut" alt="A finger cluster upside down with no keys in it. A square nut (orange) hovers above its slot at the back, and an arrow shows it pressed straight down." caption="Before the center key goes in, press the square nut straight down into the slot at the back of the cluster." />
+	<CadFigure name="cad-cluster-nut-seated" alt="The same cluster, still without keys, with the square nut seated in its slot." caption="Seated: the nut sits fully in the slot." />
+</div>
+
+### Insert the keys
+
 Every key should slide easily into place and snap to its magnet.
 
 <CadFigure name="cad-key-insert" alt="A finger cluster with its keys in place except the East key (orange), which is above its slot with an arrow pointing straight down." caption="Slide each key straight down into its slot until it snaps to its magnet." />
@@ -500,33 +513,18 @@ You connect the other end of each FFC to the MCU in [Step 12](/build/#step-12-in
 - Line each PCBA up squarely with the cluster before you press it in. Installing it at an angle can damage the optical sensors.
 - **Finger clusters:** use just the two screws shown. If one strips, use one of the other two holes.
 - Make sure the bottom-left corner of the PCBA is fully seated in the cluster. If it isn't, the East or South key may not register.
-- **Thumb clusters:** use 3 to 5 screws, as you prefer.
+- **Thumb clusters:** put a screw in every hole.
 - You don't need to remove the finger center key to replace a PCBA.
 
 Use the M2 thread-cutting screws.
 
 <CadFigure name="cad-pcba-finger" alt="A finger cluster from below with its PCBA in place. Two M2 screws (orange) sit in opposite corners; rings mark the two spare holes and the bottom-left corner that must be fully seated." caption="Finger cluster: two M2 screws in opposite corners. If one strips, use a spare hole. Make sure the bottom-left corner is fully seated." />
 
-<CadFigure name="cad-pcba-thumb" alt="A right thumb cluster from the PCBA side with the keys removed. Orange rings mark the six M2 screw holes." caption="Thumb cluster: use 3 to 5 of the M2 screw holes." />
+<CadFigure name="cad-pcba-thumb" alt="A right thumb cluster from the PCBA side with the keys removed. An M2 screw (orange) sits in each of the six screw holes." caption="Thumb cluster: an M2 screw in every hole." />
 
-{/* VERIFY: the six thumb rings are taken to be the M2 screw holes; the finger figure's "bottom-left corner" follows the old photo's orientation. */}
+{/* VERIFY: the finger figure's "bottom-left corner" follows the old photo's orientation. */}
 
 {/* PHOTO: replace with current-design photos (shot list: pcba-install). */}
-
-### Insert the square nuts
-
-A square nut goes in the back underside of each cluster. It's the fixing point for the tower.
-
-1. Place the cluster top side down.
-2. Line up the nut with small pliers or tweezers.
-3. Press it **straight** down into the slot.
-
-<div class="cad-steps">
-	<CadFigure name="cad-cluster-nut" alt="A finger cluster upside down. A square nut (orange) hovers above its slot at the back, and an arrow shows it pressed straight down." caption="Press the square nut straight down into the slot at the back of the cluster." />
-	<CadFigure name="cad-cluster-nut-seated" alt="The same cluster with the square nut seated in its slot, its edge just visible." caption="Seated: the nut sits fully in the slot." />
-</div>
-
-{/* VERIFY: the nut drawings leave out the center key and PCBA. In the model the center key's rear arm passes under the nut pocket: can the nut go in with the center key installed? */}
 
 ### Test the clusters (recommended)
 
@@ -671,14 +669,15 @@ Use one pointing device per half. Connect its FFCs as in [Step 6](/build/#step-6
 ### 10a TrackPoint
 
 - Attach a same-side FFC to the TrackPoint: unlatch, insert the contacts **up**, latch.
-- Mount the TrackPoint in its holder with the M2 thread-cutting screws. Attach the cover.
+- Mount the TrackPoint in its holder with three M2 thread-cutting screws.
+- Attach the cover with two M2 screws.
 - Route the cable with the finger cluster cables ([Step 10](/build/#step-10-install-towers-on-baseplates)).
 - This half needs TrackPoint firmware. See [Step 15](/build/#step-15-flash-firmware-and-connect).
 - The TrackPoint half must be the half you connect to your computer ([Step 15](/build/#step-15-flash-firmware-and-connect)).
 
-<CadFigure name="cad-trackpoint-exploded" alt="An exploded TrackPoint holder: the holder bottom, the TrackPoint module (blue) with its stick up, three M2 screws, the cover, and two cover screws, with dashed lines to their holes." caption="TrackPoint holder: module stick up, held with three M2 screws, then the cover." />
+<CadFigure name="cad-trackpoint-exploded" alt="An exploded TrackPoint holder: the holder bottom, the TrackPoint module (blue) with its stick up, three M2 screws, the cover, and two M2 cover screws, with dashed lines to their holes." caption="TrackPoint holder: module stick up, held with three M2 screws, then the cover with two M2 screws." />
 
-{/* VERIFY: the TrackPoint drawing infers two cover screws from the matching counterbored holes; is the cover screwed, not snapped? A photo of the FFC contacts-up end is still needed. */}
+{/* VERIFY: a photo of the FFC contacts-up end is still needed. */}
 
 ### 10b Trackball
 
@@ -918,12 +917,12 @@ If the board rocks, shave the bottoms of the feet with a craft knife. The silico
 
 ### Feet sizes
 
-- Recent cases have 4 mm holes for the larger rubber feet.
+- Recent cases have 4.8 mm holes for the larger rubber feet.
 - Case version 1.2.6 and later also fit the small plug feet: 6 mm across, about 3 mm long, in soft 70A silicone. They lower the stack by more than a millimeter. On an older case, drill 3 mm holes to fit them.
 
 <CadFigure name="cad-back-cover-feet" alt="The bottom of a right back case. Rubber feet (orange) sit in the four larger holes near the corners. Rings mark the 3 mm holes for the small plug feet, and a line points to one of the seven case screw counterbores." />
 
-{/* VERIFY: on the v1.2.8 case model the larger feet holes measure 4.8 mm, not 4 mm. The v2alpha case has no 3 mm holes for the small plug feet. */}
+{/* VERIFY: the v2alpha case has no 3 mm holes for the small plug feet. */}
 
 ## Step 18: Adjust the fit
 
