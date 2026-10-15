@@ -203,7 +203,10 @@ Pick your side key size first. See [Sizing before you build](/build/#sizing-befo
 
 **Thumb keys**
 
-- 2 Pad, 2 Knuckle, 2 Down, Nail Left, Nail Right, and 2 Up (Mode) keys.
+- 2 Pad, 2 Knuckle, 2 Down, Nail Left and Nail Right.
+- 2 Up keys: Mode Slim 29h. Print the "Mode (Up) 29h" key from `Thumb Side Keys All v2.0 RCe.step` in the `Lightly FDM/V2.0/V2.0 Keys/Thumb Side Keys` folder. A curved Up key will replace it later.
+
+  {/* VERIFY: is "Mode (Up) 29h" in Thumb Side Keys All v2.0 RCe.step the current Mode Slim 29h? Its volume (about 1214 mm3) doesn't match the Onshape Mode Slim 29h export (about 1112 mm3). The only file named Mode Slim 29h is "Lightly FDM/V2.0/experimental/Mode Slim - Mode (Up) Right 29h one-line-flag print at 0.42 line width.step", which is taller (35.4 mm against 31.7 mm). Publish the current Mode Slim 29h and point this line at it. */}
 
 **Clusters**
 
@@ -421,7 +424,7 @@ Install the cluster magnets the same way, from the Cluster stage (north pole up)
 
 ### Key magnets
 
-<CadFigure name="cad-magnets-keys" alt="The keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up and Down." caption="Where the magnet goes in each key. The south pole faces out." />
+<CadFigure name="cad-magnets-keys" alt="The keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up, the upcoming curved Up, and Down." caption="Where the magnet goes in each key. The south pole faces out." />
 
 ### Tipping center key
 
@@ -465,6 +468,8 @@ This is how each key sits in its cluster:
 <CadFigure name="cad-finger-cluster-keys" alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." />
 
 <CadFigure name="cad-thumb-cluster-keys" alt="A right thumb cluster seen from its outer side, keys labeled: the Nail and Knuckle keys in front, their sloped tops running together as one line, the layer LED below them, the Pad key behind with its top rising toward the south, the Up key, the Down key in the middle, and the cluster body." />
+
+<CadFigure name="cad-thumb-cluster-keys-curved-up" alt="A right thumb cluster seen from the side, square to the Up slot, with the curved Up key in profile: its stem bows outward and its top curves back over the cluster. The Nail, Knuckle, Pad and Down keys are also labeled." caption="The upcoming curved Up key, in the same cluster." />
 
 ### Tipping center keys
 
