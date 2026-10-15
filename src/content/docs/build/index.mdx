@@ -8,6 +8,20 @@ import hemiExplodedLight from '../../../assets/build/cad-hemi-exploded-light.web
 import hemiExplodedDark from '../../../assets/build/cad-hemi-exploded-dark.webp';
 import tippingKeyLight from '../../../assets/build/cad-tipping-center-key-light.webp';
 import tippingKeyDark from '../../../assets/build/cad-tipping-center-key-dark.webp';
+import fcKeysLight from '../../../assets/hardware/cad-finger-cluster-keys-light.webp';
+import fcKeysDark from '../../../assets/hardware/cad-finger-cluster-keys-dark.webp';
+import tcKeysLight from '../../../assets/hardware/cad-thumb-cluster-keys-light.webp';
+import tcKeysDark from '../../../assets/hardware/cad-thumb-cluster-keys-dark.webp';
+import popnutLocLight from '../../../assets/build/cad-popnut-locations-light.webp';
+import popnutLocDark from '../../../assets/build/cad-popnut-locations-dark.webp';
+import popnutDropLight from '../../../assets/build/cad-popnut-1-drop-light.webp';
+import popnutDropDark from '../../../assets/build/cad-popnut-1-drop-dark.webp';
+import popnutPushLight from '../../../assets/build/cad-popnut-2-push-light.webp';
+import popnutPushDark from '../../../assets/build/cad-popnut-2-push-dark.webp';
+import popnutSeatedLight from '../../../assets/build/cad-popnut-3-seated-light.webp';
+import popnutSeatedDark from '../../../assets/build/cad-popnut-3-seated-dark.webp';
+import towerClusterLight from '../../../assets/build/cad-tower-on-cluster-light.webp';
+import towerClusterDark from '../../../assets/build/cad-tower-on-cluster-dark.webp';
 import facts from '../../../data/facts.json';
 export const stable = facts.firmware.stable;
 export const blank = (side) => stable.assets.find((a) => a.startsWith(`svalboard_${side}_blank_`) && a.endsWith('.uf2'));
@@ -425,7 +439,9 @@ If a key doesn't slide in easily or doesn't move freely:
 
 This is how each key sits in its cluster:
 
-![A finger cluster with its North, East, South, West and Center keys, and a thumb cluster with its Pad, Knuckle, Up (Mode), Nail and Down keys.](../../../assets/build/keys-in-clusters.webp)
+<p><Image src={fcKeysLight} alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." class="dark:sl-hidden" /><Image src={fcKeysDark} alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." class="light:sl-hidden" /></p>
+
+<p><Image src={tcKeysLight} alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." class="dark:sl-hidden" /><Image src={tcKeysDark} alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." class="light:sl-hidden" /></p>
 
 ### Tipping center keys
 
@@ -531,22 +547,22 @@ The back cases take heat set inserts either way.
 
 Square nuts need no soldering iron. Each one clicks into a pocket on the back of the base plate and stays there, ready for its case screw. You need 7 M3 square nuts per base plate, DIN 562 (the thin kind: 5.5 mm across and 1.8 mm thick).
 
-![The back of the right base plate. Orange circles mark the seven case screw holes, each with a small rectangular opening beside it.](../../../assets/build/popnut-locations.webp)
+<p><Image src={popnutLocLight} alt="The back of the right base plate. Orange circles mark the seven case screw holes, each with a small rectangular opening beside it." class="dark:sl-hidden" /><Image src={popnutLocDark} alt="The back of the right base plate. Orange circles mark the seven case screw holes, each with a small rectangular opening beside it." class="light:sl-hidden" /></p>
 
 The left base plate is a mirror image. In the close-ups below, the thin layer of plastic over the pocket is cut away so you can see the nut.
 
 1. Lay the base plate on the table with the back facing up.
 2. Drop a nut flat into the rectangular opening beside a case screw hole.
 
-   ![Close-up of a case screw hole from the back of the base plate. A square nut hovers above the rectangular opening, and an arrow shows it dropping in. A blue spring arm runs along each side of the opening.](../../../assets/build/popnut-1-drop.webp)
+   <p><Image src={popnutDropLight} alt="Close-up of a case screw hole from the back of the base plate. A square nut (orange) hovers above the rectangular opening, and an arrow shows it dropping in. A blue spring arm runs along each side of the opening." class="dark:sl-hidden" /><Image src={popnutDropDark} alt="Close-up of a case screw hole from the back of the base plate. A square nut (orange) hovers above the rectangular opening, and an arrow shows it dropping in. A blue spring arm runs along each side of the opening." class="light:sl-hidden" /></p>
 
 3. Push the nut sideways toward the screw hole, with a fingertip or a small screwdriver. The two spring arms bend outward to let it pass.
 
-   ![The nut lies in the opening, and an arrow pushes it toward the screw hole. The blue arms bend outward where the nut slides past their tips.](../../../assets/build/popnut-2-push.webp)
+   <p><Image src={popnutPushLight} alt="The nut lies in the opening between the blue spring arms, and an arrow shows the push toward the screw hole." class="dark:sl-hidden" /><Image src={popnutPushDark} alt="The nut lies in the opening between the blue spring arms, and an arrow shows the push toward the screw hole." class="light:sl-hidden" /></p>
 
 4. Keep pushing until the nut clicks into the pocket over the hole. The arms spring back behind it and hold it in place.
 
-   ![The nut sits in its pocket, centered over the screw hole. The arm tips have closed behind it. A dashed line shows where the case screw goes in.](../../../assets/build/popnut-3-seated.webp)
+   <p><Image src={popnutSeatedLight} alt="The nut sits in its pocket, centered over the screw hole, with the blue arm tips behind it. A dashed line shows where the case screw goes in." class="dark:sl-hidden" /><Image src={popnutSeatedDark} alt="The nut sits in its pocket, centered over the screw hole, with the blue arm tips behind it. A dashed line shows where the case screw goes in." class="light:sl-hidden" /></p>
 
 5. Repeat for the other six holes, then do the other base plate.
 
@@ -602,7 +618,7 @@ Make sure each tower goes in the right place:
 - **Index fingers:** the tall oblique tower, tall side up.
 - **Middle, ring and pinky:** the shorter, symmetric towers.
 
-![An index tower screwed to a finger cluster.](../../../assets/build/tower-on-cluster.webp)
+<p><Image src={towerClusterLight} alt="An index tower (orange) screwed to a finger cluster with an M3 screw." class="dark:sl-hidden" /><Image src={towerClusterDark} alt="An index tower (orange) screwed to a finger cluster with an M3 screw." class="light:sl-hidden" /></p>
 
 ## Step 10: Install towers on baseplates
 
