@@ -203,7 +203,10 @@ Pick your side key size first. See [Sizing before you build](/build/#sizing-befo
 
 **Thumb keys**
 
-- 2 Pad, 2 Knuckle, 2 Down, Nail Left, Nail Right, and 2 Up (Mode) keys.
+- 2 Pad, 2 Knuckle, 2 Down, Nail Left and Nail Right.
+- 2 Up keys: Mode Slim 29h. Print the "Mode (Up) 29h" key from `Thumb Side Keys All v2.0 RCe.step` in the `Lightly FDM/V2.0/V2.0 Keys/Thumb Side Keys` folder. A curved Up key will replace it later.
+
+  {/* VERIFY: is "Mode (Up) 29h" in Thumb Side Keys All v2.0 RCe.step the current Mode Slim 29h? Its volume (about 1214 mm3) doesn't match the Onshape Mode Slim 29h export (about 1112 mm3). The only file named Mode Slim 29h is "Lightly FDM/V2.0/experimental/Mode Slim - Mode (Up) Right 29h one-line-flag print at 0.42 line width.step", which is taller (35.4 mm against 31.7 mm). Publish the current Mode Slim 29h and point this line at it. */}
 
 **Clusters**
 
@@ -216,6 +219,7 @@ Pick your side key size first. See [Sizing before you build](/build/#sizing-befo
 
   {/* VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? */}
 - Base plates and cases: L Base, L Case, R Base, R Case.
+  For a compact board with no palm rest, print the [sawed-off case](/build/#sawed-off-case) instead.
 - TrackPoint case, if you have a TrackPoint: top cover and bottom cover.
 - Tools: mini 4x3 magnet stages (Key and Cluster), magnet dropper, mini key tray fixture.
 
@@ -307,6 +311,18 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 Print the tripod palm rests the same way, standing on the long edge with tree supports and a brim. Print the carriers and shims without supports.
 
 ![Slicer view of a tripod palm rest standing on its long edge with tree supports, next to two carriers and a set of shims.](../../../assets/build/print-palm-rests.webp)
+
+### Sawed-off case
+
+The sawed-off case shortens the whole half: base plate and back case end just behind the cluster slots, with no palm rest. It packs small for travel, and it's the one to choose if you bring your own palm rest setup.
+
+Print the sawed-off base plates and cases from the [Sawed-off Case folder](https://github.com/svalboard/svalboard-self-print/tree/main/Lightly%20FDM/V2.0/Baseplates%20and%20Case/Sawed-off%20Case) in place of the standard ones. Its one STEP file holds both halves. Print them the same way as the [standard cases and base plates](/build/#cases-and-base-plates). Skip the palm rest parts, and skip [Steps 13 and 14](/build/#step-13-attach-palm-rest-carriers).
+
+The sawed-off base plates take heat set inserts at the case screw holes, five per plate. See [Heat set inserts in the base plates](/build/#heat-set-inserts-in-the-base-plates).
+
+<CadFigure name="cad-sawed-off-case" alt="Two right halves at the same scale, each a base plate on its back case. The standard one on the left runs long behind the cluster slots, with the palm rest slot. The sawed-off one on the right ends just behind the cluster slots and has no palm rest slot." caption="The standard right base plate and case beside the sawed-off one, at the same scale." />
+
+{/* VERIFY: the published sawed-off file is "sawedoff test 1.X.step", cut from the v1.2.8 base plate and case (heat set inserts, five M3 case screw holes per plate instead of seven, by hole count). Is it final, and should it be renamed? Is a square nut (pop-nut) version planned to match the latest base plates? */}
 
 ### TrackPoint case
 
@@ -408,7 +424,7 @@ Install the cluster magnets the same way, from the Cluster stage (north pole up)
 
 ### Key magnets
 
-<CadFigure name="cad-magnets-keys" alt="The keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up and Down." caption="Where the magnet goes in each key. The south pole faces out." />
+<CadFigure name="cad-magnets-keys" alt="The keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up, the upcoming curved Up, and Down." caption="Where the magnet goes in each key. The south pole faces out." />
 
 ### Tipping center key
 
@@ -452,6 +468,8 @@ This is how each key sits in its cluster:
 <CadFigure name="cad-finger-cluster-keys" alt="A finger cluster with its keys labeled: North at the back, East, South, West, and the Center key in the middle, plus the cluster body." />
 
 <CadFigure name="cad-thumb-cluster-keys" alt="A right thumb cluster seen from its outer side, keys labeled: the Nail and Knuckle keys in front, their sloped tops running together as one line, the layer LED below them, the Pad key behind with its top rising toward the south, the Up key, the Down key in the middle, and the cluster body." />
+
+<CadFigure name="cad-thumb-cluster-keys-curved-up" alt="A right thumb cluster seen from the side, square to the Up slot, with the curved Up key in profile: its stem bows outward and its top curves back over the cluster. The Nail, Knuckle, Pad and Down keys are also labeled." caption="The upcoming curved Up key, in the same cluster." />
 
 ### Tipping center keys
 
@@ -769,6 +787,8 @@ The black latches on the connectors flip up to open and down to close.
 ![Left: two photos of an MCU with all FFCs connected. A red line points to the pointing device cable. Right: a TrackPoint PCBA with its FFC, contacts up.](../../../assets/build/mcu-connect-trackpoint.webp)
 
 ## Step 13: Attach palm rest carriers
+
+If you're building the [sawed-off case](/build/#sawed-off-case), skip this step and Step 14.
 
 The carrier holds the palm rest. Its cup takes the ball on the underside of the rest, and its two curved slots let it slide and turn on the base plate.
 
