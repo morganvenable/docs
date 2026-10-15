@@ -43,13 +43,8 @@
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-gray-2);
 }
-/* A short sequence of figures side by side on wide screens. */
-.cad-steps {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-	gap: 0 1rem;
-	align-items: start;
-}
+/* A short sequence of figures. Stacked, not side by side: the labels are drawn for the
+   full column width and get too small at half width. */
 .cad-steps .cad-fig {
 	margin: 1rem 0 0;
 }
