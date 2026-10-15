@@ -9,7 +9,7 @@ import CadFigure from '../../../components/CadFigure.astro';
 
 ![Both halves from above, labeled: towers, finger clusters, trackball, thumb cluster, palm rest, carrier and baseplate.](../../../assets/hardware/halves-overview.webp)
 
-![Side view of both halves showing the RESET button, the U port to the computer and the S port to the other half.](../../../assets/hardware/ports-and-reset.webp)
+<CadFigure name="cad-ports-reset" alt="The finger end of a right half's case, from below. The U port (USB to your computer) and the S port (split cable to the other half) are side by side in the end wall, and the RESET button hole is in the bottom beside the RESET lettering." caption="Right half shown; the left half is its mirror image." />
 
 Each half has its own RP2040 microcontroller and its own firmware. You flash each half with the file for its side (left or right). Copying a firmware file does not change which side a half is.
 
@@ -31,6 +31,8 @@ That gives **52 keys** in total, each a few millimeters from your fingers.
 
 For more reach, choose the **6-key finger cluster**, which adds a second South key under each finger that has one. Put it on any or all fingers for 56 to 60 keys. Every Svalboard firmware supports it. In Keybard, choose the clusters your board has in **Settings → Fragments** (see [Fragments](/keybard/settings/#fragments-your-finger-clusters)).
 
+<CadFigure name="cad-6key-cluster" alt="A 6-key finger cluster body with its key slots labeled: North, East, West, Center, South, and the Second South (2S) slot, ringed, behind South." caption="The 6-key cluster adds a Second South key behind South." />
+
 ## Mounting and tenting
 
 Each half has two M5 inserts at the inner edge and a ¼"-20 insert at the center.
@@ -46,6 +48,9 @@ Factory builds are printed in tough ABS and handle everyday heat well; like any 
 
 - **Keys**: all keys except the finger Center keys lift out. Wash them in cold or room-temperature water with mild soap. Don't use an ultrasonic cleaner; it heats the water and can warp the keys. Handle the flag on each key carefully.
 - **Center keys**: tipping Center keys curl under the cluster to a magnet at the north end. Rotate the key upward to pull its arm off the magnet and out through the cluster. Older "gap slider" Center keys pop off the back of the cluster; see the [build guide](https://svalboard.com/build). Don't lose the sliders.
+
+  <CadFigure name="cad-tipping-remove" alt="A finger cluster with its tipping Center key (orange) turned partway up and out, with a curved arrow showing the direction to rotate it." />
+
 - **Dust**: blow it out with a powered air duster.
 - **Spills**: unplug the board first. Wipe the plastic with a barely damp cloth, keeping water away from the electronics, and let everything dry completely before you plug it back in. Then check that every key still works in [Matrix Tester](/keybard/settings/#check-every-key-with-matrix-tester).
 
@@ -54,6 +59,8 @@ Factory builds are printed in tough ABS and handle everyday heat well; like any 
 1. Turn the half upside down. Don't rest it on the thumb keys.
 2. Remove the six or seven M3 screws in the bottom plate with the included 2.5 mm hex key, or the T10 driver for Torx screws.
 3. Lift off the bottom. You can leave the screws in their holes.
+
+<CadFigure name="cad-back-cover-screws" alt="A half turned upside down and pulled apart: the back cover lifted off the base plate, with seven M3 x 6 mm screws (orange) lined up over its screw holes." />
 
 ## Self-printing and repairs
 
@@ -138,7 +145,7 @@ Set the palm rests first. You need a steady hand position before you can fit the
   ![A hemispherical palm rest from an angle, showing its curved shape behind the thumb cluster.](../../../assets/hardware/palm-rest-hemisphere-angled.webp)
 - **Tripod palm rests**: newer ones have 5 mm shims installed. Remove them to lower the rest 5 mm, or use any shim up to about 6 mm.
 
-  ![Exploded view of a tripod palm rest: three legs, a shim for each leg, and the carrier with its set screws.](../../../assets/hardware/tripod-palm-rest-shims.webp)
+  <CadFigure name="cad-tripod-shims" alt="Exploded view of a tripod palm rest: the rest at the top, a 5 mm shim (orange) under each of its three legs, the sled with its three leg sockets, and an M2 x 4 mm screw (blue) beside each socket." caption="With the 5 mm shims in, the legs sit 5 mm higher and the M2 screws go in the upper holes." />
 
 - **PLA palm rests** can be reshaped in hot water. Keep the rest attached to its carrier while you do it. [Thermoforming demo](https://www.youtube.com/watch?v=feAgCKpLzhQ). Palm rests are a consumable part; contact support@svalboard.com for replacements.
 
@@ -146,11 +153,11 @@ Set the palm rests first. You need a steady hand position before you can fit the
 
 - **X/Y and yaw**: loosen the base screw just enough to move the tower with gentle pressure: north–south (Y), east–west (X), and turned (yaw). Fingers should rest on the Center keys; many people like a slight bias toward South. If a cluster won't reach, move the palm rest back.
 
-  ![A base plate with its finger clusters. Lines point to the tower base screws; red arrows show a cluster's X, Y and yaw movement.](../../../assets/build/fit-finger-adjustment.webp)
+  <CadFigure name="cad-fit-cluster-xy" alt="An index tower (orange) and finger cluster on a corner of the base plate. A line points to the tower base screw; arrows show the cluster moving along the tower foot (Y), along the plate slot (X), and turning (Yaw)." />
 
 - **Z and roll**: loosen the cluster height screw slightly and slide the cluster up or down (Z), or turn it on its tower (roll). Each finger should rest with the same light pressure, without reaching or pulling back. Roll the cluster so you reach East and West easily. If you must favor one, favor the inward key (East on the left hand, West on the right).
 
-  ![A Svalboard half from the side. Red arrows show a cluster's Z (height) and roll movement on its tower.](../../../assets/build/fit-height-roll.webp)
+  <CadFigure name="cad-fit-height-roll" alt="A finger cluster on its tower, seen from behind the tower. A line points to the cluster height screw; arrows show the cluster sliding up and down the tower (Z) and turning on the screw (Roll)." />
 
 - **Keep splay small**: put clusters as close together as you can without neighboring East and West keys touching.
 - At very low heights, check that the cluster doesn't hit the baseplate, especially on the pinky.

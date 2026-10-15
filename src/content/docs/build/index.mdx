@@ -751,7 +751,9 @@ On the left half, the thumb FFC has to cross all the way to the opposite side.
 
 ## Step 12: Install MCUs
 
-Screw the MCU (the main PCBA) to the base plate with the M3 6 mm thread-cutting screws. Then connect each FFC to its connector.
+Screw the MCU (the main PCBA) to the base plate with four M3 6 mm thread-cutting screws. Then connect each FFC to its connector.
+
+<CadFigure name="cad-mcu-screws" alt="The underside of a right base plate. Rings mark the four MCU screw bosses, with an M3 x 6 mm thread-cutting screw (orange) lined up over each." caption="Four screws hold each MCU." />
 
 - {/* PHOTO: replace with a current build: MCU installed, black FFCs latched, trackball or TrackPoint cable connected (shot list: mcu-install). */}
 
@@ -759,7 +761,7 @@ The black latches on the connectors flip up to open and down to close.
 - Every FFC connects to the MCU with the blue stiffener **up** and the metal contacts **down**: unlatch, insert, latch.
 - On the TrackPoint PCBA end, the FFC connects with the metal contacts **up** and the blue stiffener down.
 
-{/* VERIFY: the live guide's Step 12 slide doesn't say which screws hold the MCU. The kit list has "Thread cutting M3 6mm for main PCB, 9 (8+1 spare)". Is that right, and how many per MCU? */}
+{/* VERIFY: "four" per MCU comes from the base plate model, which has 4 MCU screw bosses; that matches the kit's 9 (8 plus 1 spare). */}
 
 ![Three photos of an MCU on a base plate, with the cluster FFCs being connected to its connectors.](../../../assets/build/mcu-connect-1.webp)
 
@@ -781,13 +783,15 @@ This step mounts the carrier and its nut, the bottom of the stack. Step 14 adds 
 4. Put an M3x6 mm screw through each slot in the carrier and into a nut.
 5. Tighten gently. It takes very little to hold the carrier. You set its final position in [Step 18](/build/#step-18-adjust-the-fit).
 
+<CadFigure name="cad-carrier-mount" alt="A hemispherical palm rest carrier lifted above a cut-away corner of the base plate. Two M3 screws (orange) line up over the carrier's two curved slots and down to two M3 square nuts (orange) in the base plate's palm rest slot. An M5 square nut (blue) sits under the carrier, with an arrow up into its pocket." caption="Push the M5 nut into the carrier's pocket, then screw the carrier to the two nuts in the palm rest slot, slots toward the clusters." />
+
 {/* VERIFY: are the carrier screws still M3x6 mm socket head screws into the two square nuts in the base plate slot, as for the tripod carrier? The close-up carrier photo (palm-rest-hemisphere-carrier.webp, no longer on the page) shows button heads. Is it right that the carrier goes on with its slots toward the finger clusters, so the screws sit under the window in the palm rest? */}
 
 ### Older builds: tripod carrier
 
 The tripod carrier (also called the sled) mounts the same way, with two M3x6 mm screws through its straight slots into two square nuts. Washers are no longer needed, but you can use them for smoother sliding.
 
-![Left: a render of the base plate with the palm rest slot. Right: a tripod carrier screwed to a base plate through its two slots.](../../../assets/build/palm-rest-carrier.webp)
+<CadFigure name="cad-tripod-carrier" alt="A tripod carrier (sled) on the base plate, with one M3 x 6 mm screw (orange) in each of its two straight slots." />
 
 ## Step 14: Attach palm rests
 
@@ -798,9 +802,13 @@ The palm rest has a ball on its underside that sits in the cup of the carrier. O
 3. Set the palm rest on its carrier, with the ball in the cup and the window over the carrier slots.
 4. Tighten the screw into the nut under the carrier with the 3 mm hex key. Leave it just loose enough to tilt the rest for now. You set the angle in [Step 18](/build/#step-18-adjust-the-fit).
 
+<CadFigure name="cad-hemi-section" alt="Cut-away side view of an assembled hemispherical palm rest. The M5 flat head screw passes through the top washer and the palm rest's ball, which sits in the carrier's cup, into the M5 square nut in the carrier." caption="The assembled stack, cut through the center screw." />
+
 ![Both halves with hemispherical palm rests. On the near half, the center screw sits in the top of the rest. The far half shows the rest from the side, on its carrier.](../../../assets/build/palm-rest-hemisphere-installed.webp)
 
 The rests ship on 9 mm carriers. For a higher or lower rest, print a carrier from 1 mm to 15 mm tall from the parts repository.
+
+<CadFigure name="cad-carrier-heights" alt="Three hemispherical palm rest carriers side by side, from the side: 1 mm, 9 mm (the one that ships, in orange) and 15 mm tall." caption="Carriers come in heights from 1 mm to 15 mm; 9 mm ships." />
 
 For a softer rest, add [Squishy Palmrests](https://svalboard.com/products/squishy-palmrests). Adhesive memory foam (1/4 inch) or adhesive-backed leather also work as padding. Foam is less durable.
 
@@ -814,7 +822,7 @@ The tripod palm rest drops into its sled on three legs. M2 thread-cutting screws
 
 You can shim a tripod rest to any height. The holes line up for 0 mm and 5 mm of lift with the default 5 mm shims. If you plan to add padding on top, you'll probably want the low position. The fixing screws are the 4 mm M2 thread-cutting screws, the same as for the PCBAs.
 
-![Exploded view of a tripod palm rest, its three legs, the shims and the fixing screws in the sled.](../../../assets/build/palm-rest-shims.webp)
+<CadFigure name="cad-tripod-shims" alt="Exploded view of a tripod palm rest: the rest at the top, a 5 mm shim (orange) under each of its three legs, the sled with its three leg sockets, and an M2 x 4 mm screw (blue) beside each socket." caption="With the 5 mm shims in, the legs sit 5 mm higher and the M2 screws go in the upper holes." />
 
 ## Step 15: Flash firmware and connect
 
@@ -904,6 +912,8 @@ When every key works ([Step 16](/build/#step-16-test-all-keys)):
 2. Add 4 rubber feet per side, in the holes closest to the four corners.
 3. Trim the feet on the thin side of the case, so they don't press against the base plate and deform it. Leave enough material that they stay in place.
 
+<CadFigure name="cad-back-cover-screws" alt="A half turned upside down and pulled apart: the back cover lifted off the base plate, with seven M3 x 6 mm screws (orange) lined up over its screw holes." caption="Seven M3 x 6 mm screws hold the back cover to the base plate." />
+
 If the board rocks, shave the bottoms of the feet with a craft knife. The silicone is very soft and easy to trim. You can also work on reducing warping in your prints.
 
 ### Feet sizes
@@ -911,7 +921,9 @@ If the board rocks, shave the bottoms of the feet with a craft knife. The silico
 - Recent cases have 4 mm holes for the larger rubber feet.
 - Case version 1.2.6 and later also fit the small plug feet: 6 mm across, about 3 mm long, in soft 70A silicone. They lower the stack by more than a millimeter. On an older case, drill 3 mm holes to fit them.
 
-![The bottom of a back case. Lines point to the 3 mm holes for the small rubber feet, the case screw counterbores, and the 4 mm holes for the larger rubber feet.](../../../assets/build/back-cover-feet.webp)
+<CadFigure name="cad-back-cover-feet" alt="The bottom of a right back case. Rubber feet (orange) sit in the four larger holes near the corners. Rings mark the 3 mm holes for the small plug feet, and a line points to one of the seven case screw counterbores." />
+
+{/* VERIFY: on the v1.2.8 case model the larger feet holes measure 4.8 mm, not 4 mm. The v2alpha case has no 3 mm holes for the small plug feet. */}
 
 ## Step 18: Adjust the fit
 
@@ -922,6 +934,11 @@ Adjust each part of the Svalboard to fit your hands. You'll keep making small ad
 ### Palm rest
 
 The carrier moves in X, Y and yaw on the base plate. The palm rest tilts in pitch and roll on the carrier.
+
+<div class="cad-steps">
+	<CadFigure name="cad-palm-motion-1-slide" alt="A palm rest carrier on the base plate, with its two screws. Arrows show it sliding along the slot (Y), across it (X), and turning (Yaw)." caption="Loosen the two carrier screws to slide and turn the carrier." />
+	<CadFigure name="cad-palm-motion-2-tilt" alt="A hemispherical palm rest on its carrier. Arrows show it tilting front to back (Pitch) and side to side (Roll). Lines point to the center screw and to the carrier screws, seen through the window in the rest." caption="Loosen the center screw to set pitch and roll." />
+</div>
 
 1. Reach the two carrier screws through the window in the palm rest, and loosen them slightly.
 2. With a relaxed hand, your fingers should rest comfortably on the center keys. Slide and turn the palm rest to get a good starting position. You can always tweak it later.
@@ -953,7 +970,7 @@ Each cluster moves in X, Y and yaw.
 
 To move one finger farther away than its slot allows, move the other fingers closer instead, and move the palm rest farther from the clusters to make room.
 
-![The finger clusters on a base plate. Lines point to the tower base screws, and red arrows show the X, Y and yaw movement of a cluster.](../../../assets/build/fit-finger-adjustment.webp)
+<CadFigure name="cad-fit-cluster-xy" alt="An index tower (orange) and finger cluster on a corner of the base plate. A line points to the tower base screw; arrows show the cluster moving along the tower foot (Y), along the plate slot (X), and turning (Yaw)." />
 
 ### Height and roll
 
@@ -963,7 +980,7 @@ To move one finger farther away than its slot allows, move the other fingers clo
 
 {/* VERIFY: the live guide warns that clusters set all the way down can hit the base plate and block the "center key slider mechanism" (it needs 1.5 mm of clearance). Does this also apply to the tipping center keys? Left off the page until confirmed. */}
 
-![A Svalboard half from the side. Red arrows show the Z (height) and roll movement of a cluster on its tower.](../../../assets/build/fit-height-roll.webp)
+<CadFigure name="cad-fit-height-roll" alt="A finger cluster on its tower, seen from behind the tower. A line points to the cluster height screw; arrows show the cluster sliding up and down the tower (Z) and turning on the screw (Roll)." />
 
 ### Palm rest shaping (PLA only)
 
