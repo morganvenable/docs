@@ -5,13 +5,13 @@ sidebar:
   order: 1
 ---
 
+import CadFigure from '../../../components/CadFigure.astro';
+
 Your order includes a packing slip. It has a printable keymap of the default layout: [packing slip](http://www.svalboard.com/packing-slip).
 
 1. Insert all thumb keys. The Nail key is mirrored for left and right.
 
-   ![A thumb cluster with its keys labeled: Nail, Knuckle, Pad, Up, Down, and the layer LED.](../../../assets/start/thumb-cluster-keys.webp)
-
-   <!-- VERIFY: this diagram labels the Up key "Up (Mode Key)". Thumb Up layer switching is gone and the Up keys ship blank. Keep this image, or replace it with one labeled just "Up"? -->
+   <CadFigure name="cad-thumb-cluster-keys" alt="A right thumb cluster from above with its keys labeled: Nail and Knuckle on one side, with the layer LED between them, the Pad and Up keys on the other side, the Down key in the middle, and the cluster body." />
 
 2. Connect the two halves with a USB-C cable between the ports marked **S** (or **↔**). This is the split cable.
 3. Connect one half to your computer with the port marked **U**. This is the main half.
