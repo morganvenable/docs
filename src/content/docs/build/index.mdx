@@ -154,9 +154,11 @@ There are four side key sizes. In order of increasing fingertip space:
 
 The spacing is the minimum distance between the keys, measured at the top of the center key.
 
-![Side views of the Thick, Thin and Backset side keys.](../../../assets/build/fitment-key-profiles.webp)
+<CadFigure name="cad-key-profiles" alt="Side profiles of the four side key sizes in a row: Thick 16 mm, Semi 17 mm, Thin 18 mm and Backset 20 mm. A dashed line marks the front of each key base; the Thick key top reaches past it, the Thin key top is level with it, and the Backset key top sits behind it." caption="The four side key sizes from the side. The dashed line is the front of the key base." />
 
-![Top views of finger clusters with Thick, Thin and Backset keys. The yellow line marks the width at the top (17, 19 and 21 mm) and the white line the width at the bottom (15, 17 and 19 mm).](../../../assets/build/print-key-sizing.webp)
+<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: Thick 16 mm, Semi 17 mm, Thin 18 mm, Backset 20 mm." caption="The space between opposite side keys for each key size." />
+
+{/* VERIFY: cad-key-sizing shows the nominal 16/17/18/20 mm, where the CAD gaps match them: 7.2 mm above the cluster top. At the resting center key top the CAD gaps are about 14.5/15.4/16.5/18.1 mm. Which height does "measured at the top of the center key" mean? */}
 
 {/* VERIFY: the live build guide (slide 15) also lists a "-2mm" side key, "only for huge fingers on narrow cluster PCBAs (not standard)". Should it be listed here? */}
 
@@ -219,6 +221,8 @@ Pick your side key size first. See [Sizing before you build](/build/#sizing-befo
 - TrackPoint case, if you have a TrackPoint: top cover and bottom cover.
 - Tools: mini 4x3 magnet stages (Key and Cluster), magnet dropper, mini key tray fixture.
 
+<CadFigure name="cad-parts-one-half" alt="The printed parts for one half laid out at the same scale: finger cluster (print 4), thumb cluster, palm rest, carrier and top washer, then North key (4), side key (12), tipping center key (4), and the Nail, Knuckle, Pad, Up and Down thumb keys." caption="The printed parts for one half (right half shown). Base plate and case not shown." />
+
 ### Print tuning
 
 - Use a smooth or satin build plate. Fully textured plates make the parts look rough. This is only about looks. We recommend the Fabreeko HoneyBadger SemiSatin plate.
@@ -243,7 +247,7 @@ The flag is the thin tab under each key that blocks the optical sensor.
 - You may still need to clean up stringing. Slower printers and wet filament make stringing worse.
 - If your filament isn't opaque to infrared light, coat the flags with opaque marker. Silver Sharpie works well ([Step 5](/build/#step-5-ink-the-key-flags)).
 
-![Slicer view of a side key. A line points to the top corner of the flag, where the seams should go.](../../../assets/build/print-key-flag-seams.webp)
+<CadFigure name="cad-key-flag" alt="A 6 mm side key lying flat as it prints, with the key top, stem, magnet pocket and flag labeled. A ring marks the top corner of the flag, where the seams should go." caption="Put the seams at the top corner of the flag." />
 
 #### Key force
 
@@ -276,7 +280,7 @@ The tipping center key is the standard center key. The default strength is 0.9 m
 
 The marked edge of the thumb cluster **must** be square. Elephant's foot here makes the thumb Down key bind. A bevel here can add play to the key and change how it feels.
 
-![Thumb cluster body seen from below, with the critical edge of the Down key opening marked in orange.](../../../assets/build/print-thumb-down-key-edge.webp)
+<CadFigure name="cad-thumb-down-edge" alt="A right thumb cluster seen from below. A heavy orange line marks the edge of the Down key opening that must stay square." caption="Keep this edge of the Down key opening square: no elephant's foot, no bevel." />
 
 ### Cases and base plates
 
@@ -293,6 +297,8 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 - Print every palm rest part with 6 walls for strength.
 - Stand each palm rest on its flat long edge, with tree supports (Auto, Default or Organic) and a brim of 5 mm or more. You may want to paint seam blockers on the visible surfaces.
 - Print the carriers and the top washers flat side down. They don't need supports.
+
+<CadFigure name="cad-hemi-print-orientation" alt="A palm rest standing on its long flat edge on a build plate, with a carrier and a top washer lying flat side down beside it." caption="Print orientation for the palm rest parts. Supports and brim are not shown." />
 
 {/* PHOTO: slicer screenshot of one build plate with Hemi Palm L and R standing on their long edges with tree supports and brim, plus two 9 mm hemi carriers and two top washers lying flat side down. Same framing and plate as print-palm-rests.webp. */}
 
@@ -323,6 +329,8 @@ Organize the magnets by polarity before you glue them in. Every magnet must face
 - **Keys:** the **south** pole faces out of the key.
 - **Clusters:** the **north** pole faces out of the cluster.
 
+<CadFigure name="cad-magnet-polarity" alt="A cut-away close-up of an East key in its cluster. The key magnet sits in the key with its south pole facing the cluster wall; the cluster magnet sits in the wall with its north pole facing the key. Orange halves are north, blue halves are south." caption="Opposite poles face each other: south out of the key, north out of the cluster." />
+
 If you don't have a reference to tell the poles apart, use a compass. Hold the magnet in your fingers or in something non-metal, so nothing else affects the reading.
 
 There are several good ways to stage the magnets.
@@ -339,7 +347,9 @@ The magnet stages hold magnets in rows on their top surface, all with the same p
 
 For a single build, print the compact 4x3 stages, or fill one row or column of the larger 8x8 stage.
 
-![Top: an 8x8 magnet stage, better for several builds. Bottom: the compact 4x3 Key and Cluster magnet stages in a slicer.](../../../assets/build/magnet-stages.webp)
+<CadFigure name="cad-magnet-stages" alt="The compact 4x3 Key and Cluster magnet stages side by side, each with 12 magnets on its top face. The Key stage holds magnets south pole up, the Cluster stage north pole up." caption="The compact 4x3 magnet stages. The Key stage holds magnets south pole up; the Cluster stage, north pole up." />
+
+{/* VERIFY: the stage drawing shows only the compact 4x3 stages; the 8x8 stage photo is no longer on the page (magnet-stages.webp is kept in src/assets). */}
 
 ### Magnet dispenser
 
@@ -378,6 +388,8 @@ All magnets are 2.0 mm x 1.5 mm N35.
 7. Squeeze the magnet flush with parallel pliers.
 8. Let the glue cure before you use the key.
 
+<CadFigure name="cad-magnet-flush" alt="Two cut-away views of a key with its magnet. Before: the magnet stands proud of the key between the open jaws of parallel pliers. After: the jaws are closed and the magnet is flush." caption="Squeeze the magnet flush with parallel pliers." />
+
 ### Install key magnets: pre-applied glue method
 
 1. Use the Key stage (south pole up).
@@ -390,34 +402,37 @@ All magnets are 2.0 mm x 1.5 mm N35.
 
 ### Cluster magnets
 
-Install the cluster magnets the same way, from the Cluster stage (north pole up). Red arrows mark each magnet hole.
+Install the cluster magnets the same way, from the Cluster stage (north pole up). Orange rings mark each magnet.
 
-![A finger cluster. Red arrows point to its magnet holes.](../../../assets/build/magnets-finger-cluster.webp)
+<CadFigure name="cad-magnets-finger-cluster" alt="A finger cluster from above and the same cluster turned over. Orange rings mark the five magnets: one in the wall of each side key slot, and the center key magnet on the underside." caption="Finger cluster magnets: one in each side key slot, one for the center key on the underside." />
 
-![The left thumb cluster from three angles. Red arrows point to its magnet holes. The right thumb cluster is the same.](../../../assets/build/magnets-thumb-cluster.webp)
-
+<CadFigure name="cad-magnets-thumb-cluster" alt="A right thumb cluster from above. Orange rings mark the five magnets: Nail, Knuckle, Pad, Up and Down." caption="Thumb cluster magnets (right cluster shown; the left cluster is the mirror image)." />
 
 ### Key magnets
 
-![Finger and thumb keys. Red arrows point to the magnet hole in each key. The two slider parts, top left and bottom right, are deprecated.](../../../assets/build/magnets-keys.webp)
+<CadFigure name="cad-magnets-keys" alt="The V2 keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up and Down." caption="Where the magnet goes in each key. The south pole faces out." />
 
 ### Tipping center key
 
 The tipping center key uses normal key polarity: the **south** pole faces out (up). Make sure the hole in the key is clear of stringing and stray filament.
 
-![Tipping center key design: the key in a finger cluster, and the cluster seen from below with the key arm marked 0.9.](../../../assets/build/tipping-center-key-design.webp)
-
-![A tipping center key. Arrows point to the magnet hole and to a hole that must be clear of stringing.](../../../assets/build/tipping-center-key-hole.webp)
+<CadFigure name="cad-tipping-key-holes" alt="A tipping center key. Rings mark the magnet hole on the arm and the light hole through the stem, which must be clear of stringing." caption="Keep the light hole clear of stringing." />
 
 ## Step 4: Insert keys
 
 Every key should slide easily into place and snap to its magnet.
+
+<CadFigure name="cad-key-insert" alt="A finger cluster with its keys in place except the East key (orange), which is above its slot with an arrow pointing straight down." caption="Slide each key straight down into its slot until it snaps to its magnet." />
 
 If a key doesn't slide in easily or doesn't move freely:
 
 1. File a little material off the sides of the key.
 2. If it still binds, file the bottom (the chamfered back of the key base).
 3. Try the fit again.
+
+<CadFigure name="cad-key-file-areas" alt="A side key, stem down. The sides of the stem are orange, marked 1, and the chamfered bottom of the stem is blue, marked 2." caption="If a key binds, file the sides (1) first, then the chamfered bottom (2)." />
+
+{/* VERIFY: cad-key-file-areas takes "sides" as the stem faces that run in the slot and "bottom" as the chamfered stem tip. */}
 
 This is how each key sits in its cluster:
 
@@ -431,6 +446,8 @@ This is how each key sits in its cluster:
 2. Hook the base of the tipping center key through the hole on the North side of the cluster.
 3. Let it snap into place.
 4. Put the North key back.
+
+<CadFigure name="cad-tipping-insert" alt="Three cut-away steps: 1, the North key lifted out of the cluster; 2, the tipping center key tilted with its hook going into the North slot, and a curved arrow showing it swing down; 3, the key seated and the North key going back in." caption="Remove North, hook the tipping key through the North slot, snap it down, then refit North." />
 
 <CadFigure name="cad-tipping-center-key" alt="A finger cluster seen from underneath, with a tipping center key (orange) hooked through it. The key arm is marked 0.9." />
 
