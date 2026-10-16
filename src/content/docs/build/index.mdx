@@ -169,7 +169,7 @@ Only fingertip width calls for different parts. Every Svalboard has plenty of ad
 - **Hand length**, wrist to the tip of the middle finger: under 170 mm is extra small, 170 mm small, 180 mm medium, 190 mm large, over 195 mm extra large.
 - **Palm width** at the knuckles: under 75 mm is small, 75 to 85 mm medium, over 85 mm large.
 
-44 mm is the default trackball size. A 55 mm ball only fits very large hands. See [Trackballs and static bearings](/build/#trackballs-and-static-bearings).
+44 mm is the default trackball size. See [Trackballs and static bearings](/build/#trackballs-and-static-bearings).
 
 ![An example hand with its measurements: whole hand 180 mm, thumb to index 65 mm, index to middle 15 mm, middle to ring -9 mm, ring to pinky -28 mm, palm width at the knuckles 76 mm, and last thumb knuckle 30 mm.](../../../assets/build/fitment-hand-measurements.webp)
 
@@ -494,13 +494,15 @@ Black PLA usually doesn't need ink.
 
 ## Step 6: Attach FFCs
 
-Every FFC connector has a small black latch. Flip the latch up, slide the cable all the way in, then flip the latch down to lock it. To remove a cable, flip the latch up and pull the cable straight out.
+Every FFC connects the same way:
 
 <div class="cad-steps">
 	<CadFigure name="cad-ffc-1-open" alt="An FFC connector on a circuit board with its black latch flipped up at the back of the connector. A curved arrow shows it flipping up and back." caption="1. Flip the latch up." />
-	<CadFigure name="cad-ffc-2-insert" alt="An FFC end being slid into the front opening of the open connector, blue stiffener on top and contacts facing down. An arrow shows the direction." caption="2. Slide the cable all the way in, contacts down and blue stiffener up." />
+	<CadFigure name="cad-ffc-2-insert" alt="An FFC end being slid into the front opening of the open connector, blue stiffener on top and the contacts on the underside, facing down. An arrow shows the direction." caption="2. Slide the cable all the way in, contacts down and blue stiffener up." />
 	<CadFigure name="cad-ffc-3-latch" alt="The cable fully inserted and the latch flipped down flat at the back of the connector. A curved arrow shows the latch closing." caption="3. Flip the latch down to lock the cable." />
 </div>
+
+To remove a cable, flip the latch up and pull the cable straight out.
 
 {/* VIDEO: a short clip of unlatch, insert, latch on one connector (shot list: ffc-latch-video). */}
 
@@ -508,7 +510,7 @@ Every FFC connector has a small black latch. Flip the latch up, slide the cable 
 
 ### Attach FFCs to the PCBAs
 
-At both ends of every FFC, the contacts face down and the blue stiffener faces up. The one exception is the TrackPoint PCBA, where the contacts face up ([Step 10a](/build/#10a-trackpoint)).
+That orientation holds at both ends of every FFC, with one exception: at the TrackPoint PCBA the contacts face up ([Step 10a](/build/#10a-trackpoint)).
 
 For the thumbs, use the 10-pin FFC if you have it; the RGB layer lights need it. On a thumb PCBA the latch sits on the side opposite the cable, so route the cable down through the slot after you close the latch.
 
@@ -948,18 +950,18 @@ Adjust each part of the Svalboard to fit your hands. You'll keep making small ad
 
 ### Palm rest
 
-The carrier moves in X, Y and yaw on the base plate. The palm rest tilts in pitch and roll on the carrier.
+The carrier slides in X and Y on the base plate. Keep it square to the plate, slots running north–south. The palm rest itself turns on the carrier for yaw and tilts for pitch and roll.
 
 <div class="cad-steps">
-	<CadFigure name="cad-palm-motion-1-slide" alt="A palm rest carrier on the base plate, with its two screws. Arrows show it sliding along the slot (Y), across it (X), and turning (Yaw)." caption="Loosen the two carrier screws to slide and turn the carrier." />
-	<CadFigure name="cad-palm-motion-2-tilt" alt="A hemispherical palm rest on its carrier. Arrows show it tilting front to back (Pitch) and side to side (Roll). Lines point to the center screw and to the carrier screws, seen through the window in the rest." caption="Loosen the center screw to set pitch and roll." />
+	<CadFigure name="cad-palm-motion-1-slide" alt="A palm rest carrier on the base plate, with its two screws. Arrows show it sliding along the slot (Y) and across it (X)." caption="Loosen the two carrier screws to slide the carrier. Keep it square to the base plate." />
+	<CadFigure name="cad-palm-motion-2-tilt" alt="A hemispherical palm rest on its carrier. Arrows show it turning on the carrier (Yaw), tilting front to back (Pitch) and side to side (Roll). Lines point to the center screw and to the carrier screws, seen through the window in the rest." caption="Loosen the center screw to turn the rest (yaw) and tilt it (pitch and roll)." />
 </div>
 
 1. Reach the two carrier screws through the window in the palm rest, and loosen them slightly.
-2. With a relaxed hand, your fingers should rest comfortably on the center keys. Slide and turn the palm rest to get a good starting position. You can always tweak it later.
+2. With a relaxed hand, your fingers should rest comfortably on the center keys. Slide the carrier to get a good starting position, keeping it square to the base plate. You can always tweak it later.
 3. The base knuckles of each hand usually rest just in front of the front edge of the palm rest.
 4. Tighten both carrier screws gently snug to fix the position.
-5. To set pitch and roll, loosen the large center screw slightly with the 3 mm hex key. Tilt the rest until your palm lies flat on it, then tighten the center screw firmly.
+5. To set yaw, pitch and roll, loosen the large center screw slightly with the 3 mm hex key. Turn the rest to the angle your hand wants, tilt it until your palm lies flat on it, then tighten the center screw firmly.
 
 ![Close-up of a hemispherical palm rest. The center screw sits in its washer, and the two carrier screws show through the window above it.](../../../assets/build/palm-rest-hemisphere-screws.webp)
 

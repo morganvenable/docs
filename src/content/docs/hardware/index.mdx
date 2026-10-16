@@ -4,6 +4,7 @@ description: "The two halves, their ports and keys, mounting and tenting, care, 
 ---
 
 import CadFigure from '../../../components/CadFigure.astro';
+import ThemeShot from '../../../components/ThemeShot.astro';
 
 ## The halves
 
@@ -136,7 +137,7 @@ Set the palm rests first. You need a steady hand position before you can fit the
 
 - Loosen both carrier screws until the carrier moves easily. Tighten until it holds, test, then tighten a little more. Don't overtighten; it can damage the carrier and base plate.
 - With a relaxed hand, your fingers rest on the Center keys. Your base knuckles usually sit just in front of the palm rest's front edge.
-- **Hemispherical palm rests** (default on orders after 2026-09-01): loosen the large center screw slightly with the 3 mm hex key to adjust pitch and roll, then tighten it firmly. They ship on 9 mm carriers; other heights are in the parts repository.
+- **Hemispherical palm rests** (default on orders after 2026-09-01): loosen the large center screw slightly with the 3 mm hex key to turn the rest (yaw) and tilt it (pitch and roll), then tighten it firmly. Keep the carriers square to the base plate and set the angle with the rest itself. They ship on 9 mm carriers; other heights are in the parts repository.
 
   ![Hemispherical palm rests on a dual-trackball Svalboard, seen from the front, with the center adjustment screw in each rest.](../../../assets/hardware/palm-rest-hemisphere-pair.webp)
 
@@ -232,11 +233,13 @@ One half connects to your computer by USB, and the other connects to it through 
 
 ### The mouse layer (automouse)
 
-Moving a pointer turns on the mouse layer, and the thumb layer lights glow magenta while it's on. The default mouse layer puts the mouse buttons and Sniper under your left hand: hold Sniper for slower, finer pointer movement.
+Moving a pointer turns on the mouse layer, and the thumb layer lights glow magenta while it's on. The mouse layer puts the mouse buttons under your left hand. In the firmware's default layout, the left pinky South key is Sniper: hold it for slower, finer pointer movement. (The QWERTY Example below leaves that key blank.)
 
-![The default mouse layer in Keybard. Left click is on the left index center key and the left thumb pad, right click on the left ring center and the left thumb nail, middle click on the left middle center, and Sniper on the left pinky's south key. Every other key shows the transparent marker.](../../../assets/hardware/layer-15-mouse.webp)
+<ThemeShot dir="hardware" name="keybard-mouse-layer" alt="Keybard with the mouse layer (layer 15) selected, the whole window. Left click is on the left index center key, middle click on the left middle center, right click on the left ring center, and left and right click on the two outer keys of the left thumb's top row. The left pinky South key is blank. Every other key shows a small triangle." caption="The mouse layer in Keybard, from its QWERTY Example layout. The mouse buttons show a mouse icon and the button number." />
 
-Every key marked ▽ is transparent: it isn't on the mouse layer. Pressing one turns the mouse layer off and types that key's normal character, so you can go straight back to typing. The mouse layer also turns off on its own once the pointer has been still for the timeout with no mouse-layer key held. Each click restarts the timer, so double clicks and Ctrl-clicks work.
+Every key marked with a small triangle (▽) is transparent: it isn't on the mouse layer. Pressing one turns the mouse layer off and types that key's normal character, so you can go straight back to typing. A key with no mark is blank: it does nothing on this layer. The mouse layer also turns off on its own once the pointer has been still for the timeout with no mouse-layer key held. Each click restarts the timer, so double clicks and Ctrl-clicks work.
+
+<ThemeShot dir="hardware" name="keybard-transparent-vs-blank" alt="A close-up of the left pinky cluster on the mouse layer in Keybard. Four keys show a small triangle and are labeled transparent; the South key has no mark and is labeled blank." caption="Transparent keys show a triangle; blank keys show nothing." />
 
 The timeout defaults to 500 ms. Change it, turn automouse off, or change sensitivity in Keybard (see [Pointing devices](/keybard/pointing/)). On Vial, see [Pointing settings in Vial](/vial/#pointing-settings-in-vial).
 
