@@ -35,7 +35,7 @@ The name stays on the keyboard across firmware updates. It is separate from your
 
 Open **Settings → General → QMK Settings...** while connected. Export a backup first. Change one setting, apply it, and test both slow, deliberate presses and normal typing.
 
-![Changing Tapping Term from 200 to 210 ms. Pending (1) and Apply 1 Change appear.](../../../assets/keybard/tapping-term-change.webp)
+![QMK Settings with Tapping Term changed from 200 to 210 ms.](../../../assets/keybard/tapping-term-change.webp)
 
 **Tap-Hold**:
 
@@ -80,7 +80,9 @@ Or set each finger under **Left** and **Right**. The thumbs always use the thumb
 3. **Clear Matrix** clears the display so you can start again. It doesn't change your layout or settings.
 4. Choose **Exit Matrix Tester** to return to editing.
 
-![Matrix Tester showing three switch presses, then Clear Matrix.](../../../assets/keybard/matrix-tester.webp)
+![Matrix Tester open with every position unlit, waiting for presses.](../../../assets/keybard/matrix-tester.webp)
+
+<!-- VERIFY: with a board connected, check that the buttons are still named Clear Matrix and Exit Matrix Tester (offline, the view shows a back arrow beside the heading). -->
 
 Matrix Tester shows switches, not what a key types. Very quick taps can fall between updates. If a switch shows up but types the wrong thing, check its layer and binding.
 

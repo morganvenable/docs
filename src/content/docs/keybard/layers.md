@@ -26,7 +26,7 @@ Layer keys are in **Layer Keys**. Start with a momentary key that opens a small 
 3. Open **Layer Keys**, choose **MO** (Momentary), and click the tile for layer 3.
 4. Apply the changes and deselect. In a text editor, hold the new key and try the arrows. Release it and check that normal typing returns.
 
-![Assigning Left, Down and Right on layer 3, then MO(3) on the base layer.](../../../assets/keybard/build-navigation-layer.webp)
+![The base layer with MO(3) on a left thumb key and Layer Keys open. Layer 3 holds Left, Down and Right.](../../../assets/keybard/build-navigation-layer.webp)
 
 To make the same key type something when tapped, assign the tap key first. Select the position again, then choose **LT** (Layer Tap) and the layer. Keybard takes the tap key from the selected position.
 
@@ -45,7 +45,7 @@ To make the same key type something when tapped, assign the tap key first. Selec
 
 ## Transparent and blank
 
-![On layer 3, setting the A position to Transparent and then Blank, and checking the base layer.](../../../assets/keybard/transparent-and-blank.webp)
+![Layer 3 with the A position set to Blank.](../../../assets/keybard/transparent-and-blank.webp)
 
 With layer 3 active, a transparent key at the A position types A from the base layer. A blank key at that position types nothing.
 
@@ -102,7 +102,7 @@ Dragging a tab moves a layer. Dragging a preview from **Layouts** replaces a lay
 1. Export a backup if you are changing a layer you rely on.
 2. Select the destination layer. For a letter layout this is usually layer 0. For a numbers layer, it is the layer your NavNAS key opens (layer 1 in the stock layout).
 3. Open **Layouts** and type a name, such as *Colemak* or *tenkey*, in the search box.
-4. Drag the layer's preview onto the destination layer's name. Read the confirmation, which names both layers, and choose **OK**.
+4. Drag the layer's preview by its title row onto the destination layer's tab. Read the **Replace** confirmation, which names both layers, and choose **OK**.
 5. The destination keeps its name and takes the new layer's color. Apply the changes in your update mode.
 
 ![Searching Layouts for Dvorak and dragging it onto Layer 0. The letters move and the thumb keys stay.](../../../assets/keybard/dvorak-on-base-layer.webp)

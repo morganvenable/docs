@@ -9,7 +9,7 @@ Keybard is the web app that configures a Svalboard running Svalboard QMK firmwar
 
 With Keybard you change what each key does, organize layers, build macros, tap dances, combos and other behaviors, tune your pointing devices, and back up your setup. You can explore it without a keyboard first.
 
-<!-- VERIFY: the screenshots and recordings in this section were captured on Keybard vLaunch2. The left navigation rail in them still says "Trainer" where Keybard vLaunch2.3 says "Overlay". Recapture them, or is that acceptable for now? -->
+<!-- VERIFY: most screenshots here were recaptured from the current Keybard (offline QWERTY Example). Eight need a connected board and still show the older navigation rail ("Trainer"): toolbar-pending-apply, manual-updates-apply-one-change, automatic-backup-after-edit, restore-automatic-backup, pointing-dpi, settings-reset-recovery, make-default-layer, and the Host overlay animation. Recapture them on a test board. -->
 
 ## What you need
 

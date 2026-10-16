@@ -64,7 +64,7 @@ Automatic backups live inside the browser. To also keep them as files, choose **
 - Dated files are kept for 30 days, then one per month. Keybard only deletes files it wrote.
 - Renaming a board starts a new subfolder. The old one stays as it was.
 
-![Choosing a backup folder. Keybard then shows the folder name with Change folder and Stop using folder.](../../../assets/keybard/choose-backup-folder.webp)
+![Settings, Backups, with Choose backup folder and no backups yet.](../../../assets/keybard/choose-backup-folder.webp)
 
 Browsers ask again before a site may keep writing to a folder. When that happens, **Settings → Backups** shows **Paused** and a **Resume backups** button. Choose it. If the browser offers **Allow on every visit**, choose that so it doesn't ask again. Backups made while paused are written when you resume.
 

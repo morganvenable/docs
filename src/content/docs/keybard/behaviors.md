@@ -87,12 +87,12 @@ To make a key A on tap and Control on hold:
 
 1. Assign A to the position. Select the position again if assigning cleared the selection.
 2. In **Standard Keys**, choose **CTRL** under **Modifiers**. The built keys use the selected position's key.
-3. Choose the **MT** (mod-tap) tile, not the plain modifier or the one-shot tile.
+3. Choose the middle tile, the mod-tap. It shows the result, such as **CTL A**; the plain modifier is on its left and the one-shot tile on its right.
 4. Apply, deselect, and test a tap. Then hold the key and press another key.
 
 ![Assigning A, selecting the position again, choosing CTRL, then the mod-tap tile.](../../../assets/keybard/mod-tap-a-control.webp)
 
-For a one-shot Shift, choose **SHIFT** and the **OSM** tile. Tap the key, let go, then type a letter.
+For a one-shot Shift, choose **SHIFT** and the one-shot tile (**OSM LSFT**). Tap the key, let go, then type a letter.
 
 ![Choosing SHIFT and the OSM tile.](../../../assets/keybard/one-shot-shift.webp)
 
@@ -106,7 +106,7 @@ Open **Settings → General → QMK Settings...** → **One Shot Keys** while co
 2. Set **Time (in ms) before the one shot key is released**, or **0** to turn off the timeout. Set both to 0 for one-shots that never time out or lock.
 3. Press Enter or leave each field. In Manual Updates, apply the changes. Test waiting past the timeout and tapping repeatedly.
 
-![Changing the tap count from 5 to 0 and the timeout from 5000 to 0. Apply 2 Changes appears.](../../../assets/keybard/one-shot-settings.webp)
+![One-shot settings with the tap count and the timeout both set to 0.](../../../assets/keybard/one-shot-settings.webp)
 
 These settings apply to one-shot modifiers and one-shot layers. Importing a backup can change them, so check them after a restore. Mod-taps also depend on the tap-hold settings in [Settings and checks](/keybard/settings/#typing-feel).
 
