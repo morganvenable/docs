@@ -210,9 +210,10 @@ export default defineConfig({
 				dark: './src/assets/brand/svalboard-dark.svg',
 			},
 			favicon: '/favicon.svg',
-			// Owner notes (off unless switched on in a browser): public/notes.js
+			// Owner notes (off unless switched on in a browser): public/notes.js. Left out of a
+			// public review build (DOCS_PUBLIC=1).
 			head: [
-				{ tag: 'script', attrs: { src: '/notes.js', defer: true } },
+				...(process.env.DOCS_PUBLIC ? [] : [{ tag: 'script', attrs: { src: '/notes.js', defer: true } }]),
 				{ tag: 'script', attrs: { src: '/sidebar-spy.js', defer: true } },
 				// Older builds footnote style: "a" (Notes list) or "b" (Older builds block). One value; see custom.css.
 				{ tag: 'script', content: "document.documentElement.dataset.older='a'" },
