@@ -4,9 +4,6 @@ description: Build, set up and use your Svalboard.
 template: splash
 hero:
   tagline: Build, set up and use your Svalboard.
-  image:
-    file: ../../assets/build/finished-svalboard.jpg
-    alt: A finished Svalboard, both halves side by side, with trackballs, finger and thumb clusters on towers, and palm rests.
 ---
 
 import SectionCard from '../../components/SectionCard.astro';
@@ -22,7 +19,7 @@ import keybardDark from '../../assets/hardware/keybard-mouse-layer-dark.webp';
 import partsLight from '../../assets/cad/cad-parts-one-half-shaded-light.webp';
 import partsDark from '../../assets/cad/cad-parts-one-half-shaded-dark.webp';
 
-<nav class="section-cards section-cards--a" aria-label="Sections">
+<nav class="section-cards section-cards--c" aria-label="Sections">
 	<SectionCard title="Start here" description="Set up a new board." href="/start/quickstart/" light={thumbLight} dark={thumbDark} />
 	<SectionCard title="Build guide" description="Build a kit, step by step." href="/build/" photo={kit} fit="cover" />
 	<SectionCard title="Hardware" description="Fit, typing and pointing modules." href="/hardware/" light={fingerLight} dark={fingerDark} />

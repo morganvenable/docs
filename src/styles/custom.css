@@ -372,3 +372,57 @@
 		aspect-ratio: 1 / 1;
 	}
 }
+
+/* Compact home: the title and tagline, then all six sections in one screen.
+   Desktop: 3 x 2, a short picture over the text. Phones: one row each, thumbnail beside text. */
+:root:has(.section-cards--c) .hero {
+	padding-block: 1.5rem 0.5rem;
+	gap: 0.5rem;
+}
+:root:has(.section-cards--c) .hero h1 {
+	font-size: var(--sl-text-4xl);
+}
+:root:has(.section-cards--c) .sl-markdown-content {
+	margin-top: 1rem;
+}
+.section-cards--c {
+	gap: 0.5rem;
+}
+.section-cards--c .section-card {
+	flex-direction: row;
+	align-items: center;
+}
+.section-cards--c .section-card-pic {
+	flex: 0 0 5rem;
+	width: 5rem;
+	aspect-ratio: 1 / 1;
+	align-self: stretch;
+}
+.section-cards--c .section-card--contain .section-card-pic img {
+	padding: 0.35rem;
+}
+.section-cards--c .section-card-text {
+	padding: 0.45rem 0.85rem;
+}
+.section-cards--c .section-card-title {
+	font-size: var(--sl-text-base);
+}
+@media (min-width: 50rem) {
+	.section-cards--c {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	.section-cards--c .section-card {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.section-cards--c .section-card-pic {
+		flex: none;
+		width: auto;
+		height: 8.5rem;
+		aspect-ratio: auto;
+	}
+	.section-cards--c .section-card-title {
+		font-size: var(--sl-text-lg);
+	}
+}
