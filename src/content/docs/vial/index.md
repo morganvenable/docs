@@ -1,11 +1,11 @@
 ---
-title: "Vial firmware (legacy)"
+title: "Vial firmware"
 description: "Svalboard's Vial firmware, for boards that stay on Vial instead of moving to Svalboard QMK."
 ---
 
-Svalboard's Vial firmware is `svalboard/vial-qmk`, release **v2025-11-01**. You configure it with the Vial app, or with legacy Keybard: https://captdeaf.github.io/keybard/
+Svalboard's Vial firmware is `svalboard/vial-qmk`, release **v2025-11-01**. You configure it with the Vial app, or with the Keybard for Vial boards: https://captdeaf.github.io/keybard/
 
-<!-- VERIFY: is https://captdeaf.github.io/keybard/ the legacy Keybard link to give Vial users? -->
+<!-- VERIFY: is https://captdeaf.github.io/keybard/ the Keybard link to give Vial users? -->
 
 Current Keybard doesn't edit Vial boards. When it sees Vial firmware, it shows **Update your Svalboard's firmware**. To move to Svalboard QMK, see [Moving from Vial](/firmware/#moving-from-vial).
 
