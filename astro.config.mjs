@@ -65,7 +65,7 @@ const notesInbox = () => ({
 
 const section = (label, directory) => ({ label, items: [{ autogenerate: { directory } }] });
 
-// One page per guide (build, hardware, firmware, Vial): the sidebar lists each
+// One page per guide (build, hardware, firmware, Keybard, Vial): the sidebar lists each
 // page's sections as jump links, and public/sidebar-spy.js highlights the one in view.
 const jumps = (label, items) => ({ label, collapsed: true, items });
 const hardwareJumps = [
@@ -116,6 +116,18 @@ const firmwareJumps = [
 	{ label: "Moving from Vial", link: '/firmware/#moving-from-vial' },
 	{ label: "Going back to Vial", link: '/firmware/#going-back-to-vial' },
 	{ label: "What a .vil doesn't hold", link: '/firmware/#what-a-vil-doesnt-hold' },
+];
+const keybardJumps = [
+	{ label: 'Get started', link: '/keybard/' },
+	{ label: "Make your first change", link: '/keybard/#make-your-first-change' },
+	{ label: "Layers and layouts", link: '/keybard/#layers-and-layouts' },
+	{ label: "Layer lights and brightness", link: '/keybard/#layer-lights-and-brightness' },
+	{ label: "Backups and files", link: '/keybard/#backups-and-files' },
+	{ label: "Behaviors", link: '/keybard/#behaviors' },
+	{ label: "Pointing devices", link: '/keybard/#pointing-devices' },
+	{ label: "Settings and checks", link: '/keybard/#settings-and-checks' },
+	{ label: "Desktop overlay", link: '/keybard/#desktop-overlay' },
+	{ label: "Troubleshooting", link: '/keybard/#troubleshooting' },
 ];
 const vialJumps = [
 	{ label: 'Overview', link: '/vial/' },
@@ -172,6 +184,15 @@ const redirects = {
 	'/vial/svalboard-keys': '/vial/#svalboard-keys-in-vial',
 	'/vial/pointing': '/vial/#pointing-settings-in-vial',
 	'/vial/recovery': '/vial/#recovery-on-vial',
+	'/keybard/first-change': '/keybard/#make-your-first-change',
+	'/keybard/layers': '/keybard/#layers-and-layouts',
+	'/keybard/layer-lights': '/keybard/#layer-lights-and-brightness',
+	'/keybard/backups': '/keybard/#backups-and-files',
+	'/keybard/behaviors': '/keybard/#behaviors',
+	'/keybard/pointing': '/keybard/#pointing-devices',
+	'/keybard/settings': '/keybard/#settings-and-checks',
+	'/keybard/overlay': '/keybard/#desktop-overlay',
+	'/keybard/troubleshooting': '/keybard/#troubleshooting',
 };
 
 export default defineConfig({
@@ -217,7 +238,7 @@ export default defineConfig({
 				jumps('Hardware', hardwareJumps),
 				jumps('Build guide', buildJumps),
 				jumps('Firmware', firmwareJumps),
-				section('Keybard', 'keybard'),
+				jumps('Keybard', keybardJumps),
 				jumps('Vial (legacy)', vialJumps),
 				section('Reference', 'reference'),
 			],

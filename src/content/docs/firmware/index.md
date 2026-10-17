@@ -36,7 +36,7 @@ New in Svalboard QMK:
 
 - **256 entries** each for tap dances, combos, key overrides, macros, alternate-repeat keys and leader sequences.
 - **Leader sequences**: a Leader key, then up to five keys, triggers an action.
-- **Layer colors and LED brightness set from Keybard** (see [Layer lights and brightness](/keybard/layer-lights/)).
+- **Layer colors and LED brightness set from Keybard** (see [Layer lights and brightness](/keybard/#layer-lights-and-brightness)).
 - **Board identity**: each board keeps its identity and can have a name.
 - **Sniper toggle**: slow movement without holding a key.
 - **Boost**: 2x, 3x or 5x faster movement, held or toggled.
@@ -130,7 +130,7 @@ The firmware does **not** bring your Vial settings across. Flashing resets the b
 
 The first start after flashing takes a few seconds longer while the board sets up its settings storage.
 
-If you'd rather start fresh, skip the import and use Keybard's **Layouts** panel for letter and NavNAS layers (see [Start from a layout Svalboard provides](/keybard/layers/#start-from-a-layout-svalboard-provides)).
+If you'd rather start fresh, skip the import and use Keybard's **Layouts** panel for letter and NavNAS layers (see [Start from a layout Svalboard provides](/keybard/#start-from-a-layout-svalboard-provides)).
 
 <!-- VERIFY: the repo rules say not to promote .vil import, but this owner-approved migration path imports the Vial .vil (step 5). Keep it as the main path, or lead with the Layouts panel? -->
 

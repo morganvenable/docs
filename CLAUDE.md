@@ -1,6 +1,6 @@
 # Svalboard docs (docs.svalboard.com)
 
-Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`. Build, Hardware, Firmware and Vial are each one page (`<section>/index.md(x)`) read by jumping: their sidebar entries are anchor links listed in `astro.config.mjs` (update them when an h2 changes), old page URLs redirect to anchors there, and there is no previous/next pager. Keybard, Start and Reference are generated per section (order with `sidebar: { order: N }` in frontmatter). Images live in `src/assets/<section>/` and are referenced relatively so Astro optimizes them.
+Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`. Build, Hardware, Firmware, Keybard and Vial are each one page (`<section>/index.md(x)`) read by jumping: their sidebar entries are anchor links listed in `astro.config.mjs` (update them when an h2 changes), old page URLs redirect to anchors there, and there is no previous/next pager. Start and Reference are generated per section (order with `sidebar: { order: N }` in frontmatter). Images live in `src/assets/<section>/` and are referenced relatively so Astro optimizes them.
 
 ## Commands
 

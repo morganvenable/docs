@@ -68,7 +68,7 @@ Vial edits these directly:
 - **Macros**: up to 50.
 - **QMK settings**: tapping term and other timing.
 
-Layer light colors are set in the firmware, with the same defaults as Svalboard QMK (see [Layer lights and brightness](/keybard/layer-lights/)): green for layer 0, orange for layer 1, azure for layer 2, magenta for layer 15. Vial can't change them.
+Layer light colors are set in the firmware, with the same defaults as Svalboard QMK (see [Layer lights and brightness](/keybard/#layer-lights-and-brightness)): green for layer 0, orange for layer 1, azure for layer 2, magenta for layer 15. Vial can't change them.
 
 ## Svalboard keys in Vial
 

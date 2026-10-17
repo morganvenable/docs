@@ -1,8 +1,6 @@
 ---
 title: Keybard
-description: What Keybard is, which browsers it needs, and how to connect your Svalboard and protect your starting point.
-sidebar:
-  order: 1
+description: Configure your Svalboard in the browser with Keybard. Keys, layers, behaviors, pointing, backups, settings and the desktop overlay.
 ---
 
 Keybard is the web app that configures a Svalboard running Svalboard QMK firmware. It runs in your browser at [keybard.svalboard.com](https://keybard.svalboard.com). There is nothing to install.
@@ -11,13 +9,15 @@ With Keybard you change what each key does, organize layers, build macros, tap d
 
 <!-- VERIFY: most screenshots here were recaptured from the current Keybard (offline QWERTY Example). Eight need a connected board and still show the older navigation rail ("Trainer"): toolbar-pending-apply, manual-updates-apply-one-change, automatic-backup-after-edit, restore-automatic-backup, pointing-dpi, settings-reset-recovery, make-default-layer, and the Host overlay animation. Recapture them on a test board. -->
 
-## What you need
+## Get started
+
+### What you need
 
 - **A desktop browser that supports WebHID**: Chrome or Edge. Firefox and Safari don't support WebHID, so **Connect Keyboard** is unavailable there.
 - **A USB data cable** between your computer and the half you plug in.
 - **Svalboard QMK firmware** on the board. A board still on Svalboard's Vial firmware needs new firmware first; see [Moving from Vial](/firmware/#moving-from-vial).
 
-## The welcome screen
+### The welcome screen
 
 ![Keybard's welcome screen with three buttons: Connect Keyboard, Load File and QWERTY Example.](../../../assets/keybard/welcome-screen.webp)
 
@@ -33,7 +33,7 @@ The recording above opens **QWERTY Example**, opens **Standard Keys**, and drags
 
 If the left navigation shows only icons, click the logo at its top to show the labels. Hovering an icon also names it.
 
-## Connect your Svalboard
+### Connect your Svalboard
 
 1. Plug your Svalboard in by USB and open [keybard.svalboard.com](https://keybard.svalboard.com).
 2. Choose **Connect Keyboard**.
@@ -43,7 +43,7 @@ If the left navigation shows only icons, click the logo at its top to show the l
 
 After a refresh, Keybard returns to the welcome screen. Keyboards you allowed before appear under **or reconnect without the chooser**.
 
-## Back up before your first edit
+### Back up before your first edit
 
 1. Choose **Export Layout** in the toolbar above the keyboard.
 2. Keep **.svil (Recommended)** and **Include Macros** selected, then choose **Export**.
@@ -53,9 +53,9 @@ After a refresh, Keybard returns to the welcome screen. Keyboards you allowed be
 
 Export saves what the editor shows, including changes not yet applied to the board. Exporting after experimenting doesn't give you back the untouched layout. Export first.
 
-Keybard also keeps [automatic backups](/keybard/backups/) while a board is connected.
+Keybard also keeps [automatic backups](/keybard/#automatic-backups) while a board is connected.
 
-## Three places your work can live
+### Three places your work can live
 
 | Where | What it is |
 | --- | --- |
@@ -65,31 +65,802 @@ Keybard also keeps [automatic backups](/keybard/backups/) while a board is conne
 
 An example or a loaded file is an offline draft. Keybard writes nothing to a keyboard from it. Export the draft before closing or refreshing the page. Connecting a keyboard later reads that keyboard; it doesn't install your draft.
 
-## Know what you are editing
+### Know what you are editing
 
 | State | Meaning |
 | --- | --- |
 | Editing a keyboard | Changes can be written to the connected board. |
 | Offline draft | Changes affect the loaded file or example in this session. Export to keep them. |
 | Pending changes | Changes are waiting to be written. The board may differ from the screen. |
-| Not saved | A write failed. Some earlier writes may have succeeded. See [Troubleshooting](/keybard/troubleshooting/#a-save-failed). |
+| Not saved | A write failed. Some earlier writes may have succeeded. See [Troubleshooting](/keybard/#a-save-failed). |
 
-## Which firmware is on the board
+### Which firmware is on the board
 
 Open **About** in the left navigation. Under **Keyboard firmware** it shows the connected board's **Release**, its **Build**, and the protocol and keycode versions. When newer firmware is available, About says so and links to it.
 
 The firmware doesn't report its release by name. Keybard works it out from the features the board reports, so it may show a release followed by "or later".
 
-If a half's firmware doesn't match the pointing device attached to it, Keybard warns you when you connect. See [Pointing devices](/keybard/pointing/#wrong-pointing-device-firmware).
+If a half's firmware doesn't match the pointing device attached to it, Keybard warns you when you connect. See [Pointing devices](/keybard/#wrong-pointing-device-firmware).
 
-## In this section
+## Make your first change
 
-- [Make your first change](/keybard/first-change/)
-- [Layers and layouts](/keybard/layers/)
-- [Layer lights and brightness](/keybard/layer-lights/)
-- [Backups and files](/keybard/backups/)
-- [Behaviors](/keybard/behaviors/)
-- [Pointing devices](/keybard/pointing/)
-- [Settings and checks](/keybard/settings/)
-- [Desktop overlay](/keybard/overlay/)
-- [Troubleshooting](/keybard/troubleshooting/)
+![The Keybard editor: navigation on the left, the toolbar and layer tabs above the layout of both halves.](../../../assets/keybard/editor-workspace.webp)
+
+Start with one easy-to-recognize key on a layer you know. Leave the keys you use to switch layers alone until you are comfortable restoring a backup.
+
+### Choose when changes reach the board
+
+**Live Updating** is on by default. While connected, each edit is saved to the board as you make it.
+
+For a controlled first experiment, click the lightning control labeled **Switch to Manual Updates**. Edits then wait in a queue until you apply them.
+
+![The toolbar in Manual Updates: Pending (1), the lightning control, and Apply 1 Change.](../../../assets/keybard/toolbar-pending-apply.webp)
+
+| Control | What it does |
+| --- | --- |
+| **Live Updating** | Edits are saved as you make them. Watch for saving or error messages. |
+| **Pending (N)** | In Manual Updates, the number of edits waiting. Click it to see the list. |
+| **Apply N Changes** | Writes the pending edits to the board. |
+| **Discard pending edits** | Throws away edits not yet applied. It doesn't undo changes already applied. |
+| **Switch to Live Updating** | Applies the pending edits, then turns Live Updating back on. |
+
+![Changing one setting in Manual Updates: Pending shows 1, then Apply 1 Change writes it.](../../../assets/keybard/manual-updates-apply-one-change.webp)
+
+### Assign a key
+
+1. Select the layer tab you want to edit.
+2. Open **Standard Keys**.
+3. Drag a key from the palette onto the position you want to change. Or select the position first, then click a palette key.
+4. Check the new legend. In Manual Updates, **Pending (N)** counts the edits waiting.
+5. Choose **Apply N Changes** and wait for saving to finish. A changed legend alone doesn't mean the board has it.
+6. Click away to deselect the key. Open a text editor, switch to the layer you edited, and press the key.
+7. Export the working result as a new `.svil` file.
+
+![Dragging A from Standard Keys onto the Q position. The position now shows A.](../../../assets/keybard/drag-a-onto-q.webp)
+
+### Swap two keys
+
+Dragging a key from the layout onto another position swaps the two bindings, even across layers. Dragging from a palette assigns a copy instead.
+
+![Dragging Q onto A to swap them, then dragging them back.](../../../assets/keybard/swap-two-keys.webp)
+
+If an **Undo** button appears, its tooltip names the change it reverses. It is not a full edit history.
+
+### Typing can assign a key
+
+**Typing Binds a Key** is on by default. While a position is selected, pressing a key on your physical keyboard assigns that key to it, modifiers included.
+
+Deselect before you test normal typing. To turn this off, open **Settings → General** and switch off **Typing Binds a Key**.
+
+## Layers and layouts
+
+A layer is another set of bindings for the same physical keys. Clicking a layer tab changes what you see in Keybard. A layer key on the keyboard changes what the keyboard types.
+
+| Term | Meaning |
+| --- | --- |
+| Default layer | The starting layer, used when no higher active layer provides a binding. |
+| Transparent key | Uses the binding from the next active layer below. |
+| Blank key | Does nothing at that position. It doesn't fall through. |
+| Momentary layer key | Turns on another layer while held. |
+| Layer-tap key | Types a key when tapped, and turns on a layer when held. |
+
+When several layers are active, the highest-numbered one wins.
+
+### Build a navigation layer
+
+Layer keys are in **Layer Keys**. Start with a momentary key that opens a small navigation layer.
+
+1. Choose an unused layer, such as layer 3. Assign a few arrow keys from **Standard Keys**. Leave the other positions transparent so they use the layers below.
+2. Go back to the base layer and select a spare position.
+3. Open **Layer Keys**, choose **MO** (Momentary), and click the tile for layer 3.
+4. Apply the changes and deselect. In a text editor, hold the new key and try the arrows. Release it and check that normal typing returns.
+
+![The base layer with MO(3) on a left thumb key and Layer Keys open. Layer 3 holds Left, Down and Right.](../../../assets/keybard/build-navigation-layer.webp)
+
+To make the same key type something when tapped, assign the tap key first. Select the position again, then choose **LT** (Layer Tap) and the layer. Keybard takes the tap key from the selected position.
+
+![Assigning A, selecting it again, and choosing Layer Keys, LT, layer 3. The key is A on tap and layer 3 on hold.](../../../assets/keybard/layer-tap-key.webp)
+
+| Layer Keys button | Use it to |
+| --- | --- |
+| **MO** (Momentary) | Turn a layer on only while held. |
+| **LT** (Layer Tap) | Send a key on tap, and turn a layer on while held. |
+| **TG** (Toggle Layer) | Turn a layer on or off with a tap. Keep a way to toggle it off. |
+| **TT** (Tap Toggle) | Hold for a momentary layer, or tap the set number of times to toggle it. |
+| **OSL** (One Shot Layer) | Turn a layer on for the next key only. |
+| **TO** (To Layer) | Switch to a layer, turning off the others except the default. Plan a way back. |
+| **DF** (Default Layer) | Change the default layer until the board restarts. |
+| **PDF** (Persistent Default Layer) | Keybard currently assigns this as DF. Use **Make Default Layer** to save a default. |
+
+### Transparent and blank
+
+![Layer 3 with the A position set to Blank.](../../../assets/keybard/transparent-and-blank.webp)
+
+With layer 3 active, a transparent key at the A position types A from the base layer. A blank key at that position types nothing.
+
+### Name, color and compare layers
+
+- Click a layer's name to rename it. Names can be up to 16 bytes. Accented letters and emoji use more than one byte each.
+- Click the color dot beside the name to pick its color. See [Layer lights and brightness](/keybard/#layer-lights-and-brightness).
+- The layer's actions menu has **Copy Layer**, **Paste Layer**, **Make All Blank**, **Make All Transparent**, and **Switch Blank to Transparent** and **Switch Transparent to Blank**. These change many keys at once, so check the layer first.
+
+![Clicking Layer 0, typing Base, and leaving the field to save the name.](../../../assets/keybard/rename-layer.webp)
+
+**Show Multiple Layers** shows layers together. **3D View** stacks them. **Hide All Transparent Keys** hides inherited keys from view; it doesn't change them. **Show All Layers** brings back layers hidden by that filter. Viewing a layer doesn't turn it on in the keyboard.
+
+![Show Multiple Layers, then 3D View.](../../../assets/keybard/compare-layers-3d-view.webp)
+
+### Choose the layer the board starts on
+
+A house icon marks the default layer.
+
+1. Connect the board.
+2. Right-click the layer tab you want and choose **Make Default Layer**.
+3. In Manual Updates, apply the change. In Live Updating, it saves right away.
+
+Keybard reads the value back to check it. The board keeps this default after you unplug and restart it.
+
+![Right-clicking a layer tab, choosing Make Default Layer, and the house icon moving after the change is applied.](../../../assets/keybard/make-default-layer.webp)
+
+This needs vLaunch2 firmware or later. On older firmware the menu shows **Make Default Layer (needs newer firmware)**. A **DF** key changes the default only until the board loses power.
+
+### Reorder layers
+
+1. Export a backup. Apply or discard pending edits.
+2. Drag a layer tab to the gap where it should go.
+3. Read the **Move … to layer …** review. Layers in between shift by one. Layer keys such as MO, LT and TG follow their layers. Names and colors move with them.
+4. Choose **Move layer**. In Manual Updates, it waits for **Apply N Changes**. In Live Updating, it is written right away. Offline, only the draft changes.
+5. Test your layer keys. Use **Undo** if needed, then export the result.
+
+![Dragging the Symbols layer tab from layer 1 to layer 5, reviewing the move, and choosing Move layer.](../../../assets/keybard/reorder-layers.webp)
+
+The mouse layer must stay last. Read any warning about tri-layer targets. On vLaunch2 or later, the default layer stays the default at its new number. On older firmware or offline, the review explains moves it blocks.
+
+Dragging a tab moves a layer. Dragging a preview from **Layouts** replaces a layer instead.
+
+### Start from a layout Svalboard provides
+
+**Layouts** in the left navigation lists layer groups from Svalboard, along with layers you saved. This is where to start a new layout.
+
+| Group | Layers | What they are |
+| --- | --- | --- |
+| sval-default | The stock layers | The standard Svalboard layout. Use it to get back to a stock layer. |
+| sval-alt-alphas | Dvorak, Colemak, HD Promethium, HD Neu, Graphite | Alternative letter layouts. Each is the stock base layer with only the letters and that layout's punctuation moved, so thumb keys and layer keys stay put. HD Promethium puts R on a left thumb key. Graphite adds Repeat on a right thumb key. |
+| sval-num-sym-layers | Home-row numbers (default NavNAS), Left-hand tenkey + right-hand nav | Numbers, symbols and navigation. The first is the factory NavNAS layer: 1 to 0 on the center keys, shifted symbols above, navigation below. The second puts 1 to 0 under the left hand as a tenkey, with arrows on the right home row. Their thumb keys are transparent, so your base layer's thumb keys keep working. |
+
+1. Export a backup if you are changing a layer you rely on.
+2. Select the destination layer. For a letter layout this is usually layer 0. For a numbers layer, it is the layer your NavNAS key opens (layer 1 in the stock layout).
+3. Open **Layouts** and type a name, such as *Colemak* or *tenkey*, in the search box.
+4. Drag the layer's preview by its title row onto the destination layer's tab. Read the **Replace** confirmation, which names both layers, and choose **OK**.
+5. The destination keeps its name and takes the new layer's color. Apply the changes in your update mode.
+
+![Searching Layouts for Dvorak and dragging it onto Layer 0. The letters move and the thumb keys stay.](../../../assets/keybard/dvorak-on-base-layer.webp)
+
+![Searching for tenkey and dragging Left-hand tenkey + right-hand nav onto Layer 1.](../../../assets/keybard/tenkey-numbers-layer.webp)
+
+To try a letter layout without losing yours, drag it onto a spare layer and add a **DF** key for that layer from **Layer Keys**. When you want to keep it, use **Make Default Layer**.
+
+You can also drag single keys from a preview onto your layout. If you delete a Svalboard group from Layouts, Keybard adds it back.
+
+### Save and reuse your own layers
+
+1. Open a layer's actions menu and choose **Save Layer...**. Give it a name.
+2. Open **Layouts** and expand the saved layout.
+3. Drag the layer onto the destination layer in the editor.
+4. Read the confirmation and choose **OK** only if the destination is right.
+5. Apply the changes in your update mode.
+
+![Choosing Save Layer…, naming it, and finding it in Layouts.](../../../assets/keybard/save-layer-to-library.webp)
+
+![Dragging a saved layer's preview onto layer 3 and confirming the replacement.](../../../assets/keybard/apply-library-layer.webp)
+
+Saved layers live in this browser's storage. Clearing browser data can remove them. They are not a backup: export a `.svil` for that.
+
+## Layer lights and brightness
+
+Thumb clusters shipped after May 2024 have an RGB light that shows the active layer. You set its colors and brightness in Keybard.
+
+<!-- VERIFY: the default colors, the default brightness of 128 and the step of 10 per key match the vLaunch2 firmware source. Is "shipped after May 2024" the right date for the RGB light? -->
+
+### Default colors
+
+| Layer | Color | Default use |
+| --- | --- | --- |
+| 0 | Green | Base |
+| 1 | Orange | NavNAS |
+| 2 | Azure | Function |
+| 3 | Coral | |
+| 4 | Yellow | |
+| 5 | Teal | |
+| 6, 7 | Red | |
+| 8 | Pink | |
+| 9 | Purple | |
+| 10 | Coral | |
+| 11 | Spring green | |
+| 12 | Teal | |
+| 13 | Turquoise | |
+| 14 | Yellow | Board settings |
+| 15 | Magenta | Mouse layer |
+
+### Change a layer's color
+
+1. Select the layer's tab.
+2. Click the color dot beside the layer name, above the keyboard. Its tooltip says **Layer Color** (or **Default Layer** on the default layer).
+3. Pick a color. The board's light changes right away.
+
+<!-- VERIFY: screenshot wanted: the layer name row with the color list open under the color dot, showing the gear button at the bottom of the list. -->
+
+### Change the brightness
+
+1. Click the color dot beside the layer name.
+2. Click the gear button at the bottom of the color list (**Custom layer color**). The **Colors for** *layer name* dialog opens.
+3. Make sure **LED color** is selected, not **Key color**.
+4. Drag the **Brightness** slider (0 to 255). The board's light changes as you drag.
+5. Choose **Apply**. **Cancel** puts the light back.
+
+Brightness applies to every layer. The default is 128.
+
+In the same dialog, **Key color** sets the color Keybard uses for that layer's keys on screen, separately from the LED.
+
+<!-- VERIFY: screenshot wanted: the "Colors for <layer>" dialog with LED color selected, showing the Hue, Saturation and Brightness sliders, the note "LED brightness applies to every layer, like the brightness keys." and the Apply button. -->
+
+### Brightness keys
+
+To change brightness from the keyboard, add **Bright +** and **Bright -** to keys on a layer. They are in **Special Keys**, under **Backlight and RGB Keys**. Each press changes brightness by 10. **RGB Toggle** turns the layer lights on and off.
+
+If you printed the thumb cluster in a dark color, turn the brightness up, or print the diffuser in white.
+
+## Backups and files
+
+Keybard keeps two kinds of backup:
+
+- **Automatic backups**: snapshots Keybard saves on its own while a board is connected.
+- **Exported files**: `.svil` files you save yourself and keep where you like.
+
+Use both. Automatic backups catch the change you forgot to save. An exported file survives a new computer or a cleared browser.
+
+### Before you flash firmware
+
+Flashing firmware resets the board's settings, including your layout.
+
+1. Connect in Keybard and choose **Export Layout**. Save a `.svil` with **Include Macros** on, somewhere outside the browser.
+2. Flash both halves. See [Flashing firmware](/firmware/#flashing-firmware).
+3. Reconnect, choose **Import Layout**, and select your saved file.
+4. Review the import. In Manual Updates, choose **Stage import**, then **Apply N Changes**. In Live Updating, choose **Apply import**.
+5. Check your layers, behaviors, pointing settings, colors and names. Set your [default layer](/keybard/#choose-the-layer-the-board-starts-on) again. Then export a fresh backup.
+
+You can also restore from **Settings → Backups**. Pick a snapshot from before the update: one saved after the reset holds the defaults.
+
+### Automatic backups
+
+Open **Settings → Backups**. Nothing needs to be turned on. While a board is connected, Keybard saves a snapshot:
+
+- when the board connects and finishes loading, before you change anything
+- about 10 seconds after your edits stop
+- when you switch tabs or close Keybard within those 10 seconds
+
+A snapshot holds the same information as an exported `.svil`. If nothing changed since the last one, no new snapshot is added.
+
+![After dragging A onto Q in Manual Updates, a new Edited entry appears in Settings, Backups: 1 key, Unsent (1).](../../../assets/keybard/automatic-backup-after-edit.webp)
+
+Backups are grouped by board, with the connected board first. Keybard tells boards apart by their serial number, so two Svalboards keep separate histories even with the same name. Each entry shows:
+
+| Shown | Meaning |
+| --- | --- |
+| Date and time | When the snapshot was saved. |
+| **Connected** or **Edited** | Saved when the board connected, or after you edited it. |
+| Change summary | What changed since the previous backup of this board, such as *2 keys, 1 macro*. The first backup says *As loaded*. |
+| **Unsent (N)** | The snapshot includes N edits still pending in Manual Updates. Restoring it brings them back, though the board never got them. |
+
+The newest eight backups of each board are shown. **Show all** lists the rest. Keybard keeps every backup from the last 24 hours, the latest of each day for 30 days, and after that the latest of each month. The most recent **Connected** backup is always kept.
+
+#### Restore, download or delete a backup
+
+- **Restore** opens **Review layout import**, the same review used for files. In Manual Updates, **Stage import** adds the differences to your pending edits; nothing reaches the board until you choose **Apply N Changes**. In Live Updating, **Apply import** writes them straight away. Apply or discard pending edits before you restore.
+- The download button saves the backup as a `.svil` file.
+- The delete button removes the backup after you confirm.
+
+![Choosing Restore beside an earlier backup, reading the review, and choosing Stage import.](../../../assets/keybard/restore-automatic-backup.webp)
+
+#### Keep a copy in a folder
+
+Automatic backups live inside the browser. To also keep them as files, choose **Choose backup folder** in **Settings → Backups**, pick a folder, and allow Keybard to edit files there. This needs a browser that lets websites save to a folder, such as Chrome or Edge.
+
+- Each board gets its own subfolder, named after the board and its serial number.
+- `latest.svil` always holds the newest backup. There is also one file per day with changes, named by date, such as `2026-10-03.svil`.
+- Dated files are kept for 30 days, then one per month. Keybard only deletes files it wrote.
+- Renaming a board starts a new subfolder. The old one stays as it was.
+
+![Settings, Backups, with Choose backup folder and no backups yet.](../../../assets/keybard/choose-backup-folder.webp)
+
+Browsers ask again before a site may keep writing to a folder. When that happens, **Settings → Backups** shows **Paused** and a **Resume backups** button. Choose it. If the browser offers **Allow on every visit**, choose that so it doesn't ask again. Backups made while paused are written when you resume.
+
+If the folder was moved or deleted, Keybard shows **Folder not found**; choose a folder again. **Change folder** switches folders. **Stop using folder** stops writing files; files already written stay.
+
+:::caution
+Automatic backups belong to this browser profile on this computer. Another browser, profile or computer has its own list. Clearing this site's data deletes them, though copies in a backup folder remain. Only a connected board is backed up, not an example or a loaded file.
+:::
+
+### Export and import files
+
+Use `.svil` files for your backups. **Export Layout** and **Import Layout** are in the toolbar above the keyboard.
+
+| Action | What it does |
+| --- | --- |
+| **Export Layout** | Downloads the editor's current configuration, including pending edits. |
+| **Load File** (welcome screen) | Opens a file as an offline draft. Writes nothing to a board. |
+| **Import Layout** | Reviews a file's changes for the current board or draft. |
+| **Restore** (Settings → Backups) | Opens the same review for an automatic backup. |
+| **Import** (Layouts) | Adds layouts to the browser's library. |
+| **Save Layer...** | Saves one layer to the library. Not a backup. |
+
+![Choosing Import Layout, reading the offline review, and choosing Open layout.](../../../assets/keybard/import-layout-review.webp)
+
+#### Import a backup onto your board
+
+1. Connect the board and export its current configuration first.
+2. Apply or discard pending edits.
+3. Choose **Import Layout**, select the file, and read **Review layout import**.
+4. Check the destination, counts, warnings and errors. **Back up current layout** is available in the review.
+5. In Manual Updates, choose **Stage import**, check the pending edits, then apply them. In Live Updating, **Apply import** writes the changes. Offline, **Open layout** replaces the current draft.
+6. Test the important keys before relying on them.
+
+A `.svil` restores the keymap, macros, tap dances, combos, overrides, alt-repeat keys and leader sequences; QMK and pointing settings Keybard supports; layer colors; layer, macro and tap-dance names; and hardware positions.
+
+It is not a full device image. The review lists settings it can't restore. Entries beyond those in the file stay on the board. The board's USB name and its saved default layer are separate settings: check them after restoring.
+
+Keybard can refuse a file whose matrix size doesn't match, that has too many layers or entries, or that holds keycodes or macro content the board can't take. Read the message rather than forcing the file through.
+
+The export dialog also offers a legacy `.vil` format. It leaves out Svalboard settings, names, colors and hardware selections. Use `.svil`.
+
+### Return to saved work
+
+![Choosing Load File on the welcome screen to open a saved .svil file.](../../../assets/keybard/load-saved-file.webp)
+
+To continue offline work, choose **Load File** on the welcome screen and open your exported file. If you forgot to export from a connected board, look in **Settings → Backups**.
+
+Name your backups so you can tell them apart: one before a big change, one after you've checked it. Keep both until you're happy with the new layout.
+
+## Behaviors
+
+A normal key sends one key. A behavior can send a sequence, tell a tap from a hold, or respond to several keys together.
+
+Svalboard QMK has 256 entries each for macros, tap dances, combos, overrides, alt-repeat mappings and leader sequences. Start with one small example, test it in an empty document, then build on it.
+
+**Special Keys** holds media, system and lighting keys. **Layer Keys** and **Mouse Keys** have their own panels. They all work like **Standard Keys**: drag a key onto a position, or select a position and click a key.
+
+:::note[Defining and using are different steps]
+A macro or tap dance needs a definition and a key that uses it. Combos and overrides respond to the keys you set as their triggers. Leader sequences need a **Leader** key as well.
+
+In Manual Updates, choose **Apply N Changes** before testing. Then close the editor, deselect, and test in a scratch document. Typing while a position is selected can change your layout.
+:::
+
+### Macros
+
+**Macro Keys** → edit an entry.
+
+A macro runs its actions in order. Start with something harmless, such as the text "hello".
+
+1. Open **Macro Keys** and edit an unused entry. In the bottom-panel layout, the plus button opens an empty entry.
+2. Add **Text** and type `hello`. Click the macro's title to give it a name.
+3. Close the editor. Select a spare position, then click the macro's tile, or drag the tile onto the position.
+4. Apply the changes. Deselect and focus an empty document. Press the key: it should type your text.
+5. Add more actions only once this works. Then export a fresh backup.
+
+![Adding a Text action containing hello, closing the editor, and dragging Macro 0 onto Q.](../../../assets/keybard/text-macro.webp)
+
+| Action | What it does |
+| --- | --- |
+| **Key Tap** | Presses and releases a key. |
+| **Key Down** | Holds a key down. |
+| **Key Up** | Releases a held key. |
+| **Delay** | Waits the number of milliseconds you set. |
+
+For a shortcut, use a modifier **Key Down**, a **Key Tap**, then the matching **Key Up**. Always release what you hold. All macros share one block of storage.
+
+Text macros send keystrokes, not clipboard text. Your computer's keyboard layout decides which characters come out, so test punctuation. Don't store passwords in macros: a macro and an exported file are not a secure place for secrets.
+
+### Tap dances
+
+**Tap Dance Keys** → edit an entry.
+
+A tap dance gives one key several outputs. To learn it, set **Tap** to A and **Double-Tap** to B, and leave the rest empty.
+
+1. Open an unused entry in **Tap Dance Keys**.
+2. Select the **Tap** slot and assign A. Select **Double-Tap** and assign B. **Hold** is a long press. **Tap-Hold** is a tap followed by a held press.
+3. Leave **Enabled** on. Don't change the timing yet.
+4. Close the editor and assign the tap dance's tile to a spare position. Apply the changes.
+5. Deselect. Test a single tap, then a quick double tap. If your double taps come out as two single taps, adjust the timing.
+
+![Enabling tap dance 0, assigning A to Tap and B to Double-Tap, and dragging its tile onto Q.](../../../assets/keybard/tap-dance.webp)
+
+:::caution
+Release a tap-dance key before changing what it does. Editing a tap dance while it is held can leave its old output held.
+:::
+
+### Combos
+
+**Combos** → edit an entry.
+
+A combo watches for up to four keys pressed together and sends its **Output**. For example, A and B together can send Escape. Combos match the keys' bindings, not physical positions, so think about where those keys sit on each layer.
+
+1. Choose an unused combo. Fill the first two inputs with A and B. Set **Output** to Escape.
+2. Leave the other inputs empty and enable the entry.
+3. Apply the changes. Deselect, then press each key alone before pressing them together.
+4. If the combo is hard to hit, raise **Combo Timeout** in the Combos panel while connected. Raise it a little at a time: a long window can catch normal typing.
+
+![Enabling a combo with A and B as inputs and Escape as the output.](../../../assets/keybard/combo-a-b-escape.webp)
+
+There's no combo key to place. Pick key pairs you rarely type together.
+
+### Mod-taps and one-shots
+
+**Standard Keys** → **Modifiers** → **Mod, Mod-Tap, and One-Shot Mod**.
+
+- A shortcut such as Ctrl+C sends both together.
+- A **mod-tap** sends A when tapped and holds Control when held.
+- A **one-shot** modifier lets you tap Shift, let go, then type the shifted key.
+
+To make a key A on tap and Control on hold:
+
+1. Assign A to the position. Select the position again if assigning cleared the selection.
+2. In **Standard Keys**, choose **CTRL** under **Modifiers**. The built keys use the selected position's key.
+3. Choose the middle tile, the mod-tap. It shows the result, such as **CTL A**; the plain modifier is on its left and the one-shot tile on its right.
+4. Apply, deselect, and test a tap. Then hold the key and press another key.
+
+![Assigning A, selecting the position again, choosing CTRL, then the mod-tap tile.](../../../assets/keybard/mod-tap-a-control.webp)
+
+For a one-shot Shift, choose **SHIFT** and the one-shot tile (**OSM LSFT**). Tap the key, let go, then type a letter.
+
+![Choosing SHIFT and the OSM tile.](../../../assets/keybard/one-shot-shift.webp)
+
+Modifiers come in left and right versions. Some views also offer **MEH** (Control, Shift and Alt) and **HYPER** (those plus GUI). GUI is the Windows or Command key.
+
+#### One-shot settings
+
+Open **Settings → General → QMK Settings...** → **One Shot Keys** while connected. On vLaunch2 and later, an unused one-shot releases after **5000** ms, and tapping it **5** times locks it on. Tap a locked one-shot again to release it.
+
+1. Set **Tapping this number of times holds the key until tapped once again** to the number you want, or **0** to turn off locking.
+2. Set **Time (in ms) before the one shot key is released**, or **0** to turn off the timeout. Set both to 0 for one-shots that never time out or lock.
+3. Press Enter or leave each field. In Manual Updates, apply the changes. Test waiting past the timeout and tapping repeatedly.
+
+![One-shot settings with the tap count and the timeout both set to 0.](../../../assets/keybard/one-shot-settings.webp)
+
+These settings apply to one-shot modifiers and one-shot layers. Importing a backup can change them, so check them after a restore. Mod-taps also depend on the tap-hold settings in [Settings and checks](/keybard/#typing-feel).
+
+### Overrides
+
+**Overrides** → edit an entry.
+
+An override replaces a key when certain modifiers are held. For example, Shift+Backspace can send Delete. It changes how an existing key behaves, so there's no override key to place.
+
+1. Set **Trigger** to Backspace and **Replacement** to Delete.
+2. In the **Trigger** modifier tab, select Shift. Check left and right if you use both Shift keys.
+3. In **Suspended**, select Shift too, so the replacement is plain Delete, not Shift+Delete. **Negative** lists modifiers that stop the override; leave it empty here.
+4. Choose the **Layers** it applies to and enable it. Leave the other options alone for now.
+5. Apply, deselect, and test: Backspace still deletes left, and Shift+Backspace deletes right.
+
+![Enabling an override with Backspace and Delete, and Shift in both Trigger and Suspended.](../../../assets/keybard/override-shift-backspace-delete.webp)
+
+### Leader sequences
+
+**Leaders** → the **Leader** key and sequence entries.
+
+A leader sequence is a **Leader** key followed by keys typed one after another. For example, Leader, A, B can run a macro that types "hello".
+
+1. Create and test the "hello" macro first.
+2. Open **Leaders**. Assign its **Leader** tile to a spare position.
+3. Edit an unused sequence. Set its first two keys to A and B, and its **Output** to your macro. Enable it. Sequences can be up to five keys.
+4. While connected, check **Leader Timeout**. With **Per-key timing** on, the timer restarts after each key. Otherwise the whole sequence shares one time limit.
+5. Apply, deselect, and type Leader, A, B.
+
+![Enabling an A-then-B sequence with Macro 0 as its output, then assigning the Leader key.](../../../assets/keybard/leader-sequence.webp)
+
+### Alternate repeat
+
+**Alt-Repeat** → edit a mapping.
+
+Alternate repeat sends a different key depending on the key you typed last. To try it, map A to B and place the alternate-repeat key on a spare position. Type A, then press the alternate-repeat key: it types B.
+
+1. Choose an unused entry. Set **Trigger** to A and **Alternate** to B, and enable it.
+2. Assign the alternate-repeat key from the panel to a position. Apply and deselect.
+3. Test this before trying **Bidirectional**, **Ignore mod handedness** or **Default to alternate**.
+
+![Enabling the A-to-B mapping and placing the Alt-Rep key in the layout.](../../../assets/keybard/alt-repeat.webp)
+
+:::caution
+Alternate repeat has known firmware defects with modifier matching and **Default to alternate**. Test custom mappings before relying on them, especially with modifiers.
+:::
+
+## Pointing devices
+
+Open **Pointing Devices** in the left navigation. Connect the board first: the settings come from the board, so an example or a loaded file shows only the assignable keys. The settings depend on the pointing device installed, so your panel may differ from the one shown here.
+
+![Pointing Devices panel: Mouse Buttons, Modifiers, Sniper Keys, Boost, then Left Pointer and Right Pointer settings. The left DPI changes from 800 to 1200.](../../../assets/keybard/pointing-dpi.webp)
+
+### What's in the panel
+
+- **Mouse Buttons**, and **Sniper Keys** and **Boost** keys to assign.
+- **Left Pointer** and **Right Pointer**: DPI and **Scroll Mode** for each side.
+- **Auto Mouse**: **Enable Auto Mouse**, which pointer turns on the mouse layer, the activation threshold and decay, and **Layer Timeout**.
+- **Scroll Settings**: **Natural Scroll**, axis lock and other scroll options.
+
+**Layer Timeout** can be 200, 300, 400, 500 or 800 ms, or Infinite. The default is 500 ms.
+
+### Set up pointing step by step
+
+1. Start with plain pointer movement. Change the left or right DPI in small steps. Apply the change in Manual Updates.
+2. Test scrolling and its direction. Check per-side scrolling, axis lock and **Natural Scroll**.
+3. Assign a **Sniper** key to slow the pointer for precise work. **Boost** speeds it up. The 2x, 3x and 5x versions set how much. Hold the key to use it; the TG versions (such as **2xTG**) toggle it on and off instead.
+4. If you use Auto Mouse, make sure the mouse layer has the mouse buttons you need and an easy way back to typing. Check which pointer can turn it on. Then tune the threshold, decay and timeout one at a time.
+5. Check movement, scrolling and getting back to typing. Then export a backup.
+
+The mouse layer must stay the last layer.
+
+Don't copy a DPI number from one kind of sensor to another and expect the same speed.
+
+### Svalboard keys in Mouse Keys
+
+**Mouse Keys** has keyboard-driven mouse movement, wheel and button keys. These are separate from the sensor's DPI.
+
+It also has Svalboard's own keys, including:
+
+- **Left DPI +**, **Left DPI -**, **Right DPI +** and **Right DPI -**
+- **Scroll Left Toggle**, **Scroll Right Toggle**, **Scroll Toggle** and **Scroll Toggle Hold**
+- **Axis Scroll Lock**
+- **Fix Drift**: recalibrates a TrackPoint
+- **AutoMouse Toggle**: turns Auto Mouse on or off
+- **Mouse Key Timer**: steps through the same timeouts as **Layer Timeout**
+
+The keys shown depend on the board's firmware.
+
+<!-- VERIFY: vLaunch2 doesn't report its pointing hardware to Keybard. Can the "Wrong pointing-device firmware" dialog below appear on vLaunch2? If not, cut this section until a stable release reports it. -->
+
+### Wrong pointing-device firmware
+
+Each half's firmware is built for one kind of pointing device, or for none. When you connect, Keybard checks this. If a half doesn't match, it shows **Wrong pointing-device firmware**. The dialog says which half is wrong, which device is attached, and the exact `.uf2` file that fixes it.
+
+To fix it, download that file from the latest Svalboard firmware release and flash it to that half. See [Flashing firmware](/firmware/#flashing-firmware). Export a `.svil` first: flashing resets the board's settings.
+
+The dialog can also say a half has no pointing device answering. If that half has one, check its cable. If it has none, flash the file the dialog names.
+
+If the dialog says **Pointing device not picked up**, the firmware is right but the device didn't start. Check its cable, then unplug that half and plug it back in.
+
+The warning shows once per connection. Choose **OK** to close it.
+
+## Settings and checks
+
+Open **Settings** at the bottom of the left navigation. It has four sections: **General**, **Fragments**, **Backups** and **Developer**. Backups are covered in [Backups and files](/keybard/#backups-and-files).
+
+<!-- VERIFY: Settings → Developer holds tools that aren't public. This page names the section but doesn't describe it. Should it be left out entirely? -->
+
+### General
+
+![Settings, General: Appearance, Typing Binds a Key, Serial Assignment, International Keyboards, QMK Settings… and Print Layers….](../../../assets/keybard/general-settings.webp)
+
+- **Board name** (connected only): see [Board name](#board-name).
+- **Appearance**: System, Light or Dark.
+- **Typing Binds a Key**: when on, pressing a key on your keyboard assigns it to the selected position. On by default.
+- **Serial Assignment**: after you assign a key, Keybard selects the next position, in the order you choose. With **None**, the default, the selection clears instead.
+- **International Keyboards**: match this to your computer's keyboard layout so Keybard shows the right characters. It doesn't change the layout on your computer.
+- **QMK Settings...**: timing and other firmware settings. See [Typing feel](#typing-feel).
+- **Print Layers...**: see [Print your layers](#print-your-layers).
+
+Appearance, Typing Binds a Key, Serial Assignment and International Keyboards are saved in this browser, not on the board.
+
+### Board name
+
+**Board name** sets how your computer and browser show the keyboard. Type a name and choose **Save now**. It is written right away, even in Manual Updates.
+
+Restart the keyboard for your computer to show the new name. Keybard offers **Restart keyboard**. Apply or export your pending edits first.
+
+The name stays on the keyboard across firmware updates. It is separate from your layout backups.
+
+### Typing feel
+
+Open **Settings → General → QMK Settings...** while connected. Export a backup first. Change one setting, apply it, and test both slow, deliberate presses and normal typing.
+
+![QMK Settings with Tapping Term changed from 200 to 210 ms.](../../../assets/keybard/tapping-term-change.webp)
+
+**Tap-Hold**:
+
+- **Tapping Term**: how long a press can last and still count as a tap.
+- **Quick Tap Term**: affects tapping a dual-role key twice quickly.
+- **Permissive Hold (new)**, **Hold On Other Key Press** and **Retro Tapping (new)**: how other key presses and releases affect the tap-or-hold decision.
+- **Chordal Hold**: uses which hand each key is on to decide.
+- **Flow Tap**: favors taps during fast typing. 0 turns it off.
+- **Tap Code Delay**, **Tap Hold Caps Delay** and **Tapping Toggle**: generated tap length, Caps Lock tap length, and the number of taps for a **TT** key. Their defaults are 0 ms, 80 ms and 5 taps.
+
+Other sections:
+
+- **Grave Escape**: "Always send Escape" options for Alt, Control, GUI and Shift.
+- **Combo**: the time window for combos.
+- **One Shot Keys**: see [One-shot settings](/keybard/#one-shot-settings).
+- **Leader Key**: the leader timeout and per-key timing.
+
+:::caution
+A setting on screen isn't proof the feature is in your firmware. Standard Svalboard QMK builds don't include Auto Shift, and some mouse-key settings have no effect.
+:::
+
+### Fragments: your finger clusters
+
+**Settings → Fragments** tells Keybard which clusters are installed, so it draws your board correctly. It doesn't rewire anything.
+
+Every finger has a 5-key cluster by default, for 52 keys. 6-key clusters add a second South key; with them on some or all fingers, a board has 56 to 60 keys.
+
+Choose a preset at the top:
+
+| Preset | Clusters |
+| --- | --- |
+| **Default** | 5-key finger clusters everywhere. |
+| **6-key** | 6-key finger clusters everywhere. |
+| **Fang** | 6-key on index and pinky, 5-key on middle and ring. |
+
+Or set each finger under **Left** and **Right**. The thumbs always use the thumb cluster. On a connected board, the change is written like any other edit.
+
+### Check every key with Matrix Tester
+
+1. Connect the board and choose **Matrix Tester** in the toolbar.
+2. Press each finger direction and each thumb key. Hold each briefly so the display catches it. Check that the highlighted position is the one you pressed.
+3. **Clear Matrix** clears the display so you can start again. It doesn't change your layout or settings.
+4. Choose **Exit Matrix Tester** to return to editing.
+
+![Matrix Tester open with every position unlit, waiting for presses.](../../../assets/keybard/matrix-tester.webp)
+
+<!-- VERIFY: with a board connected, check that the buttons are still named Clear Matrix and Exit Matrix Tester (offline, the view shows a back arrow beside the heading). -->
+
+Matrix Tester shows switches, not what a key types. Very quick taps can fall between updates. If a switch shows up but types the wrong thing, check its layer and binding.
+
+### Print your layers
+
+1. Open **Settings → General → Print Layers...**.
+2. Check the number of non-empty layers and choose **Print**.
+3. Print from your browser's print dialog, or save a PDF.
+
+![Opening Print Layers…, checking the layer count, and choosing Print.](../../../assets/keybard/print-layers.webp)
+
+A printout is a reference card, not a backup. Export a `.svil` as well.
+
+## Desktop overlay
+
+**Keybard Host** is a small desktop app that shows your layout above your other windows. It follows the layer you are on, so you can glance at it while you type in any app.
+
+It only reads the keyboard. It never changes your layout or flashes firmware. It keeps its own settings.
+
+In Keybard, **Overlay** in the left navigation (below **Layouts**) opens a small dialog. It offers the download and connects Keybard to Keybard Host.
+
+![The overlay showing the base layer, then other layers as they change, then held keys highlighted.](../../../assets/keybard/overlay-layer-changes.webp)
+
+### Install it on Windows
+
+Keybard Host is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed, so Windows may warn you.
+
+<!-- VERIFY: the vLaunch2.3 release ships a portable ZIP (RELEASE-NOTES.md, HOST_DOWNLOAD in HostInstall.tsx). The repo also has a Windows installer build. Should these docs describe an installer instead? -->
+
+1. In Keybard, choose **Overlay**, then **Download for Windows**. Or download **KeybardHost-Windows.zip** from the [latest Keybard Host release](https://github.com/svalboard/keybard/releases/latest).
+2. Extract the whole ZIP to a folder you'll keep. Run **Start-Windows.cmd**.
+3. The first start downloads its own copy of Python and Qt, so you need to be online. It needs no administrator rights and makes no system changes.
+4. Keybard Host sits in the system tray and opens Keybard.
+
+### Connect it to Keybard
+
+1. In Keybard (Chrome or Edge), connect your keyboard.
+2. Choose **Overlay**, then **Connect**.
+3. If the browser asks whether the site can access apps on this device, allow it.
+
+Once connected, the dialog shows the board Keybard Host is following and a **Disconnect** button.
+
+Connecting lets the overlay keep up with your edits. About a second after a change reaches the keyboard, the overlay re-reads the layout. In Manual Updates, apply your changes first. Connecting also gives the overlay Keybard's keyboard language.
+
+If you have more than one Svalboard, choose yours from **Board** in the overlay's **⋯** menu or the tray icon. Keybard Host remembers it.
+
+### Move, resize and hide it
+
+The grips sit above the overlay's corner.
+
+- Drag the move grip to move the overlay.
+- Drag the resize grip: up or right makes it bigger, down or left smaller.
+- The collapse button hides the overlay and leaves just the grips. Click it again to bring the overlay back.
+- **Show overlay** in the tray menu hides it completely, or shows it again.
+
+Clicks anywhere else on the overlay, keys included, go through to the window underneath.
+
+### Overlay settings
+
+The overlay's **⋯** menu, above its corner, and the tray icon hold its settings:
+
+- **Board**: the Svalboard to follow, or **Disconnect**.
+- **Style**: Dark, Subtle, Outline only, Light or High contrast.
+- **Outline shadow**: a contrasting shadow around legends and key outlines, readable on any background. On by default.
+- **Colors…**: key fill, outline and legend colors and opacity, outline width, outline shadow, and the layer-change and held-key colors. Changes show as you make them. **Reset to default look** undoes them.
+- **Layer highlight**: Off, Flash or Fade when the layer changes.
+- **Highlight held keys**: lights the keys you're holding. On by default. Very quick taps can be missed, and it doesn't show macro or combo output.
+- **Hands**: both halves, or one.
+- **Capital letters**: shows letter keys in capitals.
+- **Adaptive contrast** (Windows): restyles each key for the background behind it.
+- **Place at bottom** and **Reload board layout**.
+
+Shifted legends follow your computer's Shift and Caps Lock.
+
+For layout changes made outside Keybard, or if the overlay looks out of date, choose **Reload board layout** from the overlay's menu or the tray.
+
+### Versions and updates
+
+The Overlay dialog shows which Keybard Host is connected. If it's older than the current release, the dialog links to the new one. The tray icon's tooltip shows your version too.
+
+Updating Keybard doesn't update Keybard Host. To update it, quit from the tray, extract the new release to a new folder, and run it. Your settings carry over.
+
+### Other platforms
+
+- **Linux**: runs from source. Wayland limits placement, stacking and click-through.
+- **macOS**: the ZIP includes `start-macos.sh` for macOS 13 or later with Python 3.10 or later. It hasn't been tested on a Mac yet.
+
+## Troubleshooting
+
+### Keybard won't connect
+
+- Use Chrome or Edge on a desktop computer. Firefox and Safari don't support WebHID.
+- Use a USB data cable, not a charge-only one.
+- Check that you picked the right device in the browser's chooser.
+- Close other configuration apps that may be holding the keyboard, then try again.
+- The board needs Svalboard QMK firmware. See [Moving from Vial](/firmware/#moving-from-vial) if it is on Vial.
+- On Linux, add [the udev rule](/firmware/#linux-the-udev-rule) so your browser can open the keyboard.
+
+A browser permission you granted before doesn't prove the cable, firmware or connection are working.
+
+### The layout changed, but typing didn't
+
+- Check whether you are editing an offline draft, or have pending edits in Manual Updates.
+- Check that the keyboard is on the layer you edited.
+- A transparent key uses the binding from a lower layer.
+- A layer-tap key waits to tell a tap from a hold.
+
+### Typing changed a key
+
+**Typing Binds a Key** assigns the key you press to the selected position. Deselect before typing, or turn it off in **Settings → General**.
+
+In Manual Updates, discard the unwanted pending edits. If the change was already applied, set the key back yourself: discarding doesn't undo applied changes.
+
+### A save failed
+
+Read the **Not saved** message. In Live Updating, the toolbar also shows **Changes not saved**. Your pending edits remain, and some earlier writes may already have succeeded.
+
+- If the board is still connected, choose **Retry**.
+- If Keybard says the keyboard can't save changes, see the next section.
+- If the board disconnected, **export the draft before reconnecting**. Reconnecting reads the board again and can discard pending edits.
+
+An automatic backup saved after your edits also holds them, marked **Unsent**. See [Backups and files](/keybard/#automatic-backups).
+
+### "Your keyboard can't save changes"
+
+Changes may appear in Keybard, or even work for now, but the board will lose them when it restarts.
+
+1. Choose **OK** to close the warning.
+2. Export the current draft before unplugging, if it holds work you want.
+3. Unplug the keyboard, plug it back in, and reconnect.
+4. Make the changes again, or import your saved draft, and apply them. Check that saving succeeds.
+
+Closing the warning doesn't fix anything by itself.
+
+### "Your keyboard's settings were reset"
+
+The board couldn't read its saved settings and started from defaults.
+
+1. Choose **OK**.
+2. Choose **Import Layout** and select your saved `.svil`. Or open **Settings → Backups** and **Restore** a snapshot from before the reset.
+3. Review and apply the import, then test your important keys.
+
+![The settings-reset notice, then starting to restore a saved layout.](../../../assets/keybard/settings-reset-recovery.webp)
+
+Choosing **OK** only clears the notice. It doesn't restore your layout.
+
+### A name won't save
+
+Layer, macro and tap-dance names can be up to 16 bytes. Accented letters and emoji use several bytes each. Shorten the name. The board name has its own limit.
+
+### Controls or layers seem to be missing
+
+- Click the logo at the top of the left navigation to show its labels.
+- If the toolbar is collapsed, choose **Show editor controls**.
+- Choose **Show All Layers** if layers are hidden.
+- Some settings appear only with a connected board, or only with certain firmware or hardware.
