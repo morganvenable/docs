@@ -12,9 +12,9 @@ Each question sits in the page as a `<!-- VERIFY: ... -->` comment. Paths are un
 6. `keybard/layer-lights.md`: is "thumb clusters shipped after May 2024" the right date for the RGB light? (The colors, the default brightness of 128 and the step of 10 match the firmware.)
 7. `keybard/pointing.md`: vLaunch2 doesn't report pointing hardware. vNext1 does, but it has one file per side, so only **Pointing device not picked up** can appear. Keep the "Wrong pointing-device firmware" section, cut it to the not-picked-up case, or hold it back?
 8. `keybard/settings.md`: Settings → Developer isn't public. Drop the mention of it entirely?
-9. `keybard/overlay.md`: vLaunch2.3 ships Keybard Host as a portable ZIP. Should the docs describe the Windows installer instead?
+9. `keybard/overlay.md`: vLaunch2.3 ships Keybard Overlay (then called Keybard Host) as a portable ZIP. Should the docs describe the Windows installer instead?
 10. `reference/links.md` and `vial/index.md`: is https://captdeaf.github.io/keybard/ the legacy Keybard link to give Vial users?
-11. `reference/releases.mdx`: is "the desktop app for the Keybard overlay" the right one-line description of Keybard Host?
+11. `reference/releases.mdx`: is "the desktop app that shows your layout above your other windows" the right one-line description of Keybard Overlay?
 12. `reference/releases.mdx`: the `.svup` sentence comes from the vNext1 notes. Leave it until the in-firmware updater ships? Yes or no.
 13. `reference/usb-ids.mdx`: does the board report the product ID of the half connected to USB?
 14. `build/index.md`: the kit lists 14 M3x4 inserts (12 plus 2 spare), but Step 8 uses 7 per base plate (14). Which is right?

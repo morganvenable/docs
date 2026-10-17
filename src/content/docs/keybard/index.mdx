@@ -725,24 +725,24 @@ A printout is a reference card, not a backup. Export a `.svil` as well.
 
 ## Desktop overlay
 
-**Keybard Host** is a small desktop app that shows your layout above your other windows. It follows the layer you are on, so you can glance at it while you type in any app.
+**Keybard Overlay** is a small desktop app that shows your layout above your other windows. It follows the layer you are on, so you can glance at it while you type in any app.
 
 It only reads the keyboard. It never changes your layout or flashes firmware. It keeps its own settings.
 
-In Keybard, **Overlay** in the left navigation (below **Layouts**) opens a small dialog. It offers the download and connects Keybard to Keybard Host.
+In Keybard, **Overlay** in the left navigation (below **Layouts**) opens a small dialog. It offers the download and connects Keybard to the overlay app.
 
 ![The overlay showing the base layer, then other layers as they change, then held keys highlighted.](../../../assets/keybard/overlay-layer-changes.webp)
 
 ### Install it on Windows
 
-Keybard Host is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed, so Windows may warn you.
+Keybard Overlay is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed, so Windows may warn you.
 
 {/* VERIFY: the vLaunch2.3 release ships a portable ZIP (RELEASE-NOTES.md, HOST_DOWNLOAD in HostInstall.tsx). The repo also has a Windows installer build. Should these docs describe an installer instead? */}
 
-1. In Keybard, choose **Overlay**, then **Download for Windows**. Or download **KeybardHost-Windows.zip** from the [latest Keybard Host release](https://github.com/svalboard/keybard/releases/latest).
+1. In Keybard, choose **Overlay**, then **Download for Windows**. Or download the Windows ZIP from the [latest Keybard Overlay release](https://github.com/svalboard/keybard/releases/latest).
 2. Extract the whole ZIP to a folder you'll keep. Run **Start-Windows.cmd**.
 3. The first start downloads its own copy of Python and Qt, so you need to be online. It needs no administrator rights and makes no system changes.
-4. Keybard Host sits in the system tray and opens Keybard.
+4. Keybard Overlay sits in the system tray and opens Keybard.
 
 ### Connect it to Keybard
 
@@ -750,11 +750,11 @@ Keybard Host is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed, so
 2. Choose **Overlay**, then **Connect**.
 3. If the browser asks whether the site can access apps on this device, allow it.
 
-Once connected, the dialog shows the board Keybard Host is following and a **Disconnect** button.
+Once connected, the dialog shows the board the overlay app is following and a **Disconnect** button.
 
 Connecting lets the overlay keep up with your edits. About a second after a change reaches the keyboard, the overlay re-reads the layout. In Manual Updates, apply your changes first. Connecting also gives the overlay Keybard's keyboard language.
 
-If you have more than one Svalboard, choose yours from **Board** in the overlay's **⋯** menu or the tray icon. Keybard Host remembers it.
+If you have more than one Svalboard, choose yours from **Board** in the overlay's **⋯** menu or the tray icon. The overlay app remembers it.
 
 ### Move, resize and hide it
 
@@ -788,9 +788,11 @@ For layout changes made outside Keybard, or if the overlay looks out of date, ch
 
 ### Versions and updates
 
-The Overlay dialog shows which Keybard Host is connected. If it's older than the current release, the dialog links to the new one. The tray icon's tooltip shows your version too.
+The Overlay dialog shows which version of Keybard Overlay is connected. If it's older than the current release, the dialog links to the new one. The tray icon's tooltip shows your version too.
 
-Updating Keybard doesn't update Keybard Host. To update it, quit from the tray, extract the new release to a new folder, and run it. Your settings carry over.
+Updating Keybard doesn't update Keybard Overlay. To update it, quit from the tray, extract the new release to a new folder, and run it. Your settings carry over.
+
+Keybard Overlay was called Keybard Host before. Updating from Keybard Host keeps your settings too.
 
 ### Other platforms
 
