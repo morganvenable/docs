@@ -208,8 +208,10 @@ export default defineConfig({
 			// One page per section, jumped through from the sidebar: no separate "On this page" pane.
 			tableOfContents: false,
 			logo: {
-				light: './src/assets/brand/svalboard-light.svg',
-				dark: './src/assets/brand/svalboard-dark.svg',
+				light: './src/assets/brand/svalboard-logo-light.svg',
+				dark: './src/assets/brand/svalboard-logo-dark.svg',
+				// Bernard's logo v6 (mark + wordmark) stands in for the typeset site title.
+				replacesTitle: true,
 			},
 			favicon: '/favicon.svg',
 			// Owner notes (off unless switched on in a browser): public/notes.js. Left out of a
