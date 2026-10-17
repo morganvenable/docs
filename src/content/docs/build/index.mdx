@@ -307,22 +307,25 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 ### Cases and base plates
 
 - 0.2 mm layer height, 6 walls.
-- Default bridging angle 180°.
-- Bridging modifiers in the slot areas, as shown.
 - Smooth side down.
 - No supports.
+- Cases: default bridging angle 180°.
 
-![Slicer view of the left case and base plate, with bridging modifiers at 135°, 45° and 90° over the slot areas.](../../../assets/build/print-cases-plates.webp)
+For the base plates:
+
+1. Set **External bridge infill direction** to 0 (automatic).
+2. On each plate, add a box modifier over the index finger tower slot: the finger tower slot closest to the thumb slots. Make the box cover the whole slot without reaching the next finger tower slot.
+3. In the modifier's settings, set **External bridge infill direction** to 94° on the left plate and 86° on the right plate.
+
+![Slicer views of the left and right base plates at the first bridge layer over the slots. On each plate, a yellow box marks the one modifier over the index finger tower slot: 94° on the left plate, 86° on the right. Every other slot bridges automatically.](../../../assets/build/print-baseplate-bridges.webp)
 
 In the slicer preview, check that the first layer over each slot bridges the short way across it. The dashed outlines mark the openings.
 
-{/* VERIFY: current left base plate (the file named for this pass) sliced in OrcaSlicer 2.3.2 (Bambu X1C 0.4 nozzle, 0.20mm Standard, Bambu PLA Basic): 0.2 mm layers, 6 walls, classic walls, default bridging angle 180, no supports, smooth side down. Its eight slots are plain bars about 5.7 mm wide: four finger tower slots (23.6 mm, short axis at 94° for the two on the left, 80° for the two on the right), two thumb slots (25.5 mm, 90°), one long slot (60.5 mm, 90°) and the palm rest slot (69.5 mm, 0°/180°). With no modifiers, the default 180° bridges only the palm rest slot the short way; the other seven bridge the long way. With modifiers placed over the slots at 94° and 80° (finger slots) and 90° (thumb and long slots), all eight bridge the short way, within 0.5°. Automatic (angle 0) with no modifiers bridges seven of eight the short way; one left finger slot bridges at 30°. The screenshot above shows 135°, 45° and 90° modifiers from an older plate. Should the text and screenshot change to 94°, 80° and 90° for the current plates? Right plate not sliced: is it the mirror image (80° and 94° swapped to 100° and 86°)? */}
+{/* VERIFY: current base plates sliced in OrcaSlicer 2.3.2 (Bambu X1C 0.4 nozzle, 0.20mm Standard, Bambu PLA Basic): 0.2 mm layers, 6 walls, classic walls, no supports, smooth side down, bridge direction 0 (automatic) plus one box modifier per plate (94° left, 86° right) over the index finger tower slot. All 8 slots on each plate bridge the short way, within 0.1°. Without the modifier, that one slot bridges diagonally (30° on the left plate, 150° on the right); no other setting fixed it (bridge flow and density, thick bridges, internal bridge settings, walls, wall generator, vertical shell thickness, 0.16 mm layers, plate rotation). Check the exact Orca menu path for adding a box modifier and its bridge direction setting against the GUI. The cases keep 180°: not sliced in this pass. Do they also print well with automatic bridging, so one setting covers both? */}
 
-![Slicer view of the left base plate at the first bridge layer over its slots. Yellow boxes mark bridging modifiers set across each slot: 94° and 80° over the finger tower slots, 90° over the thumb slots. The palm rest slot bridges at the default 180°.](../../../assets/build/print-baseplate-bridges.webp)
+![Close-up of the index finger tower slot on the left plate at the first bridge layer, from the top and from below. Inside the 94° modifier box, the blue bridge lines cross the dashed opening the short way. An arrow marks that bridges run the short way.](../../../assets/build/print-baseplate-bridge-index-slot.webp)
 
-![Close-up of a finger tower slot at the first bridge layer, from the top and from below. Under the 80° modifier, the blue bridge lines cross the dashed opening the short way. An arrow marks that bridges run the short way.](../../../assets/build/print-baseplate-bridge-finger-slot.webp)
-
-![Close-up of the two thumb slots at the first bridge layer, from the top and from below. Under the 90° modifier, the blue bridge lines cross each dashed opening the short way. An arrow marks that bridges run the short way.](../../../assets/build/print-baseplate-bridge-thumb-slot.webp)
+![Close-up of the two thumb slots on the left plate at the first bridge layer, from the top and from below. With automatic bridging, the blue bridge lines cross each dashed opening the short way. An arrow marks that bridges run the short way.](../../../assets/build/print-baseplate-bridge-thumb-slot.webp)
 
 ### Palm rests and carriers
 
