@@ -309,19 +309,18 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 - 0.2 mm layer height, 6 walls.
 - Smooth side down.
 - No supports.
-- Cases: default bridging angle 180°.
+- **External bridge infill direction** 0 (automatic), for cases and base plates.
 
-For the base plates:
+The base plates also need one modifier each:
 
-1. Set **External bridge infill direction** to 0 (automatic).
-2. On each plate, add a box modifier over the index finger tower slot: the finger tower slot closest to the thumb slots. Make the box cover the whole slot without reaching the next finger tower slot.
-3. In the modifier's settings, set **External bridge infill direction** to 94° on the left plate and 86° on the right plate.
+1. On each plate, add a box modifier over the index finger tower slot: the finger tower slot closest to the thumb slots. Make the box cover the whole slot without reaching the next finger tower slot.
+2. In the modifier's settings, set **External bridge infill direction** to 94° on the left plate and 86° on the right plate.
 
 ![Slicer views of the left and right base plates at the first bridge layer over the slots. On each plate, a yellow box marks the one modifier over the index finger tower slot: 94° on the left plate, 86° on the right. Every other slot bridges automatically.](../../../assets/build/print-baseplate-bridges.webp)
 
 In the slicer preview, check that the first layer over each slot bridges the short way across it. The dashed outlines mark the openings.
 
-{/* VERIFY: current base plates sliced in OrcaSlicer 2.3.2 (Bambu X1C 0.4 nozzle, 0.20mm Standard, Bambu PLA Basic): 0.2 mm layers, 6 walls, classic walls, no supports, smooth side down, bridge direction 0 (automatic) plus one box modifier per plate (94° left, 86° right) over the index finger tower slot. All 8 slots on each plate bridge the short way, within 0.1°. Without the modifier, that one slot bridges diagonally (30° on the left plate, 150° on the right); no other setting fixed it (bridge flow and density, thick bridges, internal bridge settings, walls, wall generator, vertical shell thickness, 0.16 mm layers, plate rotation). Check the exact Orca menu path for adding a box modifier and its bridge direction setting against the GUI. The cases keep 180°: not sliced in this pass. Do they also print well with automatic bridging, so one setting covers both? */}
+{/* VERIFY: current base plates sliced in OrcaSlicer 2.3.2 (Bambu X1C 0.4 nozzle, 0.20mm Standard, Bambu PLA Basic): 0.2 mm layers, 6 walls, classic walls, no supports, smooth side down, bridge direction 0 (automatic) plus one box modifier per plate (94° left, 86° right) over the index finger tower slot. All 8 slots on each plate bridge the short way, within 0.1°. Without the modifier, that one slot bridges diagonally (30° on the left plate, 150° on the right); no other setting fixed it (bridge flow and density, thick bridges, internal bridge settings, walls, wall generator, vertical shell thickness, 0.16 mm layers, plate rotation). Check the exact Orca menu path for adding a box modifier and its bridge direction setting against the GUI. */}
 
 ![Close-up of the index finger tower slot on the left plate at the first bridge layer, from the top and from below. Inside the 94° modifier box, the blue bridge lines cross the dashed opening the short way. An arrow marks that bridges run the short way.](../../../assets/build/print-baseplate-bridge-index-slot.webp)
 
