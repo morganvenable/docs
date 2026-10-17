@@ -36,7 +36,7 @@ This is the standard packing list for Lightly FDM V2.0. It can vary a little bet
 | Thumb PCBAs | 2 |
 | Main PCBAs (MCUs) | 2 |
 | 150 mm FFCs (flat flexible cables) | 12 (10, plus 2 spare) |
-| M2 thread-cutting screws, for PCBAs (and the set screws of older tripod palm rests) | 46 (44, plus 2 spare) |
+| M2 x 4 mm T6 thread-cutting screws, for PCBAs and the TrackPoint holder (and the set screws of older tripod palm rests) | 46 (44, plus 2 spare) |
 | M3 6 mm screws, for cases and clusters | 40 (32, plus 8 spare) |
 | M3 square nuts | 32 (24, plus 8 spare) |
 | M3 6 mm thread-cutting screws, for the main PCB | 9 (8, plus 1 spare) |
@@ -532,11 +532,11 @@ You connect the other end of each FFC to the MCU in [Step 12](/build/#step-12-in
 - **Thumb clusters:** put a screw in every hole.
 - You don't need to remove the finger center key to replace a PCBA.
 
-Use the M2 thread-cutting screws.
+Use the M2 x 4 mm T6 thread-cutting screws and the T6 bit.
 
-<CadFigure name="cad-pcba-finger" alt="A finger cluster from below with its PCBA in place. Two M2 screws (orange) sit in opposite corners; rings mark the two spare holes and the bottom-left corner that must be fully seated." caption="Finger cluster: two M2 screws in opposite corners. If one strips, use a spare hole. Make sure the bottom-left corner is fully seated." />
+<CadFigure name="cad-pcba-finger" alt="A finger cluster from below with its PCBA in place. Two M2 x 4 mm T6 screws (orange) sit in opposite corners; rings mark the two spare holes and the bottom-left corner that must be fully seated." caption="Finger cluster: two M2 x 4 mm T6 screws in opposite corners. If one strips, use a spare hole. Make sure the bottom-left corner is fully seated." />
 
-<CadFigure name="cad-pcba-thumb" alt="A right thumb cluster from the PCBA side with the keys removed. An M2 screw (orange) sits in each of the six screw holes." caption="Thumb cluster: an M2 screw in every hole." />
+<CadFigure name="cad-pcba-thumb" alt="A right thumb cluster from the PCBA side with the keys removed. An M2 x 4 mm T6 screw (orange) sits in each of the six screw holes." caption="Thumb cluster: an M2 x 4 mm T6 screw in every hole." />
 
 {/* VERIFY: the finger figure's "bottom-left corner" follows the old photo's orientation. */}
 
@@ -685,13 +685,13 @@ Use one pointing device per half. Connect its FFCs as in [Step 6](/build/#step-6
 ### 10a TrackPoint
 
 - Attach a same-side FFC to the TrackPoint: unlatch, insert the contacts **up**, latch.
-- Mount the TrackPoint in its holder with three M2 thread-cutting screws.
-- Attach the cover with two M2 screws.
+- Mount the TrackPoint in its holder with three M2 x 4 mm T6 thread-cutting screws.
+- Attach the cover with two more M2 x 4 mm T6 screws.
 - Route the cable with the finger cluster cables ([Step 10](/build/#step-10-install-towers-on-baseplates)).
 - This half needs TrackPoint firmware. See [Step 15](/build/#step-15-flash-firmware-and-connect).
 - The TrackPoint half must be the half you connect to your computer ([Step 15](/build/#step-15-flash-firmware-and-connect)).
 
-<CadFigure name="cad-trackpoint-exploded" alt="An exploded TrackPoint holder: the holder bottom, the TrackPoint module (blue) with its stick up, three M2 screws, the cover, and two M2 cover screws, with dashed lines to their holes." caption="TrackPoint holder: module stick up, held with three M2 screws, then the cover with two M2 screws." />
+<CadFigure name="cad-trackpoint-exploded" alt="An exploded TrackPoint holder: the holder bottom, the TrackPoint module (blue) with its stick up, three M2 x 4 mm T6 screws, the cover, and two more M2 x 4 mm T6 screws for the cover, with dashed lines to their holes." caption="TrackPoint holder: module stick up, held with three M2 x 4 mm T6 screws, then the cover with two more." />
 
 {/* VERIFY: a photo of the FFC contacts-up end is still needed. */}
 
@@ -726,7 +726,7 @@ If you don't carry your Svalboard around and don't tent it steeply, you don't st
   - Older PCBAs may use the **PMW3360** (deprecated).
   - Look for silver marker on the PCBA, or read the tiny text on the sensor itself.
 - Flashing the wrong image does no harm.
-- Mount the trackball PCBA in its holder with the M2 thread-cutting screws. Attach the cover.
+- Mount the trackball PCBA in its holder with the M2 x 4 mm T6 thread-cutting screws. Attach the cover.
 - Route the cable with the finger cluster cables ([Step 10](/build/#step-10-install-towers-on-baseplates)).
 - Connect the trackball cable to the 8-pin FFC connector marked "TrkPt", "Trackball" or "Ball", depending on your MCU: unlatch, insert the contacts down, latch.
 
