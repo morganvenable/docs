@@ -203,6 +203,8 @@ export default defineConfig({
 		starlight({
 			title: 'Svalboard',
 			description: 'Build, set up and use your Svalboard.',
+			// One page per section, jumped through from the sidebar: no separate "On this page" pane.
+			tableOfContents: false,
 			logo: {
 				light: './src/assets/brand/svalboard-light.svg',
 				dark: './src/assets/brand/svalboard-dark.svg',
