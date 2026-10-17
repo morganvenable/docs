@@ -274,6 +274,16 @@ The tipping center key is the standard center key. The default strength is 0.9 m
 
 ![Slicer view of the cluster plate. Yellow bridging modifiers on the clusters are set to 90°, 157.2°, 166.2°, 193.8° and 202.8°.](../../../assets/build/print-cluster-plate.webp)
 
+In the slicer preview, check that the first layer over each key well bridges the short way across it. The dashed outlines mark the openings.
+
+{/* VERIFY: sliced in OrcaSlicer 2.3.2 (Bambu X1C 0.4 nozzle, 0.20mm Standard, Bambu PLA Basic) with the settings above: 0.2 mm layers, Arachne, bridging angle 0, no supports, no modifiers. The first bridge layer runs the short way over all 4 finger wells (1.9 x 5.45 mm, layer 7.8) and all 8 thumb wells (2.5 x 6.45 mm, layer 15.2). One layer up, the small step at the end of each well (finger 1.3 x 2.75 mm at layer 8.0, thumb 1.9 x 2.75 mm at layer 15.4) bridges the long way, crossing the layer below. Is that fine, or should it bridge the short way too? */}
+
+![Slicer view of a finger cluster at the first bridge layer over its key wells. Blue bridge lines fill each of the four wells, running across the narrow dimension of each dashed opening.](../../../assets/build/print-cluster-bridges.webp)
+
+![Close-up of one finger cluster key well at the first bridge layer, from the top and from below. The blue bridge lines cross the narrow dashed opening. An arrow marks that bridges run the short way.](../../../assets/build/print-cluster-bridge-finger-well.webp)
+
+![Close-up of one thumb cluster key well at the first bridge layer, from the top and from below. The blue bridge lines cross the narrow dashed opening. An arrow marks that bridges run the short way.](../../../assets/build/print-cluster-bridge-thumb-well.webp)
+
 #### Thumb Down key opening
 
 The marked edge of the thumb cluster **must** be square. Elephant's foot here makes the thumb Down key bind. A bevel here can add play to the key and change how it feels.
@@ -289,6 +299,16 @@ The marked edge of the thumb cluster **must** be square. Elephant's foot here ma
 - No supports.
 
 ![Slicer view of the left case and base plate, with bridging modifiers at 135°, 45° and 90° over the slot areas.](../../../assets/build/print-cases-plates.webp)
+
+In the slicer preview, check that the first layer over each slot bridges in the direction set by the modifier over it.
+
+{/* VERIFY: left pop-nut base plate sliced in OrcaSlicer 2.3.2 (Bambu X1C 0.4 nozzle, 0.20mm Standard, Bambu PLA Basic): 0.2 mm layers, 6 walls, default bridging angle 180, no supports, smooth side down, modifiers placed as in the figure above. Results at the first bridge layer (4.4 mm): thumb slots and the long slot under the 90° modifier bridge the short way; the palm rest slot (default 180°) bridges the short way. The four finger tower slots bridge at 45° and 135°, 31° to 39° off the short way across each slot. The wide end of the thumb slots (about 7 x 16 mm) bridges its long way under the 90° modifier. Without modifiers (angle 0), most slots bridge the long way, so the modifiers matter. Are the 45° and 135° finger slot angles intended? The figure shows only the left plate: are the right plate's modifiers the mirror image (45° on the left, 135° on the right)? */}
+
+![Slicer view of the left base plate at the first bridge layer over its slots. Yellow boxes mark the bridging modifiers: 135° and 45° over the finger tower slots, 90° over the thumb slots. The palm rest slot bridges at the default 180°.](../../../assets/build/print-baseplate-bridges.webp)
+
+![Close-up of a finger tower slot at the first bridge layer, from the top and from below. Under the 45° modifier, the blue bridge lines cross the slot diagonally.](../../../assets/build/print-baseplate-bridge-finger-slot.webp)
+
+![Close-up of the thumb slots at the first bridge layer, from the top and from below. Under the 90° modifier, the blue bridge lines cross each slot channel the short way.](../../../assets/build/print-baseplate-bridge-thumb-slot.webp)
 
 ### Palm rests and carriers
 
