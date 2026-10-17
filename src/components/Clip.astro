@@ -1,0 +1,89 @@
+---
+// A short recording of the real app, in one of two forms.
+//
+// video: public/video/<video>.webm and .mp4 plus <video>-poster.webp. Muted, looping,
+//   no captions, with controls. It plays by itself unless the reader asks for reduced
+//   motion; then it stays paused on its poster until they press play.
+// anim: an animated WebP in src/assets (anim) with its still (still), both imported in
+//   the page. Readers who ask for reduced motion get the still.
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	alt: string;
+	video?: string;
+	width?: number;
+	height?: number;
+	anim?: ImageMetadata;
+	still?: ImageMetadata;
+	caption?: string;
+}
+
+const { alt, video, anim, still, caption } = Astro.props;
+const width = Astro.props.width ?? anim?.width ?? 1200;
+const height = Astro.props.height ?? anim?.height ?? 792;
+if (!video && !anim) throw new Error('Clip: give video or anim');
+if (anim && !still) throw new Error('Clip: an anim needs its still');
+const base = video ? `/video/${video}` : '';
+---
+
+<figure class="clip">
+	{
+		video ? (
+			<video
+				class="clip-video"
+				width={width}
+				height={height}
+				poster={`${base}-poster.webp`}
+				aria-label={alt}
+				autoplay
+				muted
+				loop
+				playsinline
+				controls
+				preload="auto"
+			>
+				<source src={`${base}.webm`} type="video/webm" />
+				<source src={`${base}.mp4`} type="video/mp4" />
+			</video>
+		) : (
+			<picture>
+				<source srcset={still!.src} media="(prefers-reduced-motion: reduce)" />
+				<img src={anim!.src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+			</picture>
+		)
+	}
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>
+{
+	video && (
+		<script is:inline>
+			// Reduced motion: keep every clip paused on its poster; the controls still play it.
+			(() => {
+				if (!matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+				for (const v of document.querySelectorAll('video.clip-video')) {
+					v.removeAttribute('autoplay');
+					v.autoplay = false;
+					v.preload = 'metadata';
+					v.pause();
+				}
+			})();
+		</script>
+	)
+}
+
+
+<style>
+	.clip video,
+	.clip img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+		border: 1px solid var(--sl-color-hairline);
+	}
+	.clip figcaption {
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+		margin-top: 0.5rem;
+	}
+</style>

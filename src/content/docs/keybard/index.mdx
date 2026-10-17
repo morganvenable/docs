@@ -3,11 +3,13 @@ title: Keybard
 description: Configure your Svalboard in the browser with Keybard. Keys, layers, behaviors, pointing, backups, settings and the desktop overlay.
 ---
 
+import Clip from '../../../components/Clip.astro';
+
 Keybard is the web app that configures a Svalboard running Svalboard QMK firmware. It runs in your browser at [keybard.svalboard.com](https://keybard.svalboard.com). There is nothing to install.
 
 With Keybard you change what each key does, organize layers, build macros, tap dances, combos and other behaviors, tune your pointing devices, and back up your setup. You can explore it without a keyboard first.
 
-<!-- VERIFY: most screenshots here were recaptured from the current Keybard (offline QWERTY Example). Eight need a connected board and still show the older navigation rail ("Trainer"): toolbar-pending-apply, manual-updates-apply-one-change, automatic-backup-after-edit, restore-automatic-backup, pointing-dpi, settings-reset-recovery, make-default-layer, and the Host overlay animation. Recapture them on a test board. -->
+{/* VERIFY: most screenshots here were recaptured from the current Keybard (offline QWERTY Example). Eight need a connected board and still show the older navigation rail ("Trainer"): toolbar-pending-apply, manual-updates-apply-one-change, automatic-backup-after-edit, restore-automatic-backup, pointing-dpi, settings-reset-recovery, make-default-layer, and the Host overlay animation. Recapture them on a test board. */}
 
 ## Get started
 
@@ -27,7 +29,7 @@ With Keybard you change what each key does, organize layers, build macros, tap d
 | **Load File** | A saved layout opens as an offline draft. | Inspecting a backup or continuing exported work. |
 | **QWERTY Example** | A bundled example opens without a keyboard. | Learning the controls safely. |
 
-![Keybard opening the QWERTY Example, opening Standard Keys, and dragging A onto the Q position.](../../../assets/keybard/first-edit-offline-example.webp)
+<Clip video="keybard/first-edit" alt="Keybard opening the QWERTY Example, opening Standard Keys, and dragging A onto the Q position." />
 
 The recording above opens **QWERTY Example**, opens **Standard Keys**, and drags A onto Q. No keyboard is changed.
 
@@ -260,7 +262,7 @@ Saved layers live in this browser's storage. Clearing browser data can remove th
 
 Thumb clusters shipped after May 2024 have an RGB light that shows the active layer. You set its colors and brightness in Keybard.
 
-<!-- VERIFY: the default colors, the default brightness of 128 and the step of 10 per key match the vLaunch2 firmware source. Is "shipped after May 2024" the right date for the RGB light? -->
+{/* VERIFY: the default colors, the default brightness of 128 and the step of 10 per key match the vLaunch2 firmware source. Is "shipped after May 2024" the right date for the RGB light? */}
 
 ### Default colors
 
@@ -288,7 +290,7 @@ Thumb clusters shipped after May 2024 have an RGB light that shows the active la
 2. Click the color dot beside the layer name, above the keyboard. Its tooltip says **Layer Color** (or **Default Layer** on the default layer).
 3. Pick a color. The board's light changes right away.
 
-<!-- VERIFY: screenshot wanted: the layer name row with the color list open under the color dot, showing the gear button at the bottom of the list. -->
+{/* VERIFY: screenshot wanted: the layer name row with the color list open under the color dot, showing the gear button at the bottom of the list. */}
 
 ### Change the brightness
 
@@ -302,7 +304,7 @@ Brightness applies to every layer. The default is 128.
 
 In the same dialog, **Key color** sets the color Keybard uses for that layer's keys on screen, separately from the LED.
 
-<!-- VERIFY: screenshot wanted: the "Colors for <layer>" dialog with LED color selected, showing the Hue, Saturation and Brightness sliders, the note "LED brightness applies to every layer, like the brightness keys." and the Apply button. -->
+{/* VERIFY: screenshot wanted: the "Colors for <layer>" dialog with LED color selected, showing the Hue, Saturation and Brightness sliders, the note "LED brightness applies to every layer, like the brightness keys." and the Apply button. */}
 
 ### Brightness keys
 
@@ -614,7 +616,7 @@ It also has Svalboard's own keys, including:
 
 The keys shown depend on the board's firmware.
 
-<!-- VERIFY: vLaunch2 doesn't report its pointing hardware to Keybard. Can the "Wrong pointing-device firmware" dialog below appear on vLaunch2? If not, cut this section until a stable release reports it. -->
+{/* VERIFY: vLaunch2 doesn't report its pointing hardware to Keybard. Can the "Wrong pointing-device firmware" dialog below appear on vLaunch2? If not, cut this section until a stable release reports it. */}
 
 ### Wrong pointing-device firmware
 
@@ -632,7 +634,7 @@ The warning shows once per connection. Choose **OK** to close it.
 
 Open **Settings** at the bottom of the left navigation. It has four sections: **General**, **Fragments**, **Backups** and **Developer**. Backups are covered in [Backups and files](/keybard/#backups-and-files).
 
-<!-- VERIFY: Settings → Developer holds tools that aren't public. This page names the section but doesn't describe it. Should it be left out entirely? -->
+{/* VERIFY: Settings → Developer holds tools that aren't public. This page names the section but doesn't describe it. Should it be left out entirely? */}
 
 ### General
 
@@ -707,7 +709,7 @@ Or set each finger under **Left** and **Right**. The thumbs always use the thumb
 
 ![Matrix Tester open with every position unlit, waiting for presses.](../../../assets/keybard/matrix-tester.webp)
 
-<!-- VERIFY: with a board connected, check that the buttons are still named Clear Matrix and Exit Matrix Tester (offline, the view shows a back arrow beside the heading). -->
+{/* VERIFY: with a board connected, check that the buttons are still named Clear Matrix and Exit Matrix Tester (offline, the view shows a back arrow beside the heading). */}
 
 Matrix Tester shows switches, not what a key types. Very quick taps can fall between updates. If a switch shows up but types the wrong thing, check its layer and binding.
 
@@ -735,7 +737,7 @@ In Keybard, **Overlay** in the left navigation (below **Layouts**) opens a small
 
 Keybard Host is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed, so Windows may warn you.
 
-<!-- VERIFY: the vLaunch2.3 release ships a portable ZIP (RELEASE-NOTES.md, HOST_DOWNLOAD in HostInstall.tsx). The repo also has a Windows installer build. Should these docs describe an installer instead? -->
+{/* VERIFY: the vLaunch2.3 release ships a portable ZIP (RELEASE-NOTES.md, HOST_DOWNLOAD in HostInstall.tsx). The repo also has a Windows installer build. Should these docs describe an installer instead? */}
 
 1. In Keybard, choose **Overlay**, then **Download for Windows**. Or download **KeybardHost-Windows.zip** from the [latest Keybard Host release](https://github.com/svalboard/keybard/releases/latest).
 2. Extract the whole ZIP to a folder you'll keep. Run **Start-Windows.cmd**.
