@@ -212,6 +212,8 @@ export default defineConfig({
 			head: [
 				{ tag: 'script', attrs: { src: '/notes.js', defer: true } },
 				{ tag: 'script', attrs: { src: '/sidebar-spy.js', defer: true } },
+				// Older builds footnote style: "a" (Notes list) or "b" (Older builds block). One value; see custom.css.
+				{ tag: 'script', content: "document.documentElement.dataset.older='a'" },
 				// CAD figure style (src/components/CadStyleSelect.astro), set before first paint.
 				{
 					tag: 'script',
