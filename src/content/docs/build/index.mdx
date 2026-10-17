@@ -4,6 +4,7 @@ description: "Build a Svalboard from a self-print kit, from printing the parts t
 ---
 
 import CadFigure from '../../../components/CadFigure.astro';
+import YouTube from '../../../components/YouTube.astro';
 import facts from '../../../data/facts.json';
 export const stable = facts.firmware.stable;
 export const blank = (side) => stable.assets.find((a) => a.startsWith(`svalboard_${side}_blank_`) && a.endsWith('.uf2'));
@@ -18,9 +19,9 @@ Help us improve it: send comments on the [Svalboard Discord](https://www.svalboa
 
 ## Video build guide
 
-[@beepbuildsathing](https://youtube.com/@beepbuildsathing) made a video build guide to go with this one: [watch it on YouTube](https://youtu.be/fa_BZ1AKQVk).
+<YouTube id="fa_BZ1AKQVk" title="Svalboard build guide video by @beepbuildsathing" />
 
-Some of the video is out of date, and it doesn't cover steps added since it was made. Where the video and this guide differ, follow this guide.
+Where the video and this guide differ, follow this guide.
 
 ## What's in the kit
 
