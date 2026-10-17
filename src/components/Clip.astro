@@ -4,8 +4,9 @@
 // video: public/video/<video>.webm and .mp4 plus <video>-poster.webp. Muted, looping,
 //   no captions, with controls. It plays by itself unless the reader asks for reduced
 //   motion; then it stays paused on its poster until they press play.
-// anim: an animated WebP in src/assets (anim) with its still (still), both imported in
-//   the page. Readers who ask for reduced motion get the still.
+// anim: "<dir>/<name>" for src/assets/<dir>/<name>-clip.webp, an animated WebP, and
+//   src/assets/<dir>/<name>.webp, its still (the end of the clip). Readers who ask for
+//   reduced motion get the still.
 import type { ImageMetadata } from 'astro';
 
 interface Props {
@@ -13,16 +14,22 @@ interface Props {
 	video?: string;
 	width?: number;
 	height?: number;
-	anim?: ImageMetadata;
-	still?: ImageMetadata;
+	anim?: string;
 	caption?: string;
 }
 
-const { alt, video, anim, still, caption } = Astro.props;
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/*/*.webp', { eager: true });
+const { alt, video, anim: animName, caption } = Astro.props;
+if (!video && !animName) throw new Error('Clip: give video or anim');
+const pick = (path: string) => {
+	const f = files[`../assets/${path}.webp`];
+	if (!f) throw new Error(`Clip: missing src/assets/${path}.webp`);
+	return f.default;
+};
+const anim = animName ? pick(`${animName}-clip`) : undefined;
+const still = animName ? pick(animName) : undefined;
 const width = Astro.props.width ?? anim?.width ?? 1200;
 const height = Astro.props.height ?? anim?.height ?? 792;
-if (!video && !anim) throw new Error('Clip: give video or anim');
-if (anim && !still) throw new Error('Clip: an anim needs its still');
 const base = video ? `/video/${video}` : '';
 ---
 

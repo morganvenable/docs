@@ -9,7 +9,7 @@ Keybard is the web app that configures a Svalboard running Svalboard QMK firmwar
 
 With Keybard you change what each key does, organize layers, build macros, tap dances, combos and other behaviors, tune your pointing devices, and back up your setup. You can explore it without a keyboard first.
 
-{/* VERIFY: most screenshots here were recaptured from the current Keybard (offline QWERTY Example). Eight need a connected board and still show the older navigation rail ("Trainer"): toolbar-pending-apply, manual-updates-apply-one-change, automatic-backup-after-edit, restore-automatic-backup, pointing-dpi, settings-reset-recovery, make-default-layer, and the Host overlay animation. Recapture them on a test board. */}
+{/* VERIFY: the step clips (animated WebP, still under reduced motion) and the first-edit video were recorded frame by frame from the current Keybard (offline QWERTY Example), with tools/video/docs_kbclips.py. Seven need a connected board and still show the older navigation rail ("Trainer"): toolbar-pending-apply, manual-updates-apply-one-change, automatic-backup-after-edit, restore-automatic-backup, pointing-dpi, settings-reset-recovery, make-default-layer. Recapture them on a test board, as clips where they show a flow. */}
 
 ## Get started
 
@@ -51,7 +51,7 @@ After a refresh, Keybard returns to the welcome screen. Keyboards you allowed be
 2. Keep **.svil (Recommended)** and **Include Macros** selected, then choose **Export**.
 3. Give the file a clear name, such as `before-first-edit.svil`, and keep it outside the browser.
 
-![Opening Export Layout and exporting a native .svil file.](../../../assets/keybard/export-svil-backup.webp)
+<Clip anim="keybard/export-svil-backup" alt="Opening Export Layout and exporting a native .svil file." />
 
 Export saves what the editor shows, including changes not yet applied to the board. Exporting after experimenting doesn't give you back the untouched layout. Export first.
 
@@ -118,13 +118,13 @@ For a controlled first experiment, click the lightning control labeled **Switch 
 6. Click away to deselect the key. Open a text editor, switch to the layer you edited, and press the key.
 7. Export the working result as a new `.svil` file.
 
-![Dragging A from Standard Keys onto the Q position. The position now shows A.](../../../assets/keybard/drag-a-onto-q.webp)
+<Clip anim="keybard/drag-a-onto-q" alt="Dragging A from Standard Keys onto the Q position. The position now shows A." />
 
 ### Swap two keys
 
 Dragging a key from the layout onto another position swaps the two bindings, even across layers. Dragging from a palette assigns a copy instead.
 
-![Dragging Q onto A to swap them, then dragging them back.](../../../assets/keybard/swap-two-keys.webp)
+<Clip anim="keybard/swap-two-keys" alt="Dragging Q onto A to swap them, then dragging them back." />
 
 If an **Undo** button appears, its tooltip names the change it reverses. It is not a full edit history.
 
@@ -157,11 +157,11 @@ Layer keys are in **Layer Keys**. Start with a momentary key that opens a small 
 3. Open **Layer Keys**, choose **MO** (Momentary), and click the tile for layer 3.
 4. Apply the changes and deselect. In a text editor, hold the new key and try the arrows. Release it and check that normal typing returns.
 
-![The base layer with MO(3) on a left thumb key and Layer Keys open. Layer 3 holds Left, Down and Right.](../../../assets/keybard/build-navigation-layer.webp)
+<Clip anim="keybard/build-navigation-layer" alt="Assigning Left, Down and Right on layer 3, then placing MO(3) on a left thumb key of the base layer from Layer Keys." />
 
 To make the same key type something when tapped, assign the tap key first. Select the position again, then choose **LT** (Layer Tap) and the layer. Keybard takes the tap key from the selected position.
 
-![Assigning A, selecting it again, and choosing Layer Keys, LT, layer 3. The key is A on tap and layer 3 on hold.](../../../assets/keybard/layer-tap-key.webp)
+<Clip anim="keybard/layer-tap-key" alt="Opening Layer Keys, selecting the A position, and choosing LT and layer 3. The key is now A on tap and layer 3 on hold." />
 
 | Layer Keys button | Use it to |
 | --- | --- |
@@ -176,7 +176,7 @@ To make the same key type something when tapped, assign the tap key first. Selec
 
 ### Transparent and blank
 
-![Layer 3 with the A position set to Blank.](../../../assets/keybard/transparent-and-blank.webp)
+<Clip anim="keybard/transparent-and-blank" alt="Switching to layer 3, selecting the A position, and choosing Blank." />
 
 With layer 3 active, a transparent key at the A position types A from the base layer. A blank key at that position types nothing.
 
@@ -186,11 +186,11 @@ With layer 3 active, a transparent key at the A position types A from the base l
 - Click the color dot beside the name to pick its color. See [Layer lights and brightness](/keybard/#layer-lights-and-brightness).
 - The layer's actions menu has **Copy Layer**, **Paste Layer**, **Make All Blank**, **Make All Transparent**, and **Switch Blank to Transparent** and **Switch Transparent to Blank**. These change many keys at once, so check the layer first.
 
-![Clicking Layer 0, typing Base, and leaving the field to save the name.](../../../assets/keybard/rename-layer.webp)
+<Clip anim="keybard/rename-layer" alt="Clicking Layer 0, typing Base, and leaving the field to save the name." />
 
 **Show Multiple Layers** shows layers together. **3D View** stacks them. **Hide All Transparent Keys** hides inherited keys from view; it doesn't change them. **Show All Layers** brings back layers hidden by that filter. Viewing a layer doesn't turn it on in the keyboard.
 
-![Show Multiple Layers, then 3D View.](../../../assets/keybard/compare-layers-3d-view.webp)
+<Clip anim="keybard/compare-layers-3d-view" alt="Show Multiple Layers, then 3D View." />
 
 ### Choose the layer the board starts on
 
@@ -214,7 +214,7 @@ This needs vLaunch2 firmware or later. On older firmware the menu shows **Make D
 4. Choose **Move layer**. In Manual Updates, it waits for **Apply N Changes**. In Live Updating, it is written right away. Offline, only the draft changes.
 5. Test your layer keys. Use **Undo** if needed, then export the result.
 
-![Dragging the Symbols layer tab from layer 1 to layer 5, reviewing the move, and choosing Move layer.](../../../assets/keybard/reorder-layers.webp)
+<Clip anim="keybard/reorder-layers" alt="Dragging the Symbols layer tab from layer 1 to layer 5, reviewing the move, and choosing Move layer." />
 
 The mouse layer must stay last. Read any warning about tri-layer targets. On vLaunch2 or later, the default layer stays the default at its new number. On older firmware or offline, the review explains moves it blocks.
 
@@ -236,9 +236,9 @@ Dragging a tab moves a layer. Dragging a preview from **Layouts** replaces a lay
 4. Drag the layer's preview by its title row onto the destination layer's tab. Read the **Replace** confirmation, which names both layers, and choose **OK**.
 5. The destination keeps its name and takes the new layer's color. Apply the changes in your update mode.
 
-![Searching Layouts for Dvorak and dragging it onto Layer 0. The letters move and the thumb keys stay.](../../../assets/keybard/dvorak-on-base-layer.webp)
+<Clip anim="keybard/dvorak-on-base-layer" alt="Searching Layouts for Dvorak and dragging it onto Layer 0. The letters move and the thumb keys stay." />
 
-![Searching for tenkey and dragging Left-hand tenkey + right-hand nav onto Layer 1.](../../../assets/keybard/tenkey-numbers-layer.webp)
+<Clip anim="keybard/tenkey-numbers-layer" alt="Searching for tenkey and dragging Left-hand tenkey + right-hand nav onto Layer 1." />
 
 To try a letter layout without losing yours, drag it onto a spare layer and add a **DF** key for that layer from **Layer Keys**. When you want to keep it, use **Make Default Layer**.
 
@@ -252,9 +252,9 @@ You can also drag single keys from a preview onto your layout. If you delete a S
 4. Read the confirmation and choose **OK** only if the destination is right.
 5. Apply the changes in your update mode.
 
-![Choosing Save Layer…, naming it, and finding it in Layouts.](../../../assets/keybard/save-layer-to-library.webp)
+<Clip anim="keybard/save-layer-to-library" alt="Choosing Save Layer…, naming it, and finding it in Layouts." />
 
-![Dragging a saved layer's preview onto layer 3 and confirming the replacement.](../../../assets/keybard/apply-library-layer.webp)
+<Clip anim="keybard/apply-library-layer" alt="Dragging a saved layer's preview onto layer 3 and confirming the replacement." />
 
 Saved layers live in this browser's storage. Clearing browser data can remove them. They are not a backup: export a `.svil` for that.
 
@@ -449,7 +449,7 @@ A macro runs its actions in order. Start with something harmless, such as the te
 4. Apply the changes. Deselect and focus an empty document. Press the key: it should type your text.
 5. Add more actions only once this works. Then export a fresh backup.
 
-![Adding a Text action containing hello, closing the editor, and dragging Macro 0 onto Q.](../../../assets/keybard/text-macro.webp)
+<Clip anim="keybard/text-macro" alt="Adding a Text action containing hello, closing the editor, and dragging Macro 0 onto Q." />
 
 | Action | What it does |
 | --- | --- |
@@ -474,7 +474,7 @@ A tap dance gives one key several outputs. To learn it, set **Tap** to A and **D
 4. Close the editor and assign the tap dance's tile to a spare position. Apply the changes.
 5. Deselect. Test a single tap, then a quick double tap. If your double taps come out as two single taps, adjust the timing.
 
-![Enabling tap dance 0, assigning A to Tap and B to Double-Tap, and dragging its tile onto Q.](../../../assets/keybard/tap-dance.webp)
+<Clip anim="keybard/tap-dance" alt="Assigning A to Tap and B to Double-Tap in tap dance 0, then dragging its tile onto Q." />
 
 :::caution
 Release a tap-dance key before changing what it does. Editing a tap dance while it is held can leave its old output held.
@@ -491,7 +491,7 @@ A combo watches for up to four keys pressed together and sends its **Output**. F
 3. Apply the changes. Deselect, then press each key alone before pressing them together.
 4. If the combo is hard to hit, raise **Combo Timeout** in the Combos panel while connected. Raise it a little at a time: a long window can catch normal typing.
 
-![Enabling a combo with A and B as inputs and Escape as the output.](../../../assets/keybard/combo-a-b-escape.webp)
+<Clip anim="keybard/combo-a-b-escape" alt="Setting A and B as a combo's inputs and Escape as its output." />
 
 There's no combo key to place. Pick key pairs you rarely type together.
 
@@ -510,11 +510,11 @@ To make a key A on tap and Control on hold:
 3. Choose the middle tile, the mod-tap. It shows the result, such as **CTL A**; the plain modifier is on its left and the one-shot tile on its right.
 4. Apply, deselect, and test a tap. Then hold the key and press another key.
 
-![Assigning A, selecting the position again, choosing CTRL, then the mod-tap tile.](../../../assets/keybard/mod-tap-a-control.webp)
+<Clip anim="keybard/mod-tap-a-control" alt="Selecting the A position, choosing CTRL, then the mod-tap tile. The key becomes CTL A." />
 
 For a one-shot Shift, choose **SHIFT** and the one-shot tile (**OSM LSFT**). Tap the key, let go, then type a letter.
 
-![Choosing SHIFT and the OSM tile.](../../../assets/keybard/one-shot-shift.webp)
+<Clip anim="keybard/one-shot-shift" alt="Selecting a spare thumb position, choosing SHIFT, then the OSM tile." />
 
 Modifiers come in left and right versions. Some views also offer **MEH** (Control, Shift and Alt) and **HYPER** (those plus GUI). GUI is the Windows or Command key.
 
@@ -526,7 +526,7 @@ Open **Settings → General → QMK Settings...** → **One Shot Keys** while co
 2. Set **Time (in ms) before the one shot key is released**, or **0** to turn off the timeout. Set both to 0 for one-shots that never time out or lock.
 3. Press Enter or leave each field. In Manual Updates, apply the changes. Test waiting past the timeout and tapping repeatedly.
 
-![One-shot settings with the tap count and the timeout both set to 0.](../../../assets/keybard/one-shot-settings.webp)
+<Clip anim="keybard/one-shot-settings" alt="Opening One Shot Keys and setting the tap count and the timeout to 0." />
 
 These settings apply to one-shot modifiers and one-shot layers. Importing a backup can change them, so check them after a restore. Mod-taps also depend on the tap-hold settings in [Settings and checks](/keybard/#typing-feel).
 
@@ -542,7 +542,7 @@ An override replaces a key when certain modifiers are held. For example, Shift+B
 4. Choose the **Layers** it applies to and enable it. Leave the other options alone for now.
 5. Apply, deselect, and test: Backspace still deletes left, and Shift+Backspace deletes right.
 
-![Enabling an override with Backspace and Delete, and Shift in both Trigger and Suspended.](../../../assets/keybard/override-shift-backspace-delete.webp)
+<Clip anim="keybard/override-shift-backspace-delete" alt="Enabling an override with Backspace and Delete, and Shift in both Trigger and Suspended." />
 
 ### Leader sequences
 
@@ -556,7 +556,7 @@ A leader sequence is a **Leader** key followed by keys typed one after another. 
 4. While connected, check **Leader Timeout**. With **Per-key timing** on, the timer restarts after each key. Otherwise the whole sequence shares one time limit.
 5. Apply, deselect, and type Leader, A, B.
 
-![Enabling an A-then-B sequence with Macro 0 as its output, then assigning the Leader key.](../../../assets/keybard/leader-sequence.webp)
+<Clip anim="keybard/leader-sequence" alt="Setting an A-then-B sequence with Macro 0 as its output, enabling it, then placing the Leader key." />
 
 ### Alternate repeat
 
@@ -568,7 +568,7 @@ Alternate repeat sends a different key depending on the key you typed last. To t
 2. Assign the alternate-repeat key from the panel to a position. Apply and deselect.
 3. Test this before trying **Bidirectional**, **Ignore mod handedness** or **Default to alternate**.
 
-![Enabling the A-to-B mapping and placing the Alt-Rep key in the layout.](../../../assets/keybard/alt-repeat.webp)
+<Clip anim="keybard/alt-repeat" alt="Mapping A to B, enabling it, and placing the Alt-Rep key on a spare thumb position." />
 
 :::caution
 Alternate repeat has known firmware defects with modifier matching and **Default to alternate**. Test custom mappings before relying on them, especially with modifiers.
@@ -662,7 +662,7 @@ The name stays on the keyboard across firmware updates. It is separate from your
 
 Open **Settings → General → QMK Settings...** while connected. Export a backup first. Change one setting, apply it, and test both slow, deliberate presses and normal typing.
 
-![QMK Settings with Tapping Term changed from 200 to 210 ms.](../../../assets/keybard/tapping-term-change.webp)
+<Clip anim="keybard/tapping-term-change" alt="QMK Settings with Tapping Term changed from 200 to 210 ms." />
 
 **Tap-Hold**:
 
@@ -719,7 +719,7 @@ Matrix Tester shows switches, not what a key types. Very quick taps can fall bet
 2. Check the number of non-empty layers and choose **Print**.
 3. Print from your browser's print dialog, or save a PDF.
 
-![Opening Print Layers…, checking the layer count, and choosing Print.](../../../assets/keybard/print-layers.webp)
+<Clip anim="keybard/print-layers" alt="Opening Print Layers… and checking the layer count before choosing Print." />
 
 A printout is a reference card, not a backup. Export a `.svil` as well.
 
