@@ -44,8 +44,8 @@ This is the standard packing list for Lightly FDM V2.0. It can vary a little bet
 | M5 thin square nuts, for the palm rests | 2 |
 | Stainless steel towers for clusters | set of 10 |
 | Rubber feet (FC-036-DCW-PT) | 9 (4 per side) |
-| T10 Torx driver | 1 |
-| T6 Torx bit | 1 |
+| T10 Torx driver, for the M3 x 6 mm screws | 1 |
+| T6 Torx bit, for the M2 x 4 mm screws | 1 |
 | 3 mm hex key, for the palm rest center screws | 1 |
 | USB-C to USB-C cables | 2 |
 | TrackPoint PCBA | optional |
@@ -654,9 +654,9 @@ Slot nuts go in from the front of the base plate, the side the towers mount on.
 
 Attach each tower to its cluster first. Then attach the assembly to the nut in the base plate slot ([Step 10](/build/#step-10-install-towers-on-baseplates)).
 
-Put an M3 x 6 mm pan head T6 screw through the tower and into the square nut in the cluster, with the T6 bit. Tighten it a little to keep the cluster roughly in place. You adjust it later.
+Put an M3 x 6 mm pan head T10 screw through the tower and into the square nut in the cluster, with the T10 driver. Tighten it a little to keep the cluster roughly in place. You adjust it later.
 
-<CadFigure name="cad-tower-exploded" alt="An exploded view on one axis: an M3 x 6 mm pan head T6 screw, the index tower (orange), and the finger cluster, with the square nut (blue) below its slot in the cluster." caption="The M3 x 6 mm pan head T6 screw passes through the tower and into the square nut in the cluster." />
+<CadFigure name="cad-tower-exploded" alt="An exploded view on one axis: an M3 x 6 mm pan head T10 screw, the index tower (orange), and the finger cluster, with the square nut (blue) below its slot in the cluster." caption="The M3 x 6 mm pan head T10 screw passes through the tower and into the square nut in the cluster." />
 
 Make sure each tower goes in the right place:
 
@@ -666,15 +666,15 @@ Make sure each tower goes in the right place:
 
 <CadFigure name="cad-tower-types" alt="Three stainless towers seen from the side, stacked: the thumb tower with its long side down, the tall index tower with its tall side up, and the shorter tower used for middle, ring and pinky." caption="Thumb: long side down. Index: tall side up. Middle, ring and pinky: the shorter towers." />
 
-<CadFigure name="cad-tower-on-cluster" alt="An index tower (orange) screwed to a finger cluster with an M3 pan head T6 screw." />
+<CadFigure name="cad-tower-on-cluster" alt="An index tower (orange) screwed to a finger cluster with an M3 x 6 mm pan head T10 screw." />
 
 ## Step 10: Install towers on baseplates
 
 1. Take a cluster and tower assembly. Feed the cluster's FFC through the matching hole in the base plate.
-2. Put an M3 x 6 mm pan head T6 screw through the tower base and into the square nut in the base plate slot.
+2. Put an M3 x 6 mm pan head T10 screw through the tower base and into the square nut in the base plate slot.
 3. Tighten it enough to hold the tower. You'll move the towers later to fit your hand ([Step 18](/build/#step-18-adjust-the-fit)), so don't tighten them hard.
 
-<CadFigure name="cad-tower-on-plate" alt="An index tower and cluster lifted above the base plate. The cluster's FFC (blue) passes down through its hole in the plate, and an M3 x 6 mm pan head T6 screw lines up with the tower base slot and the square nut (blue) in the plate slot." caption="Feed the FFC through the base plate, then screw the tower base to the square nut in the slot." />
+<CadFigure name="cad-tower-on-plate" alt="An index tower and cluster lifted above the base plate. The cluster's FFC (blue) passes down through its hole in the plate, and an M3 x 6 mm pan head T10 screw lines up with the tower base slot and the square nut (blue) in the plate slot." caption="Feed the FFC through the base plate, then screw the tower base to the square nut in the slot." />
 
 If you have a TrackPoint, trackball or touchpad, install it next: see [Steps 10a to 10c](/build/#steps-10a-to-10c-pointing-devices).
 
@@ -833,7 +833,7 @@ For a softer rest, add [Squishy Palmrests](https://svalboard.com/products/squish
 
 ### Older builds: tripod palm rests
 
-The tripod palm rest drops into its sled on three legs. M2 thread-cutting screws clamp it at the sides. Don't overtighten these screws.
+The tripod palm rest drops into its sled on three legs. M2 x 4 mm T6 thread-cutting set screws clamp it at the sides. Don't overtighten these screws.
 
 ![A tripod palm rest seated in its sled on the base plate.](../../../assets/build/palm-rest-on-sled.webp)
 
@@ -957,15 +957,13 @@ The carrier slides in X and Y on the base plate. Keep it square to the plate, sl
 	<CadFigure name="cad-palm-motion-2-tilt" alt="A hemispherical palm rest on its carrier. Arrows show it turning on the carrier (Yaw), tilting front to back (Pitch) and side to side (Roll). Lines point to the center screw and to the carrier screws, seen through the window in the rest." caption="Loosen the center screw to turn the rest (yaw) and tilt it (pitch and roll)." />
 </div>
 
-1. Reach the two carrier screws through the window in the palm rest, and loosen them slightly.
+1. Reach the two carrier screws through the window in the palm rest with the T10 driver, and loosen them slightly.
 2. With a relaxed hand, your fingers should rest comfortably on the center keys. Slide the carrier to get a good starting position, keeping it square to the base plate. You can always tweak it later.
 3. The base knuckles of each hand usually rest just in front of the front edge of the palm rest.
 4. Tighten both carrier screws gently snug to fix the position.
 5. To set yaw, pitch and roll, loosen the large center screw slightly with the 3 mm hex key. Turn the rest to the angle your hand wants, tilt it until your palm lies flat on it, then tighten the center screw firmly.
 
 ![Close-up of a hemispherical palm rest. The center screw sits in its washer, and the two carrier screws show through the window above it.](../../../assets/build/palm-rest-hemisphere-screws.webp)
-
-{/* VERIFY: which driver fits the carrier screws through the window: the T10 driver, or a hex key? */}
 
 #### Older builds: tripod palm rests
 
@@ -977,7 +975,7 @@ Loosen both carrier screws slightly, slide and turn the carrier as above, then t
 
 Each cluster moves in X, Y and yaw.
 
-1. Loosen the tower base screw (M3 pan head, T6) slightly with the T6 bit.
+1. Loosen the tower base screw (M3 x 6 mm pan head, T10) slightly with the T10 driver.
 2. Tighten it gently to test and fine-tune.
 3. After you set the palm rest, adjust how far forward or back each cluster sits, so each finger feels equally relaxed. Fingers should rest only on the center keys, and on the South keys if you prefer.
 4. Tighten snug, without overdoing it, to fix the position.
@@ -988,7 +986,7 @@ To move one finger farther away than its slot allows, move the other fingers clo
 
 ### Height and roll
 
-1. Loosen the cluster height screws (M3 pan head, T6) slightly with the T6 bit. The washer may bind a little. Don't unscrew too far. Wiggle it gently, or lift the edge of the washer to break it free of the plastic.
+1. Loosen the cluster height screws (M3 x 6 mm pan head, T10) slightly with the T10 driver. The washer may bind a little. Don't unscrew too far. Wiggle it gently, or lift the edge of the washer to break it free of the plastic.
 2. **Roll:** set it so each finger presses the East and West keys equally easily. If you have to favor one side, make the inboard key slightly higher, so it's easier to press: West on the right hand, East on the left hand.
 3. **Height:** set it so each finger rests with the same light pressure on its center key, without touching any other key.
 
