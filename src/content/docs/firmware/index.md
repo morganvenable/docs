@@ -91,7 +91,7 @@ For hardware problems, see [Troubleshooting](/hardware/#troubleshooting).
 
 Linux lets only root open the keyboard until you add a udev rule. Without it, Keybard and Keybard Host can see the board but can't open it. Older Svalboard rules matched a Vial serial number that current firmware no longer reports, so many people hit this after a firmware update.
 
-This rule covers every Svalboard QMK firmware file, current and upcoming:
+This rule covers every Svalboard QMK firmware file:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="404[4-9a-d]", MODE="0660", TAG+="uaccess"

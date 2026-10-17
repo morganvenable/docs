@@ -143,22 +143,22 @@ There are four side key sizes. In order of increasing fingertip space:
 
 | Size | Approximate spacing |
 |---|---|
-| Thick | 16 mm |
-| Semi | 17 mm |
-| Thin | 18 mm |
-| Backset | 20 mm |
+| Thick (+1) | 16 mm |
+| Semi (+0.5) | 17 mm |
+| Thin (0) | 18 mm |
+| Backset (−1) | 20 mm |
 
 - People with thin or pointed fingertips may prefer the thicker keys.
 - People with blunt or wide fingertips may need the Backset keys for enough room to type comfortably.
-- North keys come in Thick only.
+- North keys come in Thick (+1) only.
 
 The spacing is roughly the space between opposite side keys, near their tops. The numbers are approximate: use them to compare sizes, not as exact measurements.
 
-<CadFigure name="cad-key-profiles" alt="The four side key sizes cut through the middle, side by side: Thick about 16 mm, Semi about 17 mm, Thin about 18 mm and Backset about 20 mm. A dashed line runs along the front face of each key base. A solid line touches the bottom front edge of each key top, with a short bracket to the dashed line. On Backset, a thin dashed curve extends the key top's front face down past its lead-in ramp to that same bottom edge. The key top sits forward of the base by +1.0 mm on Thick and +0.5 mm on Semi, in line with it on Thin, and 1.0 mm behind it on Backset." caption="The four side key sizes, cut through the middle. The dashed line is the front of the key base; the solid line is the bottom front edge of the key top. On Backset, the key top's front face is extended down past the lead-in ramp. The numbers are how far the key top sits forward of the base, in mm: + is forward, − is back." />
+<CadFigure name="cad-key-profiles" alt="The four side key sizes cut through the middle, side by side: Thick (+1) about 16 mm, Semi (+0.5) about 17 mm, Thin (0) about 18 mm and Backset (−1) about 20 mm. A dashed line runs along the front face of each key base. A solid line touches the bottom front edge of each key top, with a short bracket to the dashed line. On Backset, a thin dashed curve extends the key top's front face down past its lead-in ramp to that same bottom edge. The key top sits forward of the base by +1.0 mm on Thick and +0.5 mm on Semi, in line with it on Thin, and 1.0 mm behind it on Backset." caption="The four side key sizes, cut through the middle. The dashed line is the front of the key base; the solid line is the bottom front edge of the key top. On Backset, the key top's front face is extended down past the lead-in ramp. The numbers are how far the key top sits forward of the base, in mm: + is forward, − is back." />
 
 {/* VERIFY: measured on the center-plane section of each key (the figure shows that section, so the lines sit on its edges). Key base front: the slot inner wall, x 8.55. Key top bottom-front edge, measured offset forward of the base: Thick +0.97, Semi +0.41, Thin 0.00, Backset -1.00 mm. Backset's key top is Thin's moved back (its front face is Thin's plus 1.00 mm, within 0.002 mm over its height); the lead-in ramp is bridging geometry added after that offset, so its reference is the front face extended down to the key top's bottom edge height (z 2.4), not the ramp top. Labels are rounded to 0.5 mm. */}
 
-<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: Thick about 16 mm, Semi about 17 mm, Thin about 18 mm, Backset about 20 mm." caption="Approximate space between opposite side keys for each key size." />
+<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: Thick (+1) about 16 mm, Semi (+0.5) about 17 mm, Thin (0) about 18 mm, Backset (−1) about 20 mm." caption="Approximate space between opposite side keys for each key size." />
 
 {/* VERIFY: the live build guide (slide 15) also lists a "-2mm" side key, "only for huge fingers on narrow cluster PCBAs (not standard)". Should it be listed here? */}
 
@@ -195,14 +195,14 @@ Pick your side key size first. See [Sizing before you build](/build/#sizing-befo
 
 **Finger keys**
 
-- 8 North keys: 11 mm tall, Thick (16 mm), medium force (0.7 mm offset).
-- 24 East, South and West side keys: 6 mm tall, in your size: Thick (16 mm), Semi (17 mm), Thin (18 mm) or Backset (20 mm). Medium force (0.7 mm offset).
+- 8 North keys: 11 mm tall, Thick (+1, 16 mm), medium force (0.7 mm offset).
+- 24 East, South and West side keys: 6 mm tall, in your size: Thick (+1, 16 mm), Semi (+0.5, 17 mm), Thin (0, 18 mm) or Backset (−1, 20 mm). Medium force (0.7 mm offset).
 - 8 tipping center keys: 0.9 mm offset is a good starting point.
 
 **Thumb keys**
 
 - 2 Pad, 2 Knuckle, 2 Down, Nail Left and Nail Right.
-- 2 Up keys: Mode Slim 29h. Print the "Mode (Up) 29h" key from `Thumb Side Keys All v2.0 RCe.step` in the `Lightly FDM/V2.0/V2.0 Keys/Thumb Side Keys` folder. A curved Up key will replace it later.
+- 2 Up keys: Mode Slim 29h. Print the "Mode (Up) 29h" key from `Thumb Side Keys All v2.0 RCe.step` in the `Lightly FDM/V2.0/V2.0 Keys/Thumb Side Keys` folder.
 
 **Clusters**
 
@@ -310,7 +310,7 @@ Print the tripod palm rests the same way, standing on the long edge with tree su
 
 ### Sawed-off case
 
-The sawed-off case shortens the whole half: base plate and back case end just behind the cluster slots, with no palm rest. It packs small for travel, and it's the one to choose if you bring your own palm rest setup.
+The sawed-off case shortens each unit: base plate and back case end just behind the cluster slots, with no palm rest. It packs small for travel, and it's the one to choose if you bring your own palm rest setup.
 
 Print the sawed-off base plates and cases from the [Sawed-off Case folder](https://github.com/svalboard/svalboard-self-print/tree/main/Lightly%20FDM/V2.0/Baseplates%20and%20Case/Sawed-off%20Case) in place of the standard ones. Its one STEP file holds both halves. Print them the same way as the [standard cases and base plates](/build/#cases-and-base-plates). Skip the palm rest parts, and skip [Steps 13 and 14](/build/#step-13-attach-palm-rest-carriers).
 
@@ -420,7 +420,7 @@ Install the cluster magnets the same way, from the Cluster stage (north pole up)
 
 ### Key magnets
 
-<CadFigure name="cad-magnets-keys" alt="The keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up, the upcoming curved Up, and Down." caption="Where the magnet goes in each key. The south pole faces out." />
+<CadFigure name="cad-magnets-keys" alt="The keys in a row, each with its magnet in orange and ringed: North, side, tipping center, Nail, Knuckle, Pad, Up, the curved Up, and Down." caption="Where the magnet goes in each key. The south pole faces out." />
 
 ### Tipping center key
 
@@ -465,7 +465,7 @@ This is how each key sits in its cluster:
 
 <CadFigure name="cad-thumb-cluster-keys" alt="A right thumb cluster seen almost level from its outer side, keys labeled: the Nail and Knuckle keys in front, the Pad key behind, whose sloped top runs on into the Knuckle top as one line rising toward the Up key, the Up key, the Down key between them, the layer LED, and the cluster body." />
 
-<CadFigure name="cad-thumb-cluster-keys-curved-up" alt="A right thumb cluster seen from the side, square to the Up slot, with the curved Up key in profile: its stem bows outward and its top curves back over the cluster. The Nail, Knuckle, Pad and Down keys are also labeled." caption="The upcoming curved Up key, in the same cluster." />
+<CadFigure name="cad-thumb-cluster-keys-curved-up" alt="A right thumb cluster seen from the side, square to the Up slot, with the curved Up key in profile: its stem bows outward and its top curves back over the cluster. The Nail, Knuckle, Pad and Down keys are also labeled." caption="The curved Up key, in the same cluster." />
 
 ### Tipping center keys
 
@@ -870,7 +870,7 @@ Flashing resets the layout to the default. Later, export a `.svil` from Keybard 
 
 #### Staying on Vial
 
-Svalboard's Vial firmware is still available, with no new releases planned. To use it, flash the `v2025-11-01` files from https://github.com/svalboard/vial-qmk/releases and configure the board with Vial (https://vial.rocks). The rest of this guide uses Keybard.
+Svalboard's Vial firmware is still available. To use it, flash the `v2025-11-01` files from https://github.com/svalboard/vial-qmk/releases and configure the board with Vial (https://vial.rocks). The rest of this guide uses Keybard.
 
 ### Connect the cables
 
