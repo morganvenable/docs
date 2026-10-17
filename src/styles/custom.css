@@ -245,3 +245,130 @@
 		grid-template-columns: 1fr 1fr;
 	}
 }
+
+/* Home page section cards (src/components/SectionCard.astro).
+   Whole-card links: a picture, the title and a one-line description. No borders; the
+   card is a soft surface that lifts on hover. */
+.section-cards {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 1rem;
+	margin: 0;
+}
+.sl-markdown-content .section-card,
+.section-card {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	overflow: hidden;
+	border-radius: 0.75rem;
+	background-color: var(--sl-color-gray-6);
+	color: var(--sl-color-white);
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+}
+:root[data-theme='light'] .section-card {
+	background-color: var(--sl-color-gray-7);
+}
+.section-card:hover {
+	background-color: var(--sl-color-gray-5);
+}
+:root[data-theme='light'] .section-card:hover {
+	background-color: var(--sl-color-gray-6);
+}
+.section-card:focus-visible {
+	outline: 3px solid var(--sl-color-text-accent);
+	outline-offset: 3px;
+}
+.section-card-pic {
+	position: relative;
+	display: block;
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+}
+.section-card-pic img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.section-card--cover .section-card-pic img {
+	object-fit: cover;
+}
+.section-card--contain .section-card-pic img {
+	object-fit: contain;
+	padding: 0.75rem;
+	box-sizing: border-box;
+}
+.section-card .pic-light,
+.section-card .pic-dark {
+	display: none;
+}
+:root[data-theme='light'] .section-card .pic-light,
+:root:not([data-theme='light']) .section-card .pic-dark {
+	display: block;
+}
+.section-card-text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	padding: 0.85rem 1rem 1rem;
+}
+.section-card-title {
+	font-size: var(--sl-text-lg);
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--sl-color-white);
+}
+.section-card:hover .section-card-title {
+	color: var(--sl-color-text-accent);
+}
+.section-card-desc {
+	font-size: var(--sl-text-sm);
+	line-height: 1.45;
+	color: var(--sl-color-gray-2);
+}
+/* The splash template spaces content with margin-top on every child; cards set their own. */
+.sl-markdown-content .section-cards > *,
+.sl-markdown-content .section-card * {
+	margin-top: 0;
+}
+
+/* Option a: the finished board as the hero picture, then compact cards, two across,
+   picture beside the text. */
+:root:has(.section-cards--a) .hero > img {
+	border-radius: 0.75rem;
+}
+@media (min-width: 40rem) {
+	.section-cards--a {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.section-cards--a .section-card {
+		flex-direction: row;
+		align-items: center;
+	}
+	.section-cards--a .section-card-pic {
+		flex: 0 0 45%;
+		align-self: stretch;
+		aspect-ratio: 4 / 3;
+	}
+}
+
+/* Option b: no hero picture; large cards, three across, with tall pictures. */
+.section-cards--b .section-card-pic {
+	aspect-ratio: 4 / 3;
+}
+@media (min-width: 40rem) {
+	.section-cards--b {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+@media (min-width: 64rem) {
+	.section-cards--b {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+	.section-cards--b .section-card-pic {
+		aspect-ratio: 1 / 1;
+	}
+}

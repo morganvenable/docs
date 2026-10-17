@@ -4,22 +4,29 @@ description: Build, set up and use your Svalboard.
 template: splash
 hero:
   tagline: Build, set up and use your Svalboard.
-  actions:
-    - text: Start here
-      link: /start/quickstart/
-      icon: right-arrow
-    - text: Build guide
-      link: /build/
-      variant: minimal
+  image:
+    file: ../../assets/build/finished-svalboard.jpg
+    alt: A finished Svalboard, both halves side by side, with trackballs, finger and thumb clusters on towers, and palm rests.
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import SectionCard from '../../components/SectionCard.astro';
+import kit from '../../assets/build/kit-hardware-photo.jpg';
+import thumbLight from '../../assets/cad/cad-thumb-cluster-keys-shaded-light.webp';
+import thumbDark from '../../assets/cad/cad-thumb-cluster-keys-shaded-dark.webp';
+import fingerLight from '../../assets/cad/cad-finger-cluster-keys-shaded-light.webp';
+import fingerDark from '../../assets/cad/cad-finger-cluster-keys-shaded-dark.webp';
+import portsLight from '../../assets/cad/cad-ports-reset-shaded-light.webp';
+import portsDark from '../../assets/cad/cad-ports-reset-shaded-dark.webp';
+import keybardLight from '../../assets/hardware/keybard-mouse-layer-light.webp';
+import keybardDark from '../../assets/hardware/keybard-mouse-layer-dark.webp';
+import partsLight from '../../assets/cad/cad-parts-one-half-shaded-light.webp';
+import partsDark from '../../assets/cad/cad-parts-one-half-shaded-dark.webp';
 
-<CardGrid>
-	<LinkCard title="Start here" description="Set up a new board." href="/start/quickstart/" />
-	<LinkCard title="Hardware" description="Fit, typing and pointing modules." href="/hardware/" />
-	<LinkCard title="Build guide" description="Build a kit, step by step." href="/build/" />
-	<LinkCard title="Firmware" description="Flash Svalboard QMK, recover a board." href="/firmware/" />
-	<LinkCard title="Keybard" description="Change your layout in the browser." href="/keybard/" />
-	<LinkCard title="Reference" description="Releases, USB IDs and links." href="/reference/releases/" />
-</CardGrid>
+<nav class="section-cards section-cards--a" aria-label="Sections">
+	<SectionCard title="Start here" description="Set up a new board." href="/start/quickstart/" light={thumbLight} dark={thumbDark} />
+	<SectionCard title="Build guide" description="Build a kit, step by step." href="/build/" photo={kit} fit="cover" />
+	<SectionCard title="Hardware" description="Fit, typing and pointing modules." href="/hardware/" light={fingerLight} dark={fingerDark} />
+	<SectionCard title="Firmware" description="Flash Svalboard QMK, recover a board." href="/firmware/" light={portsLight} dark={portsDark} zoom={1.8} />
+	<SectionCard title="Keybard" description="Change your layout in the browser." href="/keybard/" light={keybardLight} dark={keybardDark} fit="cover" position="55% 25%" />
+	<SectionCard title="Reference" description="Releases, USB IDs and links." href="/reference/releases/" light={partsLight} dark={partsDark} />
+</nav>
