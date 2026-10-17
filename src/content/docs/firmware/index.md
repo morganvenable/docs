@@ -49,7 +49,7 @@ Settings are stored in two checked copies, so a bad read doesn't wipe your layou
 
 Changed: **Chordal Hold** replaces Achordion and is on by default. It is similar but not identical; check your mod-taps after moving.
 
-Keybard also adds automatic backups, layer reordering, a saved default layer, a layouts library, printable layers and the Keybard Host overlay.
+Keybard also adds automatic backups, layer reordering, a saved default layer, a layouts library, printable layers and the Keybard Overlay app.
 
 To move your board over, see [Moving from Vial](/firmware/#moving-from-vial).
 
@@ -89,7 +89,7 @@ For hardware problems, see [Troubleshooting](/hardware/#troubleshooting).
 
 ## Linux: the udev rule
 
-Linux lets only root open the keyboard until you add a udev rule. Without it, Keybard and Keybard Host can see the board but can't open it. Older Svalboard rules matched a Vial serial number that current firmware no longer reports, so many people hit this after a firmware update.
+Linux lets only root open the keyboard until you add a udev rule. Without it, Keybard and Keybard Overlay can see the board but can't open it. Older Svalboard rules matched a Vial serial number that current firmware no longer reports, so many people hit this after a firmware update.
 
 This rule covers every Svalboard QMK firmware file:
 

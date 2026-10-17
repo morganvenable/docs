@@ -8,7 +8,7 @@ sidebar:
 - Build guide: https://svalboard.com/build
 - Keybard: https://keybard.svalboard.com
 - Keybard manual: https://keybard.svalboard.com/manual/
-- Keybard Host releases: https://github.com/svalboard/keybard/releases
+- Keybard Overlay releases: https://github.com/svalboard/keybard/releases
 - Svalboard QMK releases: https://github.com/svalboard/qmk/releases
 - Vial firmware releases: https://github.com/svalboard/vial-qmk/releases
 - Keybard for Vial boards: https://captdeaf.github.io/keybard/

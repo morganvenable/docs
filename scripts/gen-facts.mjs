@@ -138,4 +138,4 @@ const facts = {
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, JSON.stringify(facts, null, '\t') + '\n');
 console.log(`wrote ${OUT}: firmware ${facts.firmware.stable.tag}` +
-	`${facts.firmware.next ? ` + ${facts.firmware.next.tag}` : ''}, Keybard Host ${facts.keybardHost.tag}`);
+	`${facts.firmware.next ? ` + ${facts.firmware.next.tag}` : ''}, Keybard Overlay ${facts.keybardHost.tag}`);

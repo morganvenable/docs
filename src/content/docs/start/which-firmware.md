@@ -33,5 +33,5 @@ Keybard needs **Chrome or Edge** on a desktop. Firefox and Safari can't connect 
 
 - **Hardware**: the halves, fit, typing, pointing modules and troubleshooting. These apply to every Svalboard.
 - **Firmware**: flashing, Svalboard QMK files and recovery, and moving between Vial and Svalboard QMK.
-- **Keybard**: the configurator, layer lights, and the Keybard Host overlay.
+- **Keybard**: the configurator, layer lights, and the Keybard Overlay app.
 - **Vial**: for boards that stay on Vial.
