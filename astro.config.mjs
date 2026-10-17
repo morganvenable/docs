@@ -196,6 +196,8 @@ const redirects = {
 };
 
 export default defineConfig({
+	// A review copy served under a path (DOCS_BASE=/name/); the real site is at the root.
+	...(process.env.DOCS_BASE ? { base: process.env.DOCS_BASE } : {}),
 	site: 'https://docs.svalboard.com',
 	redirects,
 	vite: { plugins: [notesInbox()] },
@@ -237,7 +239,8 @@ export default defineConfig({
 				Banner: './src/components/PreviewBanner.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 			},
-			plugins: [starlightLinksValidator({ errorOnLocalLinks: false }), starlightLlmsTxt()],
+			// Links are validated on the real build; a review copy under DOCS_BASE has its content links prefixed afterward.
+			plugins: [...(process.env.DOCS_BASE ? [] : [starlightLinksValidator({ errorOnLocalLinks: false })]), starlightLlmsTxt()],
 			sidebar: [
 				section('Start here', 'start'),
 				jumps('Hardware', hardwareJumps),
