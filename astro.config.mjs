@@ -239,7 +239,7 @@ export default defineConfig({
 				jumps('Build guide', buildJumps),
 				jumps('Firmware', firmwareJumps),
 				jumps('Keybard', keybardJumps),
-				jumps('Vial (legacy)', vialJumps),
+				jumps('Vial', vialJumps),
 				section('Reference', 'reference'),
 			],
 		}),
