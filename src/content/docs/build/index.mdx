@@ -3,12 +3,26 @@ title: "Build guide"
 description: "Build a Svalboard from a self-print kit, from printing the parts to the first fit."
 ---
 
+import { Image } from 'astro:assets';
+import finished from '../../../assets/build/finished-svalboard.jpg';
+import kitPhoto from '../../../assets/build/kit-hardware-photo.jpg';
 import CadFigure from '../../../components/CadFigure.astro';
 import YouTube from '../../../components/YouTube.astro';
 import facts from '../../../data/facts.json';
 export const stable = facts.firmware.stable;
 export const blank = (side) => stable.assets.find((a) => a.startsWith(`svalboard_${side}_blank_`) && a.endsWith('.uf2'));
 export const blankUrl = (side) => `https://github.com/svalboard/qmk/releases/download/${stable.tag}/${blank(side)}`;
+
+<div class="opening-pair">
+	<figure class="opening-fig">
+		<Image src={finished} alt="A finished Svalboard in gray and black on a white background: both halves, each with four finger clusters, a thumb cluster, a black trackball and a gray hemispherical palm rest." widths={[480, 720, 1080, 1440]} sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw" loading="eager" fetchpriority="high" />
+		<figcaption>A finished board</figcaption>
+	</figure>
+	<figure class="opening-fig">
+		<Image src={kitPhoto} alt="The kit hardware laid out on a white background: FFCs, the two main PCBAs, cluster and thumb PCBAs, stainless towers, screws, square nuts, brass heat set inserts, two rods of magnets, a T10 driver and two USB-C cables." widths={[480, 720, 1080, 1280]} sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw" loading="eager" />
+		<figcaption>What comes in the kit</figcaption>
+	</figure>
+</div>
 
 This guide covers building a Svalboard from a self-print kit. It also helps with repairs and part swaps on a finished board.
 

@@ -214,3 +214,34 @@
 	padding: 0;
 }
 
+
+/* Opening pictures at the top of a guide: a finished board and the kit. No borders;
+   the photos sit on their own white backdrop, so a soft radius is the only frame. */
+.sl-markdown-content .opening-fig {
+	margin: 0 0 1.5rem;
+}
+.sl-markdown-content .opening-fig img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0.75rem;
+}
+.sl-markdown-content .opening-fig figcaption {
+	margin-top: 0.5rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-2);
+}
+.sl-markdown-content .opening-pair {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin: 0 0 1.5rem;
+}
+.sl-markdown-content .opening-pair .opening-fig {
+	margin: 0;
+}
+@media (min-width: 40rem) {
+	.sl-markdown-content .opening-pair {
+		grid-template-columns: 1fr 1fr;
+	}
+}
