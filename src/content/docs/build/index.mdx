@@ -777,16 +777,60 @@ If you don't carry your Svalboard around and don't tent it steeply, you don't st
 
 ### 10c Touchpad
 
-- The touchpad uses the same mounting rail as the trackball, so you can swap them.
-- It needs MCU v3.1 or newer.
-- Connect the 6-pin FFC to the touchpad: unlatch, insert the contacts **down**, latch.
-- Connect the other end to the 6-pin "Azo" connector on the MCU: unlatch, insert the contacts **down**, latch.
-- Mount the touchpad on the rail. The touchpad holder attaches to the base plate with a single M3 x 6 mm pan head T10 screw through the pointer slot. Use the T10 driver.
-- Route the cable with the finger cluster cables ([Step 10](/build/#step-10-install-towers-on-baseplates)).
-- This half needs touchpad firmware, or firmware that detects its pointing module automatically. See [Step 15](/build/#step-15-flash-firmware-and-connect).
+Each half can have one touchpad. It sits between the finger clusters and the thumb cluster, on the same rail as the trackball, so you can swap them. It needs MCU v3.1 or newer.
 
-{/* VERIFY: the touchpad mounting steps (screws, holder, cover) for this section. */}
-{/* VERIFY: photos needed: the touchpad end of the FFC (contacts down, latch closed); the MCU end in the "Azo" connector (contacts down, latch closed); the touchpad mounted on the rail, from above and from the side. */}
+You need, for each touchpad half:
+
+- The touchpad module, glass on one side and the circuit board on the other.
+- A touchpad holder for that half. Print **Left** for the left half and **Right** for the right half, from the `Touchpad` folder of the self-print files. The two holders slope differently, so they are not interchangeable.
+- A 6-pin FFC.
+- One M3 x 6 mm pan head T10 screw, and a square nut in the rail ([Step 8](/build/#square-nuts-in-the-base-plate-slots)).
+
+#### Which way it goes
+
+The drawings show the right half. The left half is its mirror image.
+
+- **Glass up.** The circuit board faces down, into the holder.
+- **Flange on the pinky side.** The holder has a flat flange with a long slot on one side. That side goes toward your pinky, with the slot over the rail.
+- **Tallest corner toward your thumb and palm.** The glass slopes down toward your fingers and toward your pinky.
+
+<div class="cad-steps">
+	<CadFigure name="cad-touchpad-orientation-right" alt="The right half's touchpad from above, on the base plate. North, toward the fingers, is up. The holder (orange) has its flange and slot on the right, the pinky side, with the screw where the slot crosses the rail. A dashed line shows the rail running east to west under the holder. The glass (blue) faces up." caption="Right: the flange and screw on the pinky side, the screw in the rail." />
+	<CadFigure name="cad-touchpad-orientation-wrong" alt="The same view with the holder turned around. The flange and its slot are on the left, the thumb side, past the west end of the rail, so the slot never crosses it." caption="Wrong: the flange is toward the thumb, and its slot misses the rail." />
+</div>
+
+{/* VERIFY: which way the module turns inside the holder. The pocket is 43 x 40 mm, so the module fits two ways, 180 degrees apart. Its connector sits about 9 mm off center along the 43 mm side. Which edge goes toward the flange (pinky side), and is there a mark on the module or holder to line up? No CAD model of the module, assembly or photo of the underside settles this. Until it is answered, the page relies on the pointer check below. Also: the holder's floor has a cross-shaped slot that crosses the rail too. Is it ever used for a second screw, or is the flange screw the only one? */}
+
+#### Connect the FFC
+
+1. Connect the 6-pin FFC to the touchpad: unlatch, insert the contacts **down**, latch.
+2. Lay the module in the holder, glass up. Lead the FFC out of the holder on the pinky side.
+3. Feed the FFC down through the base plate on the pinky side of the holder.
+4. Connect the other end to the 6-pin "Azo" connector on the MCU: unlatch, insert the contacts **down**, latch.
+5. Route the cable with the finger cluster cables ([Step 11](/build/#step-11-route-cables)).
+
+{/* VERIFY: "contacts down" at the touchpad end: down with the module glass-down on the bench (connector facing up), or down as installed (glass up)? Build photos (2025-02-05 b2947 left half, 2026-09-19 orange/white left half) show the FFC leaving on the pinky side and going down through a plate hole beside the flange. Which holder notch and which plate hole are correct? */}
+
+#### Mount the holder
+
+1. Set the holder on the base plate with the flange on the pinky side and its slot over the rail.
+2. Put an M3 x 6 mm pan head T10 screw through the flange slot and into the square nut in the rail. Use the T10 driver.
+3. Slide the holder along its slot, toward or away from your fingers, until no key touches it. Then tighten the screw.
+
+<CadFigure name="cad-touchpad-installed" alt="The installed touchpad on the right half's base plate, seen from the front and the pinky side. The holder (orange) holds the glass (blue) facing up. Its tallest corner is toward the thumb and the palm. The flange with its slot is on the pinky side, and one M3 x 6 mm pan head T10 screw passes through the slot into the rail." caption="Installed: glass up, flange and screw on the pinky side, tallest corner toward the thumb and palm." />
+
+#### Check the orientation
+
+- The glass faces up and sits just below the holder's rim.
+- The flange and its screw are on the pinky side, and the screw is in the rail.
+- The holder is tallest at the corner nearest your thumb and palm.
+- The FFC leaves on the pinky side, and the holder doesn't pinch it.
+- After you flash the firmware ([Step 15](/build/#step-15-flash-firmware-and-connect)), slide a finger on the pad toward your fingers. The pointer moves up the screen. If it moves down, the module is turned around in the holder: take it out, turn it 180 degrees, and put it back.
+
+This half needs touchpad firmware, or firmware that detects its pointing module automatically. See [Step 15](/build/#step-15-flash-firmware-and-connect).
+
+{/* VERIFY: the pointer check assumes the touchpad firmware has no rotation setting that would hide a module turned around. Confirm a finger moving north moves the pointer up on both halves. */}
+{/* VERIFY: photos needed: the touchpad end of the FFC (contacts down, latch closed); the module in the holder before the glass goes in, showing which edge faces the flange; the MCU end in the "Azo" connector (contacts down, latch closed); the touchpad mounted on the rail, from above and from the side. */}
 
 ## Step 11: Route cables
 
