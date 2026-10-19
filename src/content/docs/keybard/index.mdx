@@ -750,9 +750,7 @@ Keybard Overlay is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed,
 Keybard Overlay for Linux is a test build in the [x3 prerelease](https://github.com/svalboard/keybard/releases/tag/x3). Report what works and what doesn't as [Keybard issues](https://github.com/svalboard/keybard/issues), and attach the report from `--diagnose`.
 :::
 
-You need a 64-bit x86 PC with a desktop Linux from 2021 or later, such as Ubuntu 22.04, Debian 12, Fedora 36 or Linux Mint 21 (glibc 2.34 or later), on X11 or Wayland. Use Chrome, Edge or Chromium for Keybard. Keybard Overlay brings its own Python and Qt, so there is nothing else to install, and it runs without admin rights.
-
-{/* VERIFY: README-LINUX.md says Fedora 36+, while the Overlay release notes say Fedora 35 or later. Which is right? */}
+You need a 64-bit x86 PC with a desktop Linux from 2021 or later, such as Ubuntu 22.04, Debian 12, Fedora 35 or Linux Mint 21 (glibc 2.34 or later), on X11 or Wayland. Use Chrome, Edge or Chromium for Keybard. Keybard Overlay brings its own Python and Qt, so there is nothing else to install, and it runs without admin rights.
 
 1. From the [x3 release](https://github.com/svalboard/keybard/releases/tag/x3), download one of the two packages, which hold the same app: `KeybardOverlay-x86_64.AppImage`, or `KeybardOverlay-Linux-x86_64.tar.gz`. Download `60-svalboard.rules` and `install-udev-rule.sh` too. Checksums are in `SHA256SUMS-Linux.txt`.
 2. Let your user read the board. This is needed once, and is the only step that needs admin rights. In the download folder, run `sudo ./install-udev-rule.sh`, then unplug the board and plug it back in. It installs the same rule as [Linux: the udev rule](/firmware/#linux-the-udev-rule).
