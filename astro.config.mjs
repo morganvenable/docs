@@ -238,7 +238,6 @@ export default defineConfig({
 			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],
 			components: {
-				Banner: './src/components/PreviewBanner.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 			},
 			// Links are validated on the real build; a review copy under DOCS_BASE has its content links prefixed afterward.

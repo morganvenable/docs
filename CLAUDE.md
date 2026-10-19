@@ -26,9 +26,9 @@ Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`. Build
 
 Every feature PR in svalboard/keybard or svalboard/qmk that changes what a user sees or does gets a matching PR here, written while the feature is designed. See CONTRIBUTING.md.
 
-## Not cut over yet
+## Short links on svalboard.com
 
-svalboard.com/manual and /build still point at the Google Doc and Slides. Don't edit those, and don't change those redirects. `src/components/PreviewBanner.astro` marks this site as a preview until cutover.
+svalboard.com/manual, /fitment and /build are Shopify URL redirects to this site: /start/quickstart/, /hardware/#fit and /build/. Keep those anchors stable; if an h2 they land on changes, the redirect in Shopify changes with it. The older Google Doc and Slides stay linked from Reference > Links, under Older guides.
 
 ## Notes from the owner
 
