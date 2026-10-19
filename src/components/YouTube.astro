@@ -1,0 +1,47 @@
+---
+// A YouTube video on the page. Shows the video's own thumbnail with a play button and loads the
+// player (youtube-nocookie) only when clicked, so the page stays fast and sets no cookies until then.
+interface Props {
+	id: string;
+	title: string;
+	start?: number;
+}
+const { id, title, start } = Astro.props;
+const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0${start ? `&start=${start}` : ''}`;
+---
+
+<figure class="yt not-content">
+	<button type="button" class="yt-frame" data-src={src} aria-label={`Play video: ${title}`}>
+		<img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" width="480" height="360" />
+		<span class="yt-play" aria-hidden="true">
+			<svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"></path><path d="M45 24 27 14v20z" fill="#fff"></path></svg>
+		</span>
+	</button>
+	<figcaption>{title} · <a href={`https://youtu.be/${id}`}>open on YouTube</a></figcaption>
+</figure>
+
+<script>
+	for (const b of document.querySelectorAll<HTMLButtonElement>('.yt-frame')) {
+		b.addEventListener('click', () => {
+			const f = document.createElement('iframe');
+			f.src = b.dataset.src!;
+			f.title = b.getAttribute('aria-label')!.replace(/^Play video: /, '');
+			f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+			f.allowFullscreen = true;
+			b.replaceWith(f);
+		}, { once: true });
+	}
+</script>
+
+<style>
+	.yt { margin: 1rem 0 1.5rem; max-width: 48rem; }
+	.yt-frame, .yt :global(iframe) {
+		display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; padding: 0;
+		border-radius: 0.5rem; overflow: hidden; background: #000; position: relative; cursor: pointer;
+	}
+	.yt-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+	.yt-play { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0.9; transition: opacity 0.15s; }
+	.yt-frame:hover .yt-play, .yt-frame:focus-visible .yt-play { opacity: 1; }
+	.yt-frame:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 2px; }
+	.yt figcaption { margin-top: 0.5rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+</style>

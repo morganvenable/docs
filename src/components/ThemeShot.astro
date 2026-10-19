@@ -1,0 +1,30 @@
+---
+// A screenshot in two versions, one per page theme: src/assets/<dir>/<name>-{light|dark}.webp.
+// CSS in custom.css shows the one that matches the page; the other is lazy.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	dir: string;
+	name: string;
+	alt: string;
+	caption?: string;
+}
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/*/*.webp', { eager: true });
+const { dir, name, alt, caption } = Astro.props;
+const images = (['light', 'dark'] as const).map((v) => {
+	const file = files[`../assets/${dir}/${name}-${v}.webp`];
+	if (!file) throw new Error(`ThemeShot: missing src/assets/${dir}/${name}-${v}.webp`);
+	return { v, src: file.default };
+});
+---
+
+<figure class="theme-shot">
+	{
+		images.map(({ v, src }) => (
+			<Image src={src} alt={alt} width={Math.min(src.width, 1440)} loading="lazy" class={`shot-${v}`} />
+		))
+	}
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>

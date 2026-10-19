@@ -1,0 +1,49 @@
+---
+// A home page card for one docs section: a picture, the section title and its one-line
+// description, all one link. The picture is a photo (`photo`) or a pair of renders that
+// follow the page theme (`light` and `dark`); CSS in custom.css shows the matching one.
+// Pictures carry alt="" because the link text (title and description) names the card.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	href: string;
+	title: string;
+	description: string;
+	photo?: ImageMetadata;
+	light?: ImageMetadata;
+	dark?: ImageMetadata;
+	/** "cover" fills the frame (photos); "contain" shows the whole render on the card surface. */
+	fit?: 'cover' | 'contain';
+	/** Lets a photo be cropped toward one side, e.g. "50% 40%". */
+	position?: string;
+	/** Enlarges a wide render whose subject is small in its frame, e.g. 1.8. */
+	zoom?: number;
+}
+
+const { href, title, description, photo, light, dark, fit = 'contain', position, zoom } = Astro.props;
+if (!photo && !(light && dark)) throw new Error(`SectionCard ${title}: pass photo, or light and dark`);
+const widths = [400, 640, 960];
+const sizes = '(min-width: 72rem) 22rem, (min-width: 50rem) 33vw, 100vw';
+const style =
+	[position && `object-position: ${position}`, zoom && `transform: scale(${zoom})`].filter(Boolean).join('; ') ||
+	undefined;
+---
+
+<a class={`section-card section-card--${fit}`} href={href}>
+	<span class="section-card-pic">
+		{photo && <Image src={photo} alt="" widths={widths} sizes={sizes} style={style} />}
+		{
+			light && dark && (
+				<>
+					<Image src={light} alt="" widths={widths} sizes={sizes} style={style} class="pic-light" />
+					<Image src={dark} alt="" widths={widths} sizes={sizes} style={style} class="pic-dark" loading="lazy" />
+				</>
+			)
+		}
+	</span>
+	<span class="section-card-text">
+		<span class="section-card-title">{title}</span>
+		<span class="section-card-desc">{description}</span>
+	</span>
+</a>

@@ -1,6 +1,6 @@
 ---
 title: Releases
-description: The current Svalboard firmware and Keybard Host releases, and their files.
+description: The current Svalboard firmware and Keybard Overlay releases, and their files.
 sidebar:
   order: 21
 ---
@@ -8,7 +8,6 @@ sidebar:
 import facts from '../../../data/facts.json';
 
 export const stable = facts.firmware.stable;
-export const next = facts.firmware.next;
 export const host = facts.keybardHost;
 export const old = (a) => /pmw3360/i.test(a);
 export const files = (rel) => (
@@ -33,7 +32,6 @@ Flashing firmware resets every setting on the board. Export your layout (`.svil`
 	</thead>
 	<tbody>
 		<tr><td><a href={stable.url}>{stable.name}</a></td><td><code>{stable.tag}</code></td><td>{stable.date}</td><td>Everyday use</td></tr>
-		{next && <tr><td><a href={next.url}>{next.name}</a></td><td><code>{next.tag}</code></td><td>{next.date}</td><td>Prerelease: the newest changes, for people who can recover a board themselves</td></tr>}
 	</tbody>
 </table>
 
@@ -43,20 +41,11 @@ Use the `sval` file for your half and pointing module. The `blank` files give th
 
 {files(stable)}
 
-{next && (
-	<>
-		<h3 id="prerelease-files">Prerelease files</h3>
-		{next.singleImage && <p>There is one firmware file per half; it works with every pointing module. Flash both halves with the same release.</p>}
-		{files(next)}
-		{next.assets.some((a) => a.endsWith('.svup')) && <p>Use the <code>.uf2</code> files. The <code>.svup</code> files are for the in-firmware updater, which isn't released yet.</p>}
-	</>
-)}
+## Keybard Overlay
 
-{/* VERIFY: The .svup sentence comes from the vNext1 release notes. Remove it once the in-firmware updater ships, or make it say how to use .svup files. */}
+<span id="keybard-host"></span>
 
-## Keybard Host
-
-Keybard Host is the desktop app for the Keybard overlay.
+Keybard Overlay is the desktop app that shows your layout above your other windows. It was called Keybard Host before.
 
 <table>
 	<thead>
@@ -66,7 +55,5 @@ Keybard Host is the desktop app for the Keybard overlay.
 		<tr><td><a href={host.url}>{host.name}</a></td><td><code>{host.tag}</code></td><td>{host.date}</td></tr>
 	</tbody>
 </table>
-
-{/* VERIFY: Is "the desktop app for the Keybard overlay" the right one-line description of Keybard Host for customers? */}
 
 See [USB IDs](/reference/usb-ids/) for the product ID each firmware uses.

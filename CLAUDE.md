@@ -1,6 +1,6 @@
 # Svalboard docs (docs.svalboard.com)
 
-Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`; the sidebar is generated per section (order with `sidebar: { order: N }` in frontmatter). Images live in `src/assets/<section>/` and are referenced relatively so Astro optimizes them.
+Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`. Build, Hardware, Firmware, Keybard and Vial are each one page (`<section>/index.md(x)`) read by jumping: their sidebar entries are anchor links listed in `astro.config.mjs` (update them when an h2 changes), old page URLs redirect to anchors there, and there is no previous/next pager. Start and Reference are generated per section (order with `sidebar: { order: N }` in frontmatter). Images live in `src/assets/<section>/` and are referenced relatively so Astro optimizes them.
 
 ## Commands
 
@@ -19,15 +19,16 @@ Astro Starlight site. Pages are Markdown in `src/content/docs/<section>/`; the s
 - The TrackPoint goes on the half connected to USB.
 - Flashing firmware resets settings: export a `.svil` first, import it after.
 - Short, plain sentences. UI names in **bold**, exactly as on screen. No filler, no marketing.
-- Owner questions go in an HTML comment, `<!-- VERIFY: ... -->`, never on the page.
+- Write as Svalboard speaking to its customers: describe options as offerings ("For more reach, choose…"), never as observations or exclusions ("Svalboard sometimes sells…", "the only other…"). No hedging about our own products.
+- Owner questions go in an HTML comment, `<!-- VERIFY: ... -->` (in `.mdx`: `{/* VERIFY: ... */}`), never on the page.
 
 ## Docs and development
 
 Every feature PR in svalboard/keybard or svalboard/qmk that changes what a user sees or does gets a matching PR here, written while the feature is designed. See CONTRIBUTING.md.
 
-## Not cut over yet
+## Short links on svalboard.com
 
-svalboard.com/manual and /build still point at the Google Doc and Slides. Don't edit those, and don't change those redirects. `src/components/PreviewBanner.astro` marks this site as a preview until cutover.
+svalboard.com/manual, /fitment and /build are Shopify URL redirects to this site: /start/quickstart/, /hardware/#fit and /build/. Keep those anchors stable; if an h2 they land on changes, the redirect in Shopify changes with it. The older Google Doc and Slides stay linked from Reference > Links, under Older guides.
 
 ## Notes from the owner
 

@@ -1,0 +1,53 @@
+---
+// Line drawings or rendered: one choice for every CAD figure on the site, kept per reader.
+// The choice lives in <html data-cad="line|shaded">. An inline head script (astro.config.mjs)
+// sets it before first paint; this picker changes it and stores it. Shown only on pages
+// that have a CAD figure (custom.css).
+import Select from '@astrojs/starlight/components/Select.astro';
+---
+
+<svalboard-cad-select class="cad-style-select">
+	<Select
+		icon="pen"
+		label="Figure style"
+		options={[
+			{ label: 'Line drawings', selected: true, value: 'line' },
+			{ label: 'Rendered', selected: false, value: 'shaded' },
+		]}
+		width="10em"
+	/>
+</svalboard-cad-select>
+
+<script is:inline>
+	document.querySelectorAll('svalboard-cad-select select').forEach((s) => {
+		s.value = document.documentElement.dataset.cad === 'shaded' ? 'shaded' : 'line';
+	});
+</script>
+
+<script>
+	const storageKey = 'svalboard-cad-style';
+	type Style = 'line' | 'shaded';
+
+	function apply(style: Style): void {
+		document.documentElement.dataset.cad = style;
+		document.querySelectorAll<HTMLSelectElement>('svalboard-cad-select select').forEach((s) => {
+			s.value = style;
+		});
+		try {
+			localStorage.setItem(storageKey, style);
+		} catch {
+			// Private windows and blocked storage: the choice lasts for this page only.
+		}
+	}
+
+	class CadSelect extends HTMLElement {
+		constructor() {
+			super();
+			this.querySelector('select')?.addEventListener('change', (e) => {
+				const value = (e.currentTarget as HTMLSelectElement).value;
+				apply(value === 'shaded' ? 'shaded' : 'line');
+			});
+		}
+	}
+	customElements.define('svalboard-cad-select', CadSelect);
+</script>
