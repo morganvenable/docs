@@ -21,6 +21,10 @@ Both halves must run the same release. Don't press keys, especially thumb keys, 
 
 New microcontrollers, in a kit or as spares, ship with no firmware and are not set to a side. Flash each one with the file for the half it goes in.
 
+:::note[Available from x3]
+From the x3 prerelease, Keybard installs firmware for you and puts your layout back. The first install of x3 is by hand, once. See [Update firmware from Keybard](/keybard/#update-firmware-from-keybard).
+:::
+
 ## What's new compared with Vial
 
 Svalboard QMK is the current firmware, `svalboard/qmk`, release **vLaunch2**. You configure it with [Keybard](/keybard/) in Chrome or Edge.

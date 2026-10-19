@@ -333,6 +333,45 @@ Flashing firmware resets the board's settings, including your layout.
 
 You can also restore from **Settings → Backups**. Pick a snapshot from before the update: one saved after the reset holds the defaults.
 
+### Update firmware from Keybard
+
+:::note[Available from x3]
+x3 is a prerelease. Firmware updates from Keybard need Keybard at [next.keybard.svalboard.com](https://next.keybard.svalboard.com). Report problems as [Keybard issues](https://github.com/svalboard/keybard/issues), or as [firmware issues](https://github.com/svalboard/qmk/issues) if the board misbehaves after an install.
+:::
+
+From x3, Keybard installs firmware for you. It saves your layout, installs both halves through the half on USB and the split cable, and puts your layout back. You approve the install once, on the keyboard itself.
+
+{/* VERIFY: at Keybard eab5db1 the list of carried releases is empty, so the Firmware card offers only Choose a file… and its button reads Install file. Will next.keybard carry x3 (a release row with Update to x3), or do people download the .svup files from the x3 firmware release? The steps below cover both. */}
+
+![Settings, Firmware and backups: This keyboard, Install with Choose a file…, the board name, Backups, Import layout and Export layout.](../../../assets/keybard/settings-firmware-card.webp)
+
+#### The first install of x3
+
+Firmware before x3 has no updater, so the first move to x3 is by hand, once. Keybard guides you through it.
+
+1. Connect the board and open **Settings**, then **Firmware and backups**.
+2. Choose **Install by hand**. Keybard saves your layout as a `.svil` file in Downloads.
+3. Under **Layout**, choose **Keep my layout** to have it put back afterward, or **Reset to the default layout**.
+4. Download the firmware, then follow the steps for each half: plug USB into that half, double-tap its reset button, and copy that half's file onto the **RPI-RP2** drive.
+5. Plug USB back into your usual half and choose **Connect**.
+
+From then on, updates come from Keybard.
+
+#### Update a board that runs x3
+
+1. Connect the board and open **Settings**, then **Firmware and backups**. **This keyboard** lists each half's release and pointing module. **USB** marks the half that is plugged in.
+2. Under **Install**, choose a release, or **Choose a file…** and pick the left and right `.svup` files.
+3. Keybard checks the board, verifies the files and saves your layout to Downloads. Under **Layout**, choose what happens afterward:
+   - **Keep my layout** (the default): your layout is put back after the install.
+   - **Reset to the default layout**: the board starts with the firmware's default layout.
+   - **Wipe to a blank board**: every key is empty on every layer.
+4. Choose **Start update**. When the board's light blinks blue, hold the two keys Keybard shows, once. They are the Index South and Middle South keys of the half on USB: **M** and **,** on the right half in the default layout. One hold approves both halves.
+5. Keep USB and the split cable connected while it installs. Both halves take about two minutes.
+
+If the halves end up on different firmware, **This keyboard** shows **Halves differ** and the button reads **Finish update**. **Advanced** has **Update left half…** and **Update right half…** for one half at a time.
+
+Keybard keeps the layout it saved as a **Before** backup, such as *Before x3*, in **Backups**. It stays until you delete it.
+
 ### Automatic backups
 
 Open **Settings → Backups**. Nothing needs to be turned on. While a board is connected, Keybard saves a snapshot:
@@ -342,6 +381,8 @@ Open **Settings → Backups**. Nothing needs to be turned on. While a board is c
 - when you switch tabs or close Keybard within those 10 seconds
 
 A snapshot holds the same information as an exported `.svil`. If nothing changed since the last one, no new snapshot is added.
+
+From x3, **Back up now** in **Settings → Firmware and backups → Backups** saves a snapshot whenever you choose.
 
 ![After dragging A onto Q in Manual Updates, a new Edited entry appears in Settings, Backups: 1 key, Unsent (1).](../../../assets/keybard/automatic-backup-after-edit.webp)
 
@@ -437,6 +478,21 @@ A macro or tap dance needs a definition and a key that uses it. Combos and overr
 In Manual Updates, choose **Apply N Changes** before testing. Then close the editor, deselect, and test in a scratch document. Typing while a position is selected can change your layout.
 :::
 
+### Editors in the side panel
+
+:::note[Available from x3]
+x3 is a prerelease. Try it in Keybard at [next.keybard.svalboard.com](https://next.keybard.svalboard.com).
+:::
+
+From x3, a macro, tap dance or combo opens in the side panel beside the layout. The rest of the screen dims while the editor is open, so the layout and the picker stand out.
+
+- Select a slot in the editor, then click a key in the picker or on the layout to fill it.
+- Click a category in the left navigation, such as **Pointing Devices** or **Layer Keys**, to change the picker. The editor stays open.
+- The picker's heading names the item you are editing.
+- Press Esc, or choose the back arrow, to close the editor.
+
+![Combo 0, named Quick escape, open in the side panel above the Standard Keys picker. The layout is dimmed behind it.](../../../assets/keybard/combo-editor.webp)
+
 ### Macros
 
 **Macro Keys** → edit an entry.
@@ -494,6 +550,24 @@ A combo watches for up to four keys pressed together and sends its **Output**. F
 <Clip anim="keybard/combo-a-b-escape" alt="Setting A and B as a combo's inputs and Escape as its output." />
 
 There's no combo key to place. Pick key pairs you rarely type together.
+
+#### Combo folds and names
+
+:::note[Available from x3]
+x3 is a prerelease. Try it in Keybard at [next.keybard.svalboard.com](https://next.keybard.svalboard.com).
+:::
+
+From x3, every key in a combo shows a folded corner at its bottom right, in that combo's color. A key in two or three combos shows the fold split into their colors. A key in more than three shows the first three.
+
+- Hover a key to see its details below the layout, including every combo it is in.
+- Hover a fold, or a combo in the **Combos** list, to light up the combo's keys on the layout.
+- Click a fold, or select it and press Enter, to open that combo's editor.
+
+![Hovering the D key: its fold is split orange and blue, and the card below the layout lists two combos, Quick escape (F + D to Esc) and Next field (S + D + F to Tab).](../../../assets/keybard/combo-folds.webp)
+
+To name a combo, open it and click the pencil beside its title (**Rename this combo**). The name shows in the editor, in the **Combos** list and on the key details card. Combo names are saved in Keybard and in your `.svil` exports, not on the board.
+
+To turn the folds off, switch off **Combo indicators** in **Settings → Appearance and editing**. **Colorblind-friendly combo colors** uses colors that stay distinct with color blindness, each with its own texture.
 
 ### Mod-taps and one-shots
 
@@ -561,6 +635,8 @@ A leader sequence is a **Leader** key followed by keys typed one after another. 
 ### Alternate repeat
 
 **Alt-Repeat** → edit a mapping.
+
+From x3, **Alt-Repeat** appears in the left navigation once you switch on **Show Alt-Repeat** in **Settings → Appearance and editing**.
 
 Alternate repeat sends a different key depending on the key you typed last. To try it, map A to B and place the alternate-repeat key on a spare position. Type A, then press the alternate-repeat key: it types B.
 
@@ -635,6 +711,28 @@ The warning shows once per connection. Choose **OK** to close it.
 Open **Settings** at the bottom of the left navigation. It has four sections: **General**, **Fragments**, **Backups** and **Developer**. Backups are covered in [Backups and files](/keybard/#backups-and-files).
 
 {/* VERIFY: Settings → Developer holds tools that aren't public. This page names the section but doesn't describe it. Should it be left out entirely? */}
+
+### Settings on one page
+
+:::note[Available from x3]
+x3 is a prerelease. Try it in Keybard at [next.keybard.svalboard.com](https://next.keybard.svalboard.com).
+:::
+
+From x3, **Settings** is one page of cards. Type in **Search settings** to find any setting, or click a chip under it to jump to a card. Each card opens and closes, and stays the way you left it.
+
+![Settings in x3: the search field, the Hardware, Firmware, Appearance, Typing and About chips, and five cards.](../../../assets/keybard/settings-one-page.webp)
+
+| Card | What it holds | Where it was before x3 |
+| --- | --- | --- |
+| **Hardware** | Your clusters (**Default**, **6-key** or **Fang**, or per finger), the pointing devices on each half, and the ball color. | **Settings → Fragments** |
+| **Firmware and backups** | [Firmware updates](/keybard/#update-firmware-from-keybard), the board name, **Backups**, **Import layout** and **Export layout**. | **Settings → Backups**, and the board name in **General** |
+| **Appearance and editing** | **Theme**, **Key size**, **Panel position**, **Typing binds a key**, **Advance after assigning**, **Key legends**, **Show Alt-Repeat**, **Combo indicators** and **Colorblind-friendly combo colors**. | **Settings → General** |
+| **Typing behavior** | **Tap-Hold**, **Auto Shift**, **One Shot Keys**, **Magic** and **Grave Escape**. | **QMK Settings...** |
+| **About** | The Keybard version, and links to the manual, the release notes and the Svalboard community. | **About** in the left navigation |
+
+**Key size** and **Panel position** live only here; the editor no longer has its own size and layout buttons. **Export layout** opens one dialog, with printing as one of its formats.
+
+{/* VERIFY: Typing behavior lists Auto Shift, but standard builds don't include it (see the caution under Typing feel). Does the x3 card show Auto Shift on a standard build? */}
 
 ### General
 
