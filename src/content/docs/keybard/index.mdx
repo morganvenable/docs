@@ -589,6 +589,73 @@ Open **Pointing Devices** in the left navigation. Connect the board first: the s
 
 **Layer Timeout** can be 200, 300, 400, 500 or 800 ms, or Infinite. The default is 500 ms.
 
+### Scroll keys: Drag Scroll and Vel Scroll
+
+:::note[Available from x3]
+x3 is a prerelease. Both keys are in Keybard at [next.keybard.svalboard.com](https://next.keybard.svalboard.com). **Vel Scroll** also needs the [x3 firmware](https://github.com/svalboard/qmk/releases/tag/x3) on both halves. Report firmware problems as [firmware issues](https://github.com/svalboard/qmk/issues), and problems in Keybard as [Keybard issues](https://github.com/svalboard/keybard/issues).
+:::
+
+The **Scroll** row in **Pointing Devices** has two keys. Hold one and use your trackball, touchpad or TrackPoint to scroll.
+
+| Key | While you hold it |
+| --- | --- |
+| **Drag Scroll** | Moving the pointer scrolls instead. Let go to point again. |
+| **Vel Scroll** (Velocity Scroll) | The pointer stays put. How far you move from where you started sets a scroll speed, and scrolling keeps going at that speed while you hold still. Move back toward the start to slow down. Let go to stop. |
+
+![The Scroll row in the Pointing Devices picker, below Mouse Buttons, Modifiers, Sniper Keys and Boost: Drag Scroll and Vel Scroll.](../../../assets/keybard/scroll-row.webp)
+
+To put a scroll key on your layout:
+
+1. Select the position. A layer you can reach while pointing, such as the mouse layer, works well.
+2. Open **Pointing Devices** and click **Drag Scroll** or **Vel Scroll** in the **Scroll** row. Or drag the key onto the position.
+3. Apply the change in your update mode. Deselect, then hold the key and move the pointer.
+
+In a macro, tap dance or combo editor, click **Pointing Devices** in the left navigation to show the same keys in the picker.
+
+Neither key is on the default layout.
+
+#### How Velocity Scroll feels
+
+- Velocity Scroll works like middle-click autoscroll, built into the board, so it works in every app.
+- A small dead zone around the start point doesn't scroll, so a resting hand stays still.
+- Speed follows the distance you move, not your DPI, so it feels the same at any DPI. **Sniper** and **Boost** don't change it. **Natural Scroll** applies.
+- Mouse buttons keep working while you hold the key. Velocity Scroll never turns on Auto Mouse.
+- On a touchpad, the board stops sending touches to your computer while you hold the key, and follows one finger per pad from where it lands. Lift the finger to stop scrolling. When you let go of the key, the pads go back to your computer once every finger is up.
+
+Keybard offers **Vel Scroll** only when the board's firmware has it. **Drag Scroll** was named **Scroll Toggle Hold** before x3; it is the same key.
+
+### Pointing devices on the layout
+
+:::note[Available from x3]
+x3 is a prerelease. Try it in Keybard at [next.keybard.svalboard.com](https://next.keybard.svalboard.com). Touch contacts and the Velocity Scroll drawing need the [x3 firmware](https://github.com/svalboard/qmk/releases/tag/x3).
+:::
+
+From x3, Keybard draws each half's pointing device on the layout, at its true size, and it moves as you use it. A trackball rolls as you roll yours. A touchpad shows your fingers. **SNIPER** and **BOOST** pills appear while either is on.
+
+![The QWERTY Example with a touchpad drawn under the left hand and a trackball under the right, each between its finger and thumb clusters.](../../../assets/keybard/pointing-layout.webp)
+
+**Settings → Hardware** lists the pointing device on each half. One the board reports reads **Auto-detected**. Keybard keeps looking for about 35 seconds after you connect, so a device that starts late still appears. Choose your trackball's ball color in the same card.
+
+#### Touch contacts
+
+Each finger on a touchpad is drawn where it is on that pad, and lifts where it was. Keybard shows up to six fingers: three on each pad.
+
+![Both halves with touchpads, three fingers drawn on each pad.](../../../assets/keybard/touch-contacts.webp)
+
+Your computer receives up to five fingers across both pads, the most a touchpad reports. With six fingers down, the last to land isn't sent to your computer. Keybard still draws it.
+
+#### Velocity Scroll on the layout
+
+While **Vel Scroll** is held, the device you are moving shows a **VEL SCROLL** pill and a live drawing:
+
+- the point where you started, with a small square for the dead zone
+- an arrow from there to your current offset, which grows with the scroll speed
+- a dashed circle where full speed starts
+
+On a trackball the drawing sits over the ball. On a touchpad it is a magnified circle where your finger landed.
+
+![The right trackball with Vel Scroll held: crosshair ticks over the ball, an arrow from the center square down and to the right, and the VEL SCROLL pill.](../../../assets/keybard/velocity-scroll.webp)
+
 ### Set up pointing step by step
 
 1. Start with plain pointer movement. Change the left or right DPI in small steps. Apply the change in Manual Updates.
@@ -608,7 +675,7 @@ Don't copy a DPI number from one kind of sensor to another and expect the same s
 It also has Svalboard's own keys, including:
 
 - **Left DPI +**, **Left DPI -**, **Right DPI +** and **Right DPI -**
-- **Scroll Left Toggle**, **Scroll Right Toggle**, **Scroll Toggle** and **Scroll Toggle Hold**
+- **Scroll Left Toggle**, **Scroll Right Toggle**, **Scroll Toggle** and **Scroll Toggle Hold** (**Drag Scroll** from x3)
 - **Axis Scroll Lock**
 - **Fix Drift**: recalibrates a TrackPoint
 - **AutoMouse Toggle**: turns Auto Mouse on or off
