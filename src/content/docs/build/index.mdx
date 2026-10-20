@@ -8,17 +8,26 @@ import finished from '../../../assets/build/finished-svalboard.jpg';
 import kitPhoto from '../../../assets/build/kit-hardware-photo.jpg';
 import CadFigure from '../../../components/CadFigure.astro';
 import YouTube from '../../../components/YouTube.astro';
+import StoreItems from '../../../components/StoreItems.astro';
 
 <div class="opening-pair">
 	<figure class="opening-fig">
-		<Image src={finished} alt="A finished Svalboard in gray and black on a white background: both halves, each with four finger clusters, a thumb cluster, a black trackball and a gray hemispherical palm rest." widths={[480, 720, 1080, 1440]} sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw" loading="eager" fetchpriority="high" />
+		<a class="opening-link" href="https://svalboard.com/products/lightly"><Image src={finished} alt="A finished Svalboard in gray and black on a white background: both halves, each with four finger clusters, a thumb cluster, a black trackball and a gray hemispherical palm rest." widths={[480, 720, 1080, 1440]} sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw" loading="eager" fetchpriority="high" /></a>
 		<figcaption>A finished board</figcaption>
+		<a class="opening-buy" href="https://svalboard.com/products/lightly">Buy complete</a>
 	</figure>
 	<figure class="opening-fig">
-		<Image src={kitPhoto} alt="The kit hardware laid out on a white background: FFCs, the two main PCBAs, cluster and thumb PCBAs, stainless towers, screws, square nuts, brass heat set inserts, two rods of magnets, a T10 driver and two USB-C cables." widths={[480, 720, 1080, 1280]} sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw" loading="eager" />
+		<a class="opening-link" href="https://svalboard.com/products/svalboard-self-print-kit"><Image src={kitPhoto} alt="The kit hardware laid out on a white background: FFCs, the two main PCBAs, cluster and thumb PCBAs, stainless towers, screws, square nuts, brass heat set inserts, two rods of magnets, a T10 driver and two USB-C cables." widths={[480, 720, 1080, 1280]} sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw" loading="eager" /></a>
 		<figcaption>What comes in the kit</figcaption>
+		<a class="opening-buy" href="https://svalboard.com/products/svalboard-self-print-kit">Buy the kit</a>
 	</figure>
 </div>
+
+## Optional items
+
+Add these to your kit from the Svalboard store:
+
+<StoreItems layout="grid" />
 
 This guide covers building a Svalboard from a self-print kit. It also helps with repairs and part swaps on a finished board.
 

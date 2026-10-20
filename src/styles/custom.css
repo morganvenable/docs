@@ -231,6 +231,26 @@
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-gray-2);
 }
+/* Store links on the opening pictures: the picture and a small link under the caption. */
+.sl-markdown-content .opening-link {
+	display: block;
+	border-radius: 0.75rem;
+}
+.sl-markdown-content .opening-link:focus-visible,
+.sl-markdown-content .opening-buy:focus-visible {
+	outline: 3px solid var(--sl-color-text-accent);
+	outline-offset: 3px;
+}
+.sl-markdown-content .opening-buy {
+	display: inline-block;
+	margin-top: 0.15rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-text-accent);
+	text-decoration: none;
+}
+.sl-markdown-content .opening-buy:hover {
+	text-decoration: underline;
+}
 .sl-markdown-content .opening-pair {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -243,6 +263,93 @@
 @media (min-width: 40rem) {
 	.sl-markdown-content .opening-pair {
 		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Optional store items near the top of the build guide (src/components/StoreItems.astro).
+   Small product photos on their own white backdrop, each linking to the store. */
+.sl-markdown-content .store-items {
+	list-style: none;
+	margin: 0.75rem 0 1.5rem;
+	padding: 0;
+	display: grid;
+	gap: 0.75rem;
+}
+.sl-markdown-content .store-items > li {
+	margin: 0;
+	padding: 0;
+}
+.sl-markdown-content .store-item {
+	display: flex;
+	gap: 0.4rem;
+	color: var(--sl-color-gray-2);
+	font-size: var(--sl-text-sm);
+	line-height: 1.3;
+	text-decoration: none;
+}
+.sl-markdown-content .store-item:hover .store-item-name {
+	color: var(--sl-color-text-accent);
+}
+.sl-markdown-content .store-item:focus-visible {
+	outline: 3px solid var(--sl-color-text-accent);
+	outline-offset: 3px;
+	border-radius: 0.5rem;
+}
+.sl-markdown-content .store-item-pic {
+	display: block;
+	flex: none;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	border-radius: 0.5rem;
+	background-color: #fff;
+}
+.sl-markdown-content .store-item-pic img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	object-fit: cover;
+}
+.sl-markdown-content .store-item-ball {
+	display: block;
+	width: 48%;
+	aspect-ratio: 1;
+	margin: 13% auto 0;
+	border-radius: 50%;
+	background: radial-gradient(circle at 35% 30%, #f27a6f 0%, #c8261c 45%, #7c120c 100%);
+}
+/* A: a compact grid of small cards, picture above the name. */
+.sl-markdown-content .store-items--grid {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.sl-markdown-content .store-items--grid .store-item {
+	flex-direction: column;
+}
+@media (min-width: 40rem) {
+	.sl-markdown-content .store-items--grid {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+}
+/* B: a list with a small thumbnail beside each name. */
+.sl-markdown-content .store-items--list {
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0.5rem;
+}
+.sl-markdown-content .store-items--list .store-item {
+	flex-direction: row;
+	align-items: center;
+	gap: 0.75rem;
+}
+.sl-markdown-content .store-items--list .store-item-pic {
+	width: 4rem;
+}
+.sl-markdown-content .store-items--list .store-item-name {
+	color: var(--sl-color-text-accent);
+	text-decoration: underline;
+}
+@media (min-width: 40rem) {
+	.sl-markdown-content .store-items--list {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 
