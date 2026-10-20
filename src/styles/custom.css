@@ -310,14 +310,6 @@
 	margin: 0;
 	object-fit: cover;
 }
-.sl-markdown-content .store-item-ball {
-	display: block;
-	width: 48%;
-	aspect-ratio: 1;
-	margin: 13% auto 0;
-	border-radius: 50%;
-	background: radial-gradient(circle at 35% 30%, #f27a6f 0%, #c8261c 45%, #7c120c 100%);
-}
 /* A: a compact grid of small cards, picture above the name. */
 .sl-markdown-content .store-items--grid {
 	grid-template-columns: repeat(3, minmax(0, 1fr));

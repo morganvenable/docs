@@ -17,24 +17,18 @@ const store = 'https://svalboard.com/products/';
 const items = [
 	{ name: '52 mm pearl trackball', href: store + 'svalboard-52mm-pearl-trackball', img: pearl, alt: 'Four 52 mm pearl trackballs: blue, purple, white and black.' },
 	{ name: '44 mm shiny black trackball', href: store + '44mm-shiny-black-trackball', img: black, alt: 'A 44 mm shiny black trackball.' },
-	{ name: '44 mm red trackball', href: store + '44mm-red-trackball', img: null, alt: '' },
 	{ name: 'Squishy palms', href: store + 'squishy-palmrests', img: palms, alt: 'A pair of black squishy palm rests with a fabric top.' },
 	{ name: 'Pitch towers', href: store + 'pitch-towers', img: towers, alt: 'A full set of sandblasted stainless pitch towers.' },
 	{ name: 'Carrier plates', href: store + 'carrier-plates', img: plates, alt: 'A pair of black anodized aluminum carrier plates.' },
 ];
 ---
 
-{/* VERIFY: the 44 mm red trackball has no photo on its store page, so its tile shows a drawn red ball. Use a real photo when one is on the store. */}
 <ul class={`store-items store-items--${layout}`} role="list">
 	{items.map((item) => (
 		<li>
 			<a class="store-item" href={item.href}>
 				<span class="store-item-pic">
-					{item.img ? (
-						<Image src={item.img} alt={item.alt} widths={[160, 240, 360, 480]} sizes={layout === 'grid' ? '(min-width: 40rem) 8rem, 30vw' : '4rem'} />
-					) : (
-						<span class="store-item-ball" role="img" aria-label="A red trackball." />
-					)}
+					<Image src={item.img} alt={item.alt} widths={[160, 240, 360, 480]} sizes={layout === 'grid' ? '(min-width: 40rem) 8rem, 30vw' : '4rem'} />
 				</span>
 				<span class="store-item-name">{item.name}</span>
 			</a>
