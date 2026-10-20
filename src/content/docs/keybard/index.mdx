@@ -747,12 +747,12 @@ Keybard Overlay is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed,
 ### Install it on Linux
 
 :::note[Available from x3]
-Keybard Overlay for Linux is a test build in the [x3 prerelease](https://github.com/svalboard/keybard/releases/tag/x3). Report what works and what doesn't as [Keybard issues](https://github.com/svalboard/keybard/issues), and attach the report from `--diagnose`.
+Keybard Overlay for Linux is a test build, first in the x3 prerelease. Get it from [Keybard Overlay releases](https://github.com/svalboard/keybard/releases). Report what works and what doesn't as [Keybard issues](https://github.com/svalboard/keybard/issues), and attach the report from `--diagnose`.
 :::
 
 You need a 64-bit x86 PC with a desktop Linux from 2021 or later, such as Ubuntu 22.04, Debian 12, Fedora 35 or Linux Mint 21 (glibc 2.34 or later), on X11 or Wayland. Use Chrome, Edge or Chromium for Keybard. Keybard Overlay brings its own Python and Qt, so there is nothing else to install, and it runs without admin rights.
 
-1. From the [x3 release](https://github.com/svalboard/keybard/releases/tag/x3), download one of the two packages, which hold the same app: `KeybardOverlay-x86_64.AppImage`, or `KeybardOverlay-Linux-x86_64.tar.gz`. Download `60-svalboard.rules` and `install-udev-rule.sh` too. Checksums are in `SHA256SUMS-Linux.txt`.
+1. From the [latest release](https://github.com/svalboard/keybard/releases) (x3 or later), download one of the two packages, which hold the same app: `KeybardOverlay-x86_64.AppImage`, or `KeybardOverlay-Linux-x86_64.tar.gz`. Download `60-svalboard.rules` and `install-udev-rule.sh` too. Checksums are in `SHA256SUMS-Linux.txt`.
 2. Let your user read the board. This is needed once, and is the only step that needs admin rights. In the download folder, run `sudo ./install-udev-rule.sh`, then unplug the board and plug it back in. It installs the same rule as [Linux: the udev rule](/firmware/#linux-the-udev-rule).
 3. Start Keybard Overlay.
    - AppImage: run `chmod +x KeybardOverlay-x86_64.AppImage`, then `./KeybardOverlay-x86_64.AppImage`. If it reports a FUSE problem, add `--appimage-extract-and-run`, or use the `.tar.gz`.
@@ -794,7 +794,7 @@ If you have more than one Svalboard, choose yours from **Board** in the overlay'
 ### Several Svalboards at once
 
 :::note[Available from x3]
-x3 is a prerelease. Get Keybard Overlay for Windows or Linux from the [x3 release](https://github.com/svalboard/keybard/releases/tag/x3).
+x3 is a prerelease. Get Keybard Overlay x3 or later for Windows or Linux from the [latest release](https://github.com/svalboard/keybard/releases).
 :::
 
 From x3, Keybard Overlay follows every Svalboard connected to your computer and shows the one you are using: the last with a held key, pointer movement or a finger on a pad. It switches boards only after the one on show has been idle for a second, so two boards used together don't flicker.
