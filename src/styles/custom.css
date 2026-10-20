@@ -231,6 +231,26 @@
 	font-size: var(--sl-text-sm);
 	color: var(--sl-color-gray-2);
 }
+/* Store links on the opening pictures: the picture and a small link under the caption. */
+.sl-markdown-content .opening-link {
+	display: block;
+	border-radius: 0.75rem;
+}
+.sl-markdown-content .opening-link:focus-visible,
+.sl-markdown-content .opening-buy:focus-visible {
+	outline: 3px solid var(--sl-color-text-accent);
+	outline-offset: 3px;
+}
+.sl-markdown-content .opening-buy {
+	display: inline-block;
+	margin-top: 0.15rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-text-accent);
+	text-decoration: none;
+}
+.sl-markdown-content .opening-buy:hover {
+	text-decoration: underline;
+}
 .sl-markdown-content .opening-pair {
 	display: grid;
 	grid-template-columns: 1fr;
