@@ -23,7 +23,7 @@ New microcontrollers, in a kit or as spares, ship with no firmware and are not s
 
 ## What's new compared with Vial
 
-Svalboard QMK is the current firmware, `svalboard/qmk`, release **vLaunch2**. You configure it with [Keybard](/keybard/) in Chrome or Edge.
+Svalboard QMK is the current firmware, `svalboard/qmk`. Get the [latest release](https://github.com/svalboard/qmk/releases), and configure it with [Keybard](/keybard/) in Chrome or Edge.
 
 Already in Svalboard's Vial firmware, now edited in Keybard:
 
@@ -55,7 +55,7 @@ To move your board over, see [Moving from Vial](/firmware/#moving-from-vial).
 
 ## Firmware files
 
-Download from the [vLaunch2 release](https://github.com/svalboard/qmk/releases/tag/vLaunch2). Pick one file per half, by the module on that half:
+Download from the [latest release](https://github.com/svalboard/qmk/releases). Pick one file per half, by the module on that half. The names below are from vLaunch2; each release puts its own tag at the end.
 
 | Module on that half | Left | Right |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ Flash as in [Flashing firmware](/firmware/#flashing-firmware). Flashing resets y
 - **"Your keyboard can't save changes"**: export your current work, unplug the board, plug it back in, reconnect and make the change again.
 - **After any reset**: restart the board before making new edits.
 - **Keybard won't connect**: use Chrome or Edge, a USB data cable, and close other configuration apps. On Linux, add the udev rule (see [Linux: the udev rule](/firmware/#linux-the-udev-rule)).
-- **Board won't start or a half is stuck**: reflash both halves with matching vLaunch2 files (see [Flashing firmware](/firmware/#flashing-firmware)), then import your `.svil`.
+- **Board won't start or a half is stuck**: reflash both halves with files from the same release (see [Flashing firmware](/firmware/#flashing-firmware)), then import your `.svil`.
 
 For hardware problems, see [Troubleshooting](/hardware/#troubleshooting).
 
@@ -121,7 +121,7 @@ The firmware does **not** bring your Vial settings across. Flashing resets the b
 
 1. In Vial, save your layout as a `.vil`. Keep it unchanged.
 2. Write down anything you rely on that a `.vil` doesn't hold: DPI, scrolling, automouse and layer colors (see [What a .vil doesn't hold](/firmware/#what-a-vil-doesnt-hold)).
-3. Flash both halves with the vLaunch2 files (see [Firmware files](/firmware/#firmware-files) and [Flashing firmware](/firmware/#flashing-firmware)).
+3. Flash both halves with the latest Svalboard QMK files (see [Firmware files](/firmware/#firmware-files) and [Flashing firmware](/firmware/#flashing-firmware)).
 4. Open https://keybard.svalboard.com in Chrome or Edge and choose **Connect Keyboard**.
 5. Choose **Import Layout** and pick your `.vil`. Read the review, then apply it. This restores your layout, macros, tap dances, combos, key overrides and QMK settings.
 6. Set DPI, scrolling, automouse and layer colors again in Keybard.
