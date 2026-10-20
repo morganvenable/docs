@@ -811,6 +811,39 @@ Keybard Overlay is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed,
 3. The first start downloads its own copy of Python and Qt, so you need to be online. It needs no administrator rights and makes no system changes.
 4. Keybard Overlay sits in the system tray and opens Keybard.
 
+### Install it on Linux
+
+:::note[Available from x3]
+Keybard Overlay for Linux is a test build, first in the x3 prerelease. Get it from [Keybard Overlay releases](https://github.com/svalboard/keybard/releases). Report what works and what doesn't as [Keybard issues](https://github.com/svalboard/keybard/issues), and attach the report from `--diagnose`.
+:::
+
+You need a 64-bit x86 PC with a desktop Linux from 2021 or later, such as Ubuntu 22.04, Debian 12, Fedora 35 or Linux Mint 21 (glibc 2.34 or later), on X11 or Wayland. Use Chrome, Edge or Chromium for Keybard. Keybard Overlay brings its own Python and Qt, so there is nothing else to install, and it runs without admin rights.
+
+1. From the [latest release](https://github.com/svalboard/keybard/releases) (x3 or later), download one of the two packages, which hold the same app: `KeybardOverlay-x86_64.AppImage`, or `KeybardOverlay-Linux-x86_64.tar.gz`. Download `60-svalboard.rules` and `install-udev-rule.sh` too. Checksums are in `SHA256SUMS-Linux.txt`.
+2. Let your user read the board. This is needed once, and is the only step that needs admin rights. In the download folder, run `sudo ./install-udev-rule.sh`, then unplug the board and plug it back in. It installs the same rule as [Linux: the udev rule](/firmware/#linux-the-udev-rule).
+3. Start Keybard Overlay.
+   - AppImage: run `chmod +x KeybardOverlay-x86_64.AppImage`, then `./KeybardOverlay-x86_64.AppImage`. If it reports a FUSE problem, add `--appimage-extract-and-run`, or use the `.tar.gz`.
+   - `.tar.gz`: run `tar -xzf KeybardOverlay-Linux-x86_64.tar.gz`, then `cd KeybardOverlay` and `./keybard-overlay`.
+4. The Svalboard icon appears in the system tray, and Keybard opens in your browser at its **Overlay** dialog. Choose **Connect**, as in the next section.
+
+To add Keybard Overlay to your app menu, start it once with `--install-desktop-entry`. To quit, choose **Quit Keybard Overlay** in the tray menu, or press Ctrl+C in the terminal you started it from.
+
+#### Wayland, tray icons and other limits
+
+- **Wayland**: Keybard Overlay runs through XWayland by default, so it can stay on top and be placed. Native Wayland can't keep a window on top or place it; to try it anyway, start with `--wayland`.
+- **No tray icon on GNOME**: plain GNOME has no tray. Ubuntu's desktop includes one. On Fedora and others, install the GNOME extension **AppIndicator and KStatusNotifierItem Support**. The overlay works without the tray: open it from Keybard's **Overlay** dialog, and quit with Ctrl+C.
+- **A black box behind the keys on X11**: the overlay needs a compositor to be see-through. GNOME, KDE Plasma and Cinnamon have one. On Xfce, turn on **Compositor** under **Window Manager Tweaks**. With i3 and other plain window managers, run a compositor such as picom.
+- **A missing library** (such as `libnss3` or `libasound`): install your distribution's `nss` and `alsa-lib` packages (`libnss3` and `libasound2` on Ubuntu and Debian).
+- **Port in use**: if another app uses port 5178, start with `--port 5179`.
+
+#### Check what the overlay sees
+
+Run `./keybard-overlay --diagnose`, or `./KeybardOverlay-x86_64.AppImage --diagnose`, with the board plugged in. It writes `keybard-overlay-report.txt` in your home folder: your system and desktop session, every Svalboard it can see and whether it can open it, and the log of its last two runs. It never writes to the board and holds nothing you typed. **CANNOT OPEN** means the udev rule is missing: repeat step 2.
+
+Every run is also logged to `~/.local/state/keybard-overlay/overlay.log`.
+
+To remove Keybard Overlay, delete the AppImage or the `KeybardOverlay` folder. Its settings are under `~/.local/share`. To remove the rule, run `sudo rm /etc/udev/rules.d/60-svalboard.rules`.
+
 ### Connect it to Keybard
 
 1. In Keybard (Chrome or Edge), connect your keyboard.
@@ -819,9 +852,29 @@ Keybard Overlay is a portable ZIP for 64-bit Windows 10 and 11. It isn't signed,
 
 Once connected, the dialog shows the board the overlay app is following and a **Disconnect** button.
 
+![Keybard's Desktop overlay dialog, with Connect and Download for Windows.](../../../assets/keybard/overlay-dialog.webp)
+
 Connecting lets the overlay keep up with your edits. About a second after a change reaches the keyboard, the overlay re-reads the layout. In Manual Updates, apply your changes first. Connecting also gives the overlay Keybard's keyboard language.
 
 If you have more than one Svalboard, choose yours from **Board** in the overlay's **⋯** menu or the tray icon. The overlay app remembers it.
+
+### Several Svalboards at once
+
+:::note[Available from x3]
+x3 is a prerelease. Get Keybard Overlay x3 or later for Windows or Linux from the [latest release](https://github.com/svalboard/keybard/releases).
+:::
+
+From x3, Keybard Overlay follows every Svalboard connected to your computer and shows the one you are using: the last with a held key, pointer movement or a finger on a pad. It switches boards only after the one on show has been idle for a second, so two boards used together don't flicker.
+
+**Board**, in the overlay's **⋯** menu and the tray icon, sets what it follows:
+
+- **Follow the board in use**: the default. The board on show is marked **showing**.
+- A board's name: show that board only. The overlay app remembers it. Two boards with the same name show the end of each serial number.
+- **Disconnect**: lets go of every board until one is plugged in or you choose one.
+
+A board with a blank keymap, such as a touchpad test board, never replaces a board with keys. While you use it, its pointing devices and touches are drawn in the layout on show.
+
+A board reconnects by itself after a firmware update.
 
 ### Move, resize and hide it
 
@@ -838,7 +891,7 @@ Clicks anywhere else on the overlay, keys included, go through to the window und
 
 The overlay's **⋯** menu, above its corner, and the tray icon hold its settings:
 
-- **Board**: the Svalboard to follow, or **Disconnect**.
+- **Board**: the Svalboard to follow, or **Disconnect**. From x3, **Follow the board in use** is the default; see [Several Svalboards at once](/keybard/#several-svalboards-at-once).
 - **Style**: Dark, Subtle, Outline only, Light or High contrast.
 - **Outline shadow**: a contrasting shadow around legends and key outlines, readable on any background. On by default.
 - **Colors…**: key fill, outline and legend colors and opacity, outline width, outline shadow, and the layer-change and held-key colors. Changes show as you make them. **Reset to default look** undoes them.
@@ -848,6 +901,7 @@ The overlay's **⋯** menu, above its corner, and the tray icon hold its setting
 - **Capital letters**: shows letter keys in capitals.
 - **Adaptive contrast** (Windows): restyles each key for the background behind it.
 - **Place at bottom** and **Reload board layout**.
+- **Pointing devices** (from x3): **Show pointing devices** draws trackballs and touchpads in the overlay. **Show sniper and boost** shows those pills, even with the devices hidden. **Left trackball** and **Right trackball** choose the ball drawn for each trackball of the board on show.
 
 Shifted legends follow your computer's Shift and Caps Lock.
 
@@ -863,7 +917,7 @@ Keybard Overlay was called Keybard Host before. Updating from Keybard Host keeps
 
 ### Other platforms
 
-- **Linux**: runs from source. Wayland limits placement, stacking and click-through.
+- **Linux**: from x3, a test build. See [Install it on Linux](/keybard/#install-it-on-linux).
 - **macOS**: the ZIP includes `start-macos.sh` for macOS 13 or later with Python 3.10 or later. It hasn't been tested on a Mac yet.
 
 ## Troubleshooting
