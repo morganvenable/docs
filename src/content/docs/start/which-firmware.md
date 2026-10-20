@@ -9,8 +9,8 @@ Svalboard boards run one of two firmwares. Svalboard QMK, configured with Keybar
 
 | | Svalboard QMK (current) | Svalboard's Vial firmware |
 | --- | --- | --- |
-| Firmware | `svalboard/qmk` release vLaunch2 | `svalboard/vial-qmk` release v2025-11-01 |
-| File names | `..._sval_vLaunch2.uf2` | `..._vial_v2025-11-01.uf2` |
+| Firmware | `svalboard/qmk`, latest release | `svalboard/vial-qmk` release v2025-11-01 |
+| File names | `..._sval_<release>.uf2` | `..._vial_v2025-11-01.uf2` |
 | Configure with | Keybard: https://keybard.svalboard.com | Vial (https://vial.rocks or the desktop app), or the Keybard for Vial boards |
 | Layout backup file | `.svil` | `.vil` |
 
@@ -23,7 +23,7 @@ Open https://keybard.svalboard.com in Chrome or Edge and choose **Connect Keyboa
 
 ## Svalboard QMK and Keybard
 
-Svalboard QMK is the current firmware, `svalboard/qmk`, release **vLaunch2**. You configure it with **Keybard** in your browser. The keyboard stores and runs your setup, so you can close Keybard and keep typing.
+Svalboard QMK is the current firmware, `svalboard/qmk`. Get the [latest release](https://github.com/svalboard/qmk/releases), and configure it with **Keybard** in your browser. The keyboard stores and runs your setup, so you can close Keybard and keep typing.
 
 Open Keybard at https://keybard.svalboard.com.
 

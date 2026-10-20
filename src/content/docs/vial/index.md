@@ -21,7 +21,7 @@ Current Keybard doesn't edit Vial boards. When it sees Vial firmware, it shows *
 
 ## Vial firmware files
 
-Download from the [v2025-11-01 release](https://github.com/svalboard/vial-qmk/releases/tag/v2025-11-01). Pick one file per half, by the module on that half:
+Download the v2025-11-01 files from [Vial firmware releases](https://github.com/svalboard/vial-qmk/releases). Pick one file per half, by the module on that half:
 
 | Module on that half | Left | Right |
 | --- | --- | --- |
