@@ -7,6 +7,8 @@ description: "Flash, recover and get to know Svalboard QMK firmware."
 
 Both firmwares install the same way: copy a `.uf2` file onto the board.
 
+From x3.2, Keybard installs updates for you after one manual install. See [Update your firmware from Keybard](/keybard/update-firmware/).
+
 **Flashing resets your layout and settings to the firmware's default layout.** Back up first and restore afterward.
 
 1. **Back up your layout.** In Keybard, choose **Export Layout** and save a `.svil` file. On Vial, save a `.vil`.

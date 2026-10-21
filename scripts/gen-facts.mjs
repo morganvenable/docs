@@ -3,8 +3,8 @@
 //
 //   node scripts/gen-facts.mjs        (GITHUB_TOKEN is optional)
 //
-// Firmware: the GitHub "latest" release (stable) and the newest vNext
-// prerelease. For each, the firmware targets are read from the release's
+// Firmware: the GitHub "latest" release (stable) and the newest x<N>
+// prerelease. Rerun as a release step, once the release is published. For each, the firmware targets are read from the release's
 // .uf2 file names, and each target's USB IDs from keyboard.json (pid) and the
 // info.json files above it (vid) at that release's tag.
 // The output has no timestamp, so it only changes when the facts change.
@@ -47,10 +47,11 @@ const hex = (s) => (s ? String(s).replace(/^0x/i, '').toLowerCase().padStart(4, 
 const day = (iso) => iso.slice(0, 10);
 
 // svalboard_trackball_pmw3389_left_sval_vLaunch2.uf2
-//   -> { keyboard: 'svalboard/trackball/pmw3389/left', keymap: 'sval' }
+//   -> { keyboard: 'svalboard/trackball/pmw3389/left', keymap: 'sval', ext: 'uf2' }
+// .svup files (updates from Keybard) are named the same way.
 function parseAsset(name, tag) {
-	const m = name.match(new RegExp(`^(svalboard(?:_[a-z0-9]+)*)_([a-z0-9]+)_${tag.replace(/[.]/g, '\\.')}\\.uf2$`, 'i'));
-	return m ? { keyboard: m[1].replace(/_/g, '/'), keymap: m[2] } : null;
+	const m = name.match(new RegExp(`^(svalboard(?:_[a-z0-9]+)*)_([a-z0-9]+)_${tag.replace(/[.]/g, '\\.')}\\.(uf2|svup)$`, 'i'));
+	return m ? { keyboard: m[1].replace(/_/g, '/'), keymap: m[2], ext: m[3].toLowerCase() } : null;
 }
 
 async function usbIds(tag, keyboard) {
@@ -76,8 +77,10 @@ async function firmware(rel) {
 	for (const name of assets) {
 		const t = parseAsset(name, rel.tag_name);
 		if (!t) continue;
-		const cur = targets.get(t.keyboard) ?? { keyboard: t.keyboard, keymaps: [] };
-		cur.keymaps.push(t.keymap);
+		const cur = targets.get(t.keyboard) ?? { keyboard: t.keyboard, keymaps: [], svup: [] };
+		// keymaps: every build (sval, blank) with a .uf2; svup: the builds that also have a .svup.
+		if (t.ext === 'uf2') cur.keymaps.push(t.keymap);
+		else cur.svup.push(t.keymap);
 		targets.set(t.keyboard, cur);
 	}
 	if (!targets.size) throw new Error(`${rel.tag_name}: no .uf2 firmware assets`);
@@ -94,7 +97,7 @@ async function firmware(rel) {
 		const info = MODULES[key];
 		if (!info) throw new Error(`${t.keyboard}: unknown module "${key}"; add it to MODULES`);
 		const row = modules.get(key) ?? { module: key, label: info.label, deprecated: !!info.deprecated, left: null, right: null };
-		row[half] = { keyboard: t.keyboard, pid, keymaps: t.keymaps.sort() };
+		row[half] = { keyboard: t.keyboard, pid, keymaps: t.keymaps.sort(), svup: t.svup.sort() };
 		modules.set(key, row);
 	}
 	if (vids.size !== 1) throw new Error(`${rel.tag_name}: more than one vendor ID: ${[...vids]}`);
@@ -116,7 +119,7 @@ async function firmware(rel) {
 const stable = await api(`/repos/${QMK}/releases/latest`);
 const all = await api(`/repos/${QMK}/releases?per_page=100`);
 const next = all
-	.filter((r) => !r.draft && r.prerelease && /^vNext/i.test(r.tag_name))
+	.filter((r) => !r.draft && r.prerelease && /^x\d/.test(r.tag_name))
 	.sort((a, b) => b.published_at.localeCompare(a.published_at))[0];
 const host = await api(`/repos/${KEYBARD}/releases/latest`);
 
@@ -128,7 +131,8 @@ const facts = {
 	},
 	keybardHost: {
 		tag: host.tag_name,
-		name: host.name || host.tag_name,
+		// The desktop app is Keybard Overlay; older releases were named Keybard Host.
+		name: `Keybard Overlay ${host.tag_name}`,
 		date: day(host.published_at),
 		url: host.html_url,
 		assets: host.assets.map((a) => a.name).sort(),

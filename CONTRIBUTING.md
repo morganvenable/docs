@@ -27,6 +27,7 @@ Release tags, dates, firmware file names and USB IDs come from GitHub, not from 
 
 - The **Facts** workflow runs every Monday and can be run by hand from the **Actions** tab. It opens a pull request when the facts changed.
 - To refresh by hand: `npm run facts`. Set `GITHUB_TOKEN` if you hit the GitHub rate limit.
+- **Release step:** when a firmware `x` or `v` release or a Keybard Overlay release is published, run `npm run facts` (or the workflow) and merge the result. `next` is the newest `x<N>` prerelease; each half lists its `.uf2` builds (`sval`, `blank`) and the builds that also have a `.svup`.
 - Don't type release tags, file names or USB IDs into other pages. Import them from `facts.json` in an `.mdx` page instead, as the two reference pages do.
 
 ## How to write
