@@ -109,7 +109,7 @@ Static can damage the PCBAs.
 - A 3D printer with a 0.4 mm nozzle, or access to one (for example, at a library or makerspace). We recommend Bambu printers, but anything from a Prusa MK3S up can do the job.
 - At least one full spool of filament. Black PLA is the basic choice. Any filament that isn't opaque to infrared light at 940 nm needs [silver Sharpie](https://www.amazon.com/Sharpie-39108PP-Metallic-Permanent-Blister/dp/B00009RAX4) on the key flags ([Step 5](/build/#step-5-ink-the-key-flags)). Only Sharpie-brand silver works reliably. Sharpie gold, bronze and copper are less reliable.
 - [Medium CA glue, with fine applicator tips](https://a.co/d/0MWOtlK).
-- Adjustable parallel pliers. We recommend the [Knipex Pliers Wrench, 180 mm](https://www.amazon.com/dp/B081K8WFTF).
+- Adjustable parallel pliers. We recommend the [Knipex Pliers Wrench, 180 mm](https://www.amazon.com/dp/B081K8WFTF). These are required. They're how every magnet gets pressed fully flush.
 - A small flat-blade screwdriver, about 4 mm wide and 1 mm thick.
 - A heat set insert kit or a soldering iron, for example [this one](https://amzn.to/3TOY4MW).
 - 3D printing experience. This is an advanced build. Depending on your filament and your printer, you may need to tune your slicer settings to get working parts.
@@ -433,6 +433,8 @@ Each finger cluster has 5 keys, so a finished cluster with its keys needs 10 mag
 
 All magnets are 2.0 mm x 1.5 mm N35.
 
+**Press every magnet fully flush.** The fit between keys and clusters has little room to spare, and a proud magnet uses some of it up.
+
 - **Clusters:** the **north** pole faces out.
 - **Keys:** the **south** pole faces out, so it's the visible side.
 
@@ -444,7 +446,7 @@ All magnets are 2.0 mm x 1.5 mm N35.
 4. Pick up a magnet with a thin flat-blade screwdriver.
 5. Dip the magnet in the glue.
 6. Press it into the hole in the key.
-7. Squeeze the magnet flush with parallel pliers.
+7. Squeeze the magnet flush with parallel pliers, every time, even when it already looks flush.
 8. Let the glue cure before you use the key.
 
 <CadFigure name="cad-magnet-flush" alt="Two cut-away views of a key with its magnet. Before: the magnet stands proud of the key between the open jaws of parallel pliers. After: the jaws are closed and the magnet is flush." caption="Squeeze the magnet flush with parallel pliers." />
@@ -456,16 +458,22 @@ All magnets are 2.0 mm x 1.5 mm N35.
 3. Put glue in the magnet holes of the keys.
 4. Pick up a magnet with a thin flat-blade screwdriver.
 5. Press it into the hole in the key.
-6. Squeeze the magnet flush with parallel pliers.
+6. Squeeze the magnet flush with parallel pliers, every time, even when it already looks flush.
 7. Let the glue cure.
 
 ### Cluster magnets
 
-Install the cluster magnets the same way, from the Cluster stage (north pole up). Orange rings mark each magnet.
+Install the cluster magnets the same way, from the Cluster stage (north pole up). Squeeze these flush with the pliers too, even where they're awkward to reach. Orange rings mark each magnet.
 
 <CadFigure name="cad-magnets-finger-cluster" alt="A finger cluster from above and the same cluster turned over. Orange rings mark the five magnets: one in the wall of each side key slot, and the center key magnet on the underside." caption="Finger cluster magnets: one in each side key slot, one for the center key on the underside." />
 
 <CadFigure name="cad-magnets-thumb-cluster" alt="A right thumb cluster from above. Orange rings mark the five magnets: Nail, Knuckle, Pad, Up and Down." caption="Thumb cluster magnets (right cluster shown; the left cluster is the mirror image)." />
+
+<CadFigure name="cad-pliers-center-overview" alt="Parallel pliers closed on a finger cluster turned upside down. The jaws come in diagonally across one corner, one jaw on the top face and one on the center key magnet on the underside." caption="Angle the pliers in across a corner so the jaws sit square on the center key magnet." />
+
+<CadFigure name="cad-magnet-flush-center" alt="Two cut-away views of a finger cluster through the center key magnet. Before: the magnet stands proud of the underside between the open jaws of parallel pliers, one jaw above the cluster and one below. After: the jaws are closed and the magnet is flush." caption="Center key magnet: one jaw on the top of the cluster, one on the magnet." />
+
+<CadFigure name="cad-magnet-flush-thumb-down" alt="Two cut-away views of a thumb cluster through the Down key magnet in the cross bar. Before: the magnet stands proud of the back of the bar between the open jaws of parallel pliers, one jaw inside the cluster and one in the Down key opening. After: the jaws are closed and the magnet is flush." caption="Down key magnet: reach in from under the cluster, with the other jaw in the Down key opening." />
 
 ### Key magnets
 
@@ -494,9 +502,9 @@ Each cluster takes a square nut in the back of its underside, the fixing point f
 
 ### Insert the keys
 
-Every key should slide easily into place and snap to its magnet.
+Press each key into its slot until it snaps to its magnet. It takes a little force to go in, and then it moves freely.
 
-<CadFigure name="cad-key-insert" alt="A finger cluster with its keys in place except the East key (orange), which is above its slot with an arrow pointing straight down." caption="Slide each key straight down into its slot until it snaps to its magnet." />
+<CadFigure name="cad-key-insert" alt="A finger cluster with its keys in place except the East key (orange), which is above its slot with an arrow pointing straight down." caption="Press each key straight down into its slot until it snaps to its magnet." />
 
 If a key doesn't slide in easily or doesn't move freely:
 
