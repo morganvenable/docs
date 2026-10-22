@@ -7,15 +7,15 @@ description: "Flash, recover and get to know Svalboard QMK firmware."
 
 Both firmwares install the same way: copy a `.uf2` file onto the board.
 
-From x3.2, Keybard installs updates for you after one manual install. See [Update your firmware from Keybard](/keybard/update-firmware/).
+From x3.2, Keybard installs updates for you after one install by hand. See [Update your firmware from Keybard](/keybard/update-firmware/).
 
 **Flashing resets your layout and settings to the firmware's default layout.** Back up first and restore afterward.
 
 1. **Back up your layout.** In Keybard, choose **Export Layout** and save a `.svil` file. On Vial, save a `.vil`.
 2. Download the right file for **each half**: the side (left or right) and, on the current firmware, the pointing module on that half (see [Firmware files](/firmware/#firmware-files), or [Vial firmware files](/vial/#vial-firmware-files) for Vial).
 3. Plug **one half** into your computer by its **U** port.
-4. Press its **RESET** button twice quickly, within half a second. A drive named **RPI-RP2** appears.
-5. Copy that half's `.uf2` onto the drive. The half restarts by itself and the drive disappears. This is normal.
+4. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
+5. Copy that half's `.uf2` onto the drive. The half restarts by itself and the drive closes. This is normal.
 6. Move the USB cable to the other half and repeat with its file.
 7. Plug in normally. In Keybard, choose **Import Layout** and pick your `.svil`.
 
