@@ -14,7 +14,7 @@ Updates from Keybard need firmware that has the updater built in. A board on old
 1. Connect your keyboard in Keybard and open **Settings** in the left navigation. Open **Firmware and backups**.
 2. Under **This keyboard**, Keybard shows the firmware the board runs now. The newest release reads **One manual install, then updates come from Keybard**.
 3. Choose **Install x3.2**. Keybard opens **Install x3.2 by hand** and saves your layout first: **Layout saved** names the file in Downloads.
-4. Under **Layout**, choose **Keep my layout** or **Reset to the default layout**.
+4. Under **Layout**, choose **Keep my layout** or **Reset to the default layout**. A manual install offers these two; **Wipe to a blank board** is for updates from Keybard.
 5. Follow the steps for both halves:
    - **Download firmware**: download the **Left half .uf2** and the **Right half .uf2**.
    - **Install on the left half** and **Install on the right half**: plug USB into that half, double-tap its reset button, and copy that half's file onto the **RPI-RP2** drive.
@@ -90,10 +90,17 @@ When it finishes, Keybard shows **Updated to** the new release, the release on e
 
 ### If you reload or close Keybard
 
-Keybard asks before you close the tab while an update runs.
+Keybard asks before you close the tab while an update runs. If you reload it:
 
-- **A reload resumes the update.** Once a half has installed, Keybard finishes the rest. A reload before that shows **Update didn't finish**: nothing was changed, and **Try again** starts over.
-- **If the tab was closed**, open Keybard and connect again. Within 30 seconds of the tab closing, the keyboard drops the unfinished update and keeps its firmware; start the update again. If one half already has the new release, Keybard shows **Halves differ**: choose **Finish update**. If the new firmware installed but your layout wasn't put back, Keybard shows **New firmware reset your settings**: choose **Put my layout back**.
+- **After the half with USB installed**, Keybard finishes the update.
+- **After only the other half installed**, Keybard shows **Halves differ**: choose **Finish update**.
+- **Before either half installed**, Keybard shows **Update didn't finish**. Nothing was changed; choose **Try again**.
+
+A closed tab doesn't pick the update back up. Open Keybard and connect again:
+
+- **If neither half had installed**, nothing was changed. Start the update again.
+- **If the new firmware installed**, it runs, but your layout isn't put back by itself. Keybard shows **New firmware reset your settings**: choose **Put my layout back** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
+- **If only one half installed**, Keybard shows **Halves differ**: choose **Finish update**.
 
 ### Update one half
 
@@ -130,16 +137,16 @@ If you don't hold the keys in time, Keybard shows **Not approved in time**. Noth
 
 The first start of a new release resets every stored setting on both halves to that release's defaults. The board keeps its identity and its name.
 
-This is why Keybard saves your layout before every install. With **Keep my layout**, Keybard puts back what the backup holds:
+This is why Keybard saves your layout before every install. With **Keep my layout**, Keybard puts back:
 
 - the keymap on every layer
-- macros, tap dances, combos, key overrides, alternate repeat keys and leader sequences
-- layer, macro and tap dance names
+- macros, combos, tap dances, key overrides, alternate repeat keys and leader sequences
 - QMK settings
-- layer colors
-- pointing settings, such as DPI, scrolling and Auto Mouse
+- layer colors and pointing settings, such as DPI, scrolling and Auto Mouse
+- layer, macro and tap dance names
+- hardware positions
 
-Everything else starts from the new firmware's defaults, including any setting the new release adds. If a part of your layout doesn't fit the new firmware, the result lists what was trimmed, for example the number of combos it kept.
+Combo names and the trackball look in Keybard stay in your browser, so they don't change. A setting the new firmware doesn't support isn't put back; the result screen lists each one as a warning. Every other setting starts from the new firmware's defaults.
 
 Reinstalling the release your board already runs keeps your settings. **Reset to the default layout** then resets them on both halves.
 
@@ -168,11 +175,14 @@ A **warning** is a choice for you to make. Keybard explains it, and the button c
 - A file **older than** what's installed: settings added since that release won't come back.
 - **Unknown firmware file**: Keybard can't check where it came from.
 - **Keybard may not configure this firmware**: you can still install it.
+- **Older updater in this file**: the file's firmware has an older updater than your keyboard. After it installs, Keybard can't update this keyboard: later firmware installs by hand, until a manual install of a newer release.
+- **Newer updater in this file**: this Keybard may not install firmware on the keyboard afterwards.
 - **Layout not saved**: Keybard switches to **Reset to the default layout**. Choose **Save layout manually** to save it as a file first.
 
 A **refusal** stops the install. Nothing is changed on the keyboard. Keybard refuses a file that fails its integrity check, and a file a half can't take:
 
-- **Firmware file failed its check**: Keybard won't install it. Choose **Reload** and try again.
+- **Firmware file is damaged**: a file you chose is damaged. Download it again, then choose it.
+- **Firmware file failed its check**: a file in Keybard's release list doesn't match its fingerprint. Keybard won't install it. Choose **Reload** and try again.
 - **The left half won't accept this file** (or right): the reason follows, such as the file is damaged, too large, or older than this keyboard allows.
 - **No file for the right half** (or left): choose a file for that half.
 
@@ -191,6 +201,7 @@ Each message says what happened to your keyboard and offers the next step.
 | **Another app is using the keyboard** | Close other Keybard tabs and Keybard Overlay, then choose **Try again**. |
 | **Left half needs a manual install** (or right) | The half shows as the **RPI-RP2** drive. Choose **Download left half .uf2** and copy it onto the drive, or **Install by hand** for the steps. |
 | **Keyboard didn't come back** | Choose **Keep waiting**. If a drive named **RPI-RP2** appeared, that half needs a manual install. |
+| **Settings not reset** | The new firmware is installed, but the settings weren't reset to the defaults. Choose **Try again**. |
 | **Layout not fully put back** | Your backup is safe in **Backups** and Downloads. Choose **Try again**, **Open Backups**, or **Keep defaults**. |
 | **Your keyboard can't save settings** | Updates from Keybard are off until this is fixed. Choose **Install by hand**. |
 | **This keyboard installs firmware by hand** | The board doesn't have the updater yet. Choose **Install by hand**. |
