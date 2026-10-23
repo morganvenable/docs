@@ -105,7 +105,7 @@ Keybard asks before you close the tab while an update runs. If you reload it:
 A closed tab doesn't pick the update back up. Open Keybard and connect again:
 
 - **If neither half had installed**, nothing was changed. Start the update again.
-- **If the new firmware installed**, it runs, and Keybard shows **New firmware reset your settings**: choose **Restore my layout** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
+- **If the new firmware installed**, it runs, and Keybard shows **Your layout was reset**: choose **Restore my layout** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
 - **If only one half installed**, Keybard shows **Halves differ**: choose **Finish update**.
 
 ## Which half is which
@@ -223,10 +223,11 @@ Each message says what happened to your keyboard and offers the next step.
 | **The keys weren't pressed in time**, **Update stopped** or **Update didn't finish** | Nothing was changed. Choose **Try again**. |
 | **Another app is using the keyboard** | Close other Keybard tabs and Keybard Overlay, then choose **Try again**. |
 | **Left half needs its firmware installed by hand** | The half opened as the **RPI-RP2** drive. Choose **Download the firmware file** and drag it onto the drive, or **Install by hand** for the steps. |
+| **Keybard couldn't confirm the update** | The keyboard didn't say which firmware it runs. Choose **Close**; the Firmware card reads it again. |
 | **Keyboard didn't come back** | Choose **Keep waiting**. If a drive named **RPI-RP2** opened, that half needs its firmware installed by hand. |
-| **Settings not reset** | The new firmware is installed, but the settings weren't reset to the defaults. Choose **Try again**. |
+| **Layout not reset** | The new firmware is installed, but the layout wasn't reset to the default layout. Choose **Try again**. |
 | **Layout not fully put back** | Your backup is safe in **Backups** and Downloads. Choose **Try again**, **Open Backups**, or **Keep defaults**. |
-| **Your keyboard can't save settings** | Updates from Keybard are off until this is fixed. Choose **Install by hand**. |
+| **Your keyboard can't save its layout** | Updates from Keybard are off until this is fixed. Choose **Install by hand**. |
 | **This keyboard installs firmware by hand** | The keyboard doesn't have the updater yet. Choose **Install by hand**. |
 | **This Keybard can't configure this firmware** | Choose **Reload** to get a newer Keybard. |
 | **Linux blocked the keyboard** | Choose **Copy command**, run it, then choose **Reconnect**. See [Linux: the udev rule](/firmware/#linux-the-udev-rule). |
