@@ -33,7 +33,7 @@ Updates from Keybard need firmware with the updater built in. A keyboard on olde
 
 Choose **Update to x4** on the Firmware card. Keybard opens **Install x4 by hand**:
 
-1. **Your layout**: Keybard saves it to Downloads first and names the file. Choose what happens afterward: **Put my layout back** or **Start from the default layout**.
+1. **Your layout**: Keybard saves it to Downloads first and names the file. Choose what happens afterward: **Restore my layout** or **Start from the default layout**.
 2. **Firmware file**: download the file. One file is for both halves.
 3. **Install**:
    1. Plug the USB cable into either half's **U** port.
@@ -46,11 +46,11 @@ Choose **Update to x4** on the Firmware card. Keybard opens **Install x4 by hand
 
 On **Connect keyboard**, Keybard reads the firmware on both halves:
 
-- **Both halves run x4**: Keybard puts your layout back, as you chose, and shows **x4 is installed**. From then on, updates install from Keybard.
+- **Both halves run x4**: Keybard restores your layout, as you chose, and shows **x4 is installed**. From then on, updates install from Keybard.
 - **One half still runs its old firmware**: Keybard names that half, for example **The left half still runs x3.1.3**, and shows the steps for that half. Install the file on it, then choose **Connect again**.
 - **A half didn't answer**: a half on older firmware doesn't answer over the split cable. Keybard names it and shows its steps. Install the file on it, then choose **Connect again**.
 - **Neither half changed**: the steps stay, with a line saying what Keybard found.
-- **A half doesn't know which side it is**: Keybard asks **Set which half is which** first, then puts your layout back. See [Which half is which](#which-half-is-which).
+- **A half doesn't know which side it is**: Keybard asks **Set which half is which** first, then restores your layout. See [Which half is which](#which-half-is-which).
 
 <!-- SCREENSHOT: "The left half still runs x3.1.3" with the steps for the left half. Source: Svalboard/review/x4-keybard/10-by-hand-one-half.png -->
 
@@ -64,7 +64,7 @@ Keep the USB cable plugged into one half and the split cable connected. Keybard 
 
 1. Choose **Update to x4**. Keybard reads both halves, saves your layout to Downloads and to **Backups**, and opens **Update to x4**: "Keybard updates both halves through the cable to your computer. It takes about 2 minutes."
 2. Under **Your layout**, choose what happens afterward:
-   - **Put my layout back**: Keybard puts your saved layout back. This is the default.
+   - **Restore my layout**: Keybard restores your saved layout. This is the default.
    - **Start from the default layout**: the firmware's own default layout.
    - **Start from a blank keyboard**: every key empty on every layer.
 3. Choose **Update**.
@@ -105,7 +105,7 @@ Keybard asks before you close the tab while an update runs. If you reload it:
 A closed tab doesn't pick the update back up. Open Keybard and connect again:
 
 - **If neither half had installed**, nothing was changed. Start the update again.
-- **If the new firmware installed**, it runs, and Keybard shows **New firmware reset your settings**: choose **Put my layout back** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
+- **If the new firmware installed**, it runs, and Keybard shows **New firmware reset your settings**: choose **Restore my layout** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
 - **If only one half installed**, Keybard shows **Halves differ**: choose **Finish update**.
 
 ## Which half is which
@@ -161,7 +161,7 @@ An install by hand needs no key press: pressing **RESET** twice already takes a 
 
 The first start of a new release resets every stored setting on both halves to that release's defaults. The keyboard keeps its identity, its name and each half's side.
 
-This is why Keybard saves your layout before every install. With **Put my layout back**, Keybard puts back:
+This is why Keybard saves your layout before every install. With **Restore my layout**, Keybard restores:
 
 - the keymap on every layer
 - macros, combos, tap dances, key overrides, alternate repeat keys and leader sequences
