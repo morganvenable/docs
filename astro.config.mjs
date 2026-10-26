@@ -107,6 +107,7 @@ const buildJumps = [
 	{ label: "Step 19: Enjoy!", link: '/build/#step-19-enjoy' },
 ];
 const firmwareJumps = [
+	{ label: "Update to x4.1", link: '/firmware/update/' },
 	{ label: "Flashing firmware", link: '/firmware/' },
 	{ label: "What's new compared with Vial", link: '/firmware/#whats-new-compared-with-vial' },
 	{ label: "Firmware files", link: '/firmware/#firmware-files' },

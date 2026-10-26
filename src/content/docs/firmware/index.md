@@ -7,21 +7,23 @@ description: "Flash, recover and get to know Svalboard QMK firmware."
 
 Both firmwares install the same way: copy a `.uf2` file onto the board.
 
-From x4, one firmware file updates both halves, and Keybard installs updates for you after one install by hand. See [Update your firmware from Keybard](/keybard/update-firmware/).
+From x4.1, one firmware file is for both halves: copy the same file onto each half. After that first install by hand, Keybard installs updates for you. For the steps from Vial, vLaunch2, x3 or x4, see [Update to x4.1](/firmware/update/).
 
 **Flashing resets your layout and settings to the firmware's default layout.** Back up first and restore afterward.
 
 1. **Back up your layout.** In Keybard, choose **Export Layout** and save a `.svil` file. On Vial, save a `.vil`.
-2. Download the right file for **each half**: the side (left or right) and, on the current firmware, the pointing module on that half (see [Firmware files](/firmware/#firmware-files), or [Vial firmware files](/vial/#vial-firmware-files) for Vial).
+2. Download the firmware. From x4.1, it is one file for both halves, for every pointing module. For older releases, download the file for **each half**: the side (left or right) and the pointing module on that half (see [Firmware files](/firmware/#firmware-files), or [Vial firmware files](/vial/#vial-firmware-files) for Vial).
 3. Plug **one half** into your computer by its **U** port.
 4. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
 5. Copy that half's `.uf2` onto the drive. The half restarts by itself and the drive closes. This is normal.
-6. Move the USB cable to the other half and repeat with its file.
+6. Move the USB cable to the other half and repeat with its file. From x4.1, it is the same file.
 7. Plug in normally. In Keybard, choose **Import Layout** and pick your `.svil`.
 
 Both halves must run the same release. Don't press keys, especially thumb keys, while the board starts.
 
-New microcontrollers, in a kit or as spares, ship with no firmware and are not set to a side. Flash each one with the file for the half it goes in.
+From x4.1, after both halves are done, wait about half a minute for the lights to settle. If Keybard then asks which half is which, choose **Left half** or **Right half** (see [Which half is which](/keybard/update-firmware/#which-half-is-which)).
+
+New microcontrollers, in a kit or as spares, ship with no firmware and are not set to a side. Flash each one with the file for the half it goes in. With x4.1, flash the same file on both; Keybard may then ask which half is which.
 
 ## What's new compared with Vial
 
@@ -57,7 +59,16 @@ To move your board over, see [Moving from Vial](/firmware/#moving-from-vial).
 
 ## Firmware files
 
-Download from the [latest release](https://github.com/svalboard/qmk/releases). Pick one file per half, by the module on that half. The names below are from vLaunch2; each release puts its own tag at the end.
+Download from the [Svalboard QMK releases](https://github.com/svalboard/qmk/releases).
+
+From x4.1, a release has two files, each for both halves and every pointing module:
+
+| File | What it is |
+| --- | --- |
+| `svalboard_sval_x4.1.uf2` | The firmware, with the default layout. Copy it onto both halves. |
+| `svalboard_blank_x4.1.uf2` | The same with no keys assigned, for testing keys. |
+
+Releases before x4 have one file per half. Pick one file per half, by the module on that half. The names below are from vLaunch2; each release puts its own tag at the end.
 
 | Module on that half | Left | Right |
 | --- | --- | --- |
@@ -123,8 +134,8 @@ The firmware does **not** bring your Vial settings across. Flashing resets the b
 
 1. In Vial, save your layout as a `.vil`. Keep it unchanged.
 2. Write down anything you rely on that a `.vil` doesn't hold: DPI, scrolling, automouse and layer colors (see [What a .vil doesn't hold](/firmware/#what-a-vil-doesnt-hold)).
-3. Flash both halves with the latest Svalboard QMK files (see [Firmware files](/firmware/#firmware-files) and [Flashing firmware](/firmware/#flashing-firmware)).
-4. Open https://keybard.svalboard.com in Chrome or Edge and choose **Connect Keyboard**.
+3. Flash both halves with the latest Svalboard QMK firmware. For x4.1, see [From Vial](/firmware/update/#from-vial).
+4. Open https://keybard.svalboard.com in Chrome or Edge (for x4.1, https://next.keybard.svalboard.com) and choose **Connect Keyboard**. If Keybard asks which half is which, choose **Left half** or **Right half**.
 5. Choose **Import Layout** and pick your `.vil`. Read the review, then apply it. This restores your layout, macros, tap dances, combos, key overrides and QMK settings.
 6. Set DPI, scrolling, automouse and layer colors again in Keybard.
 7. Check every layer, your macros, your modifier swaps and your mod-tap feel (Chordal Hold replaces Achordion).

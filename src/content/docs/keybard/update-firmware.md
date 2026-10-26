@@ -1,17 +1,17 @@
 ---
 title: Update your firmware from Keybard
-description: Install Svalboard firmware updates from Keybard. One firmware file updates both halves. One install by hand, then Keybard updates both halves through USB after you confirm on the keyboard.
+description: Install Svalboard firmware updates from Keybard. After one install by hand on both halves, Keybard updates both halves through USB after you confirm on the keyboard.
 ---
 
 Keybard installs Svalboard firmware for you. Choose **Update**, confirm on the keyboard, and Keybard updates both halves through the cable to your computer. It saves your layout first and puts it back afterward.
 
-Updates from Keybard start with x4. From x4, each release is one firmware file for both halves, for example `svalboard_sval_x4.uf2`. The same file installs from Keybard or by hand.
+Updates from Keybard start with x4. From x4, each release is one firmware file for both halves, for example `svalboard_sval_x4.1.uf2`. The same file installs from Keybard or by hand. To move to x4.1 from Vial, vLaunch2, x3 or x4, see [Update to x4.1](/firmware/update/).
 
 ## Find the Firmware card
 
 Open **Settings** in the left navigation, then **Firmware and backups**. A dot on **Settings** means a newer release is ready, and the **Firmware** chip carries the same dot.
 
-The card shows the release on each half, and **plugged in** next to the half your USB cable goes to. When a newer release is ready, the card reads, for example, **x4 is available**, with **What's new in x4** to open its release notes and one button: **Update to x4**.
+The card shows the release on each half, and **plugged in** next to the half your USB cable goes to. When a newer release is ready, the card reads, for example, **x4.1 is available**, with **What's new in x4.1** to open its release notes and one button: **Update to x4.1**.
 
 When both halves run the newest release, the card reads **Your keyboard has the newest firmware**. When the halves run different releases, it reads **The halves run different firmware** and offers **Finish update**.
 
@@ -29,28 +29,29 @@ If the card says **Your keyboard runs newer firmware than this Keybard knows**, 
 
 ## Your first update is an install by hand
 
-Updates from Keybard need firmware with the updater built in. A keyboard on older firmware gets it with one install by hand. After that, every update comes from Keybard.
+Updates from Keybard need firmware with the updater built in. A keyboard on older firmware gets it with one install by hand, on both halves. After that, every update comes from Keybard. For each firmware you may be coming from, see [Update to x4.1](/firmware/update/).
 
-Choose **Update to x4** on the Firmware card. Keybard opens **Install x4 by hand**:
+Choose **Update to x4.1** on the Firmware card. Keybard opens **Install x4.1 by hand**:
 
 1. **Your layout**: Keybard saves it to Downloads first and names the file. Choose what happens afterward: **Restore my layout** or **Start from the default layout**.
 2. **Firmware file**: download the file. One file is for both halves.
-3. **Install**:
-   1. Plug the USB cable into either half's **U** port.
+3. **Install**, keeping the split cable connected. Keybard starts with the half you don't usually plug in:
+   1. Plug the USB cable into that half's **U** port.
    2. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
    3. Drag the file onto the drive. The half restarts and the drive closes.
-   4. The other half updates by itself, in about half a minute. Keep the split cable connected.
-4. When both halves have restarted, choose **Connect keyboard**.
+   4. Then the other half: move the USB cable to its **U** port, press its **RESET** button twice, and drag the same file onto the drive.
+   5. Wait about half a minute. The halves may show rainbow colors while they check each other. When the lights settle, the install is done.
+4. When the lights have settled, choose **Connect keyboard**.
 
-<!-- SCREENSHOT: Install x4 by hand with the layout choice, the one file and the steps. Source: Svalboard/review/x4-keybard/09-by-hand-instructions.png -->
+<!-- SCREENSHOT: Install x4.1 by hand with the layout choice, the one file and the steps for both halves. Source: Svalboard/review/x4-keybard/09-by-hand-instructions.png (retake for x4.1) -->
 
 On **Connect keyboard**, Keybard reads the firmware on both halves:
 
-- **Both halves run x4**: Keybard restores your layout, as you chose, and shows **x4 is installed**. From then on, updates install from Keybard.
+- **Both halves run x4.1**: Keybard restores your layout, as you chose, and shows **x4.1 is installed**. From then on, updates install from Keybard.
 - **One half still runs its old firmware**: Keybard names that half, for example **The left half still runs x3.1.3**, and shows the steps for that half. Install the file on it, then choose **Connect again**.
 - **A half didn't answer**: a half on older firmware doesn't answer over the split cable. Keybard names it and shows its steps. Install the file on it, then choose **Connect again**.
 - **Neither half changed**: the steps stay, with a line saying what Keybard found.
-- **A half doesn't know which side it is**: Keybard asks **Set which half is which** first, then restores your layout. See [Which half is which](#which-half-is-which).
+- **Keybard asks which half is which**: answer **Set which half is which**, then Keybard restores your layout. See [Which half is which](#which-half-is-which).
 
 <!-- SCREENSHOT: "The left half still runs x3.1.3" with the steps for the left half. Source: Svalboard/review/x4-keybard/10-by-hand-one-half.png -->
 
@@ -58,11 +59,13 @@ Closing the dialog loses nothing. Your layout is in Downloads and in **Backups**
 
 For an extra copy, choose **Export layout** and save a `.svil` file before you start. For flashing in detail, see [Flashing firmware](/firmware/#flashing-firmware).
 
+A keyboard on Vial doesn't connect to Keybard. Save your layout in Vial first, then follow [From Vial](/firmware/update/#from-vial).
+
 ## Update from Keybard
 
 Keep the USB cable plugged into one half and the split cable connected. Keybard updates the other half through the split cable, then the half with USB.
 
-1. Choose **Update to x4**. Keybard reads both halves, saves your layout to Downloads and to **Backups**, and opens **Update to x4**: "Keybard updates both halves through the cable to your computer. It takes about 2 minutes."
+1. Choose **Update to x4.1**. Keybard reads both halves, saves your layout to Downloads and to **Backups**, and opens **Update to x4.1**: "Keybard updates both halves through the cable to your computer. It takes about 2 minutes."
 2. Under **Your layout**, choose what happens afterward:
    - **Restore my layout**: Keybard restores your saved layout. This is the default.
    - **Start from the default layout**: the firmware's own default layout.
@@ -70,7 +73,7 @@ Keep the USB cable plugged into one half and the split cable connected. Keybard 
 3. Choose **Update**.
 4. When Keybard shows **Confirm on your keyboard**, press the two keys it shows. See [Confirm on your keyboard](#confirm-on-your-keyboard).
 5. Keybard shows **Updating your keyboard**, with one progress bar and what it is doing now, for example **Installing on the left half**. Keep the keyboard plugged in, keep the split cable connected, and keep Keybard open.
-6. When it finishes, Keybard shows **x4 is installed** and **Your layout is back on the keyboard**. Choose **Done**.
+6. When it finishes, Keybard shows **x4.1 is installed** and **Your layout is back on the keyboard**. Choose **Done**.
 
 <!-- SCREENSHOT: Update to x4: one sentence, the layout choice, Update. Source: Svalboard/review/x4-keybard/03-update-start.png -->
 
@@ -86,7 +89,7 @@ Open **Other versions and files**, choose **Update one half only…**, then **Le
 
 ### Install a firmware file
 
-Open **Other versions and files** and choose **Install a firmware file…**. Pick the release's `.uf2` file, for example `svalboard_sval_x4.uf2` from the release on [GitHub](https://github.com/svalboard/qmk/releases). The one file installs both halves.
+Open **Other versions and files** and choose **Install a firmware file…**. Pick the release's `.uf2` file, for example `svalboard_sval_x4.1.uf2` from the release on [GitHub](https://github.com/svalboard/qmk/releases). The one file installs both halves.
 
 Files from releases before x4 have one file per half. Keybard doesn't install those. It says so, and how to install the file by hand: plug in the half it's for, press its **RESET** button twice, and drag the file onto the **RPI-RP2** drive.
 
@@ -105,12 +108,12 @@ Keybard asks before you close the tab while an update runs. If you reload it:
 A closed tab doesn't pick the update back up. Open Keybard and connect again:
 
 - **If neither half had installed**, nothing was changed. Start the update again.
-- **If the new firmware installed**, it runs, and Keybard shows **New firmware reset your settings**: choose **Restore my layout** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
+- **If the new firmware installed**, it runs, and Keybard shows **Your layout was reset**: choose **Restore my layout** to restore the backup it saved before the update. The `.svil` file is in Downloads too.
 - **If only one half installed**, Keybard shows **Halves differ**: choose **Finish update**.
 
 ## Which half is which
 
-From x4, both halves run the same firmware. Each half knows its side: from its thumb PCBA when that is wired for one side, or from the side it saved. It keeps its side through every update. A half that ran the per-half firmware before x4 keeps the side it had.
+From x4, both halves run the same firmware. Each half knows its side: from its thumb PCBA when that is wired for one side, or from the side it saved. It keeps its side through every update. After an install from older firmware, Keybard may ask which half is which: a normal step, answered once.
 
 If a half doesn't know its side, or both halves claim the same side, neither half types. Keybard shows **Set which half is which** on the Firmware card, in the editor, and before an update, and asks **Which half is plugged into your computer?** Choose **Left half** or **Right half**. When Keybard can tell, the likely answer is the main button. Your answer sets the sides, and each half restarts.
 
@@ -153,7 +156,7 @@ An install by hand needs no key press: pressing **RESET** twice already takes a 
 | --- | --- |
 | Blue, blinking | Press the two keys now. |
 | White, two flashes | The keyboard saw the key press. |
-| Rainbow | Busy: checking, sending and copying the firmware. After an install by hand, the half you copied the file onto shows it while it sends the firmware to the other half. |
+| Rainbow | Busy: checking, sending and copying the firmware. After an install by hand on both halves, the halves may show it for about half a minute while they check each other. |
 | Magenta, steady | Installing. Don't unplug. |
 | Red, blinking slowly, on the half with USB | The halves run different releases for a moment. This is expected between the two installs and stops when both halves are done. |
 
@@ -195,7 +198,7 @@ A **warning** is a choice for you to make, and the button reads **Update anyway*
 
 - **This file has no trackball driver.** Pointing stops working on that half.
 - **The left half isn't answering.** Check the split cable, or update the right half on its own: the button reads **Update the right half**.
-- **v3 is older than x4.** Settings added since v3 won't come back.
+- **v3 is older than x4.1.** Settings added since v3 won't come back.
 - **Keybard can't check where this file came from.** Install it only if you trust where you got it.
 - **This Keybard may not be able to edit this firmware.** You can still install it. Reload Keybard afterward to get a newer one.
 - **This file has an older updater.** Afterward, Keybard can't update this keyboard, and later firmware installs by hand.
@@ -223,10 +226,11 @@ Each message says what happened to your keyboard and offers the next step.
 | **The keys weren't pressed in time**, **Update stopped** or **Update didn't finish** | Nothing was changed. Choose **Try again**. |
 | **Another app is using the keyboard** | Close other Keybard tabs and Keybard Overlay, then choose **Try again**. |
 | **Left half needs its firmware installed by hand** | The half opened as the **RPI-RP2** drive. Choose **Download the firmware file** and drag it onto the drive, or **Install by hand** for the steps. |
+| **Keybard couldn't confirm the update** | The keyboard didn't say which firmware it runs. Choose **Close**; the Firmware card reads it again. |
 | **Keyboard didn't come back** | Choose **Keep waiting**. If a drive named **RPI-RP2** opened, that half needs its firmware installed by hand. |
-| **Settings not reset** | The new firmware is installed, but the settings weren't reset to the defaults. Choose **Try again**. |
+| **Layout not reset** | The new firmware is installed, but the layout wasn't reset to the default layout. Choose **Try again**. |
 | **Layout not fully put back** | Your backup is safe in **Backups** and Downloads. Choose **Try again**, **Open Backups**, or **Keep defaults**. |
-| **Your keyboard can't save settings** | Updates from Keybard are off until this is fixed. Choose **Install by hand**. |
+| **Your keyboard can't save its layout** | Updates from Keybard are off until this is fixed. Choose **Install by hand**. |
 | **This keyboard installs firmware by hand** | The keyboard doesn't have the updater yet. Choose **Install by hand**. |
 | **This Keybard can't configure this firmware** | Choose **Reload** to get a newer Keybard. |
 | **Linux blocked the keyboard** | Choose **Copy command**, run it, then choose **Reconnect**. See [Linux: the udev rule](/firmware/#linux-the-udev-rule). |
