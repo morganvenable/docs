@@ -13,7 +13,7 @@ From x4.1, one firmware file is for both halves: copy the same file onto each ha
 
 1. **Back up your layout.** In Keybard, choose **Export Layout** and save a `.svil` file. On Vial, save a `.vil`.
 2. Download the firmware. From x4.1, it is one file for both halves, for every pointing module. For older releases, download the file for **each half**: the side (left or right) and the pointing module on that half (see [Firmware files](/firmware/#firmware-files), or [Vial firmware files](/vial/#vial-firmware-files) for Vial).
-3. Plug **one half** into your computer by its **U** port.
+3. Plug **one half** straight into your computer by its **U** port (see [Connect the cables](/start/connect-cables/#installing-firmware)).
 4. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
 5. Copy that half's `.uf2` onto the drive. The half restarts by itself and the drive closes. This is normal.
 6. Move the USB cable to the other half and repeat with its file. From x4.1, it is the same file.

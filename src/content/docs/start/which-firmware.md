@@ -2,7 +2,7 @@
 title: Which firmware
 description: Find out whether your board runs Svalboard QMK or Svalboard's Vial firmware, and which part of these docs applies.
 sidebar:
-  order: 2
+  order: 3
 ---
 
 Svalboard boards run one of two firmwares. Svalboard QMK, configured with Keybard, is the current firmware and the main track of these docs.

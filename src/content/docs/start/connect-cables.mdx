@@ -1,0 +1,41 @@
+---
+title: Connect the cables
+description: Which port each cable goes in, for everyday use and for installing firmware.
+sidebar:
+  order: 2
+---
+
+import CadFigure from '../../../components/CadFigure.astro';
+
+Each half has two ports side by side at the finger end, marked on the case:
+
+- **U**: the USB port. It goes straight to your computer, and nowhere else.
+- **S** (or **↔**): the split port. The split cable joins the **S** ports of the two halves.
+
+Both halves have the same two ports in the same order. Seen from above, **S** is on the left and **U** is on the right, on both halves.
+
+{/* VERIFY: port order on each half is from the case CAD (v1.2.8 and v2alpha cases both letter the notches U then S in the same order on left and right) and the MCU board, which is the same part in both halves. The Hardware page's port figure caption said the left half is a mirror image; it now says the ports are in the same order. */}
+
+## Everyday use
+
+Plug one half's **U** port into your computer. Connect the split cable between the two **S** ports. Either half can be the one you plug in; if you have a TrackPoint, plug in the TrackPoint half (see [Connect the cables](/build/#connect-the-cables) in the build guide).
+
+<CadFigure name="cad-cables-left-usb" alt="Correct, marked with a green check: both halves from above. A cable runs from the left half's U port to the computer. The split cable arches between the two halves' S ports." caption="Left half plugged in: its U port to the computer, the split cable between the S ports." />
+
+<CadFigure name="cad-cables-right-usb" alt="Correct, marked with a green check: both halves from above. A cable runs from the right half's U port to the computer. The split cable arches between the two halves' S ports." caption="Right half plugged in: its U port to the computer, the split cable between the S ports." />
+
+## Installing firmware
+
+Plug the half you're installing straight into your computer by its **U** port. Keep the split cable connected, as [Install x4.1 on both halves](/firmware/update/#install-x41-on-both-halves) says. Firmware never goes in through the **S** port.
+
+<CadFigure name="cad-cables-flash-left" alt="Correct, marked with a green check: installing on the left half. A cable runs from the left half's U port straight to the computer, and the split cable stays connected between the S ports." caption="Installing on the left half: its U port straight to the computer." />
+
+<CadFigure name="cad-cables-flash-right" alt="Correct, marked with a green check: installing on the right half. A cable runs from the right half's U port straight to the computer, and the split cable stays connected between the S ports." caption="Installing on the right half: its U port straight to the computer." />
+
+## Never connect U to the other half
+
+A **U** port never connects to the other half. If one half's **U** port is cabled to the other half's **S** port, that half doesn't show up on your computer. Move that cable so the **U** port goes straight to the computer.
+
+<CadFigure name="cad-cables-wrong-u-to-s" alt="Wrong, marked with a red X: both halves from above. The right half's U port goes to the computer, and a red cable runs from the left half's U port to the right half's S port, crossed out." caption="Wrong: the left half's U port cabled to the right half's S port." />
+
+Some boards come with small magnetic cable adapters in their ports, so the cables on the two halves can look different, and a magnetic cable is easy to put on the wrong port. Check the **U** and **S** letters on the case.

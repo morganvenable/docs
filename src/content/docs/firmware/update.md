@@ -23,7 +23,7 @@ If your halves run different firmware, follow the section for the older one. The
 
 ## Install x4.1 on both halves
 
-Keep the split cable connected the whole time. Start with the half you don't usually plug in, and finish with the one you do.
+Keep the split cable connected the whole time. Start with the half you don't usually plug in, and finish with the one you do. Each half's **U** port goes straight to your computer (see [Installing firmware](/start/connect-cables/#installing-firmware)).
 
 1. Plug the USB cable into that half's **U** port.
 2. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
