@@ -29,7 +29,7 @@ Keep the split cable connected the whole time. Start with the half you don't usu
 2. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
 3. Drag `svalboard_sval_x4.1.uf2` onto the drive. The half restarts and the drive closes.
 4. Move the USB cable to the other half's **U** port. Press its **RESET** button twice, and drag the same file onto its **RPI-RP2** drive.
-5. Both halves light up in rainbow colors for about half a minute, then flash green twice. Your keyboard is on x4.1.
+5. Wait about half a minute. The halves may show rainbow colors while they check each other. When the lights settle, your keyboard is on x4.1.
 
 Between steps 3 and 4, the halves may not work together, and the first half may show rainbow colors. That's expected. Go on with step 4.
 
