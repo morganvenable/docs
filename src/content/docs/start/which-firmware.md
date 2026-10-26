@@ -10,7 +10,7 @@ Svalboard boards run one of two firmwares. Svalboard QMK, configured with Keybar
 | | Svalboard QMK (current) | Svalboard's Vial firmware |
 | --- | --- | --- |
 | Firmware | `svalboard/qmk`, latest release | `svalboard/vial-qmk` release v2025-11-01 |
-| File names | `..._sval_<release>.uf2` | `..._vial_v2025-11-01.uf2` |
+| File names | `svalboard_sval_<release>.uf2` for both halves (x4.1 on), `..._sval_<release>.uf2` per half before | `..._vial_v2025-11-01.uf2` |
 | Configure with | Keybard: https://keybard.svalboard.com | Vial (https://vial.rocks or the desktop app), or the Keybard for Vial boards |
 | Layout backup file | `.svil` | `.vil` |
 
@@ -18,8 +18,8 @@ Svalboard boards run one of two firmwares. Svalboard QMK, configured with Keybar
 
 Open https://keybard.svalboard.com in Chrome or Edge and choose **Connect Keyboard**.
 
-- If Keybard shows your layout, you are on Svalboard QMK. See [Keybard](/keybard/) and [What's new compared with Vial](/firmware/#whats-new-compared-with-vial).
-- If Keybard shows **Update your Svalboard's firmware** and says the board is running Vial firmware, you are on Vial. To update, see [Moving from Vial](/firmware/#moving-from-vial). To stay on Vial, see [Vial firmware](/vial/).
+- If Keybard shows your layout, you are on Svalboard QMK. See [Keybard](/keybard/) and [What's new compared with Vial](/firmware/#whats-new-compared-with-vial). **Settings → Firmware and backups** shows which release it runs. To update, see [Update to x4.1](/firmware/update/).
+- If Keybard shows **Update your Svalboard's firmware** and says the board is running Vial firmware, you are on Vial. To update, see [From Vial](/firmware/update/#from-vial) and [Moving from Vial](/firmware/#moving-from-vial). To stay on Vial, see [Vial firmware](/vial/).
 
 ## Svalboard QMK and Keybard
 
