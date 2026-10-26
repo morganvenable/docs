@@ -40,7 +40,7 @@ Choose **Update to x4.1** on the Firmware card. Keybard opens **Install x4.1 by 
    2. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
    3. Drag the file onto the drive. The half restarts and the drive closes.
    4. Then the other half: move the USB cable to its **U** port, press its **RESET** button twice, and drag the same file onto the drive.
-   5. Both halves light up in rainbow colors for about half a minute, then flash green twice.
+   5. Wait about half a minute. The halves may show rainbow colors while they check each other. When the lights settle, the install is done.
 4. When the lights have settled, choose **Connect keyboard**.
 
 <!-- SCREENSHOT: Install x4.1 by hand with the layout choice, the one file and the steps for both halves. Source: Svalboard/review/x4-keybard/09-by-hand-instructions.png (retake for x4.1) -->
@@ -156,7 +156,7 @@ An install by hand needs no key press: pressing **RESET** twice already takes a 
 | --- | --- |
 | Blue, blinking | Press the two keys now. |
 | White, two flashes | The keyboard saw the key press. |
-| Rainbow | Busy: checking, sending and copying the firmware. After an install by hand on both halves, both halves show it for about half a minute while they check each other, then flash green twice. |
+| Rainbow | Busy: checking, sending and copying the firmware. After an install by hand on both halves, the halves may show it for about half a minute while they check each other. |
 | Magenta, steady | Installing. Don't unplug. |
 | Red, blinking slowly, on the half with USB | The halves run different releases for a moment. This is expected between the two installs and stops when both halves are done. |
 
