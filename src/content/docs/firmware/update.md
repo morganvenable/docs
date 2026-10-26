@@ -37,7 +37,7 @@ The first start of x4.1 resets every setting to the defaults, so keep your layou
 
 ### Which half is which
 
-Each half on x4.1 knows whether it is the left or the right half. When you connect, Keybard may show **Set which half is which** and ask **Which half is plugged into your computer?** Choose **Left half** or **Right half**. Both halves restart, and then they type. Neither half types until you answer. See [Which half is which](/keybard/update-firmware/#which-half-is-which).
+When you connect after the install, Keybard may show **Set which half is which** and ask **Which half is plugged into your computer?** Choose **Left half** or **Right half**. Both halves restart, and then they type. Neither half types until you answer. See [Which half is which](/keybard/update-firmware/#which-half-is-which).
 
 ## From Vial
 

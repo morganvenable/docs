@@ -23,7 +23,7 @@ Both halves must run the same release. Don't press keys, especially thumb keys, 
 
 From x4.1, after both halves are done, they light up in rainbow colors for about half a minute, then flash green twice. If Keybard then asks which half is which, choose **Left half** or **Right half** (see [Which half is which](/keybard/update-firmware/#which-half-is-which)).
 
-New microcontrollers, in a kit or as spares, ship with no firmware and are not set to a side. Flash each one with the file for the half it goes in. With x4.1, flash the same file on both; Keybard asks which half is which if a half can't tell.
+New microcontrollers, in a kit or as spares, ship with no firmware and are not set to a side. Flash each one with the file for the half it goes in. With x4.1, flash the same file on both; Keybard may then ask which half is which.
 
 ## What's new compared with Vial
 

@@ -113,7 +113,7 @@ A closed tab doesn't pick the update back up. Open Keybard and connect again:
 
 ## Which half is which
 
-From x4, both halves run the same firmware. Each half knows its side: from its thumb PCBA when that is wired for one side, or from the side it saved. It keeps its side through every update. A half that ran older firmware takes the side it had when it can. When it can't, Keybard asks which half is which: a normal step, answered once.
+From x4, both halves run the same firmware. Each half knows its side: from its thumb PCBA when that is wired for one side, or from the side it saved. It keeps its side through every update. After an install from older firmware, Keybard may ask which half is which: a normal step, answered once.
 
 If a half doesn't know its side, or both halves claim the same side, neither half types. Keybard shows **Set which half is which** on the Firmware card, in the editor, and before an update, and asks **Which half is plugged into your computer?** Choose **Left half** or **Right half**. When Keybard can tell, the likely answer is the main button. Your answer sets the sides, and each half restarts.
 
