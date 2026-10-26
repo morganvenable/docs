@@ -27,11 +27,13 @@ Keep the split cable connected the whole time. Start with the half you don't usu
 
 1. Plug the USB cable into that half's **U** port.
 2. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
-3. Drag `svalboard_sval_x4.1.uf2` onto the drive. The half restarts and the drive closes.
-4. Move the USB cable to the other half's **U** port. Press its **RESET** button twice, and drag the same file onto its **RPI-RP2** drive.
-5. Wait about half a minute. The halves may show rainbow colors while they check each other. When the lights settle, your keyboard is on x4.1.
+3. Drag `svalboard_sval_x4.1.uf2` onto the drive. The drive closes and the half restarts. What you see next depends on the other half:
+   - **The other half runs Vial or vLaunch2**: nothing special. The half you just installed shows its usual lights, and the other half keeps its old lights (on Vial, plain white). The halves don't work together yet. That's expected: go on with step 4.
+   - **The other half runs x3 or x4**: within a few seconds both halves turn rainbow. The other half then glows steady magenta for a few seconds while it installs x4.1 itself, restarts, and both halves flash green twice, about half a minute after the drive closed. Do step 4 anyway; it's quick and harmless.
+4. Move the USB cable to the other half's **U** port. Press its **RESET** button twice, and drag the same file onto its **RPI-RP2** drive. The drive closes and the half restarts.
+5. Within a few seconds both halves turn rainbow while this half sends x4.1 across the split cable. The first half glows steady magenta for a few seconds while it writes, then restarts. Both halves stay rainbow until they find each other, then flash green twice, about half a minute after the drive closed. Your keyboard is on x4.1.
 
-Between steps 3 and 4, the halves may not work together, and the first half may show rainbow colors. That's expected. Go on with step 4.
+If a half blinks red, about once a second, the install didn't finish: the halves still differ a minute after an update, or a half refused the file. The red stops by itself after 30 seconds. Check the split cable, then install the file on both halves again. If it blinks red again, open a ticket in #customer-service on the [Svalboard Discord](https://www.svalboard.com/discord).
 
 The first start of x4.1 resets every setting to the defaults, so keep your layout first, as each section below says.
 
@@ -63,7 +65,7 @@ Keybard saves your layout and puts it back for you.
 3. Under **Your layout**, keep **Restore my layout**.
 4. Under **Firmware file**, download the file.
 5. Install it on both halves, as the dialog shows. See [Install x4.1 on both halves](#install-x41-on-both-halves).
-6. When the lights have settled, choose **Connect keyboard**. If Keybard asks which half is which, answer it.
+6. After the green flashes, choose **Connect keyboard**. If Keybard asks which half is which, answer it.
 7. Keybard puts your layout back and shows **x4.1 is installed**. Choose **Done**.
 
 ## From x3
@@ -75,7 +77,7 @@ x3, x3.1, x3.1.1, x3.1.2, x3.1.3 and vNext1 all update the same way. Keybard sav
 3. Under **Your layout**, keep **Restore my layout**.
 4. Under **Firmware file**, download the file.
 5. Install it on both halves, as the dialog shows. See [Install x4.1 on both halves](#install-x41-on-both-halves).
-6. When the lights have settled, choose **Connect keyboard**. If Keybard asks which half is which, answer it.
+6. After the green flashes, choose **Connect keyboard**. If Keybard asks which half is which, answer it.
 7. Keybard puts your layout back and shows **x4.1 is installed**. Choose **Done**.
 
 ## From x4
