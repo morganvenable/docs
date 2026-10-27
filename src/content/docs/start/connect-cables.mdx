@@ -1,0 +1,45 @@
+---
+title: Connect the cables
+description: Which port each cable goes in, for everyday use and for installing firmware.
+sidebar:
+  order: 2
+---
+
+import CadFigure from '../../../components/CadFigure.astro';
+
+Each half has two ports side by side at the finger end, marked on the case:
+
+- **U**: the USB port. It goes straight to your computer, and nowhere else.
+- **S** (or **↔**): the split port. The split cable joins the **S** ports of the two halves.
+
+Both halves use the same board, so the ports are in the same order on both. Seen from above, **S** is on the left and **U** is on the right, on both halves.
+
+## Everyday use
+
+Plug one half's **U** port into your computer. Connect the split cable between the two **S** ports. Usually that's the right half, but either half can be the one you plug in; if you have a TrackPoint, plug in the TrackPoint half (see [Connect the cables](/build/#connect-the-cables) in the build guide).
+
+<CadFigure name="cad-cables-right-master" alt="Correct, marked with a green check: both halves from above. A cable runs from the right half's U port to the computer. The split cable arches between the two halves' S ports." caption="Right half plugged in, the usual setup: its U port to the computer, the split cable between the S ports." />
+
+<CadFigure name="cad-cables-left-master" alt="Correct, marked with a green check: both halves from above. A cable runs from the left half's U port to the computer. The split cable arches from the left half's S port, over that cable, to the right half's S port." caption="Left half plugged in: its U port to the computer, the split cable between the S ports." />
+
+## Installing firmware
+
+Plug the half you're installing straight into your computer by its **U** port. Keep the split cable connected, as [Install firmware by hand](/firmware/update/) shows for each half. Firmware never goes in through the **S** port.
+
+The cables are the same as for everyday use, shown above.
+
+## Never connect U to the other half
+
+A **U** port never connects to the other half. If one half's **U** port is cabled to the other half's **S** port, that half doesn't show up on your computer. Move that cable so the **U** port goes straight to the computer.
+
+<CadFigure name="cad-cables-wrong-right-master" alt="Wrong, marked with a red X: both halves from above. The right half's U port goes to the computer, and a red cable runs from the left half's U port to the right half's S port, crossed out." caption="Wrong: the left half's U port cabled to the right half's S port." />
+
+<CadFigure name="cad-cables-wrong-left-master" alt="Wrong, marked with a red X: both halves from above. The left half's U port goes to the computer, and a red cable runs from the right half's U port to the left half's S port, crossed out." caption="Wrong: the right half's U port cabled to the left half's S port." />
+
+## Never plug the computer into S
+
+The computer always goes in a **U** port. Plugged into an **S** port, the keyboard doesn't show up on your computer. If the two cables on a half are swapped, swap them back: computer to **U**, split cable to **S**.
+
+<CadFigure name="cad-cables-wrong-host-in-s" alt="Wrong, marked with a red X: both halves from above. The cables on the right half are swapped: a red cable runs from the right half's S port to the computer, crossed out, and a red cable runs from the left half's S port to the right half's U port." caption="Wrong: the computer plugged into the right half's S port, and the split cable into its U port." />
+
+Some boards come with small magnetic cable adapters in their ports, so the cables on the two halves can look different, and a magnetic cable is easy to put on the wrong port. Check the **U** and **S** letters on the case.

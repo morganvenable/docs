@@ -10,12 +10,13 @@ import ThemeShot from '../../../components/ThemeShot.astro';
 
 ![Both halves from above, labeled: towers, finger clusters, trackball, thumb cluster, palm rest, carrier and baseplate.](../../../assets/hardware/halves-overview.webp)
 
-<CadFigure name="cad-ports-reset" alt="The finger end of a right half's case, from below. The U (USB) port and the S (split) port are side by side in the end wall, and the RESET button hole is in the bottom." caption="Right half shown; the left half is its mirror image." />
+<CadFigure name="cad-ports-reset" alt="The finger end of a right half's case, from below. The U (USB) port and the S (split) port are side by side in the end wall, and the RESET button hole is in the bottom." caption="Right half shown. The left half has the same ports in the same order." />
 
 Each half has its own RP2040 microcontroller and its own firmware. You flash each half with the file for its side (left or right). Copying a firmware file does not change which side a half is.
 
 - **U port**: the USB port, to your computer.
 - **S port** (or **↔**): the split port, for the split cable to the other half. You can connect and disconnect the split cable while the board is plugged in.
+- Never cable a **U** port to the other half. See [Connect the cables](/start/connect-cables/).
 - **RESET button**: on the bottom of each half. A double press starts bootloader mode (see [Flashing firmware](/firmware/#flashing-firmware)).
 
 ## Keys
@@ -273,6 +274,14 @@ A TrackPoint can drift slightly, most often with large temperature changes. Pres
 - If a drive named RPI-RP2 is showing, that half is in bootloader mode. Press RESET once. Try both halves.
 - Check that every key is installed and seated.
 - Check that both halves run the same release, left file on left and right on right.
+
+### A half doesn't show up on the computer
+
+Check that the half's **U** port goes straight to your computer. A **U** port cabled to the other half's **S** port doesn't show up. The computer cable never goes in an **S** port. Move that cable to the computer, and join the two **S** ports with the split cable. More pictures: [Connect the cables](/start/connect-cables/).
+
+<CadFigure name="cad-cables-wrong-right-master" alt="Wrong, marked with a red X: both halves from above. The right half's U port goes to the computer, and a red cable runs from the left half's U port to the right half's S port, crossed out." caption="Wrong: the left half's U port cabled to the right half's S port." />
+
+<CadFigure name="cad-cables-right-master" alt="Correct, marked with a green check: both halves from above. A cable runs from the right half's U port to the computer. The split cable arches between the two halves' S ports." caption="Right: the right half's U port to the computer, the split cable between the S ports." />
 
 ### A key is always on
 
