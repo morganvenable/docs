@@ -1,0 +1,66 @@
+---
+title: Install firmware by hand
+description: Install Svalboard QMK on your keyboard one half at a time, from any firmware it runs now. After that, Keybard installs updates for you.
+---
+
+import CadFigure from '../../../components/CadFigure.astro';
+
+{/* VERIFY before merge: the lights while installing the left and right files by hand (no relay) have not been checked on hardware yet. */}
+
+Installing by hand works from any firmware your keyboard runs now, including Vial. You install one half at a time, each with its own file. After that, Keybard installs updates for you (see [Update your firmware from Keybard](/keybard/update-firmware/)). Plan on about ten minutes.
+
+## Before you start
+
+1. **Save your layout.** Installing resets your layout and settings to the defaults.
+   - Open [next.keybard.svalboard.com](https://next.keybard.svalboard.com) in Chrome or Edge and choose **Connect Keyboard**. If Keybard shows your layout, choose **Export Layout** and keep the `.svil` file.
+   - If Keybard shows **Update your Svalboard's firmware** and says the board runs Vial, open Vial instead and choose **File → Save current layout**. Write down your DPI, scrolling, automouse and layer colors too: a `.vil` doesn't hold them (see [What a .vil doesn't hold](/firmware/#what-a-vil-doesnt-hold)).
+2. **Download two files** from the newest [Svalboard QMK release](https://github.com/svalboard/qmk/releases): `svalboard_sval_right_<release>.uf2` for the right half and `svalboard_sval_left_<release>.uf2` for the left half, for example `svalboard_sval_right_x4.2.uf2`. They work with every pointing module.
+
+Each file is for its own half only, and tells that half which side it is. A left file on the right half, or the other way round, stops both halves typing until the right file goes on.
+
+## Update the right half
+
+Plug the computer into the right half's **U** port. Keep the split cable between the two **S** ports.
+
+<CadFigure name="cad-cables-right-master" alt="Correct, marked with a green check: both halves from above. A cable runs from the right half's U port to the computer. The split cable arches between the two halves' S ports." caption="Updating the right half: its U port to the computer, the split cable between the S ports." />
+
+1. Press the right half's **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens on your computer.
+2. Drag `svalboard_sval_right_<release>.uf2` onto the drive. The drive closes and the half restarts. This is normal.
+
+The two halves may not work together yet. That's expected until both are done.
+
+## Update the left half
+
+Move the computer cable to the left half's **U** port. Keep the split cable between the two **S** ports.
+
+<CadFigure name="cad-cables-left-master" alt="Correct, marked with a green check: both halves from above. A cable runs from the left half's U port to the computer. The split cable arches from the left half's S port, over that cable, to the right half's S port." caption="Updating the left half: its U port to the computer, the split cable between the S ports." />
+
+1. Press the left half's **RESET** button twice, about a quarter of a second apart. A drive named **RPI-RP2** opens.
+2. Drag `svalboard_sval_left_<release>.uf2` onto the drive. The drive closes and the half restarts.
+
+## Put your layout back
+
+1. Plug in the way you usually do (see [Connect the cables](/start/connect-cables/)). Both halves type.
+2. Open [next.keybard.svalboard.com](https://next.keybard.svalboard.com) and choose **Connect Keyboard**.
+3. Choose **Import Layout** and pick the `.svil` (or the `.vil` from Vial). Read the review, then apply it.
+4. Coming from Vial: set DPI, scrolling, automouse and layer colors again, and check your mod-taps: Chordal Hold replaces Achordion. Then choose **Export Layout** and keep the new `.svil`. For everything else that changes from Vial, see [Moving from Vial](/firmware/#moving-from-vial).
+
+**Settings → Firmware and backups** now shows the new release on both halves. From here on, updates install from Keybard.
+
+## Check the cables
+
+If no **RPI-RP2** drive opens, or a half doesn't show up, look at the cables first. The computer always goes in a **U** port, and the split cable always joins the two **S** ports. Check the **U** and **S** letters on the case: a magnetic cable is easy to put on the wrong port.
+
+<CadFigure name="cad-cables-wrong-host-in-s" alt="Wrong, marked with a red X: both halves from above. The cables on the right half are swapped: a red cable runs from the right half's S port to the computer, crossed out, and a red cable runs from the left half's S port to the right half's U port." caption="Wrong: the computer in the right half's S port, and the split cable in its U port. Swap them back." />
+
+<CadFigure name="cad-cables-wrong-right-master" alt="Wrong, marked with a red X: both halves from above. The right half's U port goes to the computer, and a red cable runs from the left half's U port to the right half's S port, crossed out." caption="Wrong: the left half's U port cabled to the right half's S port. A U port never connects to the other half." />
+
+<CadFigure name="cad-cables-wrong-left-master" alt="Wrong, marked with a red X: both halves from above. The left half's U port goes to the computer, and a red cable runs from the right half's U port to the left half's S port, crossed out." caption="Wrong: the right half's U port cabled to the left half's S port." />
+
+## If a half doesn't type
+
+- **A half stays a drive named RPI-RP2**: drag its file onto that drive again.
+- **Neither half types**: a half may have the other half's file. Install `svalboard_sval_right_<release>.uf2` on the right half and `svalboard_sval_left_<release>.uf2` on the left half again, as above.
+- **A half blinks red, about once a second**: the install didn't finish. The red stops by itself after 30 seconds. Check the cables, then install both halves again.
+
+Still stuck? Open a ticket in #customer-service on the [Svalboard Discord](https://www.svalboard.com/discord).

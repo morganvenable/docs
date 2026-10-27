@@ -5,7 +5,7 @@ description: Install Svalboard firmware updates from Keybard. After one install 
 
 Keybard installs Svalboard firmware for you. Choose **Update**, confirm on the keyboard, and Keybard updates both halves through the cable to your computer. It saves your layout first and puts it back afterward.
 
-Updates from Keybard start with x4. From x4, each release is one firmware file for both halves, for example `svalboard_sval_x4.1.uf2`. The same file installs from Keybard or by hand. To move to x4.1 from Vial, vLaunch2, x3 or x4, see [Update to x4.1](/firmware/update/).
+Updates from Keybard start with x4. From x4, each release is one firmware file for both halves, for example `svalboard_sval_x4.1.uf2`. To install by hand from any older firmware, see [Install firmware by hand](/firmware/update/).
 
 ## Find the Firmware card
 
@@ -29,7 +29,7 @@ If the card says **Your keyboard runs newer firmware than this Keybard knows**, 
 
 ## Your first update is an install by hand
 
-Updates from Keybard need firmware with the updater built in. A keyboard on older firmware gets it with one install by hand, on both halves. After that, every update comes from Keybard. For each firmware you may be coming from, see [Update to x4.1](/firmware/update/).
+Updates from Keybard need firmware with the updater built in. A keyboard on older firmware gets it with one install by hand, on both halves. After that, every update comes from Keybard. See [Install firmware by hand](/firmware/update/).
 
 Choose **Update to x4.1** on the Firmware card. Keybard opens **Install x4.1 by hand**:
 
@@ -59,7 +59,7 @@ Closing the dialog loses nothing. Your layout is in Downloads and in **Backups**
 
 For an extra copy, choose **Export layout** and save a `.svil` file before you start. For flashing in detail, see [Flashing firmware](/firmware/#flashing-firmware).
 
-A keyboard on Vial doesn't connect to Keybard. Save your layout in Vial first, then follow [From Vial](/firmware/update/#from-vial).
+A keyboard on Vial doesn't connect to Keybard. Follow [Install firmware by hand](/firmware/update/): it starts with saving your layout in Vial.
 
 ## Update from Keybard
 
