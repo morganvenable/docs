@@ -3,7 +3,8 @@
 // saves to this PC. On the public site it is off for everyone; turn it on in one
 // browser with ?notes=on (notes then go to a private GitHub repo).
 (() => {
-	const LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname);
+	// *.localhost names (docs.sval.localhost) are the review hub's proxy to the same local server.
+	const LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname) || location.hostname.endsWith('.localhost');
 	const KEY = 'svalboard-docs-notes';
 	const INBOX = 'https://github.com/morganvenable/docs-notes/issues/new';
 	const params = new URLSearchParams(location.search);
