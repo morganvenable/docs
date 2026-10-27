@@ -11,12 +11,12 @@ Firmware is updated manually by putting each hand in bootloader mode and copying
 
 ## Before you start
 
-1. **Save your layout.** Installing resets your layout and settings to the defaults.
+1. **Save your layout.**
    - Open [next.keybard.svalboard.com](https://next.keybard.svalboard.com) in Chrome or Edge and choose **Connect Keyboard**. If Keybard shows your layout, choose **Export Layout** and keep the `.svil` file.
    - If Keybard shows **Update your Svalboard's firmware** and says the board runs Vial, open Vial instead and choose **File → Save current layout**. Write down your DPI, scrolling, automouse and layer colors too: a `.vil` doesn't hold them (see [What a .vil doesn't hold](/firmware/#what-a-vil-doesnt-hold)).
 2. **Download two files** from the newest [Svalboard QMK release](https://github.com/svalboard/qmk/releases): `svalboard_sval_right_<release>.uf2` for the right half and `svalboard_sval_left_<release>.uf2` for the left half, for example `svalboard_sval_right_x4.2.uf2`. They work with every pointing module.
 
-Each file is for its own half only, and tells that half which side it is. A left file on the right half, or the other way round, stops both halves typing until the right file goes on.
+You must install the Left and Right firmware on the correct halves.
 
 ## Update the right half
 
