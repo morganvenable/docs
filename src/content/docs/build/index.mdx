@@ -162,10 +162,10 @@ There are four side key sizes. In order of increasing fingertip space:
 
 | Your largest sizer reading | Size | Approximate spacing | East, South and West key file |
 |---|---|---|---|
-| 16 mm or less | Thick (+1) | 16 mm | `Finger Side Keys V2.0 - 6 1 0.7.step` |
-| 17 mm | Semi (+0.5) | 17 mm | `Finger Side Keys V2.0 - 6 0.5 0.7.step` |
-| 18 mm | Thin (0) | 18 mm | `Finger Side Keys V2.0 - 6 0 0.7.step` |
-| 19 to 20 mm | Backset (−1) | 20 mm | `Finger Side Keys V2.0 - 6 -1 0.7.step` |
+| 16 mm or less | Thick (+1) | 16 mm | [`Finger Side Keys V2.0 - 6 1 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%201%200.7.step) |
+| 17 mm | Semi (+0.5) | 17 mm | [`Finger Side Keys V2.0 - 6 0.5 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200.5%200.7.step) |
+| 18 mm | Thin (0) | 18 mm | [`Finger Side Keys V2.0 - 6 0 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200%200.7.step) |
+| 19 to 20 mm | Backset (−1) | 20 mm | [`Finger Side Keys V2.0 - 6 -1 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%20-1%200.7.step) |
 
 {/* VERIFY: the sizer-reading column is new. It maps each reading to the size with the same approximate spacing. Two rows need your call: a 14 or 15 mm reading goes to Thick (the smallest fit on a standard cluster; the Fit page example uses 16 for a 14 mm pinky), and a 19 mm reading goes to Backset rather than Thin. Are those right? Should the sizer sheet print these size names next to its crescents? */}
 
@@ -173,7 +173,7 @@ The side key files are in the `Lightly FDM/V2.0/V2.0 Keys/Side Keys V2.0` folder
 
 - People with thin or pointed fingertips may prefer the thicker keys.
 - People with blunt or wide fingertips may need the Backset keys for enough room to type comfortably.
-- North keys come in Thick (+1) only. Their file is `Finger Side Keys V2.0 - 11mm Thick Medium.step`, in the same folder.
+- North keys come in Thick (+1) only. Their file is [`Finger Side Keys V2.0 - 11mm Thick Medium.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%2011mm%20Thick%20Medium.step), in the same folder.
 
 The spacing is roughly the space between opposite side keys, near their tops. The numbers are approximate: use them to compare sizes, not as exact measurements.
 
@@ -217,39 +217,41 @@ The parts are in the [svalboard-self-print repository](https://github.com/svalbo
 
 Pick your side key size first. See [Key sizes](/build/#key-sizes).
 
-This table lists every file for a standard build: both halves, five-key finger clusters and hemispherical palm rests. Folders are in the [svalboard-self-print repository](https://github.com/svalboard/svalboard-self-print/), under `Lightly FDM/V2.0/` unless the folder says otherwise. Some files hold several parts: print the parts named in the table.
+This table lists every file for a standard build: both halves, five-key finger clusters and hemispherical palm rests. Some files hold several parts: print the parts named in the table.
 
-| Part | Print | File | Folder |
-|---|---|---|---|
-| North keys | 8 | `Finger Side Keys V2.0 - 11mm Thick Medium.step` | `V2.0 Keys/Side Keys V2.0` |
-| East, South and West keys | 24 | Your size from [Key sizes](/build/#key-sizes), for example `Finger Side Keys V2.0 - 6 0 0.7.step` for Thin | `V2.0 Keys/Side Keys V2.0` |
-| Tipping center keys | 8 | `Center-Key_Offset-0.9_Wide.step` | `V2.0 Keys/Center Keys V2.0` |
-| Thumb Pad, Knuckle and Up keys | 2 of each | `Thumb Side Keys All v2.0 RCe.step`: the Pad, Knuckle and "Mode (Up) 29h" parts | `V2.0 Keys/Thumb Side Keys` |
-| Thumb Nail keys | Left and Right | `Thumb Side Keys All v2.0 RCe.step`: the Nail Left and Nail Right parts | `V2.0 Keys/Thumb Side Keys` |
-| Thumb Down keys | 2 | `TKDown V2.1.step` | `V2.0 Keys/Thumb Down Regular` |
-| Finger clusters | 8 | `FC Standard - V2 RCe.step` | `V2.0 Clusters` |
-| Thumb clusters | Left and Right | `TC Standard - TC L C V2 RCe.step` and `TC Standard - TC R C V2 RCe.step` | `V2.0 Clusters` |
-| Palm rests | Left and Right | `Hemi Palm L.3mf` and `Hemi Palm R.3mf` | `Palmrests/Experimental/Hemi Palms` |
-| Palm rest top washers | 2 | `Hemi Top Washer - Print two.step` | `Palmrests/Experimental/Hemi Palms` |
-| Palm rest carriers, 9 mm | 2 | `Hemi-Carrier-9mm-Shim_2N-Slots.step` | `Palmrests/Experimental/Hemi Palms/Additional carrier variants and heights` |
-| Base plates | Left and Right | `Lightly Baseplates and Case - Baseplates v3.0.0.step` | `Lightly FDM/V3.0rc/Baseplates and Case` |
-| Cases | Left and Right | `Lightly Baseplates and Case - Case Logo L and R Composite v3.0.0.stl` | `Lightly FDM/V3.0rc/Baseplates and Case` |
-| Trackball holders, 44 mm | 1 per trackball | `PROD Svalball 3.175mm 44mm ball 1.6mm gap 757560.step` | `V2.0 Trackball Holders` |
-| TrackPoint case | Top and bottom | `Lightly - Trackpoint Holder - Top.step` and `Lightly - Trackpoint Holder - Bottom.step` | `Lightly FDM/V1.3` |
-| Touchpad holders | 1 per touchpad | `SvalTPS43 Rev 2 WIP - Ambi.step` | `Touchpad` |
-| Magnet stages | Key and Cluster | `Magnet Stages - Key Stage Mini 4x3.step` and `Magnet Stages - Cluster Stage Mini 4x3.step` | `Tools` |
-| Magnet dropper | 1 | `Magnet Dropper v1.2.step` | `Tools` |
-| Key tray fixture | 1 | `Side Key 4-position tray V2.0.step` | `Tools/Key Tray Fixtures` |
+To get every file at once, download [svalboard-lightly-standard-build-v2.0.0.zip](https://github.com/svalboard/svalboard-self-print/releases/download/standard-build-v2.0.0/svalboard-lightly-standard-build-v2.0.0.zip). It holds all four East, South and West key sizes, each in its own folder: print the one that matches your sizer reading.
+
+{/* VERIFY: the release "standard-build-v2.0.0" doesn't exist yet, so the download link above is broken until it is published as a release asset on svalboard/svalboard-self-print. The zip is built by scripts/build_standard_zip.py on the print repo branch golden-path-defaults. */}
+
+The links open the files in the [svalboard-self-print repository](https://github.com/svalboard/svalboard-self-print/), which needs supporter access. If you don't have access yet, see [Get the files](/build/#get-the-files).
+
+| Part | Print | File |
+|---|---|---|
+| North keys | 8 | [`Finger Side Keys V2.0 - 11mm Thick Medium.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%2011mm%20Thick%20Medium.step) |
+| East, South and West keys | 24, all one size | Your size from [Key sizes](/build/#key-sizes): [Thick](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%201%200.7.step), [Semi](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200.5%200.7.step), [Thin](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200%200.7.step) or [Backset](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%20-1%200.7.step) |
+| Tipping center keys | 8 | [`Center-Key_Offset-0.9_Wide.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Center%20Keys%20V2.0/Center-Key_Offset-0.9_Wide.step) |
+| Thumb Pad, Knuckle and Up keys | 2 of each | [`Thumb Side Keys All v2.0 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Side%20Keys/Thumb%20Side%20Keys%20All%20v2.0%20RCe.step): the Pad, Knuckle and "Mode (Up) 29h" parts |
+| Thumb Nail keys | Left and Right | [`Thumb Side Keys All v2.0 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Side%20Keys/Thumb%20Side%20Keys%20All%20v2.0%20RCe.step): the Nail Left and Nail Right parts |
+| Thumb Down keys | 2 | [`TKDown V2.1.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Down%20Regular/TKDown%20V2.1.step) |
+| Finger clusters | 8 | [`FC Standard - V2 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Clusters/FC%20Standard%20-%20V2%20RCe.step) |
+| Thumb clusters | Left and Right | [`TC Standard - TC L C V2 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Clusters/TC%20Standard%20-%20TC%20L%20C%20V2%20RCe.step) and [`TC Standard - TC R C V2 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Clusters/TC%20Standard%20-%20TC%20R%20C%20V2%20RCe.step) |
+| Palm rests | Left and Right | [`Hemi Palm L.3mf`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Experimental/Hemi%20Palms/Hemi%20Palm%20L.3mf) and [`Hemi Palm R.3mf`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Experimental/Hemi%20Palms/Hemi%20Palm%20R.3mf) |
+| Palm rest top washers | 2 | [`Hemi Top Washer - Print two.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Experimental/Hemi%20Palms/Hemi%20Top%20Washer%20-%20Print%20two.step) |
+| Palm rest carriers, 9 mm | 2 | [`Hemi-Carrier-9mm-Shim_2N-Slots.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Experimental/Hemi%20Palms/Additional%20carrier%20variants%20and%20heights/Hemi-Carrier-9mm-Shim_2N-Slots.step) |
+| Base plates | Left and Right (one file) | [`Lightly Baseplates and Case - Baseplates v3.0.0.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V3.0rc/Baseplates%20and%20Case/Lightly%20Baseplates%20and%20Case%20-%20Baseplates%20v3.0.0.step) |
+| Cases | Left and Right (one file) | [`Lightly Baseplates and Case - Case Logo L and R Composite v3.0.0.stl`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V3.0rc/Baseplates%20and%20Case/Lightly%20Baseplates%20and%20Case%20-%20Case%20Logo%20L%20and%20R%20Composite%20v3.0.0.stl) |
+| Trackball holders, 44 mm | 1 per trackball | [`PROD Svalball 3.175mm 44mm ball 1.6mm gap 757560.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Trackball%20Holders/PROD%20Svalball%203.175mm%2044mm%20ball%201.6mm%20gap%20757560.step) |
+| TrackPoint case | Top and bottom | [`Lightly - Trackpoint Holder - Top.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V1.3/Lightly%20-%20Trackpoint%20Holder%20-%20Top.step) and [`Lightly - Trackpoint Holder - Bottom.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V1.3/Lightly%20-%20Trackpoint%20Holder%20-%20Bottom.step) |
+| Touchpad holders | 1 per touchpad | [`SvalTPS43 Rev 2 - Ambi.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Touchpad/SvalTPS43%20Rev%202%20-%20Ambi.step) |
+| Magnet stages | Key and Cluster | [`Magnet Stages - Key Stage Mini 4x3.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Magnet%20Stages%20-%20Key%20Stage%20Mini%204x3.step) and [`Magnet Stages - Cluster Stage Mini 4x3.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Magnet%20Stages%20-%20Cluster%20Stage%20Mini%204x3.step) |
+| Magnet dropper | 1 | [`Magnet Dropper v1.2.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Magnet%20Dropper%20v1.2.step) |
+| Key tray fixture | 1 | [`Side Key 4-position tray V2.0.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Key%20Tray%20Fixtures/Side%20Key%204-position%20tray%20V2.0.step) |
 
 {/* VERIFY: "Finger Side Keys V2.0 - 11mm Thick Medium.step" is taken as the North key (11 mm, Thick, 0.7 mm offset). The folder has no "11 1 0.7" file; its other Thick North files are 11 1 0.8, 11 1 0.9 and 11 1 1.2. Is "Thick Medium" the 0.7 mm offset key? */}
 
-{/* VERIFY: base plates and cases. A customer's list named "Baseplates and Case/Lightly Baseplates and Case v1.2.8.step" (heat set inserts). The table uses the v3.0.0 files in "Lightly FDM/V3.0rc/Baseplates and Case", which you named as the current production plates and case. Is V3.0rc the folder to send self-builders to, and are the v3.0.0 plates the pop-nut plates Step 8 describes? If not, which file: v1.2.8 or "experimental/Lightly Baseplates and Case v2alpha DIN562 pop-nuts - BREAKING.step"? */}
-
 {/* VERIFY: Thumb Down key. The Thumb Side Keys file has no Down key; the table uses TKDown V2.1 from "Thumb Down Regular" (the latest; the clusters readme says to use the standard thumb down key with TC Standard). Its readme says it may bind on the pivot on some printers. V2.1 or V2.0? */}
 
-{/* VERIFY: palm rest carrier height. The table follows the guide's 9 mm 2N-Slots carrier; the Hemi Palm readme recommends starting with 12 mm. Keep 9 mm? */}
-
-{/* VERIFY: TrackPoint case and touchpad holder. The newest TrackPoint holder files are in V1.3 (none in V2.0); the touchpad holder is the "Ambi" file in "Touchpad", which is still named "WIP". Are these the right files? Is "Side Key 4-position tray V2.0.step" the "mini key tray fixture" the guide named before? */}
+{/* VERIFY: is "Side Key 4-position tray V2.0.step" the "mini key tray fixture" the guide named before? */}
 
 {/* VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? */}
 

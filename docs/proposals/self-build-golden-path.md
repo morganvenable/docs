@@ -22,7 +22,7 @@ Source: customer feedback on the self-print kit. Mapping the build guide to the 
 | Palm rests | L and R | `Hemi Palm L.3mf`, `Hemi Palm R.3mf` (Hemi Palms folder) |
 | Top washers | 2 | `Hemi Top Washer - Print two.step` |
 | Carriers | 2 | `Hemi-Carrier-9mm-Shim_2N-Slots.step` |
-| Base plates and cases | L and R | `V3.0rc/Baseplates and Case/` v3.0.0 files (pending the owner's answer in the guide's VERIFY note) |
+| Base plates and cases | L and R | `V3.0rc/Baseplates and Case/` v3.0.0 plates (pop-nut, checked in CAD) and case STL |
 | Trackball holder, 44 mm | 1 per trackball | `V2.0/V2.0 Trackball Holders/PROD Svalball 3.175mm 44mm ball 1.6mm gap 757560.step` |
 | Tools | | `V2.0/Tools/`: Key and Cluster Stage Mini 4x3, Magnet Dropper v1.2, Side Key 4-position tray |
 
@@ -37,7 +37,7 @@ Keep the guide and this file in step: when a default changes, both change in the
 - Inside it, keep `Hemi Palm L.3mf`, `Hemi Palm R.3mf`, `Hemi Top Washer - Print two.step`, the readme, and the carriers. Put `Hemi-Carrier-9mm-Shim_2N-Slots.step` at the top level of the folder, so the default carrier is beside the palms; leave the other heights in `Additional carrier variants and heights/`.
 - Move the two Cyrus STEPs to `Palmrests/Experimental/Cyrus Hemi Palms/`.
 - Move the tripod palm rests (`v1.3Redux Tripod ...`, `Palm v1.3Redux ...`) to `Palmrests/Older - Tripod/`.
-- Update the readme's carrier advice to match the guide's default (9 mm; the readme says to start at 12 mm). This is the owner's call; the guide has a VERIFY note on it.
+- Update `Hemi Palm Readme.txt`: change "I recommend starting with 12" to start with the 9 mm carrier, which the owner confirmed as the starting height. A branch with this change already exists on origin: `hemi-readme-9mm` (b1896d7, "Hemi palm readme: start with the 9 mm carrier"), not yet merged to main.
 - Then update the guide's table paths in the same pass.
 
 ## 3. Consistent North key naming
@@ -68,3 +68,20 @@ The 14, 15 and 19 mm rows depend on the owner's answer in the guide's VERIFY not
 **Why:** the guide never said what Narrow and Wide mean; the only explanation is in `Center Keys V2.0/Errata - Readme.txt`, whose name doesn't suggest it.
 
 **Proposed change:** rename it to `readme.txt` and start it with one line: "Standard: Center-Key_Offset-0.9_Wide. Narrow is for tighter key geometries and very small fingertips."
+
+## 6. Drop "WIP" from the touchpad holder names (done locally)
+
+**Why:** the owner confirmed the SvalTPS43 Rev 2 holders are the current files. "WIP" tells builders not to print them.
+
+**Change:** on the local print repo branch `golden-path-defaults` (commit 3caeb07, not pushed), `git mv` of `Lightly FDM/V2.0/Touchpad/SvalTPS43 Rev 2 WIP - {Ambi,Left,Right}.step` to `SvalTPS43 Rev 2 - {Ambi,Left,Right}.step`. No readme names them. The guide links the new Ambi name, so that link is broken until the branch is merged.
+
+## 7. A versioned standard-build zip as a release asset
+
+**Why:** one download is the shortest path: the builder gets every default file, already sorted, with the sizes side by side.
+
+**Change:**
+- Script: `scripts/build_standard_zip.py` in the print repo (on `golden-path-defaults`). It lives in a new top-level `scripts/` folder rather than `tools/`, because `Lightly FDM/V2.0/Tools/` already means printable build tools. Its `FILES` list is the single source for the package; it refuses to build if any file is missing. Run from the repo root: `python scripts/build_standard_zip.py v2.0.0 dist`.
+- Contents: every file in the guide's table, in numbered folders (finger keys, thumb keys, clusters, palm rests, base plates and cases, pointing, build tools). The East/South/West keys sit in `01 Finger keys/East South West - pick ONE size/`, one subfolder per size, each named with its sizer reading. A `README.txt` lists each file with its part, how many to print, its source path, and the source commit.
+- Version scheme: `svalboard-lightly-standard-build-v<major>.<minor>.<patch>.zip`. Major.minor is the key and cluster generation (keys and clusters must match), so v2.0 now. Patch goes up whenever any default file changes (a new plate, a renamed key, a moved folder). Release tag: `standard-build-v<version>`, so it never collides with other tags. First package: `v2.0.0`.
+- Hosting: a GitHub release asset on svalboard/svalboard-self-print, so it inherits the repository's supporters-only access. Release URL: `https://github.com/svalboard/svalboard-self-print/releases/download/standard-build-v2.0.0/svalboard-lightly-standard-build-v2.0.0.zip`. The release isn't created; the guide carries a VERIFY note until it is.
+- Rule: when a default changes, update the script's list, the guide's table and `START HERE.md` together, then publish the next patch version.
