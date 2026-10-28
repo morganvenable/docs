@@ -156,26 +156,30 @@ The sizer measures fingertip width 6 mm from the tip. That is the depth of a fin
 
 ### Key sizes
 
-There are four side key sizes. In order of increasing fingertip space:
+Each finger cluster has a Center key and four side keys around it: North, East, South and West. Your sizer reading picks the size of the East, South and West keys. North keys are always size +1.
 
-| Size | Approximate spacing |
-|---|---|
-| Thick (+1) | 16 mm |
-| Semi (+0.5) | 17 mm |
-| Thin (0) | 18 mm |
-| Backset (−1) | 20 mm |
+A key's size is a number: how far its face sits forward of the front of its key base, in mm. A bigger number puts the key closer to your fingertip. In order of increasing fingertip space:
 
-- People with thin or pointed fingertips may prefer the thicker keys.
-- People with blunt or wide fingertips may need the Backset keys for enough room to type comfortably.
-- North keys come in Thick (+1) only.
+| Your largest sizer reading | Size | Approximate spacing | East, South and West key file |
+|---|---|---|---|
+| 16 mm or less | +1 (formerly Thick) | 16 mm | [`Finger Side Keys V2.0 - 6 1 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%201%200.7.step) |
+| 17 mm | +0.5 (formerly Semi) | 17 mm | [`Finger Side Keys V2.0 - 6 0.5 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200.5%200.7.step) |
+| 18 mm | 0 (formerly Thin) | 18 mm | [`Finger Side Keys V2.0 - 6 0 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200%200.7.step) |
+| 19 to 20 mm | −1 (formerly Backset) | 20 mm | [`Finger Side Keys V2.0 - 6 -1 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%20-1%200.7.step) |
+
+The size is the second number in each side key file name. The file names give three numbers: height, size and offset. `6 0.5 0.7` is a key 6 mm tall, size +0.5, with a 0.7 mm magnet offset for medium force. A larger offset gives a lighter key. See [Key width](/hardware/#key-width) for more on the naming.
+
+- People with thin or pointed fingertips may prefer the +1 or +0.5 keys.
+- People with blunt or wide fingertips may need the −1 keys for enough room to type comfortably.
+- North keys come in +1 only. Their file is [`Finger Side Keys V2.0 - 11 1 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%2011%201%200.7.step), in the same folder.
 
 The spacing is roughly the space between opposite side keys, near their tops. The numbers are approximate: use them to compare sizes, not as exact measurements.
 
-<CadFigure name="cad-key-profiles" alt="The four side key sizes cut through the middle, side by side: Thick (+1) about 16 mm, Semi (+0.5) about 17 mm, Thin (0) about 18 mm and Backset (−1) about 20 mm. A dashed line runs along the front face of each key base. A solid line touches the bottom front edge of each key top, with a short bracket to the dashed line. On Backset, a thin dashed curve extends the key top's front face down past its lead-in ramp to that same bottom edge. The key top sits forward of the base by +1.0 mm on Thick and +0.5 mm on Semi, in line with it on Thin, and 1.0 mm behind it on Backset." caption="The four side key sizes, cut through the middle. The dashed line is the front of the key base; the solid line is the bottom front edge of the key top. On Backset, the key top's front face is extended down past the lead-in ramp. The numbers are how far the key top sits forward of the base, in mm: + is forward, − is back." />
+<CadFigure name="cad-key-profiles" alt="The four side key sizes cut through the middle, side by side: +1 about 16 mm, +0.5 about 17 mm, 0 about 18 mm and −1 about 20 mm. A dashed line runs along the front face of each key base. A solid line touches the bottom front edge of each key top, with a short bracket to the dashed line. On the −1 key, a thin dashed curve extends the key top's front face down past its lead-in ramp to that same bottom edge. The key top sits forward of the base by +1.0 mm on the +1 key and +0.5 mm on the +0.5 key, in line with it on the 0 key, and 1.0 mm behind it on the −1 key." caption="The four side key sizes, cut through the middle. The dashed line is the front of the key base; the solid line is the bottom front edge of the key top. On the −1 key, the key top's front face is extended down past the lead-in ramp. The numbers are how far the key top sits forward of the base, in mm: + is forward, − is back." />
 
-{/* VERIFY: measured on the center-plane section of each key (the figure shows that section, so the lines sit on its edges). Key base front: the slot inner wall, x 8.55. Key top bottom-front edge, measured offset forward of the base: Thick +0.97, Semi +0.41, Thin 0.00, Backset -1.00 mm. Backset's key top is Thin's moved back (its front face is Thin's plus 1.00 mm, within 0.002 mm over its height); the lead-in ramp is bridging geometry added after that offset, so its reference is the front face extended down to the key top's bottom edge height (z 2.4), not the ramp top. Labels are rounded to 0.5 mm. */}
+{/* VERIFY: measured on the center-plane section of each key (the figure shows that section, so the lines sit on its edges). Key base front: the slot inner wall, x 8.55. Key top bottom-front edge, measured offset forward of the base: +1 key +0.97, +0.5 key +0.41, 0 key 0.00, −1 key -1.00 mm. The −1 key top is the 0 key top moved back (its front face is the 0 key's plus 1.00 mm, within 0.002 mm over its height); the lead-in ramp is bridging geometry added after that offset, so its reference is the front face extended down to the key top's bottom edge height (z 2.4), not the ramp top. Labels are rounded to 0.5 mm. */}
 
-<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: Thick (+1) about 16 mm, Semi (+0.5) about 17 mm, Thin (0) about 18 mm, Backset (−1) about 20 mm." caption="Approximate space between opposite side keys for each key size." />
+<CadFigure name="cad-key-sizing" alt="Four finger clusters cut through the middle, one for each side key size, with a dimension line between the East and West keys: +1 about 16 mm, +0.5 about 17 mm, 0 about 18 mm, −1 about 20 mm." caption="Approximate space between opposite side keys for each key size." />
 
 {/* VERIFY: the live build guide (slide 15) also lists a "-2mm" side key, "only for huge fingers on narrow cluster PCBAs (not standard)". Should it be listed here? */}
 
@@ -204,37 +208,44 @@ The parts are in the [svalboard-self-print repository](https://github.com/svalbo
 - V2.0 greatly improves the key mechanism tolerances. Use it unless you're building to match older printed parts.
 - Keys and clusters **must** come from the same major version, or they won't fit together.
 - Many other parts didn't change from V1.3 to V2.0 and were carried forward as they are.
+- The standard build takes its base plates and cases from V3.0rc, the TrackPoint case from V1.3, and every other part from V2.0. See [What to print](/build/#what-to-print).
 - The repository may hold prototypes or parts that aren't in your kit. If you're unsure whether a part fits, ask in #supporters on Discord.
 
 ### What to print
 
-Pick your side key size first. See [Sizing before you build](/build/#sizing-before-you-build).
+1. Measure your fingertips and find your size number in [Key sizes](/build/#key-sizes): +1, +0.5, 0 or −1.
+2. Download every file at once in [svalboard-lightly-standard-build-v2.0.1.zip](https://github.com/svalboard/svalboard-self-print/releases/download/standard-build-v2.0.1/svalboard-lightly-standard-build-v2.0.1.zip), or open each file from the table below.
+3. Print every part in the table. For the East, South and West keys, print 24 from the one folder for your size.
 
-**Finger keys**
+The table lists every file for a standard build: both halves, five-key finger clusters and hemispherical palm rests. Some files hold several parts: print the parts named in the table. The links open the files in the [svalboard-self-print repository](https://github.com/svalboard/svalboard-self-print/), which needs supporter access. If you don't have access yet, see [Get the files](/build/#get-the-files).
 
-- 8 North keys: 11 mm tall, Thick (+1, 16 mm), medium force (0.7 mm offset).
-- 24 East, South and West side keys: 6 mm tall, in your size: Thick (+1, 16 mm), Semi (+0.5, 17 mm), Thin (0, 18 mm) or Backset (−1, 20 mm). Medium force (0.7 mm offset).
-- 8 tipping center keys: 0.9 mm offset is a good starting point.
+| Part | Print | File |
+|---|---|---|
+| North keys | 8 | [`Finger Side Keys V2.0 - 11 1 0.7.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%2011%201%200.7.step) |
+| East, South and West keys | 24, all one size | Your size from [Key sizes](/build/#key-sizes): [+1](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%201%200.7.step), [+0.5](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200.5%200.7.step), [0](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%200%200.7.step) or [−1](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Side%20Keys%20V2.0/Finger%20Side%20Keys%20V2.0%20-%206%20-1%200.7.step) |
+| Tipping center keys | 8 | [`Center-Key_Offset-0.9_Wide.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Center%20Keys%20V2.0/Center-Key_Offset-0.9_Wide.step) |
+| Thumb Pad, Knuckle and Up keys | 2 of each | [`Thumb Side Keys All v2.0 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Side%20Keys/Thumb%20Side%20Keys%20All%20v2.0%20RCe.step): the Pad, Knuckle and "Mode (Up) 29h" parts |
+| Thumb Nail keys | Left and Right | [`Thumb Side Keys All v2.0 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Side%20Keys/Thumb%20Side%20Keys%20All%20v2.0%20RCe.step): the Nail Left and Nail Right parts |
+| Thumb Down keys | 2 | [`TKDown V2.1.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Down%20Regular/TKDown%20V2.1.step) |
+| Finger clusters | 8 | [`FC Standard - V2 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Clusters/FC%20Standard%20-%20V2%20RCe.step) |
+| Thumb clusters | Left and Right | [`TC Standard - TC L C V2 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Clusters/TC%20Standard%20-%20TC%20L%20C%20V2%20RCe.step) and [`TC Standard - TC R C V2 RCe.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Clusters/TC%20Standard%20-%20TC%20R%20C%20V2%20RCe.step) |
+| Palm rests | Left and Right | [`Hemi Palm L.3mf`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Hemi%20Palms/Hemi%20Palm%20L.3mf) and [`Hemi Palm R.3mf`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Hemi%20Palms/Hemi%20Palm%20R.3mf) |
+| Palm rest top washers | 2 | [`Hemi Top Washer - Print two.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Hemi%20Palms/Hemi%20Top%20Washer%20-%20Print%20two.step) |
+| Palm rest carriers, 9 mm | 2 | [`Hemi-Carrier-9mm-Shim_2N-Slots.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Palmrests/Hemi%20Palms/Hemi-Carrier-9mm-Shim_2N-Slots.step) |
+| Base plates | Left and Right (one file) | [`Lightly Baseplates and Case - Baseplates v3.0.0.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V3.0rc/Baseplates%20and%20Case/Lightly%20Baseplates%20and%20Case%20-%20Baseplates%20v3.0.0.step) |
+| Cases | Left and Right (one file) | [`Lightly Baseplates and Case - Case Logo L and R Composite v3.0.0.stl`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V3.0rc/Baseplates%20and%20Case/Lightly%20Baseplates%20and%20Case%20-%20Case%20Logo%20L%20and%20R%20Composite%20v3.0.0.stl) |
+| Trackball holders, 44 mm | 1 per trackball | [`PROD Svalball 3.175mm 44mm ball 1.6mm gap 757560.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Trackball%20Holders/PROD%20Svalball%203.175mm%2044mm%20ball%201.6mm%20gap%20757560.step) |
+| TrackPoint case | Top and bottom | [`Lightly - Trackpoint Holder - Top.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V1.3/Lightly%20-%20Trackpoint%20Holder%20-%20Top.step) and [`Lightly - Trackpoint Holder - Bottom.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V1.3/Lightly%20-%20Trackpoint%20Holder%20-%20Bottom.step) |
+| Touchpad holders | 1 per touchpad | [`SvalTPS43 Rev 2 - Ambi.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Touchpad/SvalTPS43%20Rev%202%20-%20Ambi.step) |
+| Magnet stages | Key and Cluster | [`Magnet Stages - Key Stage Mini 4x3.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Magnet%20Stages%20-%20Key%20Stage%20Mini%204x3.step) and [`Magnet Stages - Cluster Stage Mini 4x3.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Magnet%20Stages%20-%20Cluster%20Stage%20Mini%204x3.step) |
+| Magnet dropper | 1 | [`Magnet Dropper v1.2.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Magnet%20Dropper%20v1.2.step) |
+| Mini key tray fixture | 1 | [`Side Key 4-position tray V2.0.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/Tools/Key%20Tray%20Fixtures/Side%20Key%204-position%20tray%20V2.0.step) |
 
-**Thumb keys**
+The [`TKDown V2.0.step`](https://github.com/svalboard/svalboard-self-print/blob/main/Lightly%20FDM/V2.0/V2.0%20Keys/Thumb%20Down%20Regular/TKDown%20V2.0.step) Down key works too. If the V2.1 Down key binds on its pivot, sand the pivot slot on the key with a needle file.
 
-- 2 Pad, 2 Knuckle, 2 Down, Nail Left and Nail Right.
-- 2 Up keys: Mode Slim 29h. Print the "Mode (Up) 29h" key from `Thumb Side Keys All v2.0 RCe.step` in the `Lightly FDM/V2.0/V2.0 Keys/Thumb Side Keys` folder.
+Print the Wide center keys. The Narrow versions in the same folder are experimental and not for general use.
 
-**Clusters**
-
-- 8 finger clusters
-- Thumb L and Thumb R
-
-**Other parts**
-
-- Palm rests: Hemi Palm L, Hemi Palm R, two 9 mm hemi carriers ("2N-Slots"), and two hemi top washers. The files are in the Hemi Palms folder under Palmrests. Carriers from 1 mm to 15 mm tall are in its "Additional carrier variants and heights" folder.
-
-  {/* VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? */}
-- Base plates and cases: L Base, L Case, R Base, R Case.
-  For a compact board with no palm rest, print the [sawed-off case](/build/#sawed-off-case) instead.
-- TrackPoint case, if you have a TrackPoint: top cover and bottom cover.
-- Tools: mini 4x3 magnet stages (Key and Cluster), magnet dropper, mini key tray fixture.
+For a compact board with no palm rest, print the [sawed-off case](/build/#sawed-off-case) in place of the standard base plates and cases, and skip the palm rest parts.
 
 <CadFigure name="cad-parts-one-half" alt="The printed parts for one half laid out at the same scale: finger cluster (print 4), thumb cluster, palm rest, carrier and top washer, then North key (4), side key (12), tipping center key (4), and the Nail, Knuckle, Pad, Up and Down thumb keys." caption="The printed parts for one half (right half shown). Base plate and case not shown." />
 
@@ -272,7 +283,7 @@ The offset sets how hard a key is to press. A larger offset gives a lighter key.
 
 #### Tipping center keys
 
-The tipping center key is the standard center key. The default strength is 0.9 mm offset, about 20 g. The STEP file has every offset from 0 to 1.2 mm (very light) if you want to experiment.
+The tipping center key is the standard center key. The default strength is 0.9 mm offset, about 20 g. The Center Keys V2.0 folder has a file for every offset from 0 to 1.2 mm (very light) if you want to experiment.
 
 - Print at 0.2 mm layer height.
 - Make the supports very dense: 0 or 0.1 mm base pattern spacing, and zero interface layer spacing (a very dense support interface).
