@@ -156,18 +156,24 @@ The sizer measures fingertip width 6 mm from the tip. That is the depth of a fin
 
 ### Key sizes
 
+Each finger cluster has a Center key and four side keys around it: North, East, South and West. Your sizer reading picks the size of the East, South and West keys. North keys are always Thick (+1).
+
 There are four side key sizes. In order of increasing fingertip space:
 
-| Size | Approximate spacing |
-|---|---|
-| Thick (+1) | 16 mm |
-| Semi (+0.5) | 17 mm |
-| Thin (0) | 18 mm |
-| Backset (−1) | 20 mm |
+| Your largest sizer reading | Size | Approximate spacing | East, South and West key file |
+|---|---|---|---|
+| 16 mm or less | Thick (+1) | 16 mm | `Finger Side Keys V2.0 - 6 1 0.7.step` |
+| 17 mm | Semi (+0.5) | 17 mm | `Finger Side Keys V2.0 - 6 0.5 0.7.step` |
+| 18 mm | Thin (0) | 18 mm | `Finger Side Keys V2.0 - 6 0 0.7.step` |
+| 19 to 20 mm | Backset (−1) | 20 mm | `Finger Side Keys V2.0 - 6 -1 0.7.step` |
+
+{/* VERIFY: the sizer-reading column is new. It maps each reading to the size with the same approximate spacing. Two rows need your call: a 14 or 15 mm reading goes to Thick (the smallest fit on a standard cluster; the Fit page example uses 16 for a 14 mm pinky), and a 19 mm reading goes to Backset rather than Thin. Are those right? Should the sizer sheet print these size names next to its crescents? */}
+
+The side key files are in the `Lightly FDM/V2.0/V2.0 Keys/Side Keys V2.0` folder. Each name gives three numbers: height, thickness and offset. `6 0.5 0.7` is a key 6 mm tall, Semi (+0.5), with a 0.7 mm magnet offset for medium force. A larger offset gives a lighter key. See [Key width](/hardware/#key-width) for more on the naming.
 
 - People with thin or pointed fingertips may prefer the thicker keys.
 - People with blunt or wide fingertips may need the Backset keys for enough room to type comfortably.
-- North keys come in Thick (+1) only.
+- North keys come in Thick (+1) only. Their file is `Finger Side Keys V2.0 - 11mm Thick Medium.step`, in the same folder.
 
 The spacing is roughly the space between opposite side keys, near their tops. The numbers are approximate: use them to compare sizes, not as exact measurements.
 
@@ -204,37 +210,54 @@ The parts are in the [svalboard-self-print repository](https://github.com/svalbo
 - V2.0 greatly improves the key mechanism tolerances. Use it unless you're building to match older printed parts.
 - Keys and clusters **must** come from the same major version, or they won't fit together.
 - Many other parts didn't change from V1.3 to V2.0 and were carried forward as they are.
+- The standard build takes its base plates and cases from V3.0rc, the TrackPoint case from V1.3, and every other part from V2.0. See [What to print](/build/#what-to-print).
 - The repository may hold prototypes or parts that aren't in your kit. If you're unsure whether a part fits, ask in #supporters on Discord.
 
 ### What to print
 
-Pick your side key size first. See [Sizing before you build](/build/#sizing-before-you-build).
+Pick your side key size first. See [Key sizes](/build/#key-sizes).
 
-**Finger keys**
+This table lists every file for a standard build: both halves, five-key finger clusters and hemispherical palm rests. Folders are in the [svalboard-self-print repository](https://github.com/svalboard/svalboard-self-print/), under `Lightly FDM/V2.0/` unless the folder says otherwise. Some files hold several parts: print the parts named in the table.
 
-- 8 North keys: 11 mm tall, Thick (+1, 16 mm), medium force (0.7 mm offset).
-- 24 East, South and West side keys: 6 mm tall, in your size: Thick (+1, 16 mm), Semi (+0.5, 17 mm), Thin (0, 18 mm) or Backset (−1, 20 mm). Medium force (0.7 mm offset).
-- 8 tipping center keys: 0.9 mm offset is a good starting point.
+| Part | Print | File | Folder |
+|---|---|---|---|
+| North keys | 8 | `Finger Side Keys V2.0 - 11mm Thick Medium.step` | `V2.0 Keys/Side Keys V2.0` |
+| East, South and West keys | 24 | Your size from [Key sizes](/build/#key-sizes), for example `Finger Side Keys V2.0 - 6 0 0.7.step` for Thin | `V2.0 Keys/Side Keys V2.0` |
+| Tipping center keys | 8 | `Center-Key_Offset-0.9_Wide.step` | `V2.0 Keys/Center Keys V2.0` |
+| Thumb Pad, Knuckle and Up keys | 2 of each | `Thumb Side Keys All v2.0 RCe.step`: the Pad, Knuckle and "Mode (Up) 29h" parts | `V2.0 Keys/Thumb Side Keys` |
+| Thumb Nail keys | Left and Right | `Thumb Side Keys All v2.0 RCe.step`: the Nail Left and Nail Right parts | `V2.0 Keys/Thumb Side Keys` |
+| Thumb Down keys | 2 | `TKDown V2.1.step` | `V2.0 Keys/Thumb Down Regular` |
+| Finger clusters | 8 | `FC Standard - V2 RCe.step` | `V2.0 Clusters` |
+| Thumb clusters | Left and Right | `TC Standard - TC L C V2 RCe.step` and `TC Standard - TC R C V2 RCe.step` | `V2.0 Clusters` |
+| Palm rests | Left and Right | `Hemi Palm L.3mf` and `Hemi Palm R.3mf` | `Palmrests/Experimental/Hemi Palms` |
+| Palm rest top washers | 2 | `Hemi Top Washer - Print two.step` | `Palmrests/Experimental/Hemi Palms` |
+| Palm rest carriers, 9 mm | 2 | `Hemi-Carrier-9mm-Shim_2N-Slots.step` | `Palmrests/Experimental/Hemi Palms/Additional carrier variants and heights` |
+| Base plates | Left and Right | `Lightly Baseplates and Case - Baseplates v3.0.0.step` | `Lightly FDM/V3.0rc/Baseplates and Case` |
+| Cases | Left and Right | `Lightly Baseplates and Case - Case Logo L and R Composite v3.0.0.stl` | `Lightly FDM/V3.0rc/Baseplates and Case` |
+| Trackball holders, 44 mm | 1 per trackball | `PROD Svalball 3.175mm 44mm ball 1.6mm gap 757560.step` | `V2.0 Trackball Holders` |
+| TrackPoint case | Top and bottom | `Lightly - Trackpoint Holder - Top.step` and `Lightly - Trackpoint Holder - Bottom.step` | `Lightly FDM/V1.3` |
+| Touchpad holders | 1 per touchpad | `SvalTPS43 Rev 2 WIP - Ambi.step` | `Touchpad` |
+| Magnet stages | Key and Cluster | `Magnet Stages - Key Stage Mini 4x3.step` and `Magnet Stages - Cluster Stage Mini 4x3.step` | `Tools` |
+| Magnet dropper | 1 | `Magnet Dropper v1.2.step` | `Tools` |
+| Key tray fixture | 1 | `Side Key 4-position tray V2.0.step` | `Tools/Key Tray Fixtures` |
 
-**Thumb keys**
+{/* VERIFY: "Finger Side Keys V2.0 - 11mm Thick Medium.step" is taken as the North key (11 mm, Thick, 0.7 mm offset). The folder has no "11 1 0.7" file; its other Thick North files are 11 1 0.8, 11 1 0.9 and 11 1 1.2. Is "Thick Medium" the 0.7 mm offset key? */}
 
-- 2 Pad, 2 Knuckle, 2 Down, Nail Left and Nail Right.
-- 2 Up keys: Mode Slim 29h. Print the "Mode (Up) 29h" key from `Thumb Side Keys All v2.0 RCe.step` in the `Lightly FDM/V2.0/V2.0 Keys/Thumb Side Keys` folder.
+{/* VERIFY: base plates and cases. A customer's list named "Baseplates and Case/Lightly Baseplates and Case v1.2.8.step" (heat set inserts). The table uses the v3.0.0 files in "Lightly FDM/V3.0rc/Baseplates and Case", which you named as the current production plates and case. Is V3.0rc the folder to send self-builders to, and are the v3.0.0 plates the pop-nut plates Step 8 describes? If not, which file: v1.2.8 or "experimental/Lightly Baseplates and Case v2alpha DIN562 pop-nuts - BREAKING.step"? */}
 
-**Clusters**
+{/* VERIFY: Thumb Down key. The Thumb Side Keys file has no Down key; the table uses TKDown V2.1 from "Thumb Down Regular" (the latest; the clusters readme says to use the standard thumb down key with TC Standard). Its readme says it may bind on the pivot on some printers. V2.1 or V2.0? */}
 
-- 8 finger clusters
-- Thumb L and Thumb R
+{/* VERIFY: palm rest carrier height. The table follows the guide's 9 mm 2N-Slots carrier; the Hemi Palm readme recommends starting with 12 mm. Keep 9 mm? */}
 
-**Other parts**
+{/* VERIFY: TrackPoint case and touchpad holder. The newest TrackPoint holder files are in V1.3 (none in V2.0); the touchpad holder is the "Ambi" file in "Touchpad", which is still named "WIP". Are these the right files? Is "Side Key 4-position tray V2.0.step" the "mini key tray fixture" the guide named before? */}
 
-- Palm rests: Hemi Palm L, Hemi Palm R, two 9 mm hemi carriers ("2N-Slots"), and two hemi top washers. The files are in the Hemi Palms folder under Palmrests. Carriers from 1 mm to 15 mm tall are in its "Additional carrier variants and heights" folder.
+{/* VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? */}
 
-  {/* VERIFY: the hemi palm files are in "Lightly FDM/V2.0/Palmrests/Experimental/Hemi Palms". Will they move out of Experimental now that they're the current design? */}
-- Base plates and cases: L Base, L Case, R Base, R Case.
-  For a compact board with no palm rest, print the [sawed-off case](/build/#sawed-off-case) instead.
-- TrackPoint case, if you have a TrackPoint: top cover and bottom cover.
-- Tools: mini 4x3 magnet stages (Key and Cluster), magnet dropper, mini key tray fixture.
+The center key folder also has Narrow versions of each center key. Print the Wide ones. The Narrow keys are for tighter key geometries and very small fingertips.
+
+{/* VERIFY: Narrow vs Wide comes from "Center Keys V2.0/Errata - Readme.txt": the narrow version is "for those who want to experiment with even tighter key geometries for tiny fingers", and the standard width interferes when thick keys are used on narrow clusters. Is it right to call Wide the standard for every build? */}
+
+For a compact board with no palm rest, print the [sawed-off case](/build/#sawed-off-case) in place of the standard base plates and cases, and skip the palm rest parts.
 
 <CadFigure name="cad-parts-one-half" alt="The printed parts for one half laid out at the same scale: finger cluster (print 4), thumb cluster, palm rest, carrier and top washer, then North key (4), side key (12), tipping center key (4), and the Nail, Knuckle, Pad, Up and Down thumb keys." caption="The printed parts for one half (right half shown). Base plate and case not shown." />
 
@@ -272,7 +295,7 @@ The offset sets how hard a key is to press. A larger offset gives a lighter key.
 
 #### Tipping center keys
 
-The tipping center key is the standard center key. The default strength is 0.9 mm offset, about 20 g. The STEP file has every offset from 0 to 1.2 mm (very light) if you want to experiment.
+The tipping center key is the standard center key. The default strength is 0.9 mm offset, about 20 g. The Center Keys V2.0 folder has a file for every offset from 0 to 1.2 mm (very light) if you want to experiment.
 
 - Print at 0.2 mm layer height.
 - Make the supports very dense: 0 or 0.1 mm base pattern spacing, and zero interface layer spacing (a very dense support interface).
