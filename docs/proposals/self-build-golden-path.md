@@ -70,8 +70,6 @@ The mapping is owner-confirmed (14–15 mm → +1, 19 mm → −1). Use the numb
 - Hosting: a GitHub release asset on svalboard/svalboard-self-print, so it inherits the repository's supporters-only access. Release URL: `https://github.com/svalboard/svalboard-self-print/releases/download/standard-build-v2.0.1/svalboard-lightly-standard-build-v2.0.1.zip`. The release isn't created; the guide carries a VERIFY note until it is. Build the release zip after the branch merges, so the README's commit is on main.
 - Rule: when a default changes, update the script's list, the guide's table and `START HERE.md` together, then publish the next patch version.
 
-## 8. Re-render the two key size figures
+## 8. Re-render the two key size figures (done)
 
-**Why:** `cad-key-profiles` and `cad-key-sizing` print "Thick (+1)", "Semi (+0.5)", "Thin (0)" and "Backset (−1)" in the images. The guide text and alt text now use the numbers.
-
-**Proposed change:** re-render both with the labels "+1", "+0.5", "0" and "−1". The label text is not in `Svalboard/tools/cad-render/cad3/batch1/figs_b1.py` (its `SIZES` list has the bare names), so find the script that made the current images first. Note that geo.py there loads `11mm Thick Medium.step` by name, which must change to `11 1 0.7` once the rename merges.
+`cad-key-profiles` and `cad-key-sizing` are re-rendered with the labels +1, +0.5, 0 and −1. The label text comes from `SIZE_LABEL` in `cad-render/cad3/batch1/geo.py`; geometry and camera are unchanged.
