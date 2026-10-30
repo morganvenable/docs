@@ -40,7 +40,7 @@ Choose **Update to x4.1** on the Firmware card. Keybard opens **Install x4.1 by 
    2. Press its **RESET** button twice, about a quarter of a second apart. Too fast and nothing happens. A drive named **RPI-RP2** opens.
    3. Drag the file onto the drive. The half restarts and the drive closes.
    4. Then the other half: move the USB cable to its **U** port, press its **RESET** button twice, and drag the same file onto the drive.
-   5. Within a few seconds of the second install, both halves turn rainbow. The first half glows steady magenta for a few seconds while it writes, restarts, and then both halves flash green twice, about half a minute after the drive closed.
+   5. Within a few seconds of the second install, the halves show a rainbow while they work, then both flash green twice, about half a minute after the drive closed.
 4. After the green flashes, choose **Connect keyboard**.
 
 <!-- SCREENSHOT: Install x4.1 by hand with the layout choice, the one file and the steps for both halves. Source: Svalboard/review/x4-keybard/09-by-hand-instructions.png (retake for x4.1) -->
@@ -156,10 +156,12 @@ An install by hand needs no key press: pressing **RESET** twice already takes a 
 | --- | --- |
 | Blue, blinking | Press the two keys now. |
 | White, two flashes | The keyboard saw the key press. |
-| Rainbow | Updating, on both halves, from the key press until both halves run the same firmware. Keep both plugged in. It ends with two green flashes. |
-| Magenta, steady | This half is writing the new firmware, for a few seconds. Don't unplug. It restarts afterward. |
+| Rainbow | Working. Keep both halves plugged in. |
+| Magenta | This half is writing the new firmware. Don't unplug. |
 | Green, two flashes | Done: both halves run the same firmware. |
-| Red, blinking about once a second | The update didn't finish: the halves still differ a minute after an update, or a half refused the firmware. It stops after 30 seconds. Open Keybard to see which half, or install the file on both halves again. |
+| Red, blinking about once a second | The update failed. It stops after 30 seconds. Open Keybard to see which half, or install the file on both halves again. |
+
+While a half writes its firmware or restarts, the firmware isn't driving its lights, so they may freeze or show other colors until it's running again.
 
 ## Your settings reset to the new firmware's defaults
 
@@ -185,7 +187,7 @@ Your saved layout stays in **Backups** and in Downloads. To put it back later, s
 The keyboard never runs half-written firmware. If USB is unplugged or the power cuts during an update, each half comes back one of two ways:
 
 - **On its firmware**: the old release if it hadn't started installing, the new one if it had finished.
-- **As a drive named RPI-RP2**, if the cut came while the light was magenta. Keybard shows, for example, **Left half needs its firmware installed by hand**: choose **Download the firmware file** and drag it onto the drive, or **Install by hand** for the steps.
+- **As a drive named RPI-RP2**, if the cut came while that half was writing its firmware. Keybard shows, for example, **Left half needs its firmware installed by hand**: choose **Download the firmware file** and drag it onto the drive, or **Install by hand** for the steps.
 
 Unplugging the split cable interrupts both halves the same safe way.
 
