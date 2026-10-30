@@ -81,7 +81,7 @@ Keep the USB cable plugged into one half and the split cable connected. Keybard 
 
 <!-- SCREENSHOT: x4 is installed. Source: Svalboard/review/x4-keybard/06-update-done.png -->
 
-While Keybard copies firmware to the half without USB, don't type on that half. Between the two halves, the light on the half with USB blinks red slowly. That is expected, and it stops when that half is updated too.
+While Keybard copies firmware to the half without USB, don't type on that half. The lights on the halves change while they update. Leave the keyboard plugged in until Keybard says it's done.
 
 ### Update one half
 
@@ -156,7 +156,7 @@ An install by hand needs no key press: pressing **RESET** twice already takes a 
 | --- | --- |
 | Blue, blinking | Press the two keys now. |
 | White, two flashes | The keyboard saw the key press. |
-| Rainbow | Updating: one half is sending the firmware across the split cable, or the halves are finding each other after an install. Keep both plugged in. It ends with two green flashes. |
+| Rainbow | Updating, on both halves, from the key press until both halves run the same firmware. Keep both plugged in. It ends with two green flashes. |
 | Magenta, steady | This half is writing the new firmware, for a few seconds. Don't unplug. It restarts afterward. |
 | Green, two flashes | Done: both halves run the same firmware. |
 | Red, blinking about once a second | The update didn't finish: the halves still differ a minute after an update, or a half refused the firmware. It stops after 30 seconds. Open Keybard to see which half, or install the file on both halves again. |
