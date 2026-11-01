@@ -109,11 +109,12 @@ The touchpad mode is a setting of the board itself:
 
 - Loading, importing or sharing a layout never changes it. A layout someone shares with you keeps your own touchpad mode.
 - Restoring a layout file or a backup doesn't restore it.
-- A settings reset returns it to **Automatic**. So does installing a new firmware release, which [resets every stored setting](/keybard/update-firmware/#your-settings-reset-to-the-new-firmwares-defaults). Choose **Built-in gestures** again afterward if you use it.
+- A settings reset returns it to **Automatic**. So does installing a different firmware release: its first start [resets every stored setting](/keybard/update-firmware/#your-settings-reset-to-the-new-firmwares-defaults), and restoring your layout afterward doesn't bring the touchpad mode back. Reinstalling the release you already run keeps it. If you use **Built-in gestures**, choose it again after an update.
 
 One board used with a Mac and a PC: leave it on **Automatic**. It is a full touchpad on the PC and uses built-in gestures on the Mac.
 
-<!-- VERIFY: svalboard/keybard#125 currently queues the touchpad mode on .svil import (review finding K3). The bullets above describe the intended behavior; confirm the fix lands before this merges. -->
+<!-- VERIFY: svalboard/keybard#125 currently queues the touchpad mode on .svil import (review finding K3), and Keybard's "Restore my layout" after an update goes through the same import path, so today it would write the mode back. The bullets above describe the intended behavior (import skips the mode); confirm the fix lands before this merges. -->
+<!-- Source for the update reset: svalboard/qmk build_reset.c:132-154 (a5275f7) resets every stored setting on the first boot of a different image, release builds can't skip it (build_reset.c:107-110), and svalboard.c:422-431 (8ea8785) sets the touchpad mode to Automatic on that reset. -->
 
 ### If Keybard doesn't show Touchpad mode
 
