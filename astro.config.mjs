@@ -126,6 +126,7 @@ const keybardJumps = [
 	{ label: "Backups and files", link: '/keybard/#backups-and-files' },
 	{ label: "Behaviors", link: '/keybard/#behaviors' },
 	{ label: "Pointing devices", link: '/keybard/#pointing-devices' },
+	{ label: "Touchpad", link: '/keybard/touchpad/' },
 	{ label: "Settings and checks", link: '/keybard/#settings-and-checks' },
 	{ label: "Update your firmware", link: '/keybard/update-firmware/' },
 	{ label: "Desktop overlay", link: '/keybard/#desktop-overlay' },
