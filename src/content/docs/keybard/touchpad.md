@@ -6,7 +6,7 @@ description: Choose how your Svalboard touchpads work, watch each touch live, an
 Your touchpads work as a Windows or Linux touchpad out of the box, and use their own built-in gestures on a Mac. Keybard shows every touch live, so you can see why a touch clicked or didn't and set the pads to suit your hands.
 
 :::note[Which release you need]
-The **Touchpad tuning** dialog, dead zone, tap time, hold time, scroll start and the tap switches are in v4.3.4. Every finger in the live view, the two-finger guides, palm rejection and **Touchpad mode** need firmware and Keybard from the next release. Use the two from the same release: an older Keybard doesn't show **Touchpad mode** or palm rejection.
+The **Touchpad tuning** dialog, dead zone, tap time, hold time, scroll start and the tap switches are in v4.3.4. Every finger in the live view, the two-finger guides, palm rejection and **Touchpad mode** need firmware and Keybard from the next release. Use the two from the same release.
 :::
 
 <!-- VERIFY: which release tag carries svalboard/qmk#66 and svalboard/keybard#125? Replace "the next release" above and below with it. -->
@@ -83,7 +83,7 @@ On a Mac and in a BIOS, nothing changes: they use built-in gestures either way.
 
 ### Switch back to Automatic
 
-Choose **Automatic** in the dialog or in **Pointing Devices**. It takes effect at once, with no confirmation, and Windows or Linux has its touchpad back.
+Open **Settings** → **Touchpad tuning** → **Tune touchpad…** and choose **Automatic**. Or choose it in **Touchpad Mode** in **Pointing Devices**. It takes effect at once, with no confirmation, and Windows or Linux has its touchpad back.
 
 ### Which settings show in each mode
 
@@ -107,21 +107,14 @@ With **Automatic** on a Mac, the pads use built-in gestures, so every setting sh
 
 The touchpad mode is a setting of the board itself:
 
-- Loading, importing or sharing a layout never changes it. A layout someone shares with you keeps your own touchpad mode.
-- Restoring a layout file or a backup doesn't restore it.
-- A settings reset returns it to **Automatic**. So does installing a different firmware release: its first start [resets every stored setting](/keybard/update-firmware/#your-settings-reset-to-the-new-firmwares-defaults), and restoring your layout afterward doesn't bring the touchpad mode back. Reinstalling the release you already run keeps it. If you use **Built-in gestures**, choose it again after an update.
+- Importing or sharing a layout file never changes it. A layout someone shares with you keeps your own touchpad mode.
+- Installing a different firmware release [resets every stored setting](/keybard/update-firmware/#your-settings-reset-to-the-new-firmwares-defaults), the touchpad mode included. When Keybard restores your layout after the update, it brings your touchpad mode back too.
+- A settings reset returns it to **Automatic**.
 
 One board used with a Mac and a PC: leave it on **Automatic**. It is a full touchpad on the PC and uses built-in gestures on the Mac.
 
-<!-- VERIFY: svalboard/keybard#125 currently queues the touchpad mode on .svil import (review finding K3), and Keybard's "Restore my layout" after an update goes through the same import path, so today it would write the mode back. The bullets above describe the intended behavior (import skips the mode); confirm the fix lands before this merges. -->
+<!-- VERIFY: two svalboard/keybard#125 changes must land before this merges: (1) importing a .svil leaves the touchpad mode alone (review finding K3), and (2) "Restore my layout" after a firmware update restores the touchpad mode with the layout. Both go through the import path today (restore.ts:23-33, import.service.ts:272-278). -->
 <!-- Source for the update reset: svalboard/qmk build_reset.c:132-154 (a5275f7) resets every stored setting on the first boot of a different image, release builds can't skip it (build_reset.c:107-110), and svalboard.c:422-431 (8ea8785) sets the touchpad mode to Automatic on that reset. -->
-
-### If Keybard doesn't show Touchpad mode
-
-Your Keybard is older than your firmware. Older Keybard can't show or change the touchpad mode, so it can't switch the pads back to **Automatic**. To switch back:
-
-1. Open Keybard from the same release as your firmware: [keybard.svalboard.com](https://keybard.svalboard.com) for a full release, or [next.keybard.svalboard.com](https://next.keybard.svalboard.com) for a prerelease.
-2. Connect your board and choose **Automatic**.
 
 ## Palm rejection
 
