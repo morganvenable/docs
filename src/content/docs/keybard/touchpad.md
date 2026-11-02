@@ -69,21 +69,20 @@ Automatic is what we ship and recommend. Choose **Built-in gestures** if you wan
 ### Switch to built-in gestures
 
 1. Open the dialog and choose **Built-in gestures**. Or choose it in **Touchpad Mode** in **Pointing Devices**.
-2. Keybard asks **Use built-in gestures?** and lists what changes.
+2. Keybard asks **Use built-in gestures?** and says what changes.
 3. Choose **Use built-in gestures**. **Cancel**, the default, changes nothing.
 
-![The Use built-in gestures? confirmation: on Windows and Linux the pads stop being a touchpad, the system's touchpad settings and gestures no longer apply, taps, two-finger scroll, right click and press-and-hold drag come from the pad itself, a Mac and a BIOS don't change, and Automatic is what we ship and recommend. Cancel and Use built-in gestures buttons.](../../../assets/keybard/touchpad-builtin-confirm.webp)
+![The Use built-in gestures? confirmation. Your computer's touchpad features won't apply on Windows and Linux: three- and four-finger swipes, pinch to zoom, and the system's tap, scroll and palm settings. Taps, two-finger scroll, right click and press and hold come from the touchpad itself, set here. Macs work the same either way. We recommend Automatic. Cancel and Use built-in gestures buttons.](../../../assets/keybard/touchpad-builtin-confirm.webp)
 
-On Windows and Linux, this is what changes:
+On Windows and Linux, your computer's touchpad features won't apply. That means three- and four-finger swipes, pinch to zoom, and the system's tap, scroll and palm settings. Your computer still lists the touchpad.
 
-- **You lose** the system's touchpad gestures and settings: three- and four-finger swipes and taps, pinch to zoom, and the Windows tap, scroll and palm settings. Your computer still lists the touchpad, but it gets no touches from it.
-- **You get** taps, two-finger scroll, right click and press-and-hold drag from the pads themselves, set with the dead zone, tap time, hold time and scroll start in this dialog and the switches in **Pointing Devices**.
+Taps, two-finger scroll, right click and press and hold to drag come from the pads themselves. Set them with the dead zone, tap time, hold time and scroll start in this dialog, and the switches in **Pointing Devices**.
 
-On a Mac and in a BIOS, nothing changes: they use built-in gestures either way.
+Macs and BIOS screens work the same either way.
 
 ### Switch back to Automatic
 
-Open **Settings** → **Touchpad tuning** → **Tune touchpad…** and choose **Automatic**. Or choose it in **Touchpad Mode** in **Pointing Devices**. It takes effect at once, with no confirmation, and Windows or Linux has its touchpad back.
+Open **Settings** → **Touchpad tuning** → **Tune touchpad…** and choose **Automatic**. Or choose it in **Touchpad Mode** in **Pointing Devices**. It takes effect at once, with no confirmation, and Windows or Linux uses its own touchpad features again.
 
 ### Which settings show in each mode
 
