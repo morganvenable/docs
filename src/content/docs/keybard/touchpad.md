@@ -6,10 +6,8 @@ description: Choose how your Svalboard touchpads work, watch each touch live, an
 Your touchpads work as a Windows or Linux touchpad out of the box, and use their own built-in gestures on a Mac. Keybard shows every touch live, so you can see why a touch clicked or didn't and set the pads to suit your hands.
 
 :::note[Which release you need]
-The **Touchpad tuning** dialog, dead zone, tap time, hold time, scroll start and the tap switches are in v4.3.4. Every finger in the live view, the two-finger guides, palm rejection and **Touchpad mode** need firmware and Keybard from the next release. Use the two from the same release.
+The **Touchpad tuning** dialog, dead zone, tap time, hold time, scroll start and the tap switches are in v4.3.4. Every finger in the live view, the two-finger guides, palm rejection and **Touchpad mode** need firmware and Keybard v4.3.5 or later. Use the two from the same release.
 :::
-
-<!-- VERIFY: which release tag carries svalboard/qmk#66 and svalboard/keybard#125? Replace "the next release" above and below with it. -->
 
 ## Open the Touchpad tuning dialog
 
@@ -112,7 +110,6 @@ The touchpad mode is a setting of the board itself:
 
 One board used with a Mac and a PC: leave it on **Automatic**. It is a full touchpad on the PC and uses built-in gestures on the Mac.
 
-<!-- VERIFY: two svalboard/keybard#125 changes must land before this merges: (1) importing a .svil leaves the touchpad mode alone (review finding K3), and (2) "Restore my layout" after a firmware update restores the touchpad mode with the layout. Both go through the import path today (restore.ts:23-33, import.service.ts:272-278). -->
 <!-- Source for the update reset: svalboard/qmk build_reset.c:132-154 (a5275f7) resets every stored setting on the first boot of a different image, release builds can't skip it (build_reset.c:107-110), and svalboard.c:422-431 (8ea8785) sets the touchpad mode to Automatic on that reset. -->
 
 ## Palm rejection
