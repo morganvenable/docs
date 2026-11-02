@@ -61,7 +61,7 @@ A third finger shows as a numbered finger with no guides. Three fingers don't ta
 
 | Mode | What you get |
 | --- | --- |
-| **Automatic** (the default) | On Windows and Linux, the pads are a full touchpad: the system makes the taps, scrolling and gestures, with its own touchpad settings. On a Mac, in a BIOS or boot menu, and before the computer switches the pads to touchpad mode, the pads use their built-in gestures. |
+| **Automatic** (the default) | Windows and Linux use their native Precision Touchpad Protocol: the system makes the taps, scrolling and gestures, with its own touchpad settings. A Mac is limited to the built-in gestures from Azoteq, the maker of the touchpad chip. A BIOS or boot menu, and the moments before the computer switches the pads to touchpad mode, use the built-in gestures too. |
 | **Built-in gestures** | The pads use their built-in gestures on every computer: tap to click, two-finger tap to right click, two-finger scroll, and press and hold to drag, tuned in this dialog. |
 
 Automatic is what we ship and recommend. Choose **Built-in gestures** if you want the pads to work the same on every computer, set up in Keybard.
