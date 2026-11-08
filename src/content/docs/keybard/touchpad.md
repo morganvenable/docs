@@ -116,7 +116,7 @@ One board used with a Mac and a PC: leave it on **Automatic**. It is a full touc
 
 A KVM switch that switches the USB connection itself works with your Svalboard. Each time you switch, the keyboard restarts in about two seconds and adapts to the computer it's now on. The touchpad works as a Precision Touchpad on Windows and uses its built-in gestures on a Mac, and Mac scrolling is set for you.
 
-Some KVMs keep your keyboard connected to the KVM and show each computer their own generic keyboard and mouse. This is often called USB emulation, or EDID or HID emulation. The Svalboard can't tell which computer it's on, and Precision Touchpad gestures don't pass through, so the touchpad works as a basic mouse at best. Choose a KVM that switches USB directly, or plug the Svalboard straight into your computer.
+Some KVMs keep your keyboard connected to the KVM and show each computer its own generic keyboard and mouse. This is often called USB emulation, or EDID or HID emulation. The Svalboard can't tell which computer it's on, and Precision Touchpad gestures don't pass through, so the touchpad works as a basic mouse at best. Choose a KVM that switches USB directly, or plug the Svalboard straight into your computer.
 
 ## Palm rejection
 
