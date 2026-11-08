@@ -91,6 +91,7 @@ For hardware problems, see [Troubleshooting](/hardware/#troubleshooting).
 - Release a tap-dance key before changing its action.
 - Auto Shift isn't in the standard firmware.
 - Automatic backups live in one browser. Keep an exported `.svil` too.
+- KVM switches with emulated USB keyboards and mice give the touchpad no gestures. Switches that pass USB through work fully. See [Using a KVM switch](/keybard/touchpad/#using-a-kvm-switch).
 
 ## Linux: the udev rule
 

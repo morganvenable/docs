@@ -112,6 +112,12 @@ One board used with a Mac and a PC: leave it on **Automatic**. It is a full touc
 
 <!-- Source for the update reset: svalboard/qmk build_reset.c:132-154 (a5275f7) resets every stored setting on the first boot of a different image, release builds can't skip it (build_reset.c:107-110), and svalboard.c:422-431 (8ea8785) sets the touchpad mode to Automatic on that reset. -->
 
+## Using a KVM switch
+
+A KVM switch that switches the USB connection itself works with your Svalboard. Each time you switch, the keyboard restarts in about two seconds and adapts to the computer it's now on. The touchpad works as a Precision Touchpad on Windows and uses its built-in gestures on a Mac, and Mac scrolling is set for you.
+
+Some KVMs keep your keyboard connected to the KVM and show each computer their own generic keyboard and mouse. This is often called USB emulation, or EDID or HID emulation. The Svalboard can't tell which computer it's on, and Precision Touchpad gestures don't pass through, so the touchpad works as a basic mouse at best. Choose a KVM that switches USB directly, or plug the Svalboard straight into your computer.
+
 ## Palm rejection
 
 Palm rejection ignores a contact larger than a fingertip, such as the heel of your hand resting on a pad. It is off by default.
